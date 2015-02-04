@@ -1,0 +1,356 @@
+// Base Elements
+body {
+  background: transparent;
+  font-family: 'Lato', sans-serif;
+  padding: 10px;
+}
+
+// Bootstrap overrides
+.input-group .form-control:first-child {
+  border-right: 0;
+
+  &:focus {
+    border-color: @input-border;
+    .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  }
+}
+
+.input-group-btn:last-child  {
+  > .btn,
+  > .btn-group {
+    margin-left: 0;
+  }
+}
+
+html.no-flash {
+  .input-group {
+    width: 100%;
+
+    .form-control {
+      width: 100%;
+      border-right: 1px solid @input-border;
+      border-radius: @border-radius-base;
+    }
+
+    .input-group-btn {
+      display: none;
+    }
+  }
+}
+
+html.lt-ie9 .fade {
+  visibility: hidden;
+
+  &.in {
+    visibility: visible;
+  }
+}
+
+// Base Referral SaaSquatch elements
+.squatch-container {
+  .box-shadow(0 2px 4px rgba(0,0,0,.5));
+  padding: 0;
+  width: 500px;
+  height: 490px;
+  position: relative;
+  background: @white;
+  overflow: hidden;
+
+  html.lt-ie9 & {
+    border: 1px solid @gray-lighter;
+  }
+}
+
+.squatch-body {
+  padding: @body-padding;
+}
+
+.squatch-title,
+.squatch-lead,
+.squatch-cta {
+  text-align: center;
+}
+
+.squatch-title {
+  margin: 0 0 20px;
+  color: @blue;
+}
+
+.squatch-header-close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background: transparent;
+  border: 0;
+  color: @blue;
+  font-size: @font-size-sm;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.squatch-cta {
+  margin: 0 0 24px;
+
+  b {
+    color: @gray-darker;
+  }
+}
+
+#squatch-share-link {
+  color: @text-color;
+  background: transparent;
+  cursor: text;
+}
+
+#squatch-share-notification {
+  position: absolute;
+  top: 10px;
+  right: 156px;
+  z-index: 100;
+}
+
+.squatch-stats {
+  .transition-transform(.3s cubic-bezier(.65, 0, .35, 1));
+  .translate(0, 0);
+  background: @white;
+  overflow: hidden;
+  position: relative;
+  z-index: 110;
+
+  .squatch-stats-body {
+    padding: 15px @body-padding;
+    border-top: 1px solid @gray-lighter;
+  }
+
+  .squatch-stats-title {
+    margin: 5px 0 7px;
+    text-align: center;
+    color: @gray-darker;
+    font-weight: bold;
+
+    html.lt-ie9 & {
+      margin: 0 0 7px;
+    }
+  }
+
+  .squatch-stats-body-actions {
+    text-align: center;
+
+    .btn {
+      margin-left: @grid-gutter-width;
+      width: 120px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.open {
+    .translate(0, -207px);
+
+    html.lt-ie9 & {
+      top: -207px;
+    }
+  }
+}
+
+.squatch-rewards {
+  margin-left: -@body-padding;
+  margin-right: -@body-padding;
+
+  .squatch-rewards-total-credit,
+  .squatch-rewards-credit-available,
+  .squatch-rewards-referred {
+    font-size: @font-size-h1;
+    line-height: 20px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: @gray-light;
+    font-weight: 300;
+  }
+
+  .squatch-rewards-credit-available {
+    color: @green;
+  }
+
+  .squatch-rewards-description {
+    text-transform: uppercase;
+    font-size: @font-size-sm;
+    color: @gray-light;
+  }
+}
+
+.squatch-actions {
+  .translate(0, 0);
+  .transition-transform(.3s cubic-bezier(0,0,.58,1));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 120;
+  background: @white;
+  text-align: center;
+  padding: 15px @body-padding 0;
+
+  html.lt-ie9 & {
+    display: block;
+  }
+
+  .squatch-stats.open + & {
+    .translate(0, 81px);
+
+    html.lt-ie9 & {
+      display: none;
+    }
+  }
+}
+
+.squatch-attribution {
+  text-align: center;
+  margin: 9px 0;
+  font-size: 9px;
+  color: lighten(@gray-light, 8%);
+}
+
+.squatch-referrals-container {
+  margin: 10px 0 11px;
+  height: 209px;
+  overflow: hidden;
+}
+
+.squatch-referrals {
+  width: 100%;
+
+  th,
+  td {
+    vertical-align: top;
+    width: 89px;
+
+    &:first-child {
+      width: 160px;
+      padding-left: @body-padding;
+    }
+
+    &:last-child {
+      width: 130px;
+      padding-right: @body-padding;
+    }
+  }
+}
+
+
+.squatch-referrals {
+  margin-bottom: 209px;
+  border-collapse: separate;
+  position: relative;
+
+  tbody {
+    td {
+      padding-top: 15px;
+      padding-bottom: 14px;
+    }
+
+    tr {
+      td {
+        border-bottom: 1px solid @gray-lighter;
+      }
+
+      &:last-child td,
+      &:nth-child(3n) td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .squatch-referrals-avatar {
+    width: 40px;
+    float: left;
+    margin-right: 14px;
+  }
+
+  .squatch-referrals-heading {
+    margin: 2px 0;
+  }
+
+  .squatch-referrals-description {
+    color: @gray-light;
+    font-size: @font-size-sm;
+    line-height: 12px;
+  }
+
+  .squatch-referrals-icon {
+    margin: 10px 7px 0 0;
+    float: left;
+    font-size: 22px;
+  }
+}
+
+// Theme-specific elements
+.icon-btn {
+  border-left: 0;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  text-align: left;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    bottom: -1px;
+    background: fade(@white, 18%);
+    width: 40px;
+  }
+
+  .icon {
+    width: 42px;
+    margin-right: 20px;
+  }
+}
+
+.btn-email {
+  .button-variant(@btn-email-color; @btn-email-bg; @btn-email-border);
+}
+
+.btn-facebook {
+  .button-variant(@btn-facebook-color; @btn-facebook-bg; @btn-facebook-border);
+}
+
+.btn-twitter {
+  .button-variant(@btn-twitter-color; @btn-twitter-bg; @btn-twitter-border);
+}
+
+.btn[data-clipboard-target] {
+  width: 140px;
+
+  &.hover {
+    background: darken(@btn-primary-bg, 10%);
+    border-color: darken(@btn-primary-border, 12%);
+  }
+}
+
+// Components
+button[data-scroll-element].disabled {
+  cursor: default;
+}
+
+// Atomic classes
+.text-green {
+  color: @green !important;
+}
+
+.text-yellow {
+  color: @yellow !important;
+}
+
+.text-gray {
+  color: @gray-light !important;
+}
+
+.text-black {
+  color: @black !important;
+}

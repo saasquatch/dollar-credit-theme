@@ -1,0 +1,244 @@
+<!doctype html>
+<!--[if lt IE 9]><html class="lt-ie9 ie no-flash"><![endif]-->
+<!--[if IE 9]><html class="ie no-flash"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-flash" lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Referral SaaSquatch Discount Theme</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="{{assets 'css/widget.css'}}">
+
+    {{>jsHead}}
+    {{squatchHead}}
+
+    <!--[if lt IE 9]>
+      <script src="/assets/libs/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+    <script>
+      // Detect if client supports flash and if so remove the `no-flash` class from the html element
+      (function() {
+        var hasFlash = false;
+        try {
+          var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+          if (fo) {
+            hasFlash = true;
+          }
+        } catch (e) {
+          if (navigator.mimeTypes
+                && navigator.mimeTypes['application/x-shockwave-flash'] != undefined
+                && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
+            hasFlash = true;
+          }
+        }
+
+        if (hasFlash) {
+          html = document.getElementsByTagName('html')[0];
+          html.className = html.className.replace('no-flash', '');
+        }
+      })()
+    </script>
+  </head>
+  <body>
+
+    <main class="squatch-container">
+      <div class="squatch-body">
+        <h1 class="squatch-title">Give $100 and Get $100!</h1>
+
+        <button class="close squatch-header-close">Close</button>
+
+        <p class="squatch-lead">
+          Give a friend $100 credit of Service and receive $100<br>
+          for yourself when they pay their first bill.
+        </p>
+
+        <p class="squatch-cta">
+          Share the link below or use code <b>{{user.referralCode}}</b>
+        </p>
+
+        <div class="squatch-share">
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" id="squatch-share-link" value="{{shareLinks.shareLink}}" readonly="readonly">
+
+              <span class="label label-default fade" id="squatch-share-notification">Copied!</span>
+
+              <span class="input-group-btn">
+                <button class="btn btn-primary icon-btn" data-clipboard-target="squatch-share-link" data-clipboard-notification="#squatch-share-notification"><i class="icon icon-link"></i> Copy</button>
+              </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-4">
+              <a class="btn btn-email btn-block icon-btn emailShare"><i class="icon icon-mail"></i> Email</a>
+            </div>
+            <div class="col-xs-4">
+              <a class="btn btn-facebook btn-block icon-btn fbShare"><i class="icon icon-facebook"></i> Share</a>
+            </div>
+            <div class="col-xs-4">
+              <a class="btn btn-twitter btn-block icon-btn twShare"><i class="icon icon-twitter"></i> Tweet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="squatch-stats" id="squatch-stats-panel">
+        <div class="squatch-stats-body">
+          <h2 class="squatch-stats-title">
+            Referral Stats
+          </h2>
+
+          <div class="row squatch-rewards">
+            <div class="col-xs-4 text-center">
+              <div class="squatch-rewards-total-credit">$300</div>
+              <span class="squatch-rewards-description">Total Credit Earned</span>
+            </div>
+
+            <div class="col-xs-4 text-center">
+              <div class="squatch-rewards-credit-available">
+                {{#if rewardBalances.[0].count}}
+                  ${{rewardBalances.[0].count}}
+                {{else}}
+                  $0
+                {{/if}}
+              </div>
+
+              <span class="squatch-rewards-description">Credit Available</span>
+            </div>
+
+            <div class="col-xs-4 text-center">
+              <div class="squatch-rewards-referred">{{referralsLength}}</div>
+              <span class="squatch-rewards-description">Friends Referred</span>
+            </div>
+          </div>
+
+          <div class="squatch-referrals-container" id="squatch-referrals-scroll" data-scroll-offset="0" data-scroll-limit="{{referralsLength}}">
+            <table class="squatch-referrals">
+              <tbody>
+                {{#each referrals}}
+                  <tr id="{{@index}}">
+                    <td>
+                      {{#if referredUser.imageUrl}}
+                        <img class="img-circle squatch-referrals-avatar" src="{{referredUser.imageUrl}}">
+                      {{else}}
+                        <img class="img-circle squatch-referrals-avatar" src="{{gravatar referredUser.email default="mm" rating="pg" size=40}}">
+                      {{/if}}
+
+                      <div class="squatch-referrals-heading">{{referredUser.firstName}}</div>
+
+                      <div class="squatch-referrals-description">
+                        {{#if paid}}
+                          Paid User
+                        {{else}}
+                          Trial User
+                        {{/if}}
+                      </div>
+                    </td>
+                    <td>
+                      <div class="squatch-referrals-heading">
+                        {{#if paid}}
+                          Signed Up
+                        {{else}}
+                          Referred
+                        {{/if}}
+                      </div>
+
+                      <div class="squatch-referrals-description" data-moment="true">{{dateReferred}}</div>
+                    </td>
+                    <td>
+                      <i class="icon squatch-referrals-icon
+                        {{#if paid}}
+                          {{#if referrerReward.credit}}
+                            icon-ok-circled text-green
+                          {{else}}
+                            icon-ok-circled text-gray
+                          {{/if}}
+                        {{else}}
+                          icon-attention text-yellow
+                        {{/if}}
+                      "></i>
+
+                      <div class="squatch-referrals-heading">
+                        {{#if paid}}
+                          $100
+                        {{else}}
+                          Trial Signup
+                        {{/if}}
+                      </div>
+
+                      <div class="squatch-referrals-description
+                        {{#if paid}}
+                          {{#if referrerReward.credit}}
+                            text-green
+                          {{else}}
+                            text-gray
+                          {{/if}}
+                        {{else}}
+                          text-yellow
+                        {{/if}}
+                      ">
+                        {{#if paid}}
+                          Free Credit {{#unless referrerReward.credit}}Used{{/unless}}
+                        {{else}}
+                          Free Credit Pending
+                        {{/if}}
+                      </div>
+                    </td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="squatch-stats-body-actions">
+            <button class="btn btn-default disabled" data-scroll-element="#squatch-referrals-scroll" data-scroll-increment="-3">Previous</button>
+
+            <button class="btn btn-default" data-close-panel="#squatch-stats-panel">Hide Referrals</button>
+
+            <button class="btn btn-default disabled" data-scroll-element="#squatch-referrals-scroll" data-scroll-increment="3">View More</button>
+          </div>
+
+          <div class="squatch-attribution text-center">
+            Powered By Referral Saasquatch
+          </div>
+        </div>
+      </div>
+
+      <div class="squatch-actions">
+        <button class="btn btn-default {{#unless referrals}}disabled{{/unless}}" data-open-panel="#squatch-stats-panel">
+          {{#if referrals}}
+            Show Referrals
+          {{else}}
+            No Referrals Yet...
+          {{/if}}
+        </button>
+        <div class="squatch-attribution">
+          Powered By Referral Saasquatch
+        </div>
+      </div>
+    </main>
+
+
+    <pre id="js-debug-context" style="display: none;">{{this}}</pre>
+
+    <script type="text/javascript">
+       (function(){
+           var context = document.getElementById("js-debug-context");
+           context.innerText = JSON.stringify(JSON.parse(context.innerText),null,2);
+       })();
+    </script>
+
+    <!--[if lt IE 9]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><![endif]-->
+    <!--[if gte IE 9]><!--><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><!--<![endif]-->
+    <!--[if lt IE 9]><script src="{{assets 'libs/ZeroClipboard-oldie.js'}}"></script><![endif]-->
+    <!--[if gte IE 9]><!--><script src="{{assets 'libs/ZeroClipboard.js'}}"></script><!--<![endif]-->
+
+    <script src="{{assets 'libs/moment.min.js'}}"></script>
+    <script src="{{assets 'javascript/widget.js'}}"></script>
+  </body>
+</html>

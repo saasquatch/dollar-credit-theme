@@ -1,0 +1,97 @@
+{{!--
+
+  jsHead.hbs
+
+  Core javascript to empower widget functionality.
+
+  TODO: Eventually this should get merged in as part of the {{squatchHead}} core helper instead of being manually included in every template
+
+  Eventually we can abstract this.
+
+--}}
+
+<script type="text/javascript" charset="utf-8">
+
+  window.squatch = window.squatch || {};
+
+  window.squatch.user = {
+    code: 'LOGANVOLKERS',
+    sharelink: 'http://ssqt.ch/1oNcJTy',
+    email: {
+      share : {
+        subject: 'Have you tried Acme?',
+        body: "Hi!%n %n I've been using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour and I wanted to let you know about it.%n %nI recommend you give it a try and if you use this link to signup we can both get $100 credit - %s",
+        mailToLink: "mailto:?subject=Have you tried Acme?&body=Hi!%n %n I've been using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour and I wanted to let you know about it.%n %nI recommend you give it a try and if you use this link to signup we can both get $100 credit - %s",
+      },
+      reminder : {
+        subject: 'How do you like Acme so far?',
+        body: "Hey,%n %nI saw that you signed up for Acme. What do you think of it so far?%n %nBy the way, if you've lost the link to Acme, here it is again - %s",
+        mailToLink: "mailto:?subject=How do you like Acme so far?&body=Hey,%n %nI saw that you signed up for Acme. What do you think of it so far?%n %nBy the way, if you've lost the link to Acme, here it is again - %s",
+      },
+      type: 'UNKNOWN'
+    },
+    facebook: {
+      title: 'Have you tried Acme?',
+      summary: "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s",
+      link: 'http://ssqt.ch/1oNcLee',
+      shareImage: '',
+      appId: '396367127152561',
+      redirectUrl: 'http://staging.referralsaasquatch.com/widget/close'
+    },
+    twitter: {
+      message: "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s"
+    },
+    mobile: {
+      sharelink : 'http://ssqt.ch/1oNcJTy',
+      emailBody: "Hi,%n %nI'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s",
+      facebookBody: "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s",
+      twitterBody: "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s",
+      twitterShareLink : 'http://ssqt.ch/1oNcLef',
+      facebookShareLink : 'http://ssqt.ch/1oNcJTz',
+      emailShareLink: 'http://ssqt.ch/1oNcJDl'
+    },
+    fallbackImg: 'https://www.gravatar.com/avatar/0?d=blank'
+  };
+
+  window.squatch.analytics = {
+      apikey : '{{segmentApiKey}}',
+      attributes : {
+        tenant : '{{tenantAlias}}',
+        userId : '{{user.id}}',
+        accountId : '{{user.accountId}}'
+      },
+      user: {
+        ident: '{{user.id}}',
+        traits: {
+        tenant : '{{tenantAlias}}',
+        accountId : '{{user.accountId}}'
+         }
+      },
+      events: {
+        OPENED_WIDGET : 'Opened Widget',
+        OPENED_POPUP : 'Opened Popup',
+        CLOSED_POPUP : 'Closed Popup',
+        FACEBOOK_SHARE : 'Clicked Facebook Share',
+        TWITTER_SHARE : 'Clicked Twitter Share',
+        EMAIL_SHARE : 'Clicked Email Share',
+        LEARN_MORE : 'Clicked Learn More',
+        FAQ_BACK : 'Clicked FAQ Back',
+        COPY_LINK : 'Clicked Copy Link',
+        REMIND_FRIEND : 'Clicked Remind Friend'
+      }
+  };
+
+  window.squatch.mode = {
+      widgetMode: '{{mode}}',
+      POPUP_MODE : 'POPUP',
+      EMBED_MODE : 'EMBED',
+      DEMO_MODE : 'DEMO',
+      DEMO_EMBED_MODE : 'DEMO_EMBED',
+      NOCONTENT_MODE : 'NOCONTENT'
+  };
+
+  window.squatch.asset = {
+    zeroclipboard : '{{assets "javascripts/ZeroClipboard.swf"}}'
+  }
+
+</script>
