@@ -95,14 +95,21 @@
 
           <div class="row squatch-rewards">
             <div class="col-xs-4 text-center">
-              <div class="squatch-rewards-total-credit">$300</div>
+              <div class="squatch-rewards-total-credit">
+                {{#if rewardBalances.[0].totalAssignedCredit}}
+                  ${{math rewardBalances.[0].totalAssignedCredit '/ 100'}}
+                {{else}}
+                  $0
+                {{/if}}
+              </div>
+
               <span class="squatch-rewards-description">Total Credit Earned</span>
             </div>
 
             <div class="col-xs-4 text-center">
               <div class="squatch-rewards-credit-available">
-                {{#if rewardBalances.[0].count}}
-                  ${{rewardBalances.[0].count}}
+                {{#if rewardBalances.[0].totalAssignedCredit}}
+                  ${{math '(' rewardBalances.[0].totalAssignedCredit '-' rewardBalances.[0].totalRedeemedCredit ') / 100'}}
                 {{else}}
                   $0
                 {{/if}}
@@ -153,11 +160,7 @@
                     <td>
                       <i class="icon squatch-referrals-icon
                         {{#if paid}}
-                          {{#if referrerReward.credit}}
-                            icon-ok-circled text-green
-                          {{else}}
-                            icon-ok-circled text-gray
-                          {{/if}}
+                          icon-ok-circled text-green
                         {{else}}
                           icon-attention text-yellow
                         {{/if}}
@@ -173,17 +176,13 @@
 
                       <div class="squatch-referrals-description
                         {{#if paid}}
-                          {{#if referrerReward.credit}}
-                            text-green
-                          {{else}}
-                            text-gray
-                          {{/if}}
+                          text-green
                         {{else}}
                           text-yellow
                         {{/if}}
                       ">
                         {{#if paid}}
-                          Free Credit {{#unless referrerReward.credit}}Used{{/unless}}
+                          Free Credit
                         {{else}}
                           Free Credit Pending
                         {{/if}}
