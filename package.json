@@ -1,6 +1,6 @@
 {
-  "name": "squatch-discount-theme",
-  "description": "A generic discount theme for Referral Saasquatch",
+  "name": "squatch-dollar-credit-theme",
+  "description": "A generic dollar credit theme for Referral Saasquatch",
   "repository": {
     "type": "git",
     "url": "git://github.com/saasquatch/discount-theme.git"
