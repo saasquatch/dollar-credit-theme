@@ -1,7 +1,7 @@
-Discount Theme
+Dollar Credit Theme
 ==============
 
-A generic discount theme for Referral Saasquatch
+A generic dollar credit theme for Referral Saasquatch
 
 
 Setup
