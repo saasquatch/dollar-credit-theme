@@ -222,16 +222,6 @@
       </div>
     </main>
 
-
-    <pre id="js-debug-context" style="display: none;">{{this}}</pre>
-
-    <script type="text/javascript">
-       (function(){
-           var context = document.getElementById("js-debug-context");
-           context.innerText = JSON.stringify(JSON.parse(context.innerText),null,2);
-       })();
-    </script>
-
     <!--[if lt IE 9]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><![endif]-->
     <!--[if gte IE 9]><!--><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><!--<![endif]-->
     <!--[if lt IE 9]><script src="{{assets 'libs/ZeroClipboard-oldie.js'}}"></script><![endif]-->
