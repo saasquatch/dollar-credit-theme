@@ -19,7 +19,7 @@
     sharelink: '{{shareLinks.shareLink}}',
     email: {
       share : {
-        subject: '{{urlencode (stringFormat "Get $%s off %s?" companyName (math programDetails.referredRewardDetails.credit ' / 100')) space="%20"}}',
+        subject: '{{urlencode (stringFormat "Get $%s off %s?" (math programDetails.referredRewardDetails.credit ' / 100') companyName) space="%20"}}',
         body: '{{urlencode (stringFormat "Hi!%n %n I've been using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour and I wanted to let you know about it.%n %nI recommend you give it a try and if you use this link to signup we can both get $100 credit - %s" shareLinks.emailShareLink) space="%20"}}',
         mailToLink: 'mailto:?subject={{urlencode "Have you tried Acme?" space="%20"}}&body={{urlencode (stringFormat "Hi!%n %n I've been using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour and I wanted to let you know about it.%n %nI recommend you give it a try and if you use this link to signup we can both get $100 credit - %s" shareLinks.emailShareLink) space="%20"}}',
       },
