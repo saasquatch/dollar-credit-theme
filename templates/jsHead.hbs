@@ -15,40 +15,40 @@
   window.squatch = window.squatch || {};
 
   window.squatch.user = {
-    code: 'LOGANVOLKERS',
-    sharelink: 'http://ssqt.ch/1oNcJTy',
+    code: '{{user.referralCode}}',
+    sharelink: '{{shareLinks.shareLink}}',
     email: {
       share : {
-        subject: 'Have you tried Acme?',
-        body: "Hi!%n %n I've been using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour and I wanted to let you know about it.%n %nI recommend you give it a try and if you use this link to signup we can both get $100 credit - %s",
-        mailToLink: "mailto:?subject=Have you tried Acme?&body=Hi!%n %n I've been using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour and I wanted to let you know about it.%n %nI recommend you give it a try and if you use this link to signup we can both get $100 credit - %s",
+        subject: '{{urlencode "Have you tried Acme?" space="%20"}}',
+        body: '{{urlencode (stringFormat "Hi!%n %n I've been using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour and I wanted to let you know about it.%n %nI recommend you give it a try and if you use this link to signup we can both get $100 credit - %s" shareLinks.emailShareLink) space="%20"}}',
+        mailToLink: 'mailto:?subject={{urlencode "Have you tried Acme?" space="%20"}}&body={{urlencode (stringFormat "Hi!%n %n I've been using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour and I wanted to let you know about it.%n %nI recommend you give it a try and if you use this link to signup we can both get $100 credit - %s" shareLinks.emailShareLink) space="%20"}}',
       },
       reminder : {
-        subject: 'How do you like Acme so far?',
-        body: "Hey,%n %nI saw that you signed up for Acme. What do you think of it so far?%n %nBy the way, if you've lost the link to Acme, here it is again - %s",
-        mailToLink: "mailto:?subject=How do you like Acme so far?&body=Hey,%n %nI saw that you signed up for Acme. What do you think of it so far?%n %nBy the way, if you've lost the link to Acme, here it is again - %s",
+        subject: '{{urlencode "How do you like Acme so far?" space="%20"}}',
+        body: '{{urlencode (stringFormat "Hey,%n %nI saw that you signed up for Acme. What do you think of it so far?%n %nBy the way, if you've lost the link to Acme, here it is again - %s" shareLinks.emailShareLink) space="%20"}}',
+        mailToLink: 'mailto:?subject={{urlencode "How do you like Acme so far?" space="%20"}}&body={{urlencode (stringFormat "Hey,%n %nI saw that you signed up for Acme. What do you think of it so far?%n %nBy the way, if you've lost the link to Acme, here it is again - %s" shareLinks.emailShareLink) space="%20"}}',
       },
       type: 'UNKNOWN'
     },
     facebook: {
-      title: 'Have you tried Acme?',
-      summary: "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s",
-      link: 'http://ssqt.ch/1oNcLee',
-      shareImage: '',
+      title: '{{urlencode "Have you tried Acme?"}}',
+      summary: '{{urlencode (stringFormat "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s" shareLinks.facebookShareLink)}}',
+      link: '{{shareLinks.facebookShareLink}}',
+      shareImage: '{{urlencode ""}}',
       appId: '396367127152561',
       redirectUrl: 'http://staging.referralsaasquatch.com/widget/close'
     },
     twitter: {
-      message: "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s"
+      message: '{{urlencode (stringFormat "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s" shareLinks.twitterShareLink)}}'
     },
     mobile: {
-      sharelink : 'http://ssqt.ch/1oNcJTy',
-      emailBody: "Hi,%n %nI'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s",
-      facebookBody: "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s",
-      twitterBody: "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s",
-      twitterShareLink : 'http://ssqt.ch/1oNcLef',
-      facebookShareLink : 'http://ssqt.ch/1oNcJTz',
-      emailShareLink: 'http://ssqt.ch/1oNcJDl'
+      sharelink : '{{shareLinks.shareLink}}',
+      emailBody: '{{urlencode (stringFormat "Hi,%n %nI'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s" shareLinks.mobileEmailShareLink)}}',
+      facebookBody: '{{urlencode (stringFormat "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s" shareLinks.mobileFacebookShareLink)}}',
+      twitterBody: '{{urlencode (stringFormat "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s" shareLinks.mobileTwitterShareLink)}}',
+      twitterShareLink : '{{shareLinks.mobileTwitterShareLink}}',
+      facebookShareLink : '{{shareLinks.mobileFacebookShareLink}}',
+      emailShareLink: '{{shareLinks.mobileEmailShareLink}}'
     },
     fallbackImg: 'https://www.gravatar.com/avatar/0?d=blank'
   };
