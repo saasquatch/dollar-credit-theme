@@ -3,7 +3,7 @@
   "description": "A generic dollar credit theme for Referral Saasquatch",
   "repository": {
     "type": "git",
-    "url": "git://github.com/saasquatch/discount-theme.git"
+    "url": "git://github.com/saasquatch/dollar-credit-theme.git"
   },
   "version": "1.0.0",
   "main": "templates/widget.hbs",
