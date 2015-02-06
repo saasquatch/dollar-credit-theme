@@ -12,8 +12,8 @@ To get started, clone the project, install the npm dependencies and start the se
 The serve task will compile less and handlebars on changes and reload the page if you install the plugin for  [LiveReload](http://livereload.com/).
 
 ```
-git clone git@github.com:saasquatch/discount-theme.git
-cd discount-theme
+git clone git@github.com:saasquatch/dollar-credit-theme.git
+cd dollar-credit-theme
 npm install -g gulp
 npm install
 gulp serve
