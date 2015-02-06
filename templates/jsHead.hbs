@@ -20,8 +20,8 @@
     email: {
       share : {
         subject: '{{urlencode (stringFormat "Get $%s off %s?" (math programDetails.referredRewardDetails.credit ' / 100') companyName) space="%20"}}',
-        body: '{{urlencode (stringFormat "Hi!%n %n I've been using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour and I wanted to let you know about it.%n %nI recommend you give it a try and if you use this link to signup we can both get $100 credit - %s" shareLinks.emailShareLink) space="%20"}}',
-        mailToLink: 'mailto:?subject={{urlencode "Have you tried Acme?" space="%20"}}&body={{urlencode (stringFormat "Hi!%n %n I've been using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour and I wanted to let you know about it.%n %nI recommend you give it a try and if you use this link to signup we can both get $100 credit - %s" shareLinks.emailShareLink) space="%20"}}',
+        body: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.emailShareLink) space="%20"}}',
+        mailToLink: 'mailto:?subject={{urlencode (stringFormat "Get $%s off %s?" (math programDetails.referredRewardDetails.credit ' / 100') companyName) space="%20"}}&body={{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.emailShareLink) space="%20"}}',
       },
       reminder : {
         subject: '{{urlencode "How do you like Acme so far?" space="%20"}}',
@@ -31,21 +31,21 @@
       type: 'UNKNOWN'
     },
     facebook: {
-      title: '{{urlencode "Have you tried Acme?"}}',
-      summary: '{{urlencode (stringFormat "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s" shareLinks.facebookShareLink)}}',
+      title: '{{urlencode (stringFormat "Get $%s off %s?" (math programDetails.referredRewardDetails.credit ' / 100') companyName)}}',
+      summary: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.facebookShareLink)}}',
       link: '{{shareLinks.facebookShareLink}}',
       shareImage: '{{urlencode ""}}',
       appId: '396367127152561',
       redirectUrl: 'http://staging.referralsaasquatch.com/widget/close'
     },
     twitter: {
-      message: '{{urlencode (stringFormat "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s" shareLinks.twitterShareLink)}}'
+      message: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.twitterShareLink)}}'
     },
     mobile: {
       sharelink : '{{shareLinks.shareLink}}',
-      emailBody: '{{urlencode (stringFormat "Hi,%n %nI'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s" shareLinks.mobileEmailShareLink)}}',
-      facebookBody: '{{urlencode (stringFormat "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s" shareLinks.mobileFacebookShareLink)}}',
-      twitterBody: '{{urlencode (stringFormat "I'm using Acme to outperform competitors with unique insights into product, pricing, and marketplace behaviour. Signup and we can both get $100 credit. Use this link %s" shareLinks.mobileTwitterShareLink)}}',
+      emailBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileEmailShareLink)}}',
+      facebookBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileFacebookShareLink)}}',
+      twitterBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileTwitterShareLink)}}',
       twitterShareLink : '{{shareLinks.mobileTwitterShareLink}}',
       facebookShareLink : '{{shareLinks.mobileFacebookShareLink}}',
       emailShareLink: '{{shareLinks.mobileEmailShareLink}}'
