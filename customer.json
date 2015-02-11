@@ -247,5 +247,10 @@
   },
   "mode": "EMBED",
   "assetVersion": "jFEOk5Lz",
-  "headerVersion": "1"
+  "headerVersion": "1",
+  "programDetails": {
+    "referredRewardDetails": {
+      "credit": 10000
+    }
+  }
 }
