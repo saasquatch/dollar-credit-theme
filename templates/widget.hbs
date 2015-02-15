@@ -141,71 +141,69 @@
 
           <div class="squatch-referrals-container" id="squatch-referrals-scroll" data-scroll-offset="0" data-scroll-limit="{{referralsLength}}">
             <table class="squatch-referrals">
-              <tbody>
-                {{#each referrals}}
-                  <tr id="{{@index}}">
-                    <td>
-                      {{#if referredUser.imageUrl}}
-                        <img class="img-circle squatch-referrals-avatar" src="{{referredUser.imageUrl}}">
+              {{#each referrals}}
+                <tr id="{{@index}}">
+                  <td>
+                    {{#if referredUser.imageUrl}}
+                      <img class="img-circle squatch-referrals-avatar" src="{{referredUser.imageUrl}}">
+                    {{else}}
+                      <img class="img-circle squatch-referrals-avatar" src="{{gravatar referredUser.email default="mm" rating="pg" size=40}}">
+                    {{/if}}
+
+                    <div class="squatch-referrals-heading">{{referredUser.firstName}}</div>
+
+                    <div class="squatch-referrals-description">
+                      {{#if paid}}
+                        Paid User
                       {{else}}
-                        <img class="img-circle squatch-referrals-avatar" src="{{gravatar referredUser.email default="mm" rating="pg" size=40}}">
+                        Trial User
                       {{/if}}
+                    </div>
+                  </td>
+                  <td>
+                    <div class="squatch-referrals-heading">
+                      {{#if paid}}
+                        Signed Up
+                      {{else}}
+                        Referred
+                      {{/if}}
+                    </div>
 
-                      <div class="squatch-referrals-heading">{{referredUser.firstName}}</div>
+                    <div class="squatch-referrals-description" data-moment="true">{{dateReferred}}</div>
+                  </td>
+                  <td>
+                    <i class="icon squatch-referrals-icon
+                      {{#if paid}}
+                        icon-ok-circled text-green
+                      {{else}}
+                        icon-attention text-yellow
+                      {{/if}}
+                    "></i>
 
-                      <div class="squatch-referrals-description">
-                        {{#if paid}}
-                          Paid User
-                        {{else}}
-                          Trial User
-                        {{/if}}
-                      </div>
-                    </td>
-                    <td>
-                      <div class="squatch-referrals-heading">
-                        {{#if paid}}
-                          Signed Up
-                        {{else}}
-                          Referred
-                        {{/if}}
-                      </div>
+                    <div class="squatch-referrals-heading">
+                      {{#if paid}}
+                        ${{math ../../programDetails.referredRewardDetails.credit ' / 100'}}
+                      {{else}}
+                        Trial Signup
+                      {{/if}}
+                    </div>
 
-                      <div class="squatch-referrals-description" data-moment="true">{{dateReferred}}</div>
-                    </td>
-                    <td>
-                      <i class="icon squatch-referrals-icon
-                        {{#if paid}}
-                          icon-ok-circled text-green
-                        {{else}}
-                          icon-attention text-yellow
-                        {{/if}}
-                      "></i>
-
-                      <div class="squatch-referrals-heading">
-                        {{#if paid}}
-                          ${{math ../../programDetails.referredRewardDetails.credit ' / 100'}}
-                        {{else}}
-                          Trial Signup
-                        {{/if}}
-                      </div>
-
-                      <div class="squatch-referrals-description
-                        {{#if paid}}
-                          text-green
-                        {{else}}
-                          text-yellow
-                        {{/if}}
-                      ">
-                        {{#if paid}}
-                          Free Credit
-                        {{else}}
-                          Free Credit Pending
-                        {{/if}}
-                      </div>
-                    </td>
-                  </tr>
-                {{/each}}
-              </tbody>
+                    <div class="squatch-referrals-description
+                      {{#if paid}}
+                        text-green
+                      {{else}}
+                        text-yellow
+                      {{/if}}
+                    ">
+                      {{#if paid}}
+                        Free Credit
+                      {{else}}
+                        Free Credit Pending
+                      {{/if}}
+                    </div>
+                  </td>
+                </tr>
+              {{/each}}
             </table>
           </div>
 

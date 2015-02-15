@@ -226,10 +226,14 @@ html.lt-ie9 .fade {
 }
 
 .squatch-referrals {
+  margin-bottom: 209px;
+  border-collapse: separate;
+  position: relative;
   width: 100%;
 
-  th,
   td {
+    padding-top: 15px;
+    padding-bottom: 14px;
     vertical-align: top;
     width: 89px;
 
@@ -243,29 +247,15 @@ html.lt-ie9 .fade {
       padding-right: 20px;
     }
   }
-}
 
-
-.squatch-referrals {
-  margin-bottom: 209px;
-  border-collapse: separate;
-  position: relative;
-
-  tbody {
+  tr {
     td {
-      padding-top: 15px;
-      padding-bottom: 14px;
+      border-bottom: 1px solid @gray-lighter;
     }
 
-    tr {
-      td {
-        border-bottom: 1px solid @gray-lighter;
-      }
-
-      &:last-child td,
-      &:nth-child(3n) td {
-        border-bottom: 0;
-      }
+    &:last-child td,
+    &:nth-child(3n) td {
+      border-bottom: 0;
     }
   }
 
