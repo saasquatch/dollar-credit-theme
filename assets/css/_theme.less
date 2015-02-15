@@ -48,17 +48,20 @@ html.lt-ie9 .fade {
 
 // Base Referral SaaSquatch elements
 .squatch-container {
-  .box-shadow(0 2px 4px rgba(0,0,0,.5));
   padding: 0;
   width: 500px;
-  height: 490px;
   position: relative;
-  background: @white;
   overflow: hidden;
 
   html.lt-ie9 & {
     border: 1px solid @gray-lighter;
   }
+}
+
+.squatch-container-popup {
+  .box-shadow(0 2px 4px rgba(0,0,0,.5));
+  background: @white;
+  height: 490px;
 }
 
 .squatch-body {
@@ -76,6 +79,10 @@ html.lt-ie9 .fade {
 
   &:hover {
     text-decoration: underline;
+  }
+
+  .squatch-container-embed & {
+    display: none;
   }
 }
 
@@ -149,6 +156,10 @@ html.lt-ie9 .fade {
       &:first-child {
         margin-left: 0;
       }
+
+      .squatch-container-embed &[data-close-panel] {
+        display: none;
+      }
     }
   }
 
@@ -209,6 +220,10 @@ html.lt-ie9 .fade {
     html.lt-ie9 & {
       display: none;
     }
+  }
+
+  .squatch-container-embed & {
+    display: none;
   }
 }
 
