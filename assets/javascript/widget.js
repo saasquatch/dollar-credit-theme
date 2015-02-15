@@ -1,25 +1,4 @@
 $(document).ready(function() {
-  $('[data-clipboard-target]').each(function() {
-    var zeroClipboard;
-
-    ZeroClipboard.config({
-      hoverClass : 'hover',
-      activeClass: 'active'
-    });
-
-    zeroClipboard = new ZeroClipboard(this);
-    zeroClipboard.on('ready', function(readyEvent) {
-      zeroClipboard.on('aftercopy', function(e) {
-        notification = $($(e.target).data('clipboard-notification'));
-        notification.addClass('in').delay(1400).queue(function() {
-          notification.removeClass('in');
-          $(this).dequeue();
-        });
-
-      });
-    });
-  });
-
   var inValidRange = function(offset, limit) {
     return offset >= 0 && offset < limit;
   };
@@ -41,6 +20,26 @@ $(document).ready(function() {
       setVisibility($this, nextOffset, limit);
     });
   };
+
+  $('[data-clipboard-target]').each(function() {
+    var zeroClipboard;
+
+    ZeroClipboard.config({
+      hoverClass : 'hover',
+      activeClass: 'active'
+    });
+
+    zeroClipboard = new ZeroClipboard(this);
+    zeroClipboard.on('ready', function(readyEvent) {
+      zeroClipboard.on('aftercopy', function(e) {
+        notification = $($(e.target).data('clipboard-notification'));
+        notification.addClass('in').delay(1400).queue(function() {
+          notification.removeClass('in');
+          $(this).dequeue();
+        });
+      });
+    });
+  });
 
   $('[data-scroll-element]').each(function() {
     var $this, element, increment, limit, offset;
