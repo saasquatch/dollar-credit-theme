@@ -65,6 +65,20 @@ html.lt-ie9 .fade {
   padding: @body-padding;
 }
 
+.squatch-header-close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background: transparent;
+  border: 0;
+  color: @blue;
+  font-size: @font-size-xs;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .squatch-title,
 .squatch-lead,
 .squatch-cta {
@@ -76,18 +90,8 @@ html.lt-ie9 .fade {
   color: @blue;
 }
 
-.squatch-header-close {
-  position: absolute;
-  top: 4px;
-  right: 6px;
-  background: transparent;
-  border: 0;
-  color: @blue;
+.squatch-lead {
   font-size: @font-size-sm;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .squatch-cta {
@@ -178,7 +182,7 @@ html.lt-ie9 .fade {
 
   .squatch-rewards-description {
     text-transform: uppercase;
-    font-size: @font-size-sm;
+    font-size: @font-size-xs;
     color: @gray-light;
   }
 }
@@ -277,7 +281,7 @@ html.lt-ie9 .fade {
 
   .squatch-referrals-description {
     color: @gray-light;
-    font-size: @font-size-sm;
+    font-size: @font-size-xs;
     line-height: 12px;
   }
 
