@@ -132,6 +132,9 @@ gulp.task('hbs', function() {
       stringFormat: function (string) {
         return string;
       },
+      strlower: function (string) {
+        return string.toLowerCase();
+      },
       times: function(n, block) {
         var string = '';
         for (var i = 0; i < n; ++i) {
