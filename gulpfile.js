@@ -107,6 +107,9 @@ gulp.task('hbs', function() {
       lookup: function(obj, field, options) {
         return obj && obj[field];
       },
+      lower: function (string) {
+        return string.toLowerCase();
+      },
       math: function(val1, val2, val3, val4, val5, val6, options) {
         var toBeEvaled = '',
             vals = {
@@ -131,9 +134,6 @@ gulp.task('hbs', function() {
       },
       stringFormat: function (string) {
         return string;
-      },
-      strlower: function (string) {
-        return string.toLowerCase();
       },
       times: function(n, block) {
         var string = '';
