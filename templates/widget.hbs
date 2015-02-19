@@ -182,7 +182,7 @@
 
                     <div class="squatch-referrals-heading">
                       {{#if paid}}
-                        ${{math programDetails.referredRewardDetails.credit ' / 100'}}
+                        ${{#each ../..}}{{math programDetails.referredRewardDetails.credit ' / 100'}}{{/each}}
                       {{else}}
                         Trial Signup
                       {{/if}}
