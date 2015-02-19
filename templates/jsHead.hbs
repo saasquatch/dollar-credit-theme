@@ -24,9 +24,9 @@
         mailToLink: 'mailto:?subject={{urlencode (stringFormat "Get $%s off %s" (math programDetails.referredRewardDetails.credit ' / 100') companyName) space="%20"}}&body={{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.emailShareLink) space="%20"}}',
       },
       reminder : {
-        subject: '{{urlencode "How do you like Acme so far?" space="%20"}}',
-        body: '{{urlencode (stringFormat "Hey,%n %nI saw that you signed up for Acme. What do you think of it so far?%n %nBy the way, if you've lost the link to Acme, here it is again - %s" shareLinks.emailShareLink) space="%20"}}',
-        mailToLink: 'mailto:?subject={{urlencode "How do you like Acme so far?" space="%20"}}&body={{urlencode (stringFormat "Hey,%n %nI saw that you signed up for Acme. What do you think of it so far?%n %nBy the way, if you've lost the link to Acme, here it is again - %s" shareLinks.emailShareLink) space="%20"}}',
+        subject: '{{urlencode (stringFormat "How do you like %s so far?" companyName) space="%20"}}',
+        body: '{{urlencode (stringFormat "Hey,%n %nI saw that you signed up for %s. What do you think of it so far?%n %nBy the way, if you've lost the link to %s, here it is again - %s" companyName companyName shareLinks.emailShareLink) space="%20"}}',
+        mailToLink: 'mailto:?subject={{urlencode (stringFormat "How do you like %s so far?" companyName) space="%20"}}&body={{urlencode (stringFormat "Hey,%n %nI saw that you signed up for %s. What do you think of it so far?%n %nBy the way, if you've lost the link to %s, here it is again - %s" companyName companyName shareLinks.emailShareLink) space="%20"}}',
       },
       type: 'UNKNOWN'
     },
