@@ -342,9 +342,23 @@ html.lt-ie9 .fade {
 }
 
 // Components
+
 button[data-scroll-element].disabled {
   cursor: default;
 }
+
+// Empty referrals list
+[data-scroll-limit='0'] {
+  &,
+  & + .squatch-stats-body-actions {
+    display: none;
+  }
+
+  & ~ .squatch-attribution {
+    margin-top: 20px;
+  }
+}
+
 
 // Atomic classes
 .text-green {
