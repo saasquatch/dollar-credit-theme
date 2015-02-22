@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  var scrollElements = $('[data-scroll-element]');
+
   var inValidRange = function(offset, limit) {
     return offset >= 0 && offset < limit;
   };
@@ -11,11 +13,14 @@ $(document).ready(function() {
     }
   };
 
-  var setVisibilityAll = function(elements, newOffset, limit) {
+  var setVisibilityAll = function(elements, newOffset) {
     elements.each(function() {
+      var $this, increment, nextOffset, limit;
+
       $this      = $(this);
       increment  = $this.data('scroll-increment');
       nextOffset = newOffset + increment;
+      limit      = $this.data('scroll-limit');
 
       setVisibility($this, nextOffset, limit);
     });
@@ -46,7 +51,7 @@ $(document).ready(function() {
     });
   });
 
-  $('[data-scroll-element]').each(function() {
+  scrollElements.each(function() {
     var $this, element, increment, limit, offset;
 
     $this     = $(this);
@@ -55,6 +60,8 @@ $(document).ready(function() {
     limit     = element.data('scroll-limit');
     offset    = element.data('scroll-offset');
 
+    $this.data('scroll-limit', limit);
+
     nextOffset = offset + increment;
     setVisibility($this, nextOffset, limit);
 
@@ -62,7 +69,7 @@ $(document).ready(function() {
     resetScroll(element);
 
     $this.on('click', function() {
-      offset    = element.data('scroll-offset');
+      offset = element.data('scroll-offset');
 
       newOffset = offset + increment;
       if (inValidRange(newOffset, limit)) {
@@ -71,7 +78,7 @@ $(document).ready(function() {
         }, 400);
         element.data('scroll-offset', newOffset);
 
-        setVisibilityAll($('[data-scroll-element]'), newOffset, limit);
+        setVisibilityAll(scrollElements, newOffset);
       }
     });
   });
@@ -110,6 +117,7 @@ $(document).ready(function() {
     $this.on('click', function() {
       $this.one('panel:closed', function() {
         resetScroll(element);
+        setVisibilityAll(scrollElements, 0);
       });
     });
   });
@@ -119,7 +127,7 @@ $(document).ready(function() {
 
     $this   = $(this);
 
-		var time = moment(parseInt($this.text()));
-		$this.text(time.fromNow());
-	});
+    var time = moment(parseInt($this.text()));
+    $this.text(time.fromNow());
+  });
 });
