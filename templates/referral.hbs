@@ -1,0 +1,67 @@
+<td>
+  {{#if referral.imageUrl}}
+    <img class="img-circle squatch-referrals-avatar" src="{{referral.imageUrl}}">
+  {{else}}
+    <img class="img-circle squatch-referrals-avatar" src="{{gravatar referral.email default="mm" rating="pg" size=40}}">
+  {{/if}}
+
+  <div class="squatch-referrals-heading">{{referral.firstName}}</div>
+
+  <div class="squatch-referrals-description">
+    {{#if description}}
+      {{description}}
+    {{else}}
+      {{#if paid}}
+        Paid User
+      {{else}}
+        Trial User
+      {{/if}}
+    {{/if}}
+  </div>
+</td>
+<td>
+  <div class="squatch-referrals-heading">
+    {{#if heading}}
+      {{heading}}
+    {{else}}
+      {{#if paid}}
+        Signed Up
+      {{else}}
+        Referred
+      {{/if}}
+    {{/if}}
+  </div>
+
+  <div class="squatch-referrals-description" data-moment="true">{{dateReferred}}</div>
+</td>
+<td>
+  <i class="icon squatch-referrals-icon
+    {{#if paid}}
+      icon-ok-circled text-green
+    {{else}}
+      icon-attention text-yellow
+    {{/if}}
+  "></i>
+
+  <div class="squatch-referrals-heading">
+    {{#if paid}}
+      ${{math programDetails.referredRewardDetails.credit ' / 100'}}
+    {{else}}
+      Trial Signup
+    {{/if}}
+  </div>
+
+  <div class="squatch-referrals-description
+    {{#if paid}}
+      text-green
+    {{else}}
+      text-yellow
+    {{/if}}
+  ">
+    {{#if paid}}
+      Free Credit
+    {{else}}
+      Credit Pending
+    {{/if}}
+  </div>
+</td>

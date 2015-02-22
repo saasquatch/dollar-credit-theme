@@ -9,6 +9,18 @@
     "firstName": "Logan",
     "lastName": "Volkers"
   },
+  "referredBy": {
+    "referredByUser": {
+      "id": "5cukkyfnuhbyjdwxywhcs47u_778239",
+      "accountId": "5cukkyfnuhbyjdwxywhcs47u",
+      "referralCode": "KARLHORKY",
+      "email": "karl@example.com",
+      "imageUrl": "http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
+      "firstName": "Karl",
+      "lastName": "Horky"
+    },
+    "dateReferred": 1404121071158
+  },
   "referrals": [
     {
       "referredUser": {
@@ -227,7 +239,7 @@
   "rewardBalances": [
     {
       "count": 3,
-      "totalAssignedCredit": 30000,
+      "totalAssignedCredit": 40000,
       "totalRedeemedCredit": 10000,
       "unit": "cents",
       "type": "CREDIT"
