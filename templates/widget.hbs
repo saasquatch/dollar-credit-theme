@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="{{assets 'css/widget.css'}}">
 
-    {{>jsHead}}
+    {{> jsHead}}
     {{squatchHead}}
 
     <!--[if lt IE 9]>
@@ -143,7 +143,7 @@
             <table class="squatch-referrals">
               {{#if referredBy.referredByUser}}
                 <tr id="0">
-                  {{>referral
+                  {{> referral
                     referral=referredBy.referredByUser
                     description="Referring User"
                     heading="Referred You"
@@ -154,7 +154,7 @@
 
               {{#each referrals}}
                 <tr id="{{#if ../referredBy.dateReferred}}{{math @index '+ 1'}}{{else}}{{math @index}}{{/if}}">
-                  {{>referral
+                  {{> referral
                     referral=referredUser
                     programDetails=../programDetails}}
                 </tr>
