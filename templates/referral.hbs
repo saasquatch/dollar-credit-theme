@@ -2,10 +2,18 @@
   {{#if referral.imageUrl}}
     <img class="img-circle squatch-referrals-avatar" src="{{referral.imageUrl}}">
   {{else}}
-    <img class="img-circle squatch-referrals-avatar" src="{{gravatar referral.email default="mm" rating="pg" size=40}}">
+    {{#if referral.email}}
+      <img class="img-circle squatch-referrals-avatar" src="{{gravatar referral.email default="mm" rating="pg" size=40}}">
+    {{else}}
+      <img class="img-circle squatch-referrals-avatar" src="">
+    {{/if}}
   {{/if}}
 
+  {{#if referral.firstName}}
   <div class="squatch-referrals-heading">{{referral.firstName}}</div>
+  {{else}}
+  <div class="squatch-referrals-heading">Not Available</div>
+  {{/if}}
 
   <div class="squatch-referrals-description">
     {{#if description}}
