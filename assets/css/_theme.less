@@ -82,13 +82,14 @@ html.lt-ie9 .fade {
   border: 0;
   color: @blue;
   font-size: @font-size-xs;
+  display: none;
 
   &:hover {
     text-decoration: underline;
   }
 
-  .squatch-container-embed & {
-    display: none;
+  .squatch-container-popup & {
+    display: inline-block;
   }
 }
 
@@ -162,8 +163,12 @@ html.lt-ie9 .fade {
         margin-left: 0;
       }
 
-      .squatch-container-embed &[data-close-panel] {
+      &[data-close-panel] {
         display: none;
+
+        .squatch-container-popup & {
+          display: inline-block;
+        }
       }
     }
   }
@@ -218,10 +223,7 @@ html.lt-ie9 .fade {
   background: @white;
   text-align: center;
   padding: 15px @body-padding 0;
-
-  html.lt-ie9 & {
-    display: block;
-  }
+  display: none;
 
   .squatch-stats.open + & {
     .translate(0, 81px);
@@ -231,8 +233,8 @@ html.lt-ie9 .fade {
     }
   }
 
-  .squatch-container-embed & {
-    display: none;
+  .squatch-container-popup & {
+    display: block;
   }
 }
 
