@@ -64,6 +64,12 @@ html.lt-ie9 .fade {
   height: 490px;
 }
 
+// Styling for portal
+.squatch-container-demo_embed {
+  border-radius: 4px;
+  border: 1px solid @gray-light;
+}
+
 .squatch-body {
   padding: @body-padding;
 }
@@ -125,7 +131,6 @@ html.lt-ie9 .fade {
 .squatch-stats {
   .transition-transform(.3s cubic-bezier(.65, 0, .35, 1));
   .translate(0, 0);
-  background: @white;
   overflow: hidden;
   position: relative;
   z-index: 110;
@@ -169,6 +174,10 @@ html.lt-ie9 .fade {
     html.lt-ie9 & {
       top: -207px;
     }
+  }
+
+  .squatch-container-popup & {
+    background: @white;
   }
 }
 
@@ -375,12 +384,4 @@ button[data-scroll-element].disabled {
 
 .text-black {
   color: @black !important;
-}
-
-// add gray border to widget in portal only
-.squatch-container-demo_embed {
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgb(161, 161, 161);
-  border-radius: 4px;
 }
