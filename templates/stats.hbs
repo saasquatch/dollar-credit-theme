@@ -1,0 +1,34 @@
+<h2 class="squatch-stats-title">
+  Referral Stats
+</h2>
+
+<div class="row squatch-rewards">
+  <div class="col-xs-4 text-center">
+    <div class="squatch-rewards-total-credit">
+      {{#if rewardBalances.[0].totalAssignedCredit}}
+        ${{math rewardBalances.[0].totalAssignedCredit '/ 100'}}
+      {{else}}
+        $0
+      {{/if}}
+    </div>
+
+    <span class="squatch-rewards-description">Total Credit Earned</span>
+  </div>
+
+  <div class="col-xs-4 text-center">
+    <div class="squatch-rewards-credit-available">
+      {{#if rewardBalances.[0].totalAssignedCredit}}
+        ${{math '(' rewardBalances.[0].totalAssignedCredit '-' rewardBalances.[0].totalRedeemedCredit ') / 100'}}
+      {{else}}
+        $0
+      {{/if}}
+    </div>
+
+    <span class="squatch-rewards-description">Credit Available</span>
+  </div>
+
+  <div class="col-xs-4 text-center">
+    <div class="squatch-rewards-referred">{{referralsLength}}</div>
+    <span class="squatch-rewards-description">Friends Referred</span>
+  </div>
+</div>

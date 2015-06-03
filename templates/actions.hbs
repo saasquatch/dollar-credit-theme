@@ -1,0 +1,21 @@
+<div class="squatch-actions">
+  <button data-open-panel="#squatch-stats-panel" class="btn btn-default
+    {{#unless referrals}}
+      {{#unless referredBy.dateReferred}}
+        disabled
+      {{/unless}}
+    {{/unless}}
+  ">
+    {{#if referrals}}
+      Show Details
+    {{else}}
+      {{#if referredBy.dateReferred}}
+        Show Details
+      {{else}}
+        No Referrals Yet...
+      {{/if}}
+    {{/if}}
+  </button>
+
+  {{> attribution}}
+</div>
