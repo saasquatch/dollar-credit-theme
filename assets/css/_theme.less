@@ -61,7 +61,7 @@ html.lt-ie9 .fade {
 .squatch-container-popup {
   .box-shadow(0 2px 4px rgba(0,0,0,.5));
   background: @white;
-  height: 490px;
+  height: 486px;
 }
 
 // Styling for portal
@@ -100,7 +100,7 @@ html.lt-ie9 .fade {
 }
 
 .squatch-title {
-  margin: 0 0 20px;
+  margin: 0 0 22px;
   color: @blue;
 }
 
@@ -109,7 +109,7 @@ html.lt-ie9 .fade {
 }
 
 .squatch-cta {
-  margin: 0 0 24px;
+  margin: 0 0 26px;
 
   b {
     color: @gray-darker;
@@ -137,7 +137,7 @@ html.lt-ie9 .fade {
   z-index: 110;
 
   .squatch-stats-body {
-    padding: 15px @body-padding;
+    padding: 15px @body-padding 0;
     border-top: 1px solid @gray-lighter;
   }
 
@@ -170,14 +170,6 @@ html.lt-ie9 .fade {
           display: inline-block;
         }
       }
-    }
-  }
-
-  &.open {
-    .translate(0, -207px);
-
-    html.lt-ie9 & {
-      top: -207px;
     }
   }
 
@@ -360,13 +352,16 @@ button[data-scroll-element].disabled {
 
 // Empty referrals list
 [data-scroll-limit='0'] {
-  &,
-  & + .squatch-stats-body-actions {
-    display: none;
+  display: none;
+
+  // Leave these elements with a height for correct container height calculation with no referrals
+  & + .squatch-stats-body-actions,
+  & ~ .squatch-attribution {
+    visibility: hidden;
   }
 
   & ~ .squatch-attribution {
-    margin-top: 20px;
+    margin-top: 30px;
   }
 }
 
