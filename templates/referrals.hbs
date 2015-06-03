@@ -1,0 +1,28 @@
+<div class="squatch-referrals-container" id="squatch-referrals-scroll" data-scroll-offset="0" data-scroll-limit="{{#if referredBy.dateReferred}}{{math referralsLength '+ 1'}}{{else}}{{math referralsLength}}{{/if}}">
+  <table class="squatch-referrals">
+    {{#if referredBy.referredByUser}}
+      <tr id="0">
+        {{#block
+          "referredByUser"
+          referral=referredBy.referredByUser
+          description="Referring User"
+          heading="Referred You"
+          paid=1
+          dateReferred=referredBy.dateReferred}}
+          {{> referral}}
+        {{/block}}
+      </tr>
+    {{/if}}
+
+    {{#each referrals}}
+      <tr id="{{#if ../referredBy.dateReferred}}{{math @index '+ 1'}}{{else}}{{math @index}}{{/if}}">
+        {{#block
+          "referredUser"
+          referral=referredUser
+          programDetails=../programDetails}}
+          {{> referral}}
+        {{/block}}
+      </tr>
+    {{/each}}
+  </table>
+</div>
