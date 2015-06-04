@@ -64,12 +64,6 @@ html.lt-ie9 .fade {
   height: 486px;
 }
 
-// Styling for portal
-.squatch-container-demo_embed {
-  border-radius: 4px;
-  border: 1px solid @gray-light;
-}
-
 .squatch-body {
   padding: @body-padding;
 }
@@ -82,14 +76,9 @@ html.lt-ie9 .fade {
   border: 0;
   color: @blue;
   font-size: @font-size-xs;
-  display: none;
 
   &:hover {
     text-decoration: underline;
-  }
-
-  .squatch-container-popup & {
-    display: inline-block;
   }
 }
 
@@ -162,14 +151,6 @@ html.lt-ie9 .fade {
       &:first-child {
         margin-left: 0;
       }
-
-      &[data-close-panel] {
-        display: none;
-
-        .squatch-container-popup & {
-          display: inline-block;
-        }
-      }
     }
   }
 
@@ -215,7 +196,6 @@ html.lt-ie9 .fade {
   background: @white;
   text-align: center;
   padding: 15px @body-padding 0;
-  display: none;
 
   .squatch-stats.open + & {
     .translate(0, 81px);
@@ -223,10 +203,6 @@ html.lt-ie9 .fade {
     html.lt-ie9 & {
       display: none;
     }
-  }
-
-  .squatch-container-popup & {
-    display: block;
   }
 }
 

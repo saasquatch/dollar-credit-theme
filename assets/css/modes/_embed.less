@@ -1,0 +1,19 @@
+.squatch-container-embed,
+.squatch-container-demo_embed {
+  .squatch-header-close,
+  .squatch-actions,
+  [data-close-panel] {
+    display: none;
+  }
+
+  // Show `No Referrals Yet...` when no referrals in embed mode
+  .squatch-actions[data-referrals="0"][data-referrals="0"] {
+    display: block;
+  }
+}
+
+// Styling for portal
+.squatch-container-demo_embed {
+  border-radius: 4px;
+  border: 1px solid @gray-light;
+}
