@@ -12,59 +12,35 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="{{assets 'css/widget.css'}}">
 
-    {{> jsHead}}
+    {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+    {{!-- {{> (stringFormat 'programs/%s/theme_messages' programDetails.referredRewardDetails.rewardType) }} --}}
+    {{> programs/CREDIT/theme_messages}}
     {{squatchHead}}
 
     <!--[if lt IE 9]>
       <script src="/assets/libs/html5shiv-printshiv.min.js"></script>
     <![endif]-->
 
-    <script>
-      // Detect if client supports flash and if so remove the `no-flash` class from the html element
-      (function() {
-        var hasFlash = false;
-        try {
-          var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
-          if (fo) {
-            hasFlash = true;
-          }
-        } catch (e) {
-          if (navigator.mimeTypes
-                && navigator.mimeTypes['application/x-shockwave-flash'] != undefined
-                && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
-            hasFlash = true;
-          }
-        }
-
-        if (hasFlash) {
-          html = document.getElementsByTagName('html')[0];
-          html.className = html.className.replace('no-flash', '');
-        }
-      })()
-    </script>
+    <script src="/assets/javascript/detect-flash.js"></script>
   </head>
-  <body>
 
+  <body>
     <main class="squatch-container squatch-container-{{lower mode}}">
       <div class="squatch-body">
-        {{> title}}
+        {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+        {{!-- {{> (stringFormat 'programs/%s/title' programDetails.referredRewardDetails.rewardType) }} --}}
+        {{> programs/CREDIT/title}}
 
         <button class="close squatch-header-close" data-close-panel="#squatch-stats-panel">Close</button>
 
-        {{> lead}}
+        {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+        {{!-- {{> (stringFormat 'programs/%s/lead' programDetails.referredRewardDetails.rewardType) }} --}}
+        {{> programs/CREDIT/lead}}
         {{> cta}}
         {{> share}}
       </div>
 
-      <div class="squatch-stats" id="squatch-stats-panel">
-        <div class="squatch-stats-body">
-          {{> stats}}
-          {{> referrals}}
-          {{> referrals_actions}}
-          {{> attribution}}
-        </div>
-      </div>
-
+      {{> stats}}
       {{> actions}}
     </main>
 

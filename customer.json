@@ -210,28 +210,14 @@
         "email": "jeremy@example.com",
         "imageUrl": "",
         "firstName": "Jeremy",
-        "lastName": "Myers"
-      },
-      "dateReferred": 1407886778837,
-      "paid": false,
-      "referrerReward": null
-    },
-    {
-      "referredUser": {
-        "id": "5cukkyfnuhbyjdwxyxphv47u_423638",
-        "accountId": "5cukkyfnuhbyjdwxyxphv47u",
-        "referralCode": "JEREMYMYERS",
-        "email": "jeremy@example.com",
-        "imageUrl": "",
-        "firstName": "Jeremy",
-        "lastName": "Alan"
+        "lastName": "Ender"
       },
       "dateReferred": 1407886778837,
       "paid": false,
       "referrerReward": null
     }
   ],
-  "referralsLength": 14,
+  "referralsLength": 13,
   "referralProgress": {
     "active": 40,
     "available": 60
@@ -262,6 +248,7 @@
   "headerVersion": "1",
   "programDetails": {
     "referredRewardDetails": {
+      "rewardType": "CREDIT",
       "credit": 10000
     }
   },

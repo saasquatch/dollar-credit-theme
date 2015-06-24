@@ -165,6 +165,7 @@
     var containerEl = $('.squatch-container-popup');
     if (!containerEl.length) { return; }
 
+    // TODO: Refactor this to make simpler
     var
       bodyEl,
       bodyHeight,
@@ -172,14 +173,16 @@
       titleEl,
       statsEl,
       referralsEl,
+      referralsTitleEl,
       statsHeight,
       css,
       stylesheet;
 
-    bodyEl      = $('.squatch-body');
-    titleEl     = bodyEl.find('.squatch-title');
-    statsEl     = $('.squatch-stats');
-    referralsEl = $('.squatch-referrals-container');
+    bodyEl           = $('.squatch-body');
+    titleEl          = bodyEl.find('.squatch-title');
+    statsEl          = $('.squatch-stats');
+    referralsEl      = $('.squatch-referrals');
+    referralsTitleEl = $('.squatch-referrals-title');
 
     bodyHeight = bodyEl.outerHeight();
     bodyHeightWithoutTitle = bodyHeight - titleEl.outerHeight(true) - titleEl.position().top;
@@ -187,6 +190,10 @@
 
     if (referralsEl.is(':visible')) {
       statsHeight -= referralsEl.outerHeight();
+    }
+
+    if (referralsTitleEl.is(':visible')) {
+      statsHeight -= referralsTitleEl.outerHeight();
     }
 
     containerEl.css('height', bodyHeight + statsHeight);

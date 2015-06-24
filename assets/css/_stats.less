@@ -1,0 +1,120 @@
+.squatch-stats {
+  .transition-transform(.3s cubic-bezier(.65, 0, .35, 1));
+  .translate(0, 0);
+  overflow: hidden;
+  position: relative;
+  z-index: 110;
+}
+
+.squatch-stats-body {
+  border-top: 1px solid @gray-lighter;
+  padding: 15px @body-padding 0;
+
+  @media (max-width: @screen-sm-max) {
+    padding: @body-padding-sm @body-padding-sm 0;
+  }
+}
+
+.squatch-stats-title {
+  margin: 5px 0 7px;
+  text-align: center;
+  color: @gray-darker;
+  font-weight: bold;
+
+  html.lt-ie9 & {
+    margin: 0 0 7px;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    display: none;
+  }
+}
+
+.squatch-stats-body-actions {
+  text-align: center;
+
+  .btn {
+    margin-left: @grid-gutter-width;
+    width: 120px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    @media (max-width: @screen-sm-max) {
+      font-size: @font-size-sm;
+      width: 85px;
+      padding-left: 6px;
+      padding-right: 6px;
+      margin-left: 7px;
+    }
+  }
+}
+
+.squatch-stats-summary {
+  .clearfix;
+}
+
+.squatch-stats-summary-item {
+  display: block;
+  float: left;
+  text-align: center;
+  width: 140px;
+
+  & + & {
+    margin-left: @grid-gutter-width;
+
+    @media (max-width: @screen-sm-max) {
+      margin-left: 0;
+      border-top: 0;
+    }
+  }
+
+  html.lt-ie9 & {
+    width: 139px;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    width: auto;
+    float: none;
+    text-align: left;
+    padding: @grid-gutter-width;
+    background: @gray-lightest;
+    border: 1px solid @gray-lighter;
+
+    &:first-child {
+      border-radius: @border-radius-base @border-radius-base 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 @border-radius-base @border-radius-base;
+    }
+  }
+}
+
+.squatch-stats-summary-title {
+  font-size: @font-size-h1;
+  line-height: 20px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: @gray-light;
+  font-weight: 300;
+
+  @media (max-width: @screen-sm-max) {
+    font-size: @font-size-xl;
+    float: left;
+    width: 60px;
+    text-align: center;
+    margin: 0 @grid-gutter-width 0 0;
+  }
+}
+
+.squatch-stats-summary-description {
+  text-transform: uppercase;
+  font-size: @font-size-xs;
+  color: @gray-light;
+
+  @media (max-width: @screen-sm-max) {
+    line-height: 20px;
+  }
+}
