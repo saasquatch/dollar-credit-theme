@@ -1,0 +1,38 @@
+.icon-btn {
+  border-left: 0;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  text-align: left;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    bottom: -1px;
+    background: fade(@white, 18%);
+    width: 40px;
+  }
+
+  .icon {
+    width: 42px;
+    margin-right: 20px;
+  }
+}
+
+.btn-email {
+  .button-variant(@btn-email-color; @btn-email-bg; @btn-email-border);
+}
+
+.btn-facebook {
+  .button-variant(@btn-facebook-color; @btn-facebook-bg; @btn-facebook-border);
+}
+
+.btn-twitter {
+  .button-variant(@btn-twitter-color; @btn-twitter-bg; @btn-twitter-border);
+}
+
+button[data-scroll-element].disabled {
+  cursor: default;
+}

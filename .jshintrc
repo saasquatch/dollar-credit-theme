@@ -11,6 +11,8 @@
   "globals": {
     "$": false,
     "ZeroClipboard": false,
-    "moment": false
+    "moment": false,
+    "ActiveXObject": false,
+    "console": false
   }
 }
