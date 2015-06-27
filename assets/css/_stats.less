@@ -1,61 +1,8 @@
 .squatch-stats {
-  .transition-transform(.3s cubic-bezier(.65, 0, .35, 1));
-  .translate(0, 0);
-  overflow: hidden;
-  position: relative;
-  z-index: 110;
-}
-
-.squatch-stats-body {
-  border-top: 1px solid @gray-lighter;
-  padding: 15px @body-padding 0;
-
-  @media (max-width: @screen-sm-max) {
-    padding: @body-padding-sm @body-padding-sm 0;
-  }
-}
-
-.squatch-stats-title {
-  margin: 5px 0 7px;
-  text-align: center;
-  color: @gray-darker;
-  font-weight: bold;
-
-  html.lt-ie9 & {
-    margin: 0 0 7px;
-  }
-
-  @media (max-width: @screen-sm-max) {
-    display: none;
-  }
-}
-
-.squatch-stats-body-actions {
-  text-align: center;
-
-  .btn {
-    margin-left: @grid-gutter-width;
-    width: 120px;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    @media (max-width: @screen-sm-max) {
-      font-size: @font-size-sm;
-      width: 85px;
-      padding-left: 6px;
-      padding-right: 6px;
-      margin-left: 7px;
-    }
-  }
-}
-
-.squatch-stats-summary {
   .clearfix;
 }
 
-.squatch-stats-summary-item {
+.squatch-stats-item {
   display: block;
   float: left;
   text-align: center;
@@ -92,7 +39,7 @@
   }
 }
 
-.squatch-stats-summary-title {
+.squatch-stats-title {
   font-size: @font-size-h1;
   line-height: 20px;
   margin-top: 20px;
@@ -109,7 +56,7 @@
   }
 }
 
-.squatch-stats-summary-description {
+.squatch-stats-description {
   text-transform: uppercase;
   font-size: @font-size-xs;
   color: @gray-light;

@@ -4,7 +4,7 @@
   overflow: hidden;
 
   &,
-  .squatch-stats {
+  #squatch-panel {
     background: @white;
   }
 
@@ -40,7 +40,7 @@
   text-align: center;
   padding: 15px @body-padding 0;
 
-  .squatch-stats.open + & {
+  #squatch-panel.open + & {
     .translate(0, 81px);
 
     html.lt-ie9 & {

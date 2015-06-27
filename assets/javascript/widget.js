@@ -171,43 +171,43 @@
       bodyHeight,
       bodyHeightWithoutTitle,
       titleEl,
-      statsEl,
+      panelEl,
       referralsEl,
       referralsTitleEl,
-      statsHeight,
+      panelHeight,
       css,
       stylesheet;
 
     bodyEl           = $('.squatch-body');
     titleEl          = bodyEl.find('.squatch-title');
-    statsEl          = $('.squatch-stats');
+    panelEl          = $('#squatch-panel');
     referralsEl      = $('.squatch-referrals');
     referralsTitleEl = $('.squatch-referrals-title');
 
     bodyHeight = bodyEl.outerHeight();
     bodyHeightWithoutTitle = bodyHeight - titleEl.outerHeight(true) - titleEl.position().top;
-    statsHeight = statsEl.outerHeight();
+    panelHeight = panelEl.outerHeight();
 
     if (referralsEl.is(':visible')) {
-      statsHeight -= referralsEl.outerHeight();
+      panelHeight -= referralsEl.outerHeight();
     }
 
     if (referralsTitleEl.is(':visible')) {
-      statsHeight -= referralsTitleEl.outerHeight();
+      panelHeight -= referralsTitleEl.outerHeight();
     }
 
-    containerEl.css('height', bodyHeight + statsHeight);
+    containerEl.css('height', bodyHeight + panelHeight);
 
     stylesheet = document.createElement('style');
     stylesheet.type = 'text/css';
 
-    css = '.squatch-stats.open {' +
+    css = '#squatch-panel.open {' +
       '-webkit-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
       '-ms-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
       '-o-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
       'transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
       '}' +
-      'html.lt-ie9 .squatch-stats.open {' +
+      'html.lt-ie9 #squatch-panel.open {' +
       'top: -' + bodyHeightWithoutTitle + 'px;' +
       '}';
 
