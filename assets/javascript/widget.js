@@ -161,10 +161,7 @@
     });
   });
 
-  $(window).on('load', function() {
-    var containerEl = $('.squatch-container-popup');
-    if (!containerEl.length) { return; }
-
+  var setContainerHeight = function(containerEl) {
     // TODO: Refactor this to make simpler
     var
       bodyEl,
@@ -219,5 +216,16 @@
     }
 
     document.querySelector('head').appendChild(stylesheet);
-  });
+  };
+
+  var containerEl = $('.squatch-container-popup');
+  if (containerEl.length) {
+    var setContainerHeightForPopup = setContainerHeight.bind(undefined, containerEl);
+
+    $(window).on('load', setContainerHeightForPopup);
+
+    // The content has a different height in mobile
+    var mql = window.matchMedia('(max-width: 500px)');
+    mql.addListener(setContainerHeightForPopup);
+  }
 })();
