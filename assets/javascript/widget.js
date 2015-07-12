@@ -205,9 +205,10 @@
       '}';
 
     if (stylesheet.styleSheet){
+      // IE
       stylesheet.styleSheet.cssText = css;
     } else {
-      // Safari
+      // W3C Standard
       stylesheet.appendChild(document.createTextNode(css));
     }
 
