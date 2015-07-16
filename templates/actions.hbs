@@ -1,4 +1,4 @@
-<div class="squatch-actions" data-referrals="{{referralsLength}}"
+<div class="squatch-actions" data-referrals="{{#if referredBy.dateReferred}}{{math referralsLength '+ 1'}}{{else}}{{math referralsLength}}{{/if}}"
   {{#unless referredBy.dateReferred}}
     data-referredBy="0"
   {{/unless}}
