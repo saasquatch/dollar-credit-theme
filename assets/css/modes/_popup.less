@@ -1,0 +1,58 @@
+.squatch-container-popup {
+  .box-shadow(0 2px 4px rgba(0,0,0,.5));
+  height: 486px;
+  overflow: hidden;
+
+  // Disable responsive view on popup temporarily.
+  // This is due to the popup being displayed inconsistently - with responsive styles activated, sometimes the mobile view will be displayed, even on a desktop monitor with more than 500 pixels width. The solution may be to set the iframe width to the full browser width, rather than the width of the widget theme.
+  // There is another hack in widget.js as well
+  // TODO: Find a solution for this and enable responsive styles again.
+  @media (max-width: @container-width) {
+    width: @container-width;
+  }
+
+  &,
+  #squatch-panel {
+    background: @white;
+  }
+
+  // Box shadow alternative for lesser "browsers"
+  html.lt-ie9 & {
+    border: 1px solid @gray-lighter;
+  }
+}
+
+.squatch-header-close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background: transparent;
+  border: 0;
+  color: @blue;
+  font-size: @font-size-xs;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.squatch-actions {
+  .translate(0, 0);
+  .transition-transform(.3s cubic-bezier(0,0,.58,1));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 120;
+  background: @white;
+  text-align: center;
+  padding: 15px @body-padding 0;
+
+  #squatch-panel.open + & {
+    .translate(0, 81px);
+
+    html.lt-ie9 & {
+      display: none;
+    }
+  }
+}

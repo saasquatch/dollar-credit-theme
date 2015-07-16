@@ -8,18 +8,35 @@
   <div class="squatch-referrals-heading">{{referral.firstName}}</div>
 
   <div class="squatch-referrals-description">
-    {{#if description}}
-      {{description}}
-    {{else}}
-      {{#if paid}}
-        Paid User
+    <span class="hidden-sm">
+      {{#if description}}
+        {{description}}
       {{else}}
-        Trial User
+        {{#if paid}}
+          Paid User
+        {{else}}
+          Trial User
+        {{/if}}
       {{/if}}
-    {{/if}}
+    </span>
+
+    <span class="hidden-md
+      {{#if paid}}
+        text-green
+      {{else}}
+        text-yellow
+      {{/if}}
+    ">
+      {{#if paid}}
+        ${{math programDetails.referredRewardDetails.credit ' / 100'}} Free Credit
+      {{else}}
+        ${{math programDetails.referredRewardDetails.credit ' / 100'}} Pending
+      {{/if}}
+    </span>
   </div>
 </td>
-<td>
+
+<td class="hidden-sm">
   <div class="squatch-referrals-heading">
     {{#if heading}}
       {{heading}}
@@ -43,7 +60,7 @@
     {{/if}}
   "></i>
 
-  <div class="squatch-referrals-heading">
+  <div class="squatch-referrals-heading hidden-sm">
     {{#if paid}}
       ${{math programDetails.referredRewardDetails.credit ' / 100'}}
     {{else}}
@@ -51,7 +68,7 @@
     {{/if}}
   </div>
 
-  <div class="squatch-referrals-description
+  <div class="squatch-referrals-description hidden-sm
     {{#if paid}}
       text-green
     {{else}}

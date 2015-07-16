@@ -1,0 +1,24 @@
+#squatch-panel {
+  .transition-transform(.3s cubic-bezier(.65, 0, .35, 1));
+  .translate(0, 0);
+  overflow: hidden;
+  position: relative;
+  z-index: 110;
+  border-top: 1px solid @gray-lighter;
+  padding: 15px @body-padding 0;
+
+  @media (max-width: @screen-sm-max) {
+    padding: @body-padding-sm @body-padding-sm 0;
+  }
+}
+
+.squatch-panel-title {
+  margin: 5px 0 15px;
+  text-align: center;
+  color: @gray-darker;
+  font-weight: bold;
+
+  html.lt-ie9 & {
+    margin: 0 0 15px;
+  }
+}

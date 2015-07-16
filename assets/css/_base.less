@@ -1,0 +1,58 @@
+body {
+  // Show background colour of the page the widget is embedded in
+  background: transparent;
+}
+
+.squatch-container {
+  font-family: 'Lato', sans-serif;
+  width: @container-width;
+  position: relative;
+
+  @media (max-width: @container-width) {
+    width: 100%;
+  }
+}
+
+.squatch-body {
+  padding: @body-padding;
+
+  @media (max-width: @screen-sm-max) {
+    padding: @body-padding-sm;
+  }
+}
+
+.squatch-title,
+.squatch-lead,
+.squatch-cta {
+  text-align: center;
+}
+
+.squatch-title {
+  margin: 0 0 22px;
+  color: @blue;
+
+  @media (max-width: @screen-sm-max) {
+    font-size: @font-size-xl;
+    padding: 0 0 @body-padding-sm;
+    margin: 0;
+  }
+}
+
+.squatch-lead {
+  font-size: @font-size-sm;
+
+  @media (max-width: @screen-sm-max) {
+    margin-left: -@body-padding-sm;
+    margin-right: -@body-padding-sm;
+    padding: @body-padding-sm @body-padding-sm 0;
+    border-top: 1px solid @gray-lighter;
+  }
+}
+
+.squatch-cta {
+  margin: 0 0 26px;
+
+  b {
+    color: @gray-darker;
+  }
+}

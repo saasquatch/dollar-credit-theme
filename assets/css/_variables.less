@@ -5,6 +5,7 @@
 @gray:                    #9a9999;
 @gray-light:              #a9a9a9;
 @gray-lighter:            #ddd;
+@gray-lightest:           #f2f2f2;
 @white:                   #fff;
 
 @blue:                    #4486e1;
@@ -17,6 +18,7 @@
 // Typography
 @font-size-h1:            30px;
 @font-size-h2:            14px;
+@font-size-xl:            22px;
 @font-size-large:         16px;
 @font-size-lg:            @font-size-large;
 @font-size-small:         13px;
@@ -30,8 +32,10 @@
 @label-default-bg:        lighten(@gray-dark, 10%);
 
 // Theme layout
+@container-width:         500px;
 @grid-gutter-width:       10px;
 @body-padding:            30px;
+@body-padding-sm:         20px;
 
 // Theme components
 @btn-primary-color:       #fff;
@@ -49,3 +53,12 @@
 @btn-twitter-color:       #fff;
 @btn-twitter-bg:          @twitter-blue;
 @btn-twitter-border:      @twitter-blue;
+
+@screen-sm:               0px;
+@screen-sm-min:           @screen-sm;
+
+@screen-md:               @container-width;
+@screen-md-min:           @screen-md;
+
+@screen-sm-max:           (@screen-md-min - 1);
+@screen-md-max:           99999px;

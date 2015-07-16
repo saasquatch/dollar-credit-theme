@@ -6,20 +6,28 @@
       <span class="label label-default fade" id="squatch-share-notification">Copied!</span>
 
       <span class="input-group-btn">
-        <button class="btn btn-primary icon-btn" data-clipboard-target="squatch-share-link" data-clipboard-notification="#squatch-share-notification"><i class="icon icon-link"></i> Copy</button>
+        <button class="btn btn-primary icon-btn" data-clipboard-target="squatch-share-link" data-clipboard-notification="#squatch-share-notification">
+          <i class="icon icon-link"></i>
+          <span class="hidden-sm">Copy</span>
+        </button>
       </span>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-xs-4">
-      <a class="btn btn-email btn-block icon-btn emailShare"><i class="icon icon-mail"></i> Email</a>
-    </div>
-    <div class="col-xs-4">
-      <a class="btn btn-facebook btn-block icon-btn fbShare"><i class="icon icon-facebook"></i> Share</a>
-    </div>
-    <div class="col-xs-4">
-      <a class="btn btn-twitter btn-block icon-btn twShare"><i class="icon icon-twitter"></i> Tweet</a>
-    </div>
+  <div class="clearfix">
+    <a class="btn btn-email squatch-share-btn emailShare">
+      <i class="icon icon-mail"></i>
+      Email
+    </a>
+
+    <a class="btn btn-facebook squatch-share-btn fbShare">
+      <i class="icon icon-facebook"></i>
+      Share
+    </a>
+
+    <a class="btn btn-twitter squatch-share-btn twShare">
+      <i class="icon icon-twitter"></i>
+      Tweet
+    </a>
   </div>
 </div>

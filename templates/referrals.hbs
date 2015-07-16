@@ -1,5 +1,14 @@
-<div class="squatch-referrals-container" id="squatch-referrals-scroll" data-scroll-offset="0" data-scroll-limit="{{#if referredBy.dateReferred}}{{math referralsLength '+ 1'}}{{else}}{{math referralsLength}}{{/if}}">
-  <table class="squatch-referrals">
+<div class="squatch-referrals-title">
+  Referral Details
+</div>
+
+<div
+  class="squatch-referrals"
+  id="squatch-referrals-scroll"
+  data-scroll-offset="0"
+  data-scroll-limit="{{#if referredBy.dateReferred}}{{math referralsLength '+ 1'}}{{else}}{{math referralsLength}}{{/if}}">
+
+  <table class="squatch-referrals-list">
     {{#if referredBy.referredByUser}}
       <tr id="0">
         {{#block
@@ -9,7 +18,10 @@
           heading="Referred You"
           paid=1
           dateReferred=referredBy.dateReferred}}
-          {{> referral}}
+
+          {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+          {{!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType)}} --}}
+          {{> programs/CREDIT/referral}}
         {{/block}}
       </tr>
     {{/if}}
@@ -20,9 +32,21 @@
           "referredUser"
           referral=referredUser
           programDetails=../programDetails}}
-          {{> referral}}
+
+          {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+          {{!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType)}} --}}
+          {{> programs/CREDIT/referral}}
         {{/block}}
       </tr>
     {{/each}}
   </table>
 </div>
+
+<div class="squatch-referrals-actions">
+  <button class="btn btn-default disabled" data-scroll-element="#squatch-referrals-scroll" data-scroll-increment="-3">Previous</button>
+
+  <button class="btn btn-default" data-close-panel="#squatch-panel" data-scroll-reset="#squatch-referrals-scroll">Hide Details</button>
+
+  <button class="btn btn-default disabled" data-scroll-element="#squatch-referrals-scroll" data-scroll-increment="3">View More</button>
+</div>
+

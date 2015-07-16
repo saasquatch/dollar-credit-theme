@@ -1,0 +1,27 @@
+html.no-flash {
+  .input-group {
+    width: 100%;
+
+    .form-control {
+      width: 100%;
+      border-right: 1px solid @input-border;
+      border-radius: @border-radius-base;
+    }
+
+    .input-group-btn {
+      display: none;
+    }
+  }
+}
+
+html.lt-ie9 .fade {
+  visibility: hidden;
+
+  &.in {
+    visibility: visible;
+  }
+}
+
+html.lt-ie9 .hidden-md {
+  display: none;
+}
