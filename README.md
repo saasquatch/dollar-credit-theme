@@ -1,7 +1,7 @@
 Dollar Credit Theme
 ===================
 
-A generic dollar credit theme for Referral SaaSquatch.
+A generic Dollar Credit Theme for Referral SaaSquatch.
 
 Setup
 -----
