@@ -2,7 +2,7 @@
   {{#if referral.imageUrl}}
     <img class="img-circle squatch-referrals-avatar" src="{{referral.imageUrl}}">
   {{else}}
-    <img class="img-circle squatch-referrals-avatar" src="{{gravatar referral.email default="mm" rating="pg" size=40}}">
+    <img class="img-circle squatch-referrals-avatar" src="{{gravatar referral.email default="mm" rating="pg" size=40 secure=isSecureUrl}}">
   {{/if}}
 
   <div class="squatch-referrals-heading">{{referral.firstName}}</div>
