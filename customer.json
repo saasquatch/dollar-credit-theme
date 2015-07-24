@@ -15,7 +15,7 @@
       "accountId": "5cukkyfnuhbyjdwxywhcs47u",
       "referralCode": "KARLHORKY",
       "email": "karl@example.com",
-      "imageUrl": "http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
+      "imageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
       "firstName": "Karl",
       "lastName": "Horky"
     },
@@ -28,7 +28,7 @@
         "accountId": "5cukkyfnuhbyjdwxyxphv47u",
         "referralCode": "ERICMASON",
         "email": "eric@example.com",
-        "imageUrl": "http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
+        "imageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
         "firstName": "Eric",
         "lastName": "Mason"
       },
@@ -46,7 +46,7 @@
         "accountId": "5cukkyfnuhbyjdwxyxphv47u",
         "referralCode": "TORBSVENWERNIER",
         "email": "torben@example.com",
-        "imageUrl": "http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
+        "imageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
         "firstName": "Torbsven",
         "lastName": "Wernier"
       },
@@ -152,7 +152,7 @@
         "accountId": "5cukkyfnuhbyjdwxyxphv47u",
         "referralCode": "ERICMASON",
         "email": "eric@example.com",
-        "imageUrl": "http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
+        "imageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
         "firstName": "Eric",
         "lastName": "Mason"
       },
@@ -166,7 +166,7 @@
         "accountId": "5cukkyfnuhbyjdwxyxphv47u",
         "referralCode": "TORBSVENWERNIER",
         "email": "torben@example.com",
-        "imageUrl": "http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
+        "imageUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
         "firstName": "Torbsven",
         "lastName": "Wernier"
       },
