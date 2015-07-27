@@ -250,6 +250,10 @@
     "referredRewardDetails": {
       "rewardType": "CREDIT",
       "credit": 10000
+    },
+    "referrerRewardDetails": {
+      "rewardType": "CREDIT",
+      "credit": 10000
     }
   },
   "companyName": "Service"
