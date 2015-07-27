@@ -24,6 +24,35 @@
   "referrals": [
     {
       "referredUser": {
+        "id": "5cukkyfnuhbyjdwxyxphv47u_423638",
+        "accountId": "5cukkyfnuhbyjdwxyxphv47u",
+        "referralCode": "JEREMYMYERS",
+        "email": "jeremy@example.com",
+        "imageUrl": "",
+        "firstName": "Jeremy",
+        "lastName": "Myers"
+      },
+      "dateReferred": 1407886778837,
+      "paid": false,
+      "referrerReward": null
+    },
+    {
+      "referredUser": {
+        "id": "5cukkyfnuhbyjdwxyxphv47u_423638",
+        "accountId": "5cukkyfnuhbyjdwxyxphv47u",
+        "referralCode": "JEREMYMYERS",
+        "email": "jeremy@example.com",
+        "imageUrl": "",
+        "firstName": "Jeremy",
+        "lastName": "Myers"
+      },
+      "dateReferred": 1407886778837,
+      "paid": false,
+      "referrerRewardDeniedOrCancelled": true,
+      "referrerReward": null
+    },
+    {
+      "referredUser": {
         "id": "5cukkyfnuhbyjdwxyxphv47u_778239",
         "accountId": "5cukkyfnuhbyjdwxyxphv47u",
         "referralCode": "ERICMASON",
@@ -75,34 +104,6 @@
         "unit": "cents",
         "name": "credit"
       }
-    },
-    {
-      "referredUser": {
-        "id": "5cukkyfnuhbyjdwxyxphv47u_423638",
-        "accountId": "5cukkyfnuhbyjdwxyxphv47u",
-        "referralCode": "JEREMYMYERS",
-        "email": "jeremy@example.com",
-        "imageUrl": "",
-        "firstName": "Jeremy",
-        "lastName": "Myers"
-      },
-      "dateReferred": 1407886778837,
-      "paid": false,
-      "referrerReward": null
-    },
-    {
-      "referredUser": {
-        "id": "5cukkyfnuhbyjdwxyxphv47u_423638",
-        "accountId": "5cukkyfnuhbyjdwxyxphv47u",
-        "referralCode": "JEREMYMYERS",
-        "email": "jeremy@example.com",
-        "imageUrl": "",
-        "firstName": "Jeremy",
-        "lastName": "Myers"
-      },
-      "dateReferred": 1407886778837,
-      "paid": false,
-      "referrerReward": null
     },
     {
       "referredUser": {
@@ -243,7 +244,7 @@
     "mobileTwitterShareLink": "http://ssqt.ch/1oNcLef",
     "mobileEmailShareLink": "http://ssqt.ch/1oNcJDl"
   },
-  "mode": "POPUP",
+  "mode": "EMBED",
   "assetVersion": "jFEOk5Lz",
   "headerVersion": "1",
   "programDetails": {
