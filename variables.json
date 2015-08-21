@@ -37,7 +37,7 @@
           "default": "Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.twitterShareLink}}"
         }
       },
-        "required": ["emailShareBody", "emailShareSubject", "facebookShareSubject", "facebookShareBody", "twitterShareBody"]
+      "required": ["emailShareBody", "emailShareSubject", "facebookShareSubject", "facebookShareBody", "twitterShareBody"]
     },
     "widgetCustomization": {
       "title": "Customize Referral Widget",
@@ -104,3 +104,4 @@
     }
   },
   "required": ["shareMessaging", "widgetCustomization"]
+}
