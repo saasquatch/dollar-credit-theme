@@ -11,12 +11,12 @@
     {{/unless}}
   ">
     {{#if referrals}}
-      Show Details
+       {{i18n "showDetails" bundle="i18n/messages"}}
     {{else}}
       {{#if referredBy.dateReferred}}
-        Show Details
+         {{i18n "showDetails" bundle="i18n/messages"}}
       {{else}}
-        No Referrals Yet...
+         {{i18n "noReferrals" bundle="i18n/messages"}}
       {{/if}}
     {{/if}}
   </button>
