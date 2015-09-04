@@ -13,9 +13,9 @@
         {{description}}
       {{else}}
         {{#if paid}}
-          Paid User
+           {{i18n "paidUser" bundle="i18n/messages"}}
         {{else}}
-          Trial User
+           {{i18n "trialUser" bundle="i18n/messages"}}
         {{/if}}
       {{/if}}
     </span>
@@ -28,9 +28,9 @@
       {{/if}}
     ">
       {{#if paid}}
-        ${{math programDetails.referredRewardDetails.credit ' / 100'}} Free Credit
+        ${{math programDetails.referredRewardDetails.credit ' / 100'}}  {{i18n "discountEarned" bundle="i18n/messages"}}
       {{else}}
-        ${{math programDetails.referredRewardDetails.credit ' / 100'}} Pending
+        ${{math programDetails.referredRewardDetails.credit ' / 100'}}  {{i18n "pending" bundle="i18n/messages"}}
       {{/if}}
     </span>
   </div>
@@ -42,9 +42,9 @@
       {{heading}}
     {{else}}
       {{#if paid}}
-        Signed Up
+         {{i18n "signedUp" bundle="i18n/messages"}}
       {{else}}
-        Referred
+         {{i18n "referred" bundle="i18n/messages"}}
       {{/if}}
     {{/if}}
   </div>
@@ -64,7 +64,7 @@
     {{#if paid}}
       ${{math programDetails.referredRewardDetails.credit ' / 100'}}
     {{else}}
-      Trial Signup
+       {{i18n "trialSignup" bundle="i18n/messages"}}
     {{/if}}
   </div>
 
@@ -76,9 +76,9 @@
     {{/if}}
   ">
     {{#if paid}}
-      Free Credit
+       {{i18n "discountEarned" bundle="i18n/messages"}}
     {{else}}
-      Credit Pending
+       {{i18n "discountPending" bundle="i18n/messages"}}
     {{/if}}
   </div>
 </td>
