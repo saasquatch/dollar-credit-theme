@@ -14,35 +14,35 @@
   window.squatch.user = {
     code     : '{{user.referralCode}}',
     sharelink: '{{shareLinks.shareLink}}',
-    email    : {
+    email: {
       share : {
-        subject: '{{urlencode (variables 'shareMessaging.emailShareSubject') space="%20"}}',
-        body: '{{urlencode (variables 'shareMessaging.emailShareBody') space="%20"}}',
-        mailToLink: 'mailto:?subject={{urlencode (variables 'shareMessaging.emailShareSubject') space="%20"}}&body={{urlencode (variables 'shareMessaging.emailShareBody') space="%20"}}',
+        subject: '{{urlencode (i18n "emailShareSubject" (math programDetails.referredRewardDetails.credit ' / 100') companyName  bundle="i18n/messages") space="%20"}}',
+        body: '{{urlencode (i18n "emailShareBody" companyName (math programDetails.referredRewardDetails.credit ' / 100') user.referralCode bundle="i18n/messages") space="%20"}}',
+        mailToLink: 'mailto:?subject={{urlencode (i18n "emailShareSubject" (math programDetails.referredRewardDetails.credit ' / 100') companyName  bundle="i18n/messages") space="%20"}}&body={{urlencode (i18n "emailShareBody" companyName (math programDetails.referredRewardDetails.credit ' / 100') user.referralCode bundle="i18n/messages") space="%20"}}',
       },
-      reminder: {
-        subject: '{{urlencode (stringFormat "How do you like %s so far?" companyName) space="%20"}}',
-        body: '{{urlencode (stringFormat "Hey,%n %nI saw that you signed up for %s. What do you think of it so far?%n %nBy the way, if you've lost the link to %s, here it is again - %s" companyName companyName shareLinks.emailShareLink) space="%20"}}',
-        mailToLink: 'mailto:?subject={{urlencode (stringFormat "How do you like %s so far?" companyName) space="%20"}}&body={{urlencode (stringFormat "Hey,%n %nI saw that you signed up for %s. What do you think of it so far?%n %nBy the way, if you've lost the link to %s, here it is again - %s" companyName companyName shareLinks.emailShareLink) space="%20"}}',
+      reminder : {
+        subject: '',
+        body: '',
+        mailToLink: '',
       },
       type: 'UNKNOWN'
     },
     facebook: {
-      title: '{{urlencode (variables 'shareMessaging.facebookShareSubject')}}',
-      summary: '{{urlencode (variables 'shareMessaging.facebookShareBody')}}',
+      title: '{{urlencode (i18n "fbTitle" (math programDetails.referredRewardDetails.credit ' / 100') companyName  bundle="i18n/messages") }}',
+      summary: '{{urlencode (i18n "fbSummary" companyName (math programDetails.referredRewardDetails.credit ' / 100') user.referralCode bundle="i18n/messages") }}',
       link: '{{shareLinks.facebookShareLink}}',
-      shareImage: '{{urlencode ""}}',
+      shareImage: '{{assets "images/log-me-in.jpg"}}',
       appId: '157382547792399',
       redirectUrl: 'http://app.referralsaasquatch.com/widget/close'
     },
     twitter: {
-      message: '{{urlencode (variables 'shareMessaging.twitterShareBody')}}'
+      message: '{{urlencode (i18n "twitterMsg" companyName programDetails.referredRewardDetails.discountPercent shareLinks.twitterShareLink bundle="i18n/messages") }}'
     },
     mobile: {
       sharelink : '{{shareLinks.shareLink}}',
-      emailBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileEmailShareLink)}}',
-      facebookBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileFacebookShareLink)}}',
-      twitterBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileTwitterShareLink)}}',
+      emailBody: '{{urlencode (i18n "emailShareBody" shareLinks.emailShareLink bundle="i18n/messages") space="%20"}}',
+      facebookBody: '{{urlencode (i18n "fbSummary" shareLinks.facebookShareLink bundle="i18n/messages") }}',
+      twitterBody: '{{urlencode (i18n "twitterMsg" companyName (math programDetails.referredRewardDetails.credit ' / 100') user.referralCode bundle="i18n/messages") }}',
       twitterShareLink : '{{shareLinks.mobileTwitterShareLink}}',
       facebookShareLink : '{{shareLinks.mobileFacebookShareLink}}',
       emailShareLink: '{{shareLinks.mobileEmailShareLink}}'
