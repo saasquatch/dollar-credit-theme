@@ -3,12 +3,12 @@
     <div class="input-group">
       <input class="form-control" id="squatch-share-link" value="{{shareLinks.shareLink}}" readonly="readonly">
 
-      <span class="label label-default fade" id="squatch-share-notification">Copied!</span>
+      <span class="label label-default fade" id="squatch-share-notification"> {{i18n "copied!" bundle="i18n/messages"}}</span>
 
       <span class="input-group-btn">
         <button class="btn btn-primary icon-btn" data-clipboard-target="squatch-share-link" data-clipboard-notification="#squatch-share-notification">
           <i class="icon icon-link"></i>
-          <span class="hidden-sm">Copy</span>
+          <span class="hidden-sm"> {{i18n "copy" bundle="i18n/messages"}}</span>
         </button>
       </span>
     </div>
@@ -17,17 +17,17 @@
   <div class="clearfix">
     <a class="btn btn-email squatch-share-btn emailShare">
       <i class="icon icon-mail"></i>
-      Email
+       {{i18n "email" bundle="i18n/messages"}}
     </a>
 
     <a class="btn btn-facebook squatch-share-btn fbShare">
       <i class="icon icon-facebook"></i>
-      Share
+       {{i18n "share" bundle="i18n/messages"}}
     </a>
 
     <a class="btn btn-twitter squatch-share-btn twShare">
       <i class="icon icon-twitter"></i>
-      Tweet
+       {{i18n "tweet" bundle="i18n/messages"}}
     </a>
   </div>
 </div>
