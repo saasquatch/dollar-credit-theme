@@ -8,14 +8,14 @@
   data-scroll-offset="0"
   data-scroll-limit="{{#if referredBy.dateReferred}}{{math referralsLength '+ 1'}}{{else}}{{math referralsLength}}{{/if}}">
 
-  <table class="squatch-referrals-list">
+   <table class="squatch-referrals-list">
     {{#if referredBy.referredByUser}}
       <tr id="0">
         {{#block
           "referredByUser"
           referral=referredBy.referredByUser
-          description={{i18n "referringUser" bundle="i18n/messages"}}
-          heading={{i18n "referredYou" bundle="i18n/messages"}}
+          description="Referring User"
+          heading="Referred You"
           paid=1
           dateReferred=referredBy.dateReferred}}
 
