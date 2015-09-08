@@ -11,13 +11,13 @@
    <table class="squatch-referrals-list">
     {{#if referredBy.referredByUser}}
       <tr id="0">
-        {{#block}}
+       {{#block
           "referredByUser"
           referral=referredBy.referredByUser
           description= {{i18n "referringUser" bundle="i18n/messages"}}
           heading= {{i18n "referredYou" bundle="i18n/messages"}}
           paid=1
-          dateReferred=referredBy.dateReferred
+          dateReferred=referredBy.dateReferred}}
 
           {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
           {{!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType)}} --}}
