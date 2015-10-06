@@ -103,7 +103,6 @@
             "validate": ["handlebars"]
           }
         },
-      },
         "shareCodeDetails": {
           "type": "string",
           "minLength": 1,
