@@ -105,9 +105,8 @@
         },
         "shareCodeDetails": {
           "type": "string",
-          "minLength": 1,
           "format": "textarea",
-          "title": "Share Code Text",
+          "title": "Call To Action Text",
           "default": "Share the link below or use the code {{user.referralCode}}",
           "options": {
             "input_height": "100px",
