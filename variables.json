@@ -157,7 +157,7 @@
 	          "allOf" : [
    	            {
 	              "properties" : {
-                    "subject" : { "default": "Congrats! Congrats! You have earned {{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}” },
+                    "subject" : { "default": "Congrats! Congrats! You have earned {{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}" },
                     "themeMapping": { "default": "email/referral-converted" }
 	              }
 	            },
