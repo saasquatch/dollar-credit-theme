@@ -11,7 +11,9 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
   <title>Referral SaaSquatch Template</title>
 
   <style type="text/css">
+
     @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
     /*
     *--------------------------------------------------------
     *
@@ -23,6 +25,7 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
     *
     *
     */
+
     img { max-width: 600px; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;}
     a img { border: none; }
     table { border-collapse: collapse !important;}
@@ -33,6 +36,9 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
     table td { border-collapse: collapse; }
     .ExternalClass * { line-height: 115%; }
     .container-for-gmail-android { min-width: 600px; }
+
+
+
     /*
     *--------------------------------------------------------
     *
@@ -41,9 +47,11 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
     *--------------------------------------------------------
     *
     */
+
     * {
       font-family: Helvetica, Arial, sans-serif;
     }
+
     body {
       -webkit-font-smoothing: antialiased;
       -webkit-text-size-adjust: none;
@@ -54,43 +62,53 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
       text-align: center;
       background-color: #ffffff;
     }
+
     td {
       font-size: 16px;
       color: #2d2c2c;
       text-align: center;
       line-height: 1.5;
     }
+
     .header-text {
       font-size: 36px;
       color: #4797d2;
       font-weight: bold;
     }
+
     .sub-header {
       font-size: 18px;
       color: #121212;
     }
+
     .strong-text {
       font-weight: bold;
       color: #141414;
     }
+
     .accent-text {
       color: #4797d2 !important;
     }
+
     .background-colored {
       background-color: #f2f2f2;
       border: 1px solid #ececec;
     }
+
     .border-bottom {
       border-bottom: 1px solid #e6e6e6;
     }
+
     .component {
       padding: 35px;
     }
+
     .hide-desktop {
       max-height: 0;    /* Gmail */
       display: none;    /* Generic */
       font-size: 0;
     }
+
     .hide {
       max-height: 0;    /* Gmail */
       display: none;    /* Generic */
@@ -101,6 +119,9 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
       color: #ffffff;
       text-decoration: none;
     }
+
+
+
     /*
     *--------------------------------------------------------
     *
@@ -109,17 +130,22 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
     *--------------------------------------------------------
     *
     */
+
     .header {
       padding: 35px 110px;
     }
+
     /*
     *
     * Friend Face
     *
     */
+
     .friend-face {
       padding: 10px 0;
     }
+
+
     /*
     *--------------------------------------------------------
     *
@@ -128,20 +154,25 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
     *--------------------------------------------------------
     *
     */
+
     .content-code {
       padding: 25px 0;
     }
+
     .link-widget {
       width: 260px;
       margin: 0 auto;
       border-collapse: separate !important;
     }
+
     .link-content {
       padding: 13px 0;
       border-radius: 7px;
       font-weight: bold;
       text-decoration: none !important;
     }
+
+
     /*
     *--------------------------------------------------------
     *
@@ -150,13 +181,17 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
     *--------------------------------------------------------
     *
     */
+
     .social {
       padding-left: 22px;
       padding-right: 22px;
     }
+
     .social-buttons {
       padding-top: 20px;
     }
+
+
     /*
     *--------------------------------------------------------
     *
@@ -165,6 +200,7 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
     *--------------------------------------------------------
     *
     */
+
     .footer,
     .footer a {
       color: #acacac !important;
@@ -172,6 +208,8 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
       text-decoration: none;
       padding-bottom: 20px;
     }
+
+
   </style>
 
   <style type="text/css" media="screen">
@@ -184,6 +222,7 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
   </style>
 
   <style type="text/css" media="only screen and (max-width: 480px)">
+
     /*
     *--------------------------------------------------------
     *
@@ -192,40 +231,51 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
     *--------------------------------------------------------
     *
     */
+
     @media only screen and (max-width: 480px) {
+
       table[class*="container-for-gmail-android"] {
         min-width: 320px !important;
         width: 100% !important;
       }
+
       table[class~="w320"] {
         width: 320px !important;
       }
+
       td[class~="component"],
       td[class~="social"] {
         padding: 25px !important;
       }
+
       td[class~="header-text"] {
         font-size: 30px !important;
       }
+
       td[class~="header"] {
         padding-left: 20px !important;
         padding-right: 20px !important;
       }
+
       table[class~="link-widget"] {
         width: 270px !important;
       }
+
       td[class~="mobile-block"] {
         display: block !important;
         padding-bottom: 10px !important;
       }
+
       a[class~="social-button"] {
         width: 270px !important;
       }
+
       div[class~="hide-desktop"] {
         max-height: none !important;
         display: block !important;
         font-size: 16px !important;
       }
+
       a[class~="hide"] {
         display: block !important;
         max-height: 39px !important;
@@ -238,6 +288,7 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
         border-radius: 7px;
         display: inline-block;
       }
+
       span[class~="mobile-hide"] {
         max-height: 0 !important;    /* Gmail */
         display: none !important;    /* Generic */
@@ -245,15 +296,19 @@ subject: {{variables 'emails.configuration.REFERRAL_REWARD_LIMIT_REACHED.subject
         overflow: hidden !important; /* Generic */
         font-size: 0 !important;
       }
+
       a[class~="twitter"] {
         background-image: url({{assets 'images/social_mobile_2.jpg'}}) !important;
       }
+
       a[class~="facebook"] {
         background-image: url({{assets 'images/social_mobile_20.jpg'}}) !important;
       }
+
       a[class~="email"] {
         background-image: url({{assets 'images/social_mobile_grey_20.jpg'}}) !important;
       }
+
     }
   </style>
 </head>
