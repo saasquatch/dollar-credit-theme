@@ -201,7 +201,7 @@
 	                "headerImageUrl" : { "default" : "//app.referrralsaasquatch.com/referral-started.png" },
 	                "headerTitle" : { "default" : "Good News!" },
 	                "headerBody" : { "default" : " Your friend has signed up for a free account with {{companyName}}!" },
-	                "mainBody" : { "default" : "{{convertedReferral.referredUser.firstName}} is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive {{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}” }
+	                "mainBody" : { "default" : "{{convertedReferral.referredUser.firstName}} is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive {{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}" }
 	              }
 	            },
 	            { "$ref" : "#/definitions/email/definitions/generalContent" },
