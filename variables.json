@@ -302,7 +302,7 @@
               "type" : "string",
               "title" : "Share Button Header",
               "propertyOrder": 7,
-              "default" : "Refer and Earn a {{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit” 
+              "default" : "Refer and Earn a {{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit" 
             }
           }
         }
