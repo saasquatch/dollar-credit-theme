@@ -155,7 +155,7 @@
 	          "allOf" : [
    	            {
 	              "properties" : {
-                        "subject" : { "default": "Congrats! Your monthly {{companyName}} bill is now {{programDetails.referrerRewardDetails.discountPercent}} less!" },
+                        "subject" : { "default": "Congrats! You have earned ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}" },
                         "themeMapping": { "default": "emails/referral-converted" }
 	              }
 	            },
@@ -168,7 +168,7 @@
 	              "properties" : {
 	                "headerImageUrl" : { "default" : "{{assets 'images/email/referral-converted-header.png'}}" },
 	                "headerContent" : { "default" : "##Congratulations\nYour friend has signed up for a {{companyName}} Account!" },
-	                "bodyContent" : { "default" : "You have now earned {{programDetails.referrerRewardDetails.discountPercent}} off your next monthly bill. Refer more friends to save even more!" }
+	                "bodyContent" : { "default" : "You have now earned ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}. Refer more friends to save even more!" }
 	              }
 	            },
 	            { "$ref" : "#/definitions/email/definitions/generalContent" },
@@ -318,7 +318,7 @@
               "title" : "Share Button Header",
               "format" : "markdown",
               "propertyOrder": 5,
-              "default" : "Refer and Earn a {{programDetails.referredRewardDetails.discountPercent}}% Discount",
+              "default" : "Refer and Earn ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of Credit",
               "options": {
                 "validate": ["handlebars"],
                 "input_height": "50px"
