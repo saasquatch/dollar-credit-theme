@@ -184,7 +184,7 @@
 	          "allOf" : [
    	            {
 	              "properties" : {
-                        "subject" : { "default": "{{newReferral.referredUser.firstName}} helped you get one step closer to saving {{programDetails.referrerRewardDetails.discountPercent}}% on {{companyName}}!" },
+                        "subject" : { "default": "​{{newReferral.referredUser.firstName}}​ helped you get one step closer to free credit with {{companyName}}​!" },
                         "themeMapping": { "default": "emails/referral-started" }
 	              }
 	            },
@@ -197,7 +197,7 @@
 	              "properties" : {
 	                "headerImageUrl" : { "default" : "{{assets 'images/email/referral-started-header.png'}}" },
 	                "headerContent" : { "default" : "##Good News!\nYour friend has signed up for a free account with {{companyName}}!" },
-	                "bodyContent" : { "default" : "{{newReferral.referredUser.firstName}} is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive a {{programDetails.referrerRewardDetails.discountPercent}} discount!" }
+	                "bodyContent" : { "default" : "{{convertedReferral.referredUser.firstName}} is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive {{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}" }
 	              }
 	            },
 	            { "$ref" : "#/definitions/email/definitions/generalContent" },
