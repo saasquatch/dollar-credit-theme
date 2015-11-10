@@ -139,7 +139,7 @@
 	                "headerImageUrl" : { "default" : "{{assets 'images/email/reward-limit-header.png'}}" },
 	                "headerContent" : { "default" : "##Reward Limit\nYou have successfully referred the maximum!" },
 	                "bodyContent" : { "default" : "Thanks for spreading the word about {{companyName}}. You’ve referred so many new people that you’ve earned the maximum amount of available credit."},
-			"shareCTA" : { "default" : "However, you can keep referring new users and giving {{programDetails.referrerRewardDetails.discountPercent}} off with your code. - **{{user.referralCode}}**\n\n[{{shareLinks.shareLink}}]({{shareLinks.shareLink}})" }
+			"shareCTA" : { "default" : "However, you can keep referring new users and giving {{programDetails.referrerRewardDetails.discountPercent}} off with your code. - **{{user.referralCode}}**" }
                       }
 	            },
 	            { "$ref" : "#/definitions/email/definitions/generalContent" },
@@ -307,17 +307,24 @@
               "title" : "Share Code CTA",
               "format" : "markdown",
               "propertyOrder": 4,
-              "default" : "Keep sharing your code and earn more discounts - **{{user.referralCode}}**\n\n[{{shareLinks.shareLink}}]({{shareLinks.shareLink}})",
+              "default" : "Keep sharing your code and earn more discounts - **{{user.referralCode}}**",
               "options": {
                 "validate": ["handlebars"],
                 "input_height": "50px"
               }
             },
+            "hasShareLink" : {
+              "type" : "boolean",
+              "format" : "checkbox",
+              "title" : "Enable Share Link",
+              "propertyOrder": 5,
+              "default" : true
+            },
             "shareButtonHeader" : {
               "type" : "string",
               "title" : "Share Button Header",
               "format" : "markdown",
-              "propertyOrder": 5,
+              "propertyOrder": 6,
               "default" : "Refer and Earn ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of Credit",
               "options": {
                 "validate": ["handlebars"],
