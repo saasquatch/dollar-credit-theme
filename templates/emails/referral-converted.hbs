@@ -1,0 +1,256 @@
+---
+from: {{variables 'email.REFERRAL_CONVERTED.configuration.fromAddress'}}
+fromName: {{variables 'email.REFERRAL_CONVERTED.configuration.fromName'}}
+subject: {{variables 'email.REFERRAL_CONVERTED.configuration.subject'}}
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
+  <head>
+    <base target="_blank">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Referral SaaSquatch Template</title>
+  </head>
+  <body bgcolor="#ffffff" style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; color: #2d2c2c; text-align: center; background: #ffffff; margin: 0;"><style type="text/css">
+@media only screen and (min-width: 481px) { 
+    td[class~="header-text"] h1 {
+      font-size: 36px !important; 
+      color: #4797d2 !important; 
+      text-align: center !important; 
+      line-height: 1.5 !important; 
+      font-weight: bold !important;
+      margin: 0 !important;
+      font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
+  }
+  td[class~="header-text"] p {
+      font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
+      font-size: 18px !important; 
+      color: #121212 !important;  
+      font-weight: normal !important;
+  }
+    td p {
+        margin: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+  table[class*="container-for-gmail-android"] {
+    min-width: 320px !important; width: 100% !important;
+  }
+  table[class~="w320"] {
+    width: 320px !important;
+  }
+  td[class~="component"] {
+    padding: 25px !important;
+  }
+  td[class~="social"] {
+    padding: 25px !important;
+  }
+  td[class~="header-text"] {
+    font-size: 30px !important;
+  }
+  td[class~="header-text"] h1 {
+      font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
+      font-size: 30px !important; 
+      color: #4797d2 !important; 
+      font-weight: bold !important;
+      margin: 0 !important;
+  }
+  td[class~="header-text"] p {
+      font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
+      font-size: 18px !important; 
+      color: #121212 !important;  
+      font-weight: normal !important;
+  }
+  td[class~="header"] {
+    padding-left: 20px !important; padding-right: 20px !important;
+  }
+  table[class~="link-widget"] {
+    width: 270px !important;
+  }
+  td[class~="mobile-block"] {
+    display: block !important; padding-bottom: 10px !important;
+  }
+  a[class~="social-button"] {
+    width: 270px !important;
+  }
+  div[class~="hide-desktop"] {
+    max-height: none !important; display: block !important; font-size: 16px !important;
+  }
+  a[class~="hide"] {
+    max-height: 39px !important; font-size: 16px !important; line-height: 39px !important; padding-bottom: 10px !important; position: relative !important; background-image: url({{assets 'images/social_mobile_17.jpg'}}); background-repeat: no-repeat; border-radius: 7px; display: inline-block;
+  }
+  span[class~="mobile-hide"] {
+    max-height: 0 !important; display: none !important; mso-hide: all !important; overflow: hidden !important; font-size: 0 !important;
+  }
+  a[class~="twitter"] {
+    background-image: url({{assets 'images/social_mobile_22.jpg'}}) !important;
+    max-height: 0 !important; display: none !important; mso-hide: all !important; overflow: hidden !important; font-size: 0 !important;
+  }
+  a[class~="twitter-mobile"] {
+    background-image: url({{assets 'images/social_mobile_22.jpg'}}) !important;
+    font-size: 16px !important; font-weight: 400 !important; line-height: 39px !important; text-align: center !important; text-decoration: none !important; -webkit-text-size-adjust: none !important; max-height: none !important; display: inline-block !important;
+  }
+  a[class~="facebook"] {
+    background-image: url({{assets 'images/social_mobile_20.jpg'}}) !important;
+  }
+  a[class~="email"] {
+    background-image: url({{assets 'images/social_mobile_grey_20.jpg'}}) !important;
+  }
+  td p {
+      margin: 0 !important;
+  }
+}
+</style>
+<table align="center" cellpadding="0" cellspacing="0" class="container-for-gmail-android" width="100%" height="100%" style="border-collapse: collapse !important; min-width: 600px; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><!--
+  *
+  *
+  * Header Component
+  * -Start-
+  *
+  *
+  --><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td align="center" valign="top" width="100%" class="background-colored" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5; background: #f2f2f2; border: 1px solid #ececec;" bgcolor="#f2f2f2">
+      <center style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
+        <table cellspacing="0" cellpadding="0" width="500" class="w320" style="border-collapse: collapse !important; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="header component" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5; padding: 35px 110px;" align="center">
+              <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse !important; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
+                {{#if (variables 'email.REFERRAL_CONVERTED.content.headerImageUrl')}}
+                  <!-- Friend Face Component--><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="friend-face" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5; padding: 10px 0;" align="center">
+                    <img width="117" height="112" src="{{variables 'email.REFERRAL_CONVERTED.content.headerImageUrl'}}" alt="friend pic" style="max-width: 600px; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;" /></td>
+                </tr><!-- Friend Face End -->
+                {{/if}}
+                <tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="header-text" style="" align="center">
+                    {{variables 'email.REFERRAL_CONVERTED.content.headerContent'}}
+                  </td>
+                </tr></table></td>
+          </tr></table></center>
+    </td>
+  </tr><!--
+  *
+  *
+  * Header Component
+  * -End-
+  *
+  --><!--
+  *
+  *
+  * Content Component
+  * -Start-
+  *
+  *
+  --><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td align="center" valign="top" width="100%" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5; border-bottom-width: 1px; border-bottom-color: #e6e6e6; border-bottom-style: solid; background: #ffffff;" class="border-bottom" bgcolor="#ffffff">
+      <center style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
+        <table cellspacing="0" cellpadding="0" width="500" class="w320" style="border-collapse: collapse !important; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="content component" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5; padding: 35px;" align="center">
+              <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse !important; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="content-body" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5;" align="center">
+                    {{variables 'email.REFERRAL_CONVERTED.content.bodyContent'}}
+                  </td>
+                </tr><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="content-code" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5; padding: 25px 0;" align="center">
+                    {{variables 'email.REFERRAL_CONVERTED.content.shareCTA'}}
+                  </td>
+                </tr>
+                {{#if variables.email.REFERRAL_CONVERTED.content.hasShareLink}}
+                    <tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5;" align="center">
+                        <center style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
+                          <table cellspacing="0" cellpadding="0" class="link-widget" style="border-collapse: separate !important; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; width: 260px; margin: 0 auto;"><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="link-content accent-text background-colored" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #4797d2 !important; text-align: center; line-height: 1.5; border-radius: 7px; font-weight: bold; text-decoration: none !important; background: #f2f2f2; padding: 13px 0; border: 1px solid #ececec;" align="center" bgcolor="#f2f2f2">
+                               <p>{{shareLinks.shareLink}}</p>
+                              </td>
+                            </tr></table></center>
+                      </td>
+                    </tr>
+                {{/if}}
+                </table></td>
+          </tr></table></center>
+    </td>
+  </tr><!--
+  *
+  *
+  * Content Component
+  * -End-
+  *
+  --><!--
+  *
+  *
+  * Social Links Component
+  * -Start-
+  *
+  *
+  --><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td align="center" valign="top" width="100%" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5; background: #ffffff;" bgcolor="#ffffff">
+      <center style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
+        <table cellspacing="0" cellpadding="0" width="500" class="w320" style="border-collapse: collapse !important; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="social component" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5; padding: 35px 22px;" align="center">
+              <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse !important; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="sub-header" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 18px; color: #121212; text-align: center; line-height: 1.5;" align="center">
+                    {{variables 'email.REFERRAL_CONVERTED.content.shareButtonHeader'}}
+                  </td>
+                </tr><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="social-buttons" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5; padding-top: 20px;" align="center">
+                    <!--[if !gte mso 9]><!-- -->
+                      <div class="hide-desktop" style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; max-height: 0; display: none; font-size: 0;">
+                        <a class="social-button sms hide" href="http://" style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; max-height: 0; display: none; mso-hide: all; overflow: hidden; font-size: 0; width: 0; color: #ffffff; text-decoration: none;">SMS</a>
+                      </div>
+                    <!--<![endif]-->
+                    <table cellpadding="0" width="100%" style="border-collapse: collapse !important; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="mobile-block" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5;" align="center">
+                          <div style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
+                            <!--[if mso]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://twitter.com/intent/tweet?source=webclient&text={{urlencode (variables 'shareMessaging.twitterShareBody')}}" style="height:39px;v-text-anchor:middle;width:136px;" arcsize="18%" stroke="f" fill="t">
+                              <v:fill type="tile" src="{{assets 'images/social_07.jpg'}}" color="#0089b6" />
+                              <w:anchorlock/>
+                              <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:400;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tweet</center>
+                            </v:roundrect>
+                            <![endif]--><a class="social-button twitter" href="https://twitter.com/intent/tweet?source=webclient&text={{urlencode (variables 'shareMessaging.twitterShareBody')}}" style="border-radius: 7px; color: #ffffff; display: inline-block; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; font-weight: 400; line-height: 39px; text-align: center; text-decoration: none; width: 136px; -webkit-text-size-adjust: none; mso-hide: all; background: #0089b6 url({{assets 'images/social_07.jpg'}});"><span class="mobile-hide" style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Tweet</a>
+                            
+                            <a class="social-button twitter-mobile" href="twitter://post?message={{urlencode (variables 'shareMessaging.twitterShareBody') space="%20"}}" style="border-radius: 7px; color: #ffffff; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; background: #0089b6 url({{assets 'images/social_07.jpg'}}); max-height: 0; display: none; mso-hide: all; overflow: hidden; font-size: 0;"><span class="mobile-hide" style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Tweet</a>
+                          </div>
+                        </td>
+                        <td class="mobile-block" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5;" align="center">
+                          <div style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
+                            <!--[if mso]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.facebook.com/dialog/feed?app_id=157382547792399&link={{shareLinks.facebookShareLink}}&name={{urlencode (variables 'shareMessaging.facebookShareSubject')}}&description={{urlencode (variables 'shareMessaging.facebookShareBody')}}&redirect_uri=https://www.facebook.com" style="height:39px;v-text-anchor:middle;width:136px;" arcsize="18%" stroke="f" fill="t">
+                              <v:fill type="tile" src="{{assets 'images/social_09.jpg'}}" color="
+                              #234079" />
+                              <w:anchorlock/>
+                              <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:400;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Share</center>
+                            </v:roundrect>
+                            <![endif]--><a class="social-button facebook" href="https://www.facebook.com/dialog/feed?app_id=157382547792399&link={{shareLinks.facebookShareLink}}&name={{urlencode (variables 'shareMessaging.facebookShareSubject')}}&description={{urlencode (variables 'shareMessaging.facebookShareBody')}}&redirect_uri=https://www.facebook.com" style="border-radius: 7px; color: #ffffff; display: inline-block; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; font-weight: 400; line-height: 39px; text-align: center; text-decoration: none; width: 136px; -webkit-text-size-adjust: none; mso-hide: all; background: #234079 url({{assets 'images/social_09.jpg'}});"><span class="mobile-hide" style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Share</a>
+                          </div>
+                        </td>
+                        <td class="mobile-block" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5;" align="center">
+                          <div style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
+                            <!--[if mso]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="mailto:?subject={{urlencode (variables 'shareMessaging.emailShareSubject') space="%20"}}&body={{urlencode (variables 'shareMessaging.emailShareBody') space="%20"}}" style="height:39px;v-text-anchor:middle;width:136px;" arcsize="18%" stroke="f" fill="t">
+                              <v:fill type="tile" src="{{assets 'images/social_11.jpg'}}" color="#40494e" />
+                              <w:anchorlock/>
+                              <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:400;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</center>
+                            </v:roundrect>
+                            <![endif]--><a class="social-button email" href="mailto:?subject={{urlencode (variables 'shareMessaging.emailShareSubject') space="%20"}}&body={{urlencode (variables 'shareMessaging.emailShareBody') space="%20"}}" style="border-radius: 7px; color: #ffffff; display: inline-block; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; font-weight: 400; line-height: 39px; text-align: center; text-decoration: none; width: 136px; -webkit-text-size-adjust: none; mso-hide: all; background: #40494e url({{assets 'images/social_11.jpg'}});"><span class="mobile-hide" style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Email</a>
+                          </div>
+                        </td>
+                      </tr></table></td>
+                </tr></table></td>
+          </tr></table></center>
+    </td>
+  </tr><!--
+  *
+  *
+  * Social Links Component
+  * -End-
+  *
+  --><!--
+  *
+  *
+  * Footer Component
+  * -Start-
+  *
+  *
+  --><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td align="center" valign="top" width="100%" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5; background: #ffffff;" bgcolor="#ffffff">
+      <center style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
+        <table cellspacing="0" cellpadding="0" width="500" class="w320" style="border-collapse: collapse !important; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><tr style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;"><td class="footer component" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 14px !important; color: #acacac !important; text-align: center; line-height: 1.5; text-decoration: none; padding: 35px 35px 20px;" align="center">
+              {{variables 'email.REFERRAL_CONVERTED.content.footer'}}
+              Powered by <a href="http://www.referralsaasquatch.com/" style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; color: #acacac !important; font-size: 14px !important; text-decoration: none; padding-bottom: 20px;">Referral SaaSquatch</a>
+            </td>
+          </tr></table></center>
+    </td>
+  </tr><!--
+  *
+  *
+  * Footer Component
+  * -End-
+  *
+  --></table></body>
+</html>
