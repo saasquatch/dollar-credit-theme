@@ -125,7 +125,7 @@
 	          "allOf" : [
    	            {
 	              "properties" : {
-                        "subject" : { "default": "You have reached max level!" },
+                        "subject" : { "default": "You have hit the reward limit!" },
                         "themeMapping": { "default": "emails/referrer-reward-limit" }
 	              }
 	            },
