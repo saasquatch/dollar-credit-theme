@@ -42,7 +42,7 @@
       sharelink : '{{shareLinks.shareLink}}',
       emailBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileEmailShareLink)}}',
       facebookBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileFacebookShareLink)}}',
-      twitterBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileTwitterShareLink)}}',
+      twitterBody: '{{urlencode (variables 'shareMessaging.twitterShareBody') space="%20"}}',
       twitterShareLink : '{{shareLinks.mobileTwitterShareLink}}',
       facebookShareLink : '{{shareLinks.mobileFacebookShareLink}}',
       emailShareLink: '{{shareLinks.mobileEmailShareLink}}'
