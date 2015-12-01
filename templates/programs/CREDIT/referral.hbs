@@ -21,16 +21,24 @@
     </span>
 
     <span class="hidden-md
-      {{#if paid}}
-        text-green
+      {{#if cancelled}}
+        text-red
       {{else}}
-        text-yellow
+        {{#if paid}}
+          text-green
+        {{else}}
+          text-yellow
+        {{/if}}
       {{/if}}
     ">
-      {{#if paid}}
-        ${{math programDetails.referredRewardDetails.credit ' / 100'}} Free Credit
+      {{#if cancelled}}
+        Credit Removed
       {{else}}
-        ${{math programDetails.referredRewardDetails.credit ' / 100'}} Pending
+        {{#if paid}}
+          ${{math programDetails.referredRewardDetails.credit ' / 100'}} Free Credit
+        {{else}}
+          ${{math programDetails.referredRewardDetails.credit ' / 100'}} Pending
+        {{/if}}
       {{/if}}
     </span>
   </div>
@@ -53,32 +61,48 @@
 </td>
 <td>
   <i class="icon squatch-referrals-icon
-    {{#if paid}}
-      icon-ok-circled text-green
+    {{#if cancelled}}
+      icon-cancel-circled text-red
     {{else}}
-      icon-attention text-yellow
+      {{#if paid}}
+        icon-ok-circled text-green
+      {{else}}
+        icon-attention text-yellow
+      {{/if}}
     {{/if}}
   "></i>
 
   <div class="squatch-referrals-heading hidden-sm">
-    {{#if paid}}
-      ${{math programDetails.referredRewardDetails.credit ' / 100'}}
+    {{#if cancelled}}
+      Referral Reward
     {{else}}
-      Trial Signup
+      {{#if paid}}
+        ${{math programDetails.referredRewardDetails.credit ' / 100'}}
+      {{else}}
+        Trial Signup
+      {{/if}}
     {{/if}}
   </div>
 
   <div class="squatch-referrals-description hidden-sm
-    {{#if paid}}
-      text-green
+    {{#if cancelled}}
+      text-red
     {{else}}
-      text-yellow
+      {{#if paid}}
+        text-green
+      {{else}}
+        text-yellow
+      {{/if}}
     {{/if}}
   ">
-    {{#if paid}}
-      Free Credit
+    {{#if cancelled}}
+      Removed
     {{else}}
-      Credit Pending
+      {{#if paid}}
+        Free Credit
+      {{else}}
+        Credit Pending
+      {{/if}}
     {{/if}}
   </div>
 </td>

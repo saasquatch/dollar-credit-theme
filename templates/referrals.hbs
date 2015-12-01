@@ -17,6 +17,7 @@
           description="Referring User"
           heading="Referred You"
           paid=1
+          cancelled=referredBy.referredRewardDeniedOrCancelled
           dateReferred=referredBy.dateReferred}}
 
           {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
@@ -31,6 +32,7 @@
         {{#block
           "referredUser"
           referral=referredUser
+          cancelled=referrerRewardDeniedOrCancelled
           programDetails=../programDetails}}
 
           {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
