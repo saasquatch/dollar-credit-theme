@@ -40,7 +40,32 @@
   </head>
 
   <body>
-   
+    <main class="squatch-container squatch-container-{{lower mode}}">
+      <div class="squatch-body">
+        {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+        {{!-- {{> (stringFormat 'programs/%s/title' programDetails.referredRewardDetails.rewardType) }} --}}
+        {{> programs/CREDIT/title}}
+
+        <button class="close squatch-header-close" data-close-panel="#squatch-panel">Close</button>
+
+        {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+        {{!-- {{> (stringFormat 'programs/%s/lead' programDetails.referredRewardDetails.rewardType) }} --}}
+        {{> programs/CREDIT/lead}}
+        {{> cta}}
+        {{> share}}
+      </div>
+
+      <div id="squatch-panel">
+        {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+        {{!-- {{> (stringFormat 'programs/%s/panel_summary' programDetails.referredRewardDetails.rewardType) }} --}}
+        {{> programs/CREDIT/panel_summary}}
+        {{> referrals}}
+        {{> attribution}}
+      </div>
+
+      {{> actions}}
+    </main>
+
     <!--[if lt IE 9]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><![endif]-->
     <!--[if gte IE 9]><!--><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><!--<![endif]-->
     <!--[if lt IE 9]><script src="{{assets 'libs/ZeroClipboard-oldie.js'}}"></script><![endif]-->
