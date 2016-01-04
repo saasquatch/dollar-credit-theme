@@ -47,24 +47,21 @@
 
     $('[data-clipboard-target]').each(function() {
       var
-        zeroClipboard,
-        notification;
+          clipboard,
+          notification;
 
-      ZeroClipboard.config({
-        hoverClass : 'hover',
-        activeClass: 'active'
-      });
+      clipboard = new Clipboard(this);
 
-      zeroClipboard = new ZeroClipboard(this);
-      zeroClipboard.on('ready', function() {
-        zeroClipboard.on('aftercopy', function(e) {
-          notification = $($(e.target).data('clipboard-notification'));
+      var notify = function(e) {
+          notification = $($(e.trigger.dataset.clipboardNotification));
           notification.addClass('in').delay(1400).queue(function() {
-            notification.removeClass('in');
-            $(this).dequeue();
-          });
-        });
-      });
+              notification.removeClass('in');
+              $(this).dequeue();
+          })
+      };
+
+      clipboard.on('success', notify);
+      clipboard.on('error', notify);
     });
 
     scrollElements.each(function() {

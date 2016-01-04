@@ -10,7 +10,6 @@
   "strict": true,
   "globals": {
     "$": false,
-    "ZeroClipboard": false,
     "moment": false,
     "ActiveXObject": false,
     "console": false
