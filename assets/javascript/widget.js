@@ -52,24 +52,35 @@
 
       clipboard = new Clipboard(this);
 
-      var notifySuccess = function(e) {
-          //set notification text to Copied!
-          notification = $($(e.trigger.dataset.clipboardNotification));
-          notification.value("Copied!");
+      var notify = function(clipboardNotification, notificationText) {
+          notification = $($(clipboardNotification));
+          notification.text(notificationText);
           notification.addClass('in').delay(1400).queue(function() {
               notification.removeClass('in');
               $(this).dequeue();
           })
       };
 
+      var notifySuccess = function(e) {
+          //set notification text to Copied!
+          notify(e.trigger.dataset.clipboardNotification, "Copied!");
+          /* notification = $($());
+          notification.text("Copied!");
+          notification.addClass('in').delay(1400).queue(function() {
+              notification.removeClass('in');
+              $(this).dequeue();
+          }) */
+      };
+
         var notifyFailure = function(e) {
             //set notification text to Press Ctrl+C to copy
-            notification = $($(e.trigger.dataset.clipboardNotification));
-            notification.value("Press Ctrl+C to copy");
+            notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
+            /* notification = $($(e.trigger.dataset.clipboardNotification));
+            notification.text("Press Ctrl+C to copy");
             notification.addClass('in').delay(1400).queue(function() {
                 notification.removeClass('in');
                 $(this).dequeue();
-            })
+            }) */
         };
 
       clipboard.on('success', notifySuccess);
