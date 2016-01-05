@@ -52,16 +52,28 @@
 
       clipboard = new Clipboard(this);
 
-      var notify = function(e) {
+      var notifySuccess = function(e) {
+          //set notification text to Copied!
           notification = $($(e.trigger.dataset.clipboardNotification));
+          notification.value("Copied!");
           notification.addClass('in').delay(1400).queue(function() {
               notification.removeClass('in');
               $(this).dequeue();
           })
       };
 
-      clipboard.on('success', notify);
-      clipboard.on('error', notify);
+        var notifyFailure = function(e) {
+            //set notification text to Press Ctrl+C to copy
+            notification = $($(e.trigger.dataset.clipboardNotification));
+            notification.value("Press Ctrl+C to copy");
+            notification.addClass('in').delay(1400).queue(function() {
+                notification.removeClass('in');
+                $(this).dequeue();
+            })
+        };
+
+      clipboard.on('success', notifySuccess);
+      clipboard.on('error', notifyFailure);
     });
 
     scrollElements.each(function() {
