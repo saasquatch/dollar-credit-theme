@@ -62,26 +62,13 @@
       };
 
       var notifySuccess = function(e) {
-          //set notification text to Copied!
           notify(e.trigger.dataset.clipboardNotification, "Copied!");
-          /* notification = $($());
-          notification.text("Copied!");
-          notification.addClass('in').delay(1400).queue(function() {
-              notification.removeClass('in');
-              $(this).dequeue();
-          }) */
       };
 
-        var notifyFailure = function(e) {
-            //set notification text to Press Ctrl+C to copy
-            notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
-            /* notification = $($(e.trigger.dataset.clipboardNotification));
-            notification.text("Press Ctrl+C to copy");
-            notification.addClass('in').delay(1400).queue(function() {
-                notification.removeClass('in');
-                $(this).dequeue();
-            }) */
-        };
+      var notifyFailure = function(e) {
+          //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
+          notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
+      };
 
       clipboard.on('success', notifySuccess);
       clipboard.on('error', notifyFailure);
