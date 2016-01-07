@@ -45,26 +45,33 @@
       element.data('scroll-offset', 0);
     };
 
-    $('[data-clipboard-target]').each(function() {
+    $('[data-clipboard-target]').each(function () {
       var
-        zeroClipboard,
+        clipboard,
         notification;
 
-      ZeroClipboard.config({
-        hoverClass : 'hover',
-        activeClass: 'active'
-      });
+      clipboard = new Clipboard(this);
 
-      zeroClipboard = new ZeroClipboard(this);
-      zeroClipboard.on('ready', function() {
-        zeroClipboard.on('aftercopy', function(e) {
-          notification = $($(e.target).data('clipboard-notification'));
-          notification.addClass('in').delay(1400).queue(function() {
-            notification.removeClass('in');
-            $(this).dequeue();
-          });
-        });
-      });
+      var notify = function (clipboardNotification, notificationText) {
+        notification = $($(clipboardNotification));
+        notification.text(notificationText);
+        notification.addClass('in').delay(1400).queue(function () {
+          notification.removeClass('in');
+          $(this).dequeue();
+        })
+      };
+
+      var notifySuccess = function (e) {
+        notify(e.trigger.dataset.clipboardNotification, "Copied!");
+      };
+
+      var notifyFailure = function (e) {
+        //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
+        notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
+      };
+
+      clipboard.on('success', notifySuccess);
+      clipboard.on('error', notifyFailure);
     });
 
     scrollElements.each(function() {
