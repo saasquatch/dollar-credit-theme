@@ -28,9 +28,17 @@
       {{/if}}
     ">
       {{#if paid}}
-        ${{math programDetails.referredRewardDetails.credit ' / 100'}} Free Credit
+        {{#if referred}}
+          ${{math programDetails.referrerRewardDetails.credit ' / 100'}} Free Credit
+        {{else}}
+          ${{math programDetails.referredRewardDetails.credit ' / 100'}} Free Credit
+        {{/if}}
       {{else}}
-        ${{math programDetails.referredRewardDetails.credit ' / 100'}} Pending
+        {{#if referred}}
+          ${{math programDetails.referrerRewardDetails.credit ' / 100'}} Pending
+        {{else}}
+          ${{math programDetails.referredRewardDetails.credit ' / 100'}} Pending
+        {{/if}}
       {{/if}}
     </span>
   </div>
@@ -62,7 +70,11 @@
 
   <div class="squatch-referrals-heading hidden-sm">
     {{#if paid}}
-      ${{math programDetails.referredRewardDetails.credit ' / 100'}}
+      {{#if referred}}
+        ${{math programDetails.referrerRewardDetails.credit ' / 100'}}
+      {{else}}
+        ${{math programDetails.referredRewardDetails.credit ' / 100'}}
+      {{/if}}
     {{else}}
       Trial Signup
     {{/if}}
