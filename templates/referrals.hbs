@@ -45,7 +45,7 @@
     {{/each}}
 
     {{#each rewardsBySource.MANUAL}}
-      <tr id="{{math @index '+ 1 + ' referralsLength}}">
+      <tr id="{{#if ../referredBy.dateReferred}}{{math @index '+ 1 +' referralsLength}}{{else}}{{math @index '+' referralsLength}}{{/if}}">
         {{#block
           "arbitraryReward"
           description="No Referral"
