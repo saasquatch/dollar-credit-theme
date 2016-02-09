@@ -6,7 +6,7 @@
   class="squatch-referrals"
   id="squatch-referrals-scroll"
   data-scroll-offset="0"
-  data-scroll-limit="{{#if referredBy.dateReferred}}{{math rewardsLength '+ 1'}}{{else}}{{math rewardsLength}}{{/if}}">
+  data-scroll-limit="{{referralAndRewardListLength}}}">
 
   <table class="squatch-referrals-list">
     {{#if referredBy.referredByUser}}
