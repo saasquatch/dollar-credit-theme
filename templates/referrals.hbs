@@ -43,6 +43,21 @@
         {{/block}}
       </tr>
     {{/each}}
+
+    {{#each rewardsBySource.MANUAL}}
+      <tr id="{{math @index '+ 1 + ' referralsLength}}">
+        {{#block
+          "arbitraryReward"
+          description="No Referral"
+          heading="Applied"
+          unit=unit
+          value=value
+          dateGiven=dateGiven}}
+
+          {{> programs/CREDIT/reward}}
+        {{/block}}
+      </tr>
+    {{/each}}
   </table>
 </div>
 
@@ -53,4 +68,3 @@
 
   <button class="btn btn-default disabled" data-scroll-element="#squatch-referrals-scroll" data-scroll-increment="3">View More</button>
 </div>
-
