@@ -30,7 +30,11 @@
       {{#if (stringCompare unit "month" emptyOnFalse=true)}}
         {{value}} {{unit}}<span class="hidden-{{math value '== 1'}}">s</span>
       {{else}}
-        {{value}} {{unit}}
+        {{#if (stringCompare unit "%" emptyOnFalse=true)}}
+          {{value}}{{unit}}
+        {{else}}
+          {{value}} {{unit}}
+        {{/if}}
       {{/if}}
     {{/if}}
   </div>

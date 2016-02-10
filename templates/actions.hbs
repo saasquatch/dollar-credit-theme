@@ -6,7 +6,9 @@
   <button data-open-panel="#squatch-panel" class="btn btn-default
     {{#unless referrals}}
       {{#unless referredBy.dateReferred}}
-        disabled
+        {{#unless rewardsBySource.MANUAL}}
+          disabled
+        {{/unless}}
       {{/unless}}
     {{/unless}}
   ">
@@ -16,7 +18,11 @@
       {{#if referredBy.dateReferred}}
         Show Details
       {{else}}
-        No Referrals Yet...
+        {{#if rewardsBySource.MANUAL}}
+          Show Details
+        {{else}}
+          No Referrals Yet...
+        {{/if}}
       {{/if}}
     {{/if}}
   </button>
