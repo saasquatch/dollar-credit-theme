@@ -3,7 +3,7 @@
   <p>
     {{i18n "title"
       (math (i18n "conversionRate" bundle="i18n/messages") '*' (math programDetails.referrerRewardDetails.credit '/ 100') )
-      (math programDetails.referrerRewardDetails.credit ' / 100')
+      (math (i18n "conversionRate" bundle="i18n/messages") '*' (math programDetails.referredRewardDetails.credit '/ 100') )
       bundle="i18n/messages"}}
   </p>
 </h1>
