@@ -1,4 +1,4 @@
-<h1 class="squatch-title">
+<h1 class="squatch-title text-center">
   <!-- {{variables 'widgetCustomization.heading'}} -->
-  {{i18n "title" (math programDetails.referredRewardDetails.credit ' / 100') bundle="i18n/messages"}}
+  <p>{{i18n "title" (math programDetails.referredRewardDetails.credit ' / 100') (math programDetails.referrerRewardDetails.credit ' / 100')  bundle="i18n/messages"}}</p>
 </h1>
