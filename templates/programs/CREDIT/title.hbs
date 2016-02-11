@@ -2,7 +2,7 @@
   <!-- {{variables 'widgetCustomization.heading'}} -->
   <p>
     {{i18n "title"
-      (math (programDetails.referredRewardDetails.credit ' / 100') '*' (i18n "conversionRate" bundle="i18n/messages"))
+      (i18n "conversionRate" bundle="i18n/messages")
       (math programDetails.referrerRewardDetails.credit ' / 100')
       bundle="i18n/messages"}}
   </p>
