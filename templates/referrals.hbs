@@ -6,57 +6,63 @@
   class="squatch-referrals"
   id="squatch-referrals-scroll"
   data-scroll-offset="0"
-  data-scroll-limit="{{referralAndRewardListLength}}">
+  data-scroll-limit="{{nonCancelledReferralAndRewardsListLength}}">
 
   <table class="squatch-referrals-list">
     {{#if referredBy.referredByUser}}
-      <tr id="0">
-        {{#block
-          "referredByUser"
-          referral=referredBy.referredByUser
-          description="Referring User"
-          heading="Referred You"
-          paid=1
-          referred=""
-          dateReferred=referredBy.dateReferred}}
-
-          {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-          {{!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType)}} --}}
-          {{> programs/CREDIT/referral}}
-        {{/block}}
-      </tr>
+      {{#unless referredBy.hasCancelledReferredReward}}
+        <tr id="0">
+          {{#block
+            "referredByUser"
+            referral=referredBy.referredByUser
+            description="Referring User"
+            heading="Referred You"
+            paid=1
+            referred=""
+            dateReferred=referredBy.dateReferred}}
+  
+            {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+            {{!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType)}} --}}
+            {{> programs/CREDIT/referral}}
+          {{/block}}
+        </tr>
+      {{/unless}}
     {{/if}}
 
     {{#each referrals}}
-      <tr id="{{#if ../referredBy.dateReferred}}{{math @index '+ 1'}}{{else}}{{math @index}}{{/if}}">
-        {{#block
-          "referredUser"
-          referral=referredUser
-          referred="Referred User"
-          description=""
-          heading=""
-          programDetails=../programDetails}}
-
-          {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-          {{!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType)}} --}}
-          {{> programs/CREDIT/referral}}
-        {{/block}}
-      </tr>
+      {{#unless hasCancelledReferrerReward}}
+        <tr id="{{#if ../referredBy.dateReferred}}{{#if ../referredBy.hasCancelledReferredReward}}{{math @index}}{{else}}{{math @index '+ 1'}}{{/if}}{{else}}{{math @index}}{{/if}}">
+          {{#block
+            "referredUser"
+            referral=referredUser
+            referred="Referred User"
+            description=""
+            heading=""
+            programDetails=../programDetails}}
+  
+            {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+            {{!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType)}} --}}
+            {{> programs/CREDIT/referral}}
+          {{/block}}
+        </tr>
+      {{/unless}}
     {{/each}}
 
     {{#each rewardsBySource.MANUAL}}
-      <tr id="{{#if ../referredBy.dateReferred}}{{math @index '+ 1 +' referralsLength}}{{else}}{{math @index '+' referralsLength}}{{/if}}">
-        {{#block
-          "arbitraryReward"
-          description="No Referral"
-          heading="Applied"
-          unit=unit
-          value=value
-          dateGiven=dateGiven}}
-
-          {{> programs/CREDIT/reward}}
-        {{/block}}
-      </tr>
+      {{#unless isCancelled}}
+        <tr id="{{#if ../referredBy.dateReferred}}{{math @index '+ 1 +' referralsLength}}{{else}}{{math @index '+' referralsLength}}{{/if}}">
+          {{#block
+            "arbitraryReward"
+            description="No Referral"
+            heading="Applied"
+            unit=unit
+            value=value
+            dateGiven=dateGiven}}
+  
+            {{> programs/CREDIT/reward}}
+          {{/block}}
+        </tr>
+      {{/unless}}
     {{/each}}
   </table>
 </div>
