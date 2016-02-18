@@ -50,7 +50,7 @@
 
     {{#each rewardsBySource.MANUAL}}
       {{#unless isCancelled}}
-        <tr id="{{#if ../referredBy.dateReferred}}{{math @index '+ 1 +' referralsLength}}{{else}}{{math @index '+' referralsLength}}{{/if}}">
+        <tr id="{{#if ../referredBy.dateReferred}}{{#if ../referredBy.hasCancelledReferredReward}}{{math @index '+' referralsLength}}{{else}}{{math @index '+ 1 +' referralsLength}}{{/if}}{{else}}{{math @index '+' referralsLength}}{{/if}}">
           {{#block
             "arbitraryReward"
             description="No Referral"
