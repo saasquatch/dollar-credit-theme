@@ -1,12 +1,12 @@
 <h2 class="squatch-panel-title">
-  Referral Stats
+  Rewards
 </h2>
 
 <div class="squatch-stats">
   <div class="squatch-stats-item">
     <div class="squatch-stats-title">
-      {{#if rewardBalances.[0].totalAssignedCredit}}
-        ${{math rewardBalances.[0].totalAssignedCredit '/ 100'}}
+      {{#if dollarCreditRewardBalance.totalAssignedCredit}}
+        ${{math dollarCreditRewardBalance.totalAssignedCredit '/ 100'}}
       {{else}}
         $0
       {{/if}}
@@ -17,8 +17,8 @@
 
   <div class="squatch-stats-item">
     <div class="squatch-stats-title text-green">
-      {{#if rewardBalances.[0].totalAssignedCredit}}
-        ${{math '(' rewardBalances.[0].totalAssignedCredit '-' rewardBalances.[0].totalRedeemedCredit ') / 100'}}
+      {{#if dollarCreditRewardBalance.totalAssignedCredit}}
+        ${{math '(' dollarCreditRewardBalance.totalAssignedCredit '-' dollarCreditRewardBalance.totalRedeemedCredit ') / 100'}}
       {{else}}
         $0
       {{/if}}
