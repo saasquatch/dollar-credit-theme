@@ -65,29 +65,36 @@
   }
 }
 
-.twShare, .fbShare {
+.twShare, .fbShare, .emailShare {
   display: block;
+
   @media (max-width: @screen-sm-max) {
     display: none;
   }
+
   @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
     /* For portrait layouts only */
     display: none;
   }
+
   @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
     /* For landscape layouts only */
     display: none;
   }
 }
-.twMobile, .fbMobile {
+
+.twMobile, .fbMobile, .emailMobile {
   display: none;
+
   @media (max-width: @screen-sm-max) {
     display: block;
   }
+
   @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
     /* For portrait layouts only */
     display: block;
   }
+
   @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
     /* For landscape layouts only */
     display: block;
