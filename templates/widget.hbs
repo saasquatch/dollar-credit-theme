@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="{{assets 'css/widget.css'}}">
 
+    {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+    {{!-- {{> (stringFormat 'programs/%s/theme_messages' programDetails.referredRewardDetails.rewardType) }} --}}
+    {{> programs/CREDIT/theme_messages}}
+    {{squatchHead}}
+
     <!-- Track mobile loads -->
     {{#if (stringCompare mode "HOSTED" emptyOnFalse=true)}}
       <script>
@@ -42,11 +47,6 @@
 
       </script>
     {{/if}}
-
-    {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-    {{!-- {{> (stringFormat 'programs/%s/theme_messages' programDetails.referredRewardDetails.rewardType) }} --}}
-    {{> programs/CREDIT/theme_messages}}
-    {{squatchHead}}
 
     <!--[if lt IE 9]>
       <script src="{{assets 'libs/bind-polyfill.js'}}"></script>
