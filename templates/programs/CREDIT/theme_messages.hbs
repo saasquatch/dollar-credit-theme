@@ -87,8 +87,5 @@
     NOCONTENT_MODE : 'NOCONTENT'
   };
 
-  // The basic check
-  if(document.readyState === 'complete') {
-    console.log("loaded!");
-  }
+  window.onload = function () { console.log("loaded!"); };
 </script>
