@@ -1,5 +1,12 @@
 .squatch-container-hosted {
-  .squatch-header-close {
+  .squatch-header-close,
+  .squatch-actions,
+  [data-close-panel] {
     display: none;
+  }
+
+  // Show `No Referrals Yet...` when no referrals in embed mode
+  .squatch-actions[data-referrals="0"][data-referrals="0"] {
+    display: block;
   }
 }
