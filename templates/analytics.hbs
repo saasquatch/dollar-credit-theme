@@ -26,6 +26,16 @@
     analytics.identify(squatch.analytics.user.ident, squatch.analytics.user.traits);
 
     window.onload = function () {
+
+      jsRoutes.saasquatch.controllers.widget.SquatchWidgetController.recordWidgetEvent(squatch.analytics.attributes.tenant, saasquatch.analytics.attributes.accountId, saasquatch.analytics.attributes.userId, squatch.analytics.events.OPENED_WIDGET).ajax({
+				success: function(data){
+					_log('Event Recorded');
+				},
+				failure : function(errorMsg) {
+				console.error(errorMsg);
+				}
+			});
+
       analytics.track(squatch.analytics.events.OPENED_WIDGET);
     };
 
