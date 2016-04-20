@@ -27,7 +27,7 @@
 
     window.onload = function () {
 
-      jsRoutes.saasquatch.controllers.widget.SquatchWidgetController.recordWidgetEvent(squatch.analytics.attributes.tenant, saasquatch.analytics.attributes.accountId, saasquatch.analytics.attributes.userId, squatch.analytics.events.OPENED_WIDGET).ajax({
+      jsRoutes.saasquatch.controllers.widget.SquatchWidgetController.recordWidgetEvent(squatch.analytics.attributes.tenant, squatch.analytics.attributes.accountId, squatch.analytics.attributes.userId, squatch.analytics.events.OPENED_WIDGET).ajax({
 				success: function(data){
 					_log('Event Recorded');
 				},
