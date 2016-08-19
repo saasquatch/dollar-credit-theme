@@ -18,6 +18,11 @@
           "minLength": 4,
           "default": "Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.emailShareLink}}"
         },
+        "facebookShareImageURL": {
+          "type": "string",
+          "description": "Facebook URL Image",
+          "default": ""
+        },
         "facebookShareSubject": {
           "type": "string",
           "description": "Facebook share subject",
