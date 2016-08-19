@@ -31,7 +31,11 @@
       title: '{{urlencode (variables 'shareMessaging.facebookShareSubject')}}',
       summary: '{{urlencode (variables 'shareMessaging.facebookShareBody')}}',
       link: '{{shareLinks.facebookShareLink}}',
-      shareImage: '{{urlencode ""}}',
+{{#if variables.shareMessaging.facebookShareImageURL}}
+      shareImage: '{{urlencode (variables 'shareMessaging.facebookShareImageURL')}}',
+{{else}}
+      shareImage: null,
+{{/if}}
       appId: '157382547792399',
       redirectUrl: 'http://app.referralsaasquatch.com/widget/close'
     },
