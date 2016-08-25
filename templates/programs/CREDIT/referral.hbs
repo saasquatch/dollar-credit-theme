@@ -82,14 +82,14 @@
         {{#if referral.referredReward.value}}
           ${{math referral.referredReward.value ' / 100'}}
         {{else}}
-          {{referral.referredReward}}
+          {{referral}}
           ${{math programDetails.referredRewardDetails.credit ' / 100'}}
         {{/if}}
       {{else}}
         {{#if referral.referrerReward.value}}
           ${{math referral.referrerReward.value ' / 100'}}
         {{else}}
-          {{referral.referrerReward}}
+          {{referral}}
           ${{math programDetails.referrerRewardDetails.credit ' / 100'}}
         {{/if}}
       {{/if}}
