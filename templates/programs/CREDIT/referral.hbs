@@ -29,14 +29,14 @@
     ">
       {{#if paid}}
         {{#if referred}}
-          {{#if referral.referredReward.value}}
-            ${{math referral.referredReward.value ' / 100'}}
+          {{#if reward.value}}
+            ${{math reward.value ' / 100'}}
           {{else}}
             ${{math programDetails.referredRewardDetails.credit ' / 100'}}
           {{/if}}
         {{else}}
-          {{#if referral.referrerReward.value}}
-            ${{math referral.referrerReward.value ' / 100'}}
+          {{#if reward.value}}
+            ${{math reward.value ' / 100'}}
           {{else}}
             ${{math programDetails.referrerRewardDetails.credit ' / 100'}}
           {{/if}}
@@ -79,15 +79,15 @@
   <div class="squatch-referrals-heading hidden-sm">
     {{#if paid}}
       {{#if referred}}
-        {{#if referral.referredReward.value}}
-          ${{math referral.referredReward.value ' / 100'}}
+        {{#if reward.value}}
+          ${{math reward.value ' / 100'}}
         {{else}}
           {{referral}}
           ${{math programDetails.referredRewardDetails.credit ' / 100'}}
         {{/if}}
       {{else}}
-        {{#if referral.referrerReward.value}}
-          ${{math referral.referrerReward.value ' / 100'}}
+        {{#if reward.value}}
+          ${{math reward.value ' / 100'}}
         {{else}}
           {{referral}}
           ${{math programDetails.referrerRewardDetails.credit ' / 100'}}
