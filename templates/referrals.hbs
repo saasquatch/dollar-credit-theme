@@ -30,8 +30,6 @@
       {{/unless}}
     {{/if}}
 
-    {{referrals}}
-
     {{#each referrals}}
       {{#unless hasCancelledReferrerReward}}
         <tr id="{{#if ../referredBy.dateReferred}}{{#if ../referredBy.hasCancelledReferredReward}}{{math @index}}{{else}}{{math @index '+ 1'}}{{/if}}{{else}}{{math @index}}{{/if}}">
