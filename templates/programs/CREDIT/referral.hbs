@@ -28,16 +28,20 @@
       {{/if}}
     ">
       {{#if paid}}
-        {{#if referred}}
-          ${{math programDetails.referrerRewardDetails.credit ' / 100'}} Free Credit
+        {{#if reward.value}}
+          ${{math reward.value ' / 100'}}
         {{else}}
-          ${{math programDetails.referredRewardDetails.credit ' / 100'}} Free Credit
+          {{#if referred}}
+            ${{math programDetails.referredRewardDetails.credit ' / 100'}}
+          {{else}}
+            ${{math programDetails.referrerRewardDetails.credit ' / 100'}}
+          {{/if}}
         {{/if}}
       {{else}}
         {{#if referred}}
-          ${{math programDetails.referrerRewardDetails.credit ' / 100'}} Pending
-        {{else}}
           ${{math programDetails.referredRewardDetails.credit ' / 100'}} Pending
+        {{else}}
+          ${{math programDetails.referrerRewardDetails.credit ' / 100'}} Pending
         {{/if}}
       {{/if}}
     </span>
@@ -70,10 +74,14 @@
 
   <div class="squatch-referrals-heading hidden-sm">
     {{#if paid}}
-      {{#if referred}}
-        ${{math programDetails.referrerRewardDetails.credit ' / 100'}}
+      {{#if reward.value}}
+        ${{math reward.value ' / 100'}}
       {{else}}
-        ${{math programDetails.referredRewardDetails.credit ' / 100'}}
+        {{#if referred}}
+          ${{math programDetails.referredRewardDetails.credit ' / 100'}}
+        {{else}}
+          ${{math programDetails.referrerRewardDetails.credit ' / 100'}}
+        {{/if}}
       {{/if}}
     {{else}}
       Trial Signup
