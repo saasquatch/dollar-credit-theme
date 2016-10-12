@@ -154,7 +154,7 @@
 
       nextOffset = offset + increment;
       console.log(nextOffset);
-      setVisibility($this, nextOffset, limit);
+      setVisibility(el, nextOffset, limit);
 
       // Force IE to forget previous scroll top value
       resetScroll(element);
