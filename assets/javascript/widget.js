@@ -141,16 +141,17 @@
       // $this     = $(this);
       // element   = $($this.data('scroll-element'));
       element = el;
-      increment = element.data('scroll-increment');
-      limit     = element.data('scroll-limit');
-      offset    = element.data('scroll-offset');
-
       console.log(element);
+      console.log('dataset', element.dataset);
+      increment = element.dataset.scrollElement;
+      limit     = element.dataset.scrollLimit;
+      offset    = element.dataset.scrollOffset;
+
       console.log("increment", increment);
       console.log("limit", limit);
       console.log("offset", offset);
 
-      element.data('scroll-limit', limit);
+      element.dataset.scrollLimit = limit;
 
       nextOffset = offset + increment;
       setVisibility($this, nextOffset, limit);
