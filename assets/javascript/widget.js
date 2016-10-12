@@ -144,7 +144,7 @@
       element   = $($this.data('scroll-element'));
       console.log(element);
 
-      element = document.querySelector('[data-scroll-element]');
+      element = document.querySelector(el.dataset.scrollElement);
       console.log(element);
       increment = element.dataset.scrollIncrement;
       limit     = element.dataset.scrollLimit;
