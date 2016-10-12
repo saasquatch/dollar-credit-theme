@@ -146,7 +146,7 @@
 
       element = document.querySelector(el.dataset.scrollElement);
       console.log(element);
-      increment = element.dataset.scrollIncrement;
+      increment = el.dataset.scrollIncrement;
       limit     = element.dataset.scrollLimit;
       offset    = element.dataset.scrollOffset;
 
