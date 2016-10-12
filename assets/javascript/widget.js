@@ -158,7 +158,7 @@
       resetScroll(element);
 
       el.addEventListener('click', function() {
-        offset = element.dataset.scrollOffset;
+        offset = parseInt(element.dataset.scrollOffset);
 
         newOffset = offset + increment;
 
