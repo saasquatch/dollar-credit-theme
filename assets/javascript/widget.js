@@ -8,13 +8,13 @@
       return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
   }
 
-  function addClass(el, className) {
+  function my_addClass(el, className) {
     if (el.classList)
       el.classList.add(className)
     else if (!hasClass(el, className)) el.className += " " + className
   }
 
-  function removeClass(el, className) {
+  function my_removeClass(el, className) {
     if (el.classList)
       el.classList.remove(className)
     else if (hasClass(el, className)) {
@@ -26,18 +26,14 @@
   $(document).ready(function() {
     var
       scrollElements,
-      newScrollElements,
       inValidRange,
       setVisibility,
       setVisibilityAll,
       resetScroll;
 
-    scrollElements = $('[data-scroll-element]');
-    console.log(scrollElements);
-    newScrollElements = document.querySelectorAll('[data-scroll-element]');
-    console.log(newScrollElements);
+    // scrollElements = $('[data-scroll-element]');
+    scrollElements = document.querySelectorAll('[data-scroll-element]');
 
-    console.log("Scroll elements are the same: ", scrollElements === newScrollElements);
 
     inValidRange = function(offset, limit) {
       return offset >= 0 && offset < limit;
@@ -46,10 +42,10 @@
     setVisibility = function(element, nextOffset, limit) {
       if(inValidRange(nextOffset, limit)) {
         // element.removeClass('disabled');
-        removeClass(element, 'disabled');
+        my_removeClass(element, 'disabled');
       } else {
         // element.addClass('disabled');
-        addClass(element, 'disabled');
+        my_addClass(element, 'disabled');
       }
     };
 
