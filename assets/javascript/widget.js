@@ -140,9 +140,9 @@
         newOffset;
 
       element = document.querySelector(el.dataset.scrollElement);
-      increment = el.dataset.scrollIncrement.valueOf();
-      limit     = element.dataset.scrollLimit.valueOf();
-      offset    = element.dataset.scrollOffset.valueOf();
+      increment = parseInt(el.dataset.scrollIncrement);
+      limit     = parseInt(element.dataset.scrollLimit.valueOf());
+      offset    = parseInt(element.dataset.scrollOffset.valueOf());
 
       // console.log("increment", increment);
       // console.log("limit", limit);
