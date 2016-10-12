@@ -86,14 +86,16 @@
         limit;
 
       each(elements, function(el) {
-        console.log(el);
-        increment  = parseInt(el.dataset.scrollIncrement);
+        $this      = $(this);
+        increment  = $this.data('scroll-increment');
         nextOffset = newOffset + increment;
-        limit      = parseInt(el.dataset.scrollLimit);
+        limit      = $this.data('scroll-limit');
 
-        console.log("nextOffset", nextOffset);
+        console.log($this);
+        console.log(increment, "increment");
+        console.log(limit, "limit");
 
-        setVisibility(el, nextOffset, limit);
+        setVisibility($this, nextOffset, limit);
       });
 
       // elements.each(function() {
