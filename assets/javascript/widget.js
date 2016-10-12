@@ -98,10 +98,8 @@
     };
 
     resetScroll = function(element) {
-      console.log("resetScroll");
-      console.log(element);
-      element[0].scrollTop = 0;
-      element.data('scroll-offset', 0);
+      element.scrollTop = 0;
+      element.dataset.scrollOffset = 0;
     };
 
     $('[data-clipboard-target]').each(function() {
