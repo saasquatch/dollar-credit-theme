@@ -85,14 +85,24 @@
         nextOffset,
         limit;
 
-      elements.each(function() {
-        $this      = $(this);
-        increment  = $this.data('scroll-increment');
+      each(elements, function(el) {
+        increment  = parseInt(el.dataset.scrollIncrement);
         nextOffset = newOffset + increment;
-        limit      = $this.data('scroll-limit');
+        limit      = parseInt(el.dataset.scrollLimit);
 
-        setVisibility($this, nextOffset, limit);
+        console.log("nextOffset", nextOffset);
+
+        setVisibility(el, nextOffset, limit);
       });
+
+      // elements.each(function() {
+      //   $this      = $(this);
+      //   increment  = $this.data('scroll-increment');
+      //   nextOffset = newOffset + increment;
+      //   limit      = $this.data('scroll-limit');
+      //
+      //   setVisibility($this, nextOffset, limit);
+      // });
     };
 
     resetScroll = function(element) {
@@ -162,16 +172,12 @@
 
         newOffset = offset + increment;
 
-        console.log("position top", $('#' + newOffset).position().top);
-        console.log("offset top", document.getElementById(newOffset).offsetTop);
-        
         if (inValidRange(newOffset, limit)) {
           element.animate({
-              scrollTop: $('#' + newOffset).position().top
+              scrollTop: document.getElementById(newOffset).offsetTop
           }, 400);
           element.dataset.scrollOffset = newOffset;
 
-          console.log("this", this);
           setVisibilityAll(scrollElements, newOffset);
         }
       });
