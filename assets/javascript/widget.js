@@ -129,6 +129,7 @@
     });
 
     each(scrollElements, function() {
+      console.log(this);
       var
         $this,
         element,
