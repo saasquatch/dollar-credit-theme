@@ -33,7 +33,9 @@
       resetScroll;
 
     scrollElements = $('[data-scroll-element]');
+    console.log(scrollElements);
     newScrollElements = document.querySelectorAll('[data-scroll-element]');
+    console.log(newScrollElements);
 
     console.log("Scroll elements are the same: ", scrollElements === newScrollElements);
 
