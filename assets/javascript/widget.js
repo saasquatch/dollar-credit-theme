@@ -162,8 +162,9 @@
 
         newOffset = offset + increment;
 
-        console.log("newOffset", newOffset);
-        console.log("offset element", $('#3'));
+        console.log("position top", $('#' + newOffset).position().top);
+        console.log("offset top", document.getElementById(newOffset).offsetTop);
+        
         if (inValidRange(newOffset, limit)) {
           element.animate({
               scrollTop: $('#' + newOffset).position().top
