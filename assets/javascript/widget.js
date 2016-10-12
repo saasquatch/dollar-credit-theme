@@ -1,6 +1,28 @@
 (function() {
   'use strict';
 
+  function hasClass(el, className) {
+    if (el.classList)
+      return el.classList.contains(className)
+    else
+      return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
+  }
+
+  function addClass(el, className) {
+    if (el.classList)
+      el.classList.add(className)
+    else if (!hasClass(el, className)) el.className += " " + className
+  }
+
+  function removeClass(el, className) {
+    if (el.classList)
+      el.classList.remove(className)
+    else if (hasClass(el, className)) {
+      var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
+      el.className=el.className.replace(reg, ' ')
+    }
+  }
+
   $(document).ready(function() {
     var
       scrollElements,
@@ -10,6 +32,9 @@
       resetScroll;
 
     scrollElements = $('[data-scroll-element]');
+    newScrollElements = document.querySelectorAll('[data-scroll-element]');
+
+    console.log("Scroll elements are the same: ", scrollElements === newScrollElements);
 
     inValidRange = function(offset, limit) {
       return offset >= 0 && offset < limit;
@@ -17,9 +42,11 @@
 
     setVisibility = function(element, nextOffset, limit) {
       if(inValidRange(nextOffset, limit)) {
-        element.removeClass('disabled');
+        // element.removeClass('disabled');
+        removeClass(element, 'disabled');
       } else {
-        element.addClass('disabled');
+        // element.addClass('disabled');
+        addClass(element, 'disabled');
       }
     };
 
