@@ -126,7 +126,7 @@
       clipboard.on('error', notifyFailure);
     });
 
-    scrollElements.each(function() {
+    each(scrollElements, function() {
       var
         $this,
         element,
@@ -163,7 +163,8 @@
           setVisibilityAll(scrollElements, newOffset);
         }
       });
-    });
+    })
+    // scrollElements.each();
 
     $('[data-open-panel]').each(function() {
       var
