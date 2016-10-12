@@ -86,6 +86,7 @@
         limit;
 
       each(elements, function(el) {
+        console.log(el);
         increment  = parseInt(el.dataset.scrollIncrement);
         nextOffset = newOffset + increment;
         limit      = parseInt(el.dataset.scrollLimit);
