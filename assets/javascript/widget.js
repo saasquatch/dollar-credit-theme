@@ -78,6 +78,7 @@
     };
 
     setVisibilityAll = function(elements, newOffset) {
+      console.log("setVisibilityAll");
       var
         $this,
         increment,
@@ -164,7 +165,7 @@
         console.log("newOffset", newOffset);
         if (inValidRange(newOffset, limit)) {
           element.animate({
-              scrollTop: $('#' + newOffset).position().top
+              scrollTop: $('#3').position().top
           }, 400);
           element.dataset.scrollOffset = newOffset;
 
