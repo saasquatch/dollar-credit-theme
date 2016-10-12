@@ -140,9 +140,9 @@
         newOffset;
 
       element = document.querySelector(el.dataset.scrollElement);
-      increment = el.dataset.scrollIncrement;
-      limit     = element.dataset.scrollLimit;
-      offset    = element.dataset.scrollOffset;
+      increment = el.dataset.scrollIncrement.valueOf();
+      limit     = element.dataset.scrollLimit.valueOf();
+      offset    = element.dataset.scrollOffset.valueOf();
 
       // console.log("increment", increment);
       // console.log("limit", limit);
@@ -163,9 +163,10 @@
         newOffset = offset + increment;
 
         console.log("newOffset", newOffset);
+        console.log("offset element", $('#3'));
         if (inValidRange(newOffset, limit)) {
           element.animate({
-              scrollTop: $('#3').position().top
+              scrollTop: $('#' + newOffset).position().top
           }, 400);
           element.dataset.scrollOffset = newOffset;
 
