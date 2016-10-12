@@ -60,7 +60,9 @@
       resetScroll;
 
     // scrollElements = $('[data-scroll-element]');
+    console.log($('[data-scroll-element]'));
     scrollElements = document.querySelectorAll('[data-scroll-element]');
+    console.log(scrollElements);
 
 
     inValidRange = function(offset, limit) {
@@ -141,12 +143,11 @@
       // $this     = $(this);
       // element   = $($this.data('scroll-element'));
       element = el;
-      console.log(element);
-      console.log('dataset', element.dataset);
-      increment = element.dataset.scrollElement;
+      increment = element.dataset.scrollIncrement;
       limit     = element.dataset.scrollLimit;
       offset    = element.dataset.scrollOffset;
 
+      console.log(element);
       console.log("increment", increment);
       console.log("limit", limit);
       console.log("offset", offset);
