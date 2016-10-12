@@ -9,12 +9,14 @@
   }
 
   function my_addClass(el, className) {
+    console.log(el, className);
     if (el.classList)
       el.classList.add(className)
     else if (!hasClass(el, className)) el.className += " " + className
   }
 
   function my_removeClass(el, className) {
+    console.log(el, className);
     if (el.classList)
       el.classList.remove(className)
     else if (hasClass(el, className)) {
