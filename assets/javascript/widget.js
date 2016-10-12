@@ -128,8 +128,8 @@
       clipboard.on('error', notifyFailure);
     });
 
-    each(scrollElements, function() {
-      console.log(this);
+    each(scrollElements, function(i) {
+      console.log(i);
       var
         $this,
         element,
@@ -291,7 +291,7 @@
     // This is due to the popup being displayed inconsistently - with responsive styles activated, sometimes the mobile view will be displayed, even on a desktop monitor with more than 500 pixels width. The solution may be to set the iframe width to the full browser width, rather than the width of the widget theme.
     // There is another hack in _popup.less as well
     // TODO: Find a solution for this and enable responsive styles again.
-    windowEl.on('load', function () {
+    windowEl.on('load', function (i) {
       var setContainerHeightIfWideEnough = function () {
         var width = windowEl.width();
 
