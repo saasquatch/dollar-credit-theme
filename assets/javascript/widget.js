@@ -9,14 +9,12 @@
   }
 
   function my_addClass(el, className) {
-    console.log(el, className);
     if (el.classList)
       el.classList.add(className)
     else if (!hasClass(el, className)) el.className += " " + className
   }
 
   function my_removeClass(el, className) {
-    console.log(el, className);
     if (el.classList)
       el.classList.remove(className)
     else if (hasClass(el, className)) {
@@ -68,7 +66,6 @@
 
     setVisibility = function(element, nextOffset, limit) {
       console.log("Set visibility");
-      console.log("element", element);
       console.log("nextOffset", nextOffset);
       console.log("limit", limit);
       if(inValidRange(nextOffset, limit)) {
@@ -171,6 +168,7 @@
           }, 400);
           element.dataset.scrollOffset = newOffset;
 
+          console.log("this", this);
           setVisibilityAll(scrollElements, newOffset);
         }
       });
