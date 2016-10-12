@@ -162,9 +162,11 @@
       resetScroll(element);
 
       $this.on('click', function() {
-        offset = element.data('scroll-offset');
+        offset = element.dataset.scrollOffset;
 
         newOffset = offset + increment;
+
+        console.log("newOffset", newOffset);
         if (inValidRange(newOffset, limit)) {
           element.animate({
               scrollTop: $('#' + newOffset).position().top
