@@ -159,7 +159,7 @@
       // Force IE to forget previous scroll top value
       resetScroll(element);
 
-      $this.on('click', function() {
+      el.addEventListener('click', function() {
         offset = element.dataset.scrollOffset;
 
         newOffset = offset + increment;
@@ -169,11 +169,27 @@
           element.animate({
               scrollTop: $('#' + newOffset).position().top
           }, 400);
-          element.data('scroll-offset', newOffset);
+          element.dataset.scrollOffset = newOffset;
 
           setVisibilityAll(scrollElements, newOffset);
         }
       });
+
+      // $this.on('click', function() {
+      //   offset = element.dataset.scrollOffset;
+      //
+      //   newOffset = offset + increment;
+      //
+      //   console.log("newOffset", newOffset);
+      //   if (inValidRange(newOffset, limit)) {
+      //     element.animate({
+      //         scrollTop: $('#' + newOffset).position().top
+      //     }, 400);
+      //     element.data('scroll-offset', newOffset);
+      //
+      //     setVisibilityAll(scrollElements, newOffset);
+      //   }
+      // });
     })
     // scrollElements.each();
 
