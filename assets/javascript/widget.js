@@ -140,8 +140,10 @@
         nextOffset,
         newOffset;
 
-      // $this     = $(this);
-      // element   = $($this.data('scroll-element'));
+      $this     = $(this);
+      element   = $($this.data('scroll-element'));
+      console.log(element);
+
       element = el;
       increment = element.dataset.scrollIncrement;
       limit     = element.dataset.scrollLimit;
