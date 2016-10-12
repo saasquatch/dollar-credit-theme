@@ -60,16 +60,17 @@
       resetScroll;
 
     // scrollElements = $('[data-scroll-element]');
-    console.log($('[data-scroll-element]'));
     scrollElements = document.querySelectorAll('[data-scroll-element]');
-    console.log(scrollElements);
-
 
     inValidRange = function(offset, limit) {
       return offset >= 0 && offset < limit;
     };
 
     setVisibility = function(element, nextOffset, limit) {
+      console.log("Set visibility");
+      console.log("element", element);
+      console.log("nextOffset", nextOffset);
+      console.log("limit", limit);
       if(inValidRange(nextOffset, limit)) {
         // element.removeClass('disabled');
         my_removeClass(element, 'disabled');
@@ -140,12 +141,7 @@
         nextOffset,
         newOffset;
 
-      $this     = $(this);
-      element   = $($this.data('scroll-element'));
-      console.log(element);
-
       element = document.querySelector(el.dataset.scrollElement);
-      console.log(element);
       increment = el.dataset.scrollIncrement;
       limit     = element.dataset.scrollLimit;
       offset    = element.dataset.scrollOffset;
@@ -157,6 +153,7 @@
       element.dataset.scrollLimit = limit;
 
       nextOffset = offset + increment;
+      console.log(nextOffset);
       setVisibility($this, nextOffset, limit);
 
       // Force IE to forget previous scroll top value
