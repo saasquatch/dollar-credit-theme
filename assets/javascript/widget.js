@@ -26,6 +26,7 @@
   $(document).ready(function() {
     var
       scrollElements,
+      newScrollElements,
       inValidRange,
       setVisibility,
       setVisibilityAll,
