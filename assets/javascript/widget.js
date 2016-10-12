@@ -98,6 +98,8 @@
     };
 
     resetScroll = function(element) {
+      console.log("resetScroll");
+      console.log(element);
       element[0].scrollTop = 0;
       element.data('scroll-offset', 0);
     };
@@ -146,14 +148,14 @@
       limit     = element.dataset.scrollLimit;
       offset    = element.dataset.scrollOffset;
 
-      console.log("increment", increment);
-      console.log("limit", limit);
-      console.log("offset", offset);
+      // console.log("increment", increment);
+      // console.log("limit", limit);
+      // console.log("offset", offset);
 
       element.dataset.scrollLimit = limit;
 
       nextOffset = offset + increment;
-      console.log(nextOffset);
+      // console.log(nextOffset);
       setVisibility(el, nextOffset, limit);
 
       // Force IE to forget previous scroll top value
