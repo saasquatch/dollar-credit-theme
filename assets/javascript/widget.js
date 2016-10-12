@@ -128,8 +128,7 @@
       clipboard.on('error', notifyFailure);
     });
 
-    each(scrollElements, function(i) {
-      console.log(i);
+    each(scrollElements, function(el) {
       var
         $this,
         element,
@@ -139,13 +138,19 @@
         nextOffset,
         newOffset;
 
-      $this     = $(this);
-      element   = $($this.data('scroll-element'));
-      increment = $this.data('scroll-increment');
+      // $this     = $(this);
+      // element   = $($this.data('scroll-element'));
+      element = el;
+      increment = element.data('scroll-increment');
       limit     = element.data('scroll-limit');
       offset    = element.data('scroll-offset');
 
-      $this.data('scroll-limit', limit);
+      console.log(element);
+      console.log("increment", increment);
+      console.log("limit", limit);
+      console.log("offset", offset);
+
+      element.data('scroll-limit', limit);
 
       nextOffset = offset + increment;
       setVisibility($this, nextOffset, limit);
