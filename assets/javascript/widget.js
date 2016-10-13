@@ -23,7 +23,7 @@
     }
   }
 
-  function scrollTo(element, to, duration) {
+  function scrollTop(element, to, duration) {
     var start = element.scrollTop,
         change = to - start,
         currentTime = 0,
