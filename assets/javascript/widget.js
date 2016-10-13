@@ -29,14 +29,18 @@
 
     var start = new Date().getTime(),
 
+    console.log("start time", start);
+
     // set an interval to update scrollTop attribute every 25 ms
     timer = setInterval(function() {
 
         // calculate the step, i.e the degree of completion of the smooth scroll
         var step = Math.min(1, (new Date().getTime() - start) / time);
 
+        console.log("step", step);
+
         // calculate the scroll distance and update the scrollTop
-        document.body['scrollTop'] = (step * target.offsetTop);
+        // target['scrollTop'] = (step * target.offsetTop);
         console.log(document.body['scrollTop']);
 
         // end interval if the scroll is completed
