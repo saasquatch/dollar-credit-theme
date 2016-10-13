@@ -87,9 +87,9 @@
 
       each(elements, function(el) {
         scrollElement = document.querySelector(el.dataset.scrollElement);
-        increment  = el.dataset.scrollIncrement;
+        increment  = parseInt(el.dataset.scrollIncrement);
         nextOffset = newOffset + increment;
-        limit      = scrollElement.dataset.scrollLimit;
+        limit      = parseInt(scrollElement.dataset.scrollLimit);
 
         setVisibility(el, nextOffset, limit);
       });
