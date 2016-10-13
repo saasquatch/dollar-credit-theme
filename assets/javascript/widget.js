@@ -80,7 +80,7 @@
     setVisibilityAll = function(elements, newOffset) {
       console.log("setVisibilityAll");
       var
-        $this,
+        scrollElement,
         increment,
         nextOffset,
         limit;
