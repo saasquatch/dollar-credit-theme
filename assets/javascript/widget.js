@@ -195,11 +195,11 @@
 
         console.log("ELEMENT scroll top", element);
         if (inValidRange(newOffset, limit)) {
-          // element.animate({
-          //     scrollTop: document.getElementById(newOffset).offsetTop
-          // }, 400);
+          element.animate({
+              scrollTop: document.getElementById(newOffset).offsetTop
+          }, 400);
           // scrollTo(document.getElementById(newOffset), 0, 400);
-          element.scrollTop(document.getElementById(newOffset).offsetTop);
+          // element.scrollTop(document.getElementById(newOffset).offsetTop);
           element.dataset.scrollOffset = newOffset;
 
           setVisibilityAll(scrollElements, newOffset);
