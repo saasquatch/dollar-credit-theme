@@ -130,14 +130,20 @@
       console.log("clipboard", this);
 
       var notify = function(clipboardNotification, notificationText) {
-        console.log(document.getElementById(clipboardNotification.slice(1)));
-        notification = $($(clipboardNotification));
+        notification = document.getElementById(clipboardNotification.slice(1));
+        // notification = $($(clipboardNotification));
         console.log(notification);
-        notification.text(notificationText);
-        notification.addClass('in').delay(1400).queue(function() {
-          notification.removeClass('in');
-          $(this).dequeue();
-        })
+        notification.textContent = notificationText;
+        // notification.text(notificationText);
+        // notification.addClass('in').delay(1400).queue(function() {
+        //   notification.removeClass('in');
+        //   $(this).dequeue();
+        // })
+
+        my_addClass(notification, 'in');
+        setTimeout(function() {
+          my_removeClass(notification, 'in');
+        }, 1400);
       };
 
       var notifySuccess = function(e) {
