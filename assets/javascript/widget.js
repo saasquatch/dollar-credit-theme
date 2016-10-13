@@ -93,15 +93,6 @@
 
         setVisibility(el, nextOffset, limit);
       });
-
-      // elements.each(function() {
-      //   $this      = $(this);
-      //   increment  = $this.data('scroll-increment');
-      //   nextOffset = newOffset + increment;
-      //   limit      = $this.data('scroll-limit');
-      //
-      //   setVisibility($this, nextOffset, limit);
-      // });
     };
 
     resetScroll = function(element) {
@@ -171,6 +162,7 @@
 
         newOffset = offset + increment;
 
+        console.log("ELEMENT scroll top", element);
         if (inValidRange(newOffset, limit)) {
           element.animate({
               scrollTop: document.getElementById(newOffset).offsetTop
