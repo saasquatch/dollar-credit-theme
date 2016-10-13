@@ -29,6 +29,9 @@
         currentTime = 0,
         increment = 20;
 
+    console.log("Move element ", element);
+    console.log("to position ", to);
+
     var animateScroll = function(){
         currentTime += increment;
         var val = Math.easeInOutQuad(currentTime, start, change, duration);
@@ -195,7 +198,7 @@
           // element.animate({
           //     scrollTop: document.getElementById(newOffset).offsetTop
           // }, 400);
-          scrollTo(element, document.body, 400);
+          scrollTo(element, 0, 400);
           element.dataset.scrollOffset = newOffset;
 
           setVisibilityAll(scrollElements, newOffset);
