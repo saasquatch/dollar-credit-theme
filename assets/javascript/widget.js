@@ -121,43 +121,43 @@
       element.dataset.scrollOffset = 0;
     };
 
-    $('[data-clipboard-target]').each(function() {
+    each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
       var
         clipboard,
         notification;
 
-      clipboard = new Clipboard(this);
-      console.log("clipboard", this);
-
-      var notify = function(clipboardNotification, notificationText) {
-        notification = document.getElementById(clipboardNotification.slice(1));
-        // notification = $($(clipboardNotification));
-        console.log(notification);
-        notification.textContent = notificationText;
-        // notification.text(notificationText);
-        // notification.addClass('in').delay(1400).queue(function() {
-        //   notification.removeClass('in');
-        //   $(this).dequeue();
-        // })
-
-        my_addClass(notification, 'in');
-        setTimeout(function() {
-          my_removeClass(notification, 'in');
-        }, 1400);
-      };
-
-      var notifySuccess = function(e) {
-        notify(e.trigger.dataset.clipboardNotification, "Copied!");
-      };
-
-      var notifyFailure = function(e) {
-        //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
-        notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
-      };
-
-      clipboard.on('success', notifySuccess);
-      clipboard.on('error', notifyFailure);
+      clipboard = new Clipboard(el);
+      console.log(clipboard);
     });
+
+    // $('[data-clipboard-target]').each(function() {
+    //   var
+    //     clipboard,
+    //     notification;
+    //
+    //   clipboard = new Clipboard(this);
+    //
+    //   var notify = function(clipboardNotification, notificationText) {
+    //     notification = document.getElementById(clipboardNotification.slice(1));
+    //     notification.textContent = notificationText;
+    //     my_addClass(notification, 'in');
+    //     setTimeout(function() {
+    //       my_removeClass(notification, 'in');
+    //     }, 1400);
+    //   };
+    //
+    //   var notifySuccess = function(e) {
+    //     notify(e.trigger.dataset.clipboardNotification, "Copied!");
+    //   };
+    //
+    //   var notifyFailure = function(e) {
+    //     //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
+    //     notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
+    //   };
+    //
+    //   clipboard.on('success', notifySuccess);
+    //   clipboard.on('error', notifyFailure);
+    // });
 
     each(scrollElements, function(el) {
       var
