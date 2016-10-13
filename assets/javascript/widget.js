@@ -130,7 +130,7 @@
       console.log("clipboard", this);
 
       var notify = function(clipboardNotification, notificationText) {
-        document.getElementById(clipboardNotification);
+        console.log(document.getElementById(clipboardNotification));
         notification = $($(clipboardNotification));
         console.log(notification);
         notification.text(notificationText);
@@ -149,7 +149,6 @@
         notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
       };
 
-      document.querySelector('[data-clipboard-target]').addEventListener('success', function() {console.log("on success")});
       clipboard.on('success', notifySuccess);
       clipboard.on('error', notifyFailure);
     });
