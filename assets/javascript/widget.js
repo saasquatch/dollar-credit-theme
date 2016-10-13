@@ -197,20 +197,23 @@
 
 
     each(document.querySelectorAll('[data-moment]'), function(el) {
-      console.log(el);
+      // console.log(el);
       var time = moment(parseInt(el.textContent));
-      console.log(time);
+      // console.log(time);
       el.textcontent = time.fromNow();
     });
 
-    // $('[data-moment]').each(function() {
-    //   var $this;
-    //
-    //   $this = $(this);
-    //
-    //   var time = moment(parseInt($this.text()));
-    //   $this.text(time.fromNow());
-    // });
+    $('[data-moment]').each(function() {
+      var $this;
+
+      $this = $(this);
+
+      console.log($this);
+
+      var time = moment(parseInt($this.text()));
+      console.log(time);
+      $this.text(time.fromNow());
+    });
   });
 
 })();
