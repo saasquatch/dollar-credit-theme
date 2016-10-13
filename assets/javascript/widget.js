@@ -130,7 +130,9 @@
       console.log("clipboard", this);
 
       var notify = function(clipboardNotification, notificationText) {
+        document.getElementById(clipboardNotification);
         notification = $($(clipboardNotification));
+        console.log(notification);
         notification.text(notificationText);
         notification.addClass('in').delay(1400).queue(function() {
           notification.removeClass('in');
@@ -139,7 +141,6 @@
       };
 
       var notifySuccess = function(e) {
-        console.log(e.trigger);
         notify(e.trigger.dataset.clipboardNotification, "Copied!");
       };
 
@@ -148,6 +149,7 @@
         notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
       };
 
+      clipboard.addEventListener('success', function() {console.log("on success")});
       clipboard.on('success', notifySuccess);
       clipboard.on('error', notifyFailure);
     });
