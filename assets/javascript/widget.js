@@ -196,7 +196,7 @@
     })
 
 
-    each(document.querySelector('[data-moment]'), function(el) {
+    each(document.querySelectorAll('[data-moment]'), function(el) {
       console.log(el);
     });
 
