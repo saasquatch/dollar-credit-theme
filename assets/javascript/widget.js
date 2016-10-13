@@ -139,6 +139,7 @@
       };
 
       var notifySuccess = function(e) {
+        console.log(e.trigger);
         notify(e.trigger.dataset.clipboardNotification, "Copied!");
       };
 
