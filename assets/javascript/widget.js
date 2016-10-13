@@ -29,9 +29,6 @@
         currentTime = 0,
         increment = 20;
 
-    console.log("Move element ", element);
-    console.log("to position ", to);
-
     var animateScroll = function(){
         currentTime += increment;
         var val = Math.easeInOutQuad(currentTime, start, change, duration);
@@ -194,9 +191,8 @@
         newOffset = offset + increment;
 
         if (inValidRange(newOffset, limit)) {
-          element.scrollTop = document.getElementById(newOffset).offsetTop;
-          // scrollTo(document.getElementById(newOffset), 0, 400);
-          // element.scrollTop(document.getElementById(newOffset).offsetTop);
+          scrollTop(element, document.getElementById(newOffset).offsetTop, 400);
+          // element.scrollTop = document.getElementById(newOffset).offsetTop;
           element.dataset.scrollOffset = newOffset;
           console.log("Element scollOffset", element.dataset.scrollOffset);
 
