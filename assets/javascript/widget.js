@@ -1,6 +1,14 @@
 (function() {
   'use strict';
 
+  function listenToClick(element, name, fn) {
+    if (document.addEventListener) {
+      element.addEventListener(name, fn, false);
+    } else {
+      element.attachEvent((name === 'click') ? 'onclick' : name, fn);
+    }
+  }
+
   function hasClass(el, className) {
     if (el.classList)
       return el.classList.contains(className)
@@ -49,7 +57,7 @@
     if (t < 1) return c/2*t*t + b;
     t--;
     return -c/2 * (t*(t-2) - 1) + b;
-  };
+  }
 
   function each(o, cb, s){
     var n;
@@ -75,7 +83,7 @@
       }
     }
     return 1;
-  };
+  }
 
   domready(function() {
     var
@@ -127,37 +135,28 @@
         notification;
 
       clipboard = new Clipboard(el);
-      console.log(clipboard);
-    });
 
-    // $('[data-clipboard-target]').each(function() {
-    //   var
-    //     clipboard,
-    //     notification;
-    //
-    //   clipboard = new Clipboard(this);
-    //
-    //   var notify = function(clipboardNotification, notificationText) {
-    //     notification = document.getElementById(clipboardNotification.slice(1));
-    //     notification.textContent = notificationText;
-    //     my_addClass(notification, 'in');
-    //     setTimeout(function() {
-    //       my_removeClass(notification, 'in');
-    //     }, 1400);
-    //   };
-    //
-    //   var notifySuccess = function(e) {
-    //     notify(e.trigger.dataset.clipboardNotification, "Copied!");
-    //   };
-    //
-    //   var notifyFailure = function(e) {
-    //     //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
-    //     notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
-    //   };
-    //
-    //   clipboard.on('success', notifySuccess);
-    //   clipboard.on('error', notifyFailure);
-    // });
+      var notify = function(clipboardNotification, notificationText) {
+        notification = document.getElementById(clipboardNotification.slice(1));
+        notification.textContent = notificationText;
+        my_addClass(notification, 'in');
+        setTimeout(function() {
+          my_removeClass(notification, 'in');
+        }, 1400);
+      };
+
+      var notifySuccess = function(e) {
+        notify(e.trigger.dataset.clipboardNotification, "Copied!");
+      };
+
+      var notifyFailure = function(e) {
+        //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
+        notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
+      };
+
+      clipboard.on('success', notifySuccess);
+      clipboard.on('error', notifyFailure);
+    });
 
     each(scrollElements, function(el) {
       var
@@ -182,7 +181,7 @@
       // Force IE to forget previous scroll top value
       resetScroll(element);
 
-      el.addEventListener('click', function() {
+      listenToClick(el, 'click', function() {
         offset = parseInt(element.dataset.scrollOffset);
 
         newOffset = offset + increment;
@@ -194,8 +193,7 @@
           setVisibilityAll(scrollElements, newOffset);
         }
       });
-    })
-
+    });
 
     each(document.querySelectorAll('[data-moment]'), function(el) {
       var time = moment(parseInt(el.textContent));
