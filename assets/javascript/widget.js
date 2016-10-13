@@ -172,14 +172,10 @@
       limit     = parseInt(element.dataset.scrollLimit.valueOf());
       offset    = parseInt(element.dataset.scrollOffset.valueOf());
 
-      // console.log("increment", increment);
-      // console.log("limit", limit);
-      // console.log("offset", offset);
-
       element.dataset.scrollLimit = limit;
 
       nextOffset = offset + increment;
-      // console.log(nextOffset);
+
       setVisibility(el, nextOffset, limit);
 
       // Force IE to forget previous scroll top value
@@ -192,75 +188,16 @@
 
         if (inValidRange(newOffset, limit)) {
           scrollTop(element, document.getElementById(newOffset).offsetTop, 400);
-          // element.scrollTop = document.getElementById(newOffset).offsetTop;
           element.dataset.scrollOffset = newOffset;
-          console.log("Element scollOffset", element.dataset.scrollOffset);
 
           setVisibilityAll(scrollElements, newOffset);
         }
       });
-
-      // $this.on('click', function() {
-      //   offset = element.dataset.scrollOffset;
-      //
-      //   newOffset = offset + increment;
-      //
-      //   console.log("newOffset", newOffset);
-      //   if (inValidRange(newOffset, limit)) {
-      //     element.animate({
-      //         scrollTop: $('#' + newOffset).position().top
-      //     }, 400);
-      //     element.data('scroll-offset', newOffset);
-      //
-      //     setVisibilityAll(scrollElements, newOffset);
-      //   }
-      // });
     })
-    // scrollElements.each();
 
-    $('[data-open-panel]').each(function() {
-      var
-        $this,
-        element;
 
-      $this   = $(this);
-      element = $($this.data('open-panel'));
-
-      $this.on('click', function() {
-        element.addClass('open');
-      });
-    });
-
-    $('[data-close-panel]').each(function() {
-      var
-        $this,
-        element;
-
-      $this   = $(this);
-      element = $($this.data('close-panel'));
-
-      $this.on('click', function() {
-        element
-          .one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
-            $this.trigger('panel:closed');
-          }).removeClass('open');
-      });
-    });
-
-    $('[data-scroll-reset]').each(function() {
-      var
-        $this,
-        element;
-
-      $this   = $(this);
-      element = $($this.data('scroll-reset'));
-
-      $this.on('click', function() {
-        $this.one('panel:closed', function() {
-          resetScroll(element);
-          setVisibilityAll(scrollElements, 0);
-        });
-      });
+    each(document.querySelector('[data-moment]'), function(el) {
+      console.log(el);
     });
 
     $('[data-moment]').each(function() {
@@ -273,92 +210,4 @@
     });
   });
 
-  var setContainerHeight = function(containerEl) {
-    // TODO: Refactor this to make simpler
-    var
-      bodyEl,
-      bodyHeight,
-      bodyHeightWithoutTitle,
-      titleEl,
-      panelEl,
-      referralsEl,
-      referralsTitleEl,
-      panelHeight,
-      css,
-      stylesheet;
-
-    bodyEl           = $('.squatch-body');
-    titleEl          = bodyEl.find('.squatch-title');
-    panelEl          = $('#squatch-panel');
-    referralsEl      = $('.squatch-referrals');
-    referralsTitleEl = $('.squatch-referrals-title');
-
-    bodyHeight = bodyEl.outerHeight();
-    bodyHeightWithoutTitle = bodyHeight - titleEl.outerHeight(true) - titleEl.position().top;
-    panelHeight = panelEl.outerHeight();
-
-    if (referralsEl.is(':visible')) {
-      panelHeight -= referralsEl.outerHeight();
-    }
-
-    if (referralsTitleEl.is(':visible')) {
-      panelHeight -= referralsTitleEl.outerHeight();
-    }
-
-    containerEl.css('height', bodyHeight + panelHeight);
-
-    stylesheet = document.createElement('style');
-    stylesheet.type = 'text/css';
-
-    css = '#squatch-panel.open {' +
-      '-webkit-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
-      '-ms-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
-      '-o-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
-      'transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
-      '}' +
-      'html.lt-ie9 #squatch-panel.open {' +
-      'top: -' + bodyHeightWithoutTitle + 'px;' +
-      '}';
-
-    if (stylesheet.styleSheet){
-      // IE
-      stylesheet.styleSheet.cssText = css;
-    } else {
-      // W3C Standard
-      stylesheet.appendChild(document.createTextNode(css));
-    }
-
-    document.querySelector('head').appendChild(stylesheet);
-  };
-
-  var containerEl = $('.squatch-container-popup');
-  if (containerEl.length) {
-    var setContainerHeightForPopup = setContainerHeight.bind(undefined, containerEl);
-    var windowEl = $(window);
-
-    // Workaround for popup height being incorrectly set during iframe resizing.
-    // This is due to the popup being displayed inconsistently - with responsive styles activated, sometimes the mobile view will be displayed, even on a desktop monitor with more than 500 pixels width. The solution may be to set the iframe width to the full browser width, rather than the width of the widget theme.
-    // There is another hack in _popup.less as well
-    // TODO: Find a solution for this and enable responsive styles again.
-    windowEl.on('load', function (i) {
-      var setContainerHeightIfWideEnough = function () {
-        var width = windowEl.width();
-
-        if (width === 500) {
-          setContainerHeightForPopup();
-        } else {
-          setTimeout(function() {
-            setContainerHeightIfWideEnough();
-          }, 50);
-        }
-      };
-
-      setContainerHeightIfWideEnough();
-    });
-
-    // The content has a different height in mobile
-    // TODO: Find a a solution for responsive in popups and re-enable this
-    // var mql = window.matchMedia('(max-width: 500px)');
-    // mql.addListener(setContainerHeightForPopup);
-  }
 })();
