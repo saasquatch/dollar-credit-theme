@@ -197,10 +197,8 @@
 
 
     each(document.querySelectorAll('[data-moment]'), function(el) {
-      // console.log(el);
       var time = moment(parseInt(el.textContent));
-      console.log(time.fromNow());
-      el.textcontent = time.fromNow();
+      el.textContent = time.fromNow();
     });
 
     // $('[data-moment]').each(function() {
