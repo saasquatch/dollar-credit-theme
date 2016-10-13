@@ -23,30 +23,33 @@
     }
   }
 
-  function smoothScroll(target, time) {
-    // time when scroll starts
-    console.log(target.offsetTop);
+  function scrollTo(element, to, duration) {
+    var start = element.scrollTop,
+        change = to - start,
+        currentTime = 0,
+        increment = 20;
 
-    var start = new Date().getTime(),
-
-
-
-    // set an interval to update scrollTop attribute every 25 ms
-    timer = setInterval(function() {
-        console.log("start time", start);
-        // calculate the step, i.e the degree of completion of the smooth scroll
-        var step = Math.min(1, (new Date().getTime() - start) / time);
-
-        console.log("step", step);
-
-        // calculate the scroll distance and update the scrollTop
-        // target['scrollTop'] = (step * target.offsetTop);
-        console.log(document.body['scrollTop']);
-
-        // end interval if the scroll is completed
-        if (step == 1) clearInterval(timer);
-    }, 25);
+    var animateScroll = function(){
+        currentTime += increment;
+        var val = Math.easeInOutQuad(currentTime, start, change, duration);
+        element.scrollTop = val;
+        if(currentTime < duration) {
+            setTimeout(animateScroll, increment);
+        }
+    };
+    animateScroll();
   }
+
+  //t = current time
+  //b = start value
+  //c = change in value
+  //d = duration
+  Math.easeInOutQuad = function (t, b, c, d) {
+    t /= d/2;
+    if (t < 1) return c/2*t*t + b;
+    t--;
+    return -c/2 * (t*(t-2) - 1) + b;
+  };
 
   function each(o, cb, s){
     var n;
@@ -192,7 +195,7 @@
           // element.animate({
           //     scrollTop: document.getElementById(newOffset).offsetTop
           // }, 400);
-          smoothScroll(element, 400);
+          scrollTo(element, document.body, 400);
           element.dataset.scrollOffset = newOffset;
 
           setVisibilityAll(scrollElements, newOffset);
