@@ -26,7 +26,7 @@
   function smoothScroll(target, time) {
     // time when scroll starts
     console.log(target);
-    
+
     var start = new Date().getTime(),
 
     // set an interval to update scrollTop attribute every 25 ms
@@ -37,6 +37,7 @@
 
         // calculate the scroll distance and update the scrollTop
         document.body['scrollTop'] = (step * target.offsetTop);
+        console.log(document.body['scrollTop']);
 
         // end interval if the scroll is completed
         if (step == 1) clearInterval(timer);
