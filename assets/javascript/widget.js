@@ -30,12 +30,12 @@
         increment = 20;
 
     var animateScroll = function(){
-        currentTime += increment;
-        var val = Math.easeInOutQuad(currentTime, start, change, duration);
-        element.scrollTop = val;
-        if(currentTime < duration) {
-            setTimeout(animateScroll, increment);
-        }
+      currentTime += increment;
+      var val = Math.easeInOutQuad(currentTime, start, change, duration);
+      element.scrollTop = val;
+      if(currentTime < duration) {
+        setTimeout(animateScroll, increment);
+      }
     };
     animateScroll();
   }
@@ -77,7 +77,7 @@
     return 1;
   };
 
-  $(document).ready(function() {
+  domready(function() {
     var
       scrollElements,
       inValidRange,
@@ -85,7 +85,6 @@
       setVisibilityAll,
       resetScroll;
 
-    // scrollElements = $('[data-scroll-element]');
     scrollElements = document.querySelectorAll('[data-scroll-element]');
 
     inValidRange = function(offset, limit) {
@@ -93,20 +92,14 @@
     };
 
     setVisibility = function(element, nextOffset, limit) {
-      console.log("Set visibility");
-      console.log("nextOffset", nextOffset);
-      console.log("limit", limit);
       if(inValidRange(nextOffset, limit)) {
-        // element.removeClass('disabled');
         my_removeClass(element, 'disabled');
       } else {
-        // element.addClass('disabled');
         my_addClass(element, 'disabled');
       }
     };
 
     setVisibilityAll = function(elements, newOffset) {
-      console.log("setVisibilityAll");
       var
         scrollElement,
         increment,
@@ -130,27 +123,28 @@
 
     $('[data-clipboard-target]').each(function() {
       var
-          clipboard,
-          notification;
+        clipboard,
+        notification;
 
       clipboard = new Clipboard(this);
+      console.log("clipboard", this);
 
       var notify = function(clipboardNotification, notificationText) {
-          notification = $($(clipboardNotification));
-          notification.text(notificationText);
-          notification.addClass('in').delay(1400).queue(function() {
-              notification.removeClass('in');
-              $(this).dequeue();
-          })
+        notification = $($(clipboardNotification));
+        notification.text(notificationText);
+        notification.addClass('in').delay(1400).queue(function() {
+          notification.removeClass('in');
+          $(this).dequeue();
+        })
       };
 
       var notifySuccess = function(e) {
-          notify(e.trigger.dataset.clipboardNotification, "Copied!");
+        notify(e.trigger.dataset.clipboardNotification, "Copied!");
       };
 
       var notifyFailure = function(e) {
-          //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
-          notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
+        //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
+        notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
       };
 
       clipboard.on('success', notifySuccess);
@@ -159,7 +153,6 @@
 
     each(scrollElements, function(el) {
       var
-        $this,
         element,
         increment,
         limit,
@@ -200,18 +193,6 @@
       var time = moment(parseInt(el.textContent));
       el.textContent = time.fromNow();
     });
-
-    // $('[data-moment]').each(function() {
-    //   var $this;
-    //
-    //   $this = $(this);
-    //
-    //   console.log($this);
-    //
-    //   var time = moment(parseInt($this.text()));
-    //   console.log(time);
-    //   $this.text(time.fromNow());
-    // });
   });
 
 })();
