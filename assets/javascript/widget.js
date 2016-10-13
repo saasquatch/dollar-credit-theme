@@ -25,7 +25,7 @@
 
   function smoothScroll(target, time) {
     // time when scroll starts
-    console.log(target);
+    console.log(target.offsetTop);
 
     var start = new Date().getTime(),
 
