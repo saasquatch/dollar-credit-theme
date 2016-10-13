@@ -149,7 +149,7 @@
         notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
       };
 
-      clipboard.addEventListener('success', function() {console.log("on success")});
+      document.querySelector('[data-clipboard-target]').addEventListener('success', function() {console.log("on success")});
       clipboard.on('success', notifySuccess);
       clipboard.on('error', notifyFailure);
     });
