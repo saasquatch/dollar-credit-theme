@@ -201,6 +201,7 @@
           // scrollTo(document.getElementById(newOffset), 0, 400);
           // element.scrollTop(document.getElementById(newOffset).offsetTop);
           element.dataset.scrollOffset = newOffset;
+          console.log("Element scollOffset", element.dataset.scrollOffset);
 
           setVisibilityAll(scrollElements, newOffset);
         }
