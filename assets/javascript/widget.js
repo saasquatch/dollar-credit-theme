@@ -130,8 +130,7 @@
       console.log("clipboard", this);
 
       var notify = function(clipboardNotification, notificationText) {
-        console.log(clipboardNotification);
-        console.log(document.getElementById(clipboardNotification));
+        console.log(document.getElementById(clipboardNotification.slice(1)));
         notification = $($(clipboardNotification));
         console.log(notification);
         notification.text(notificationText);
