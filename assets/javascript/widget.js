@@ -199,6 +199,10 @@
       var time = moment(parseInt(el.textContent));
       el.textContent = time.fromNow();
     });
+
+    each(document.querySelectorAll('[data-clipboard-target]', funtction() {
+      console.log(window.squatch);
+    });
   });
 
 })();
