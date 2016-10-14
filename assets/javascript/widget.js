@@ -169,6 +169,11 @@
 
       clipboard.on('success', notifySuccess);
       clipboard.on('error', notifyFailure);
+      handleClicks(el, function(e) {
+        if (window.parent.squatch.eventBus) {
+          window.parent.squatch.eventBus.dispatch('copy_btn_clicked', e.type);
+        }
+      });
     });
 
     each(scrollElements, function(el) {
@@ -211,15 +216,6 @@
     each(document.querySelectorAll('[data-moment]'), function(el) {
       var time = moment(parseInt(el.textContent));
       el.textContent = time.fromNow();
-    });
-
-    each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
-      handleClicks(el, function(e) {
-        if (window.parent.squatch.eventBus) {
-          window.parent.squatch.eventBus.dispatch('copy_btn_clicked', e.type);
-        }
-      });
-
     });
   });
 
