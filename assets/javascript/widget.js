@@ -200,7 +200,7 @@
       el.textContent = time.fromNow();
     });
 
-    each(document.querySelectorAll('[data-clipboard-target]', funtction() {
+    each(document.querySelectorAll('[data-clipboard-target]'), funtction() {
       console.log(window.squatch);
     });
   });
