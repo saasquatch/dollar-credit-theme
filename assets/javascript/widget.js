@@ -9,6 +9,19 @@
     }
   }
 
+  function handleClicks(elem, fn) {
+
+    if (document.addEventListener) {
+      // For all major browsers, except IE 8 and earlier
+      elem.addEventListener("click", fn, false);
+      elem.addEventListener("touchstart", fn, false);
+    } else if (document.attachEvent) {
+      // For IE 8 and earlier versions
+      elem.attachEvent("onclick", fn, false);
+      elem.attachEvent("touchstart", fn, false);
+    }
+  };
+
   function hasClass(el, className) {
     if (el.classList)
       return el.classList.contains(className)
@@ -201,7 +214,12 @@
     });
 
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
-      console.log(window.parent.squatch);
+      el.handleClicks(el, function(e) {
+        if (window.parent.squatch.eventBus) {
+          window.parent.squatch.eventBus.dispatch('copy_btn_clicked', e.type);
+        }
+      });
+
     });
   });
 
