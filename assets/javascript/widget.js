@@ -201,7 +201,7 @@
     });
 
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
-      console.log(window.squatch);
+      console.log(window.parent.squatch);
     });
   });
 
