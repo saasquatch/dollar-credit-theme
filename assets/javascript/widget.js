@@ -214,7 +214,7 @@
     });
 
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
-      el.handleClicks(el, function(e) {
+      handleClicks(el, function(e) {
         if (window.parent.squatch.eventBus) {
           window.parent.squatch.eventBus.dispatch('copy_btn_clicked', e.type);
         }
