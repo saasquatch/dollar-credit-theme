@@ -256,7 +256,7 @@
                           "default":"\"Helvetica Neue\",Helvetica,Arial,sans-serif"
                         },
                         "headerColor":{
-                          "default":"#4486E1"
+                          "default":"#5b6165"
                         },
                         "heading":{
                           "default":"You were Successfully Referred to {{companyName}}"
