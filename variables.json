@@ -696,7 +696,7 @@
     }
   },
   "required":[
-    "jsOptions",
+
     "widget",
     "email"
   ]
