@@ -262,7 +262,7 @@
                           "default":"You were Successfully Referred to {{companyname}}"
                         },
                         "headerDetails":{
-                          "default":"Use Referral Code<br><h1>{{referralcode}}</h1><br>at checkout to receive your referral discount"
+                          "default":"Use Referral Code<br><h1>{{referralCode}}</h1><br>at checkout to receive your referral discount"
                         },
                         "buttonCopy":{
                           "type":"string",
