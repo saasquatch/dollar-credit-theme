@@ -234,7 +234,7 @@
             "configuration":{
               "properties":{
                 "themeMapping":{
-                  "default":"referrer-widget"
+                  "default":"conversion-widget"
                 }
               }
             },
