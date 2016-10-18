@@ -64,10 +64,10 @@
 
   span {
     display: inline-block;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: @font-size-xl;
   }
 }
 
@@ -78,6 +78,8 @@
 button.icon-btn.copy {
   .button-variant(@white; #6cc44d; #6cc44d);
   text-align: center;
+  width: 100%;
+  max-width: 170px;
 
   &:before {
     content: none;
