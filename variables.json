@@ -250,7 +250,7 @@
                           "format":"text",
                           "minLength":1,
                           "title":"Heading Image Url:",
-                          "default":"{{ referred_widget_header_image }}"
+                          "default":"{{assets 'images/friendface_03.png'}}"
                         },
                         "widgetFont":{
                           "default":"\"Helvetica Neue\",Helvetica,Arial,sans-serif"
