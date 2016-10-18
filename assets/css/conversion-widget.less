@@ -43,11 +43,19 @@
 @import 'modes/_hosted.less';
 
 .squatch-title {
-  font-size: 26px;
-  font-weight: 400;
+  font-size: @font-size-xl;
+  font-weight: 300;
 }
 
 .squatch-lead {
-  font-size: @font-size-large;
+  font-size: @font-size-h2;
   color: @gray-darker;
+
+  span {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+  }
 }
