@@ -1,15 +1,5 @@
 <div class="squatch-share">
-  <div class="form-group">
-    <div class="input-group">
-      <input class="form-control" id="squatch-share-link" value="{{shareLinks.shareLink}}" readonly="readonly">
-
-      <span class="label label-default fade" id="squatch-share-notification">Copied!</span>
-
-      <span class="input-group-btn">
-        <button class="btn btn-primary icon-btn copy" data-clipboard-target="#squatch-share-link" data-clipboard-notification="#squatch-share-notification">
-          <span class="hidden-sm">{{variables 'widget.CONVERSION_WIDGET.content.widgetCustomization.buttonCopy'}}</span>
-        </button>
-      </span>
-    </div>
-  </div>
+  <button class="btn btn-primary icon-btn copy" data-clipboard-target="#squatch-share-link" data-clipboard-notification="#squatch-share-notification">
+    <span class="hidden-sm">{{variables 'widget.CONVERSION_WIDGET.content.widgetCustomization.buttonCopy'}}</span>
+  </button>
 </div>
