@@ -262,7 +262,7 @@
                           "default":"You were Successfully Referred to {{companyName}}"
                         },
                         "headerDetails":{
-                          "default":"Use the Referral Code<br><span>WILLSANDERSON</span><br>at checkout to receive your referral discount"
+                          "default":"Use the Referral Code<br><span id=\"squatch-share-code\">WILLSANDERSON</span><br>at checkout to receive your referral discount"
                         },
                         "buttonCopy":{
                           "type":"string",
