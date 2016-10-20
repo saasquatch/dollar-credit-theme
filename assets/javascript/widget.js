@@ -296,6 +296,7 @@
       bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - titleEl.offsetTop;
       panelHeight = panelEl.offsetHeight;
 
+      console.log(referralsEl.style.display);
       if (referralsEl.style.display) {
         panelHeight -= referralsEl.offsetHeight;
       }
