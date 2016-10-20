@@ -343,7 +343,8 @@
       document.querySelector('head').appendChild(stylesheet);
     };
 
-    var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
+    var containerEl = $('.squatch-container-popup');
+    // var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
     if (containerEl.length) {
      var setContainerHeightForPopup = setContainerHeight.bind(undefined, containerEl);
      var windowEl = $(window);
