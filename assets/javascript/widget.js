@@ -311,17 +311,15 @@
         panelHeight -= referralsEl.offsetHeight;
       }
 
-
       if (referralsTitleEl.style.display !== 'none') {
         panelHeight -= referralsTitleEl.offsetHeight;
       }
 
-      containerEl.css('height', bodyHeight + panelHeight);
+      // containerEl.css('height', bodyHeight + panelHeight);
+      containerEl.style.height = bodyHeight + panelHeight;
 
       stylesheet = document.createElement('style');
       stylesheet.type = 'text/css';
-
-      console.log('bodyHeight with no title', bodyHeightWithoutTitle);
 
       css = '#squatch-panel.open {' +
         '-webkit-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
