@@ -273,12 +273,11 @@
     });
 
     each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
-      console.log(el);
-      var element = document.getElementById(el.dataset.scrollReset);
+      var element = document.getElementById(el.dataset.scrollReset.slice(1));
       console.log(element);
 
       element.onclick = function() {
-
+        console.log("clicked", element);
       }
     })
 
