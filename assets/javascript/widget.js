@@ -315,9 +315,10 @@
         panelHeight -= referralsTitleEl.offsetHeight;
       }
 
-      containerEl.css('height', bodyHeight + panelHeight);
-      console.log(containerEl);
-      // containerEl.style.height = bodyHeight + panelHeight;
+      // containerEl.css('height', bodyHeight + panelHeight);
+      console.log('containerEl', containerEl);
+      containerEl.style.height = bodyHeight + panelHeight;
+      console.log('style', containerel.style);
 
       stylesheet = document.createElement('style');
       stylesheet.type = 'text/css';
