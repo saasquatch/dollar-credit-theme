@@ -273,6 +273,7 @@
     });
 
     each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
+      console.log(el);
       var element = document.getElementById(el.dataset.scrollReset);
       console.log(element);
 
