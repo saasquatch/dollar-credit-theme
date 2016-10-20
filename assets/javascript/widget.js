@@ -296,11 +296,11 @@
       bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - titleEl.offsetTop;
       panelHeight = panelEl.offsetHeight;
 
-      if (referralsEl.is(':visible')) {
+      if (referralsEl.style.display) {
         panelHeight -= referralsEl.offsetHeight;
       }
 
-      if (referralsTitleEl.is(':visible')) {
+      if (referralsTitleEl.style.display) {
         panelHeight -= referralsTitleEl.offsetHeight;
       }
 
