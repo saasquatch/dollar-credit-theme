@@ -347,7 +347,7 @@
     var containerEl = $('.squatch-container-popup');
     // var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
     if (containerEl) {
-     var setContainerHeightForPopup = setContainerHeight.bind(containerEl);
+     var setContainerHeightForPopup = setContainerHeight.bind(undefined,containerEl);
      var windowEl = $(window);
 
      windowEl.on('load', function () {
