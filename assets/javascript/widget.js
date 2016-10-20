@@ -346,8 +346,7 @@
 
     // var containerEl = $('.squatch-container-popup');
     var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
-    console.log('length', containerEl.length);
-    if (containerEl.length) {
+    if (containerEl) {
      var setContainerHeightForPopup = setContainerHeight.bind(containerEl);
      var windowEl = $(window);
 
