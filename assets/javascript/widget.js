@@ -323,6 +323,8 @@
       stylesheet = document.createElement('style');
       stylesheet.type = 'text/css';
 
+      //containerEl height is 494 in jquery
+      
       css = '#squatch-panel.open {' +
         '-webkit-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
         '-ms-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
