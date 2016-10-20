@@ -330,30 +330,31 @@
       document.querySelector('head').appendChild(stylesheet);
     };
 
-    var containerEl = $('.squatch-container-popup');
-    if (containerEl.length) {
-     var setContainerHeightForPopup = setContainerHeight.bind(undefined, containerEl);
-     var windowEl = $(window);
-
-     // Workaround for popup height being incorrectly set during iframe resizing.
-     // This is due to the popup being displayed inconsistently - with responsive styles activated, sometimes the mobile view will be displayed, even on a desktop monitor with more than 500 pixels width. The solution may be to set the iframe width to the full browser width, rather than the width of the widget theme.
-     // There is another hack in _popup.less as well
-     // TODO: Find a solution for this and enable responsive styles again.
-     windowEl.on('load', function () {
-       var setContainerHeightIfWideEnough = function () {
-         var width = windowEl.width();
-
-         if (width === 500) {
-           setContainerHeightForPopup();
-         } else {
-           setTimeout(function() {
-             setContainerHeightIfWideEnough();
-           }, 50);
-         }
-       };
-
-       setContainerHeightIfWideEnough();
-     });
+    // Probably not needed? 
+    // var containerEl = $('.squatch-container-popup');
+    // if (containerEl.length) {
+    //  var setContainerHeightForPopup = setContainerHeight.bind(undefined, containerEl);
+    //  var windowEl = $(window);
+    //
+    //  // Workaround for popup height being incorrectly set during iframe resizing.
+    //  // This is due to the popup being displayed inconsistently - with responsive styles activated, sometimes the mobile view will be displayed, even on a desktop monitor with more than 500 pixels width. The solution may be to set the iframe width to the full browser width, rather than the width of the widget theme.
+    //  // There is another hack in _popup.less as well
+    //  // TODO: Find a solution for this and enable responsive styles again.
+    //  windowEl.on('load', function () {
+    //    var setContainerHeightIfWideEnough = function () {
+    //      var width = windowEl.width();
+    //
+    //      if (width === 500) {
+    //        setContainerHeightForPopup();
+    //      } else {
+    //        setTimeout(function() {
+    //          setContainerHeightIfWideEnough();
+    //        }, 50);
+    //      }
+    //    };
+    //
+    //    setContainerHeightIfWideEnough();
+    //  });
 
      // The content has a different height in mobile
      // TODO: Find a a solution for responsive in popups and re-enable this
