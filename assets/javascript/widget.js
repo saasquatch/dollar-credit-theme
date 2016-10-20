@@ -288,6 +288,7 @@
         bodyHeight,
         bodyHeightWithoutTitle,
         titleEl,
+        titleStyle,
         panelEl,
         referralsEl,
         referralsTitleEl,
@@ -297,12 +298,13 @@
 
       bodyEl           = document.getElementsByClassName('squatch-body')[0];
       titleEl          = document.getElementsByClassName('squatch-title')[0];
+      titleStyle       = getComputedStyle(titleEl);
       panelEl          = document.getElementById('squatch-panel');
       referralsEl      = document.getElementsByClassName('squatch-referrals')[0];
       referralsTitleEl = document.getElementsByClassName('squatch-referrals-title')[0];
 
       bodyHeight = bodyEl.offsetHeight;
-      bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight + parseInt(titleEl.style.marginTop) + parseInt(titleEl.style.marginBottom) - titleEl.offsetTop;
+      bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight + parseInt(titleStyle.marginTop) + parseInt(titleStyle.marginBottom) - titleEl.offsetTop;
       panelHeight = panelEl.offsetHeight;
 
       if (referralsEl.style.display !== 'none') {
