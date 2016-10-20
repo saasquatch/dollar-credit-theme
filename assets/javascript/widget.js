@@ -302,15 +302,14 @@
       referralsTitleEl = document.getElementsByClassName('squatch-referrals-title')[0];
 
       bodyHeight = bodyEl.offsetHeight;
-      bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - titleEl.offsetTop;
+      bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight + parseInt(titleEl.style.marginTop) + parseInt(titleEl.style.marginBottom) - titleEl.offsetTop;
       panelHeight = panelEl.offsetHeight;
 
-      console.log(referralsEl.style.display);
       if (referralsEl.style.display !== 'none') {
         panelHeight -= referralsEl.offsetHeight;
       }
 
-      console.log()
+
       if (referralsTitleEl.style.display !== 'none') {
         panelHeight -= referralsTitleEl.offsetHeight;
       }
