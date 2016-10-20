@@ -273,7 +273,12 @@
     });
 
     each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
-      console.log(el.dataset.scrollReset);
+      var element = document.getElementById(el.dataset.scrollReset);
+      console.log(element);
+
+      element.onclick = function() {
+
+      }
     })
 
     var setContainerHeight = function(containerEl) {
@@ -301,11 +306,12 @@
       panelHeight = panelEl.offsetHeight;
 
       console.log(referralsEl.style.display);
-      if (referralsEl.style.display) {
+      if (referralsEl.style.display !== 'none') {
         panelHeight -= referralsEl.offsetHeight;
       }
 
-      if (referralsTitleEl.style.display) {
+      console.log()
+      if (referralsTitleEl.style.display !== 'none') {
         panelHeight -= referralsTitleEl.offsetHeight;
       }
 
