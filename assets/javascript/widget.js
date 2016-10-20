@@ -330,7 +330,7 @@
       document.querySelector('head').appendChild(stylesheet);
     };
 
-    // Probably not needed? 
+    // Probably not needed?
     // var containerEl = $('.squatch-container-popup');
     // if (containerEl.length) {
     //  var setContainerHeightForPopup = setContainerHeight.bind(undefined, containerEl);
@@ -360,7 +360,7 @@
      // TODO: Find a a solution for responsive in popups and re-enable this
      // var mql = window.matchMedia('(max-width: 500px)');
      // mql.addListener(setContainerHeightForPopup);
-    }
+    // }
   });
 
 })();
