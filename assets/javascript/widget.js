@@ -272,6 +272,10 @@
       });
     });
 
+    each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
+      console.log(el.dataset.scrollReset);
+    })
+
     var setContainerHeight = function(containerEl) {
       // TODO: Refactor this to make simpler
       var
