@@ -344,6 +344,7 @@
     };
 
     var containerEl = $('.squatch-container-popup');
+    console.log(document.getElementsByClassName('squatch-container-popup')[0]);
     // var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
     if (containerEl.length) {
      var setContainerHeightForPopup = setContainerHeight.bind(undefined, containerEl);
