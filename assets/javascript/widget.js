@@ -315,9 +315,9 @@
         panelHeight -= referralsTitleEl.offsetHeight;
       }
 
-      // containerEl.css('height', bodyHeight + panelHeight);
+      containerEl.css('height', bodyHeight + panelHeight);
       console.log(containerEl);
-      containerEl.style.height = bodyHeight + panelHeight;
+      // containerEl.style.height = bodyHeight + panelHeight;
 
       stylesheet = document.createElement('style');
       stylesheet.type = 'text/css';
@@ -343,8 +343,8 @@
       document.querySelector('head').appendChild(stylesheet);
     };
 
-    // var containerEl = $('.squatch-container-popup');
-    var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
+    var containerEl = $('.squatch-container-popup');
+    // var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
     if (containerEl.length) {
      var setContainerHeightForPopup = setContainerHeight.bind(undefined, containerEl);
      var windowEl = $(window);
