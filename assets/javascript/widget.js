@@ -286,22 +286,22 @@
         css,
         stylesheet;
 
-      bodyEl           = $('.squatch-body');
-      titleEl          = bodyEl.find('.squatch-title');
-      panelEl          = $('#squatch-panel');
-      referralsEl      = $('.squatch-referrals');
-      referralsTitleEl = $('.squatch-referrals-title');
+      bodyEl           = document.getElementsByClassName('squatch-body')[0];
+      titleEl          = document.getElementsByClassName('squatch-title')[0];
+      panelEl          = document.getElementById('squatch-panel');
+      referralsEl      = document.getElementsByClassName('squatch-referrals')[0];
+      referralsTitleEl = document.getElementsByClassName('squatch-referrals-title')[0];
 
-      bodyHeight = bodyEl.outerHeight();
-      bodyHeightWithoutTitle = bodyHeight - titleEl.outerHeight(true) - titleEl.position().top;
-      panelHeight = panelEl.outerHeight();
+      bodyHeight = bodyEl.offsetHeight;
+      bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - titleEl.offsetTop;
+      panelHeight = panelEl.offsetHeight;
 
       if (referralsEl.is(':visible')) {
-        panelHeight -= referralsEl.outerHeight();
+        panelHeight -= referralsEl.offsetHeight;
       }
 
       if (referralsTitleEl.is(':visible')) {
-        panelHeight -= referralsTitleEl.outerHeight();
+        panelHeight -= referralsTitleEl.offsetHeight;
       }
 
       containerEl.css('height', bodyHeight + panelHeight);
