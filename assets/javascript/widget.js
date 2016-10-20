@@ -316,6 +316,7 @@
       }
 
       // containerEl.css('height', bodyHeight + panelHeight);
+      console.log(containerEl);
       containerEl.style.height = bodyHeight + panelHeight;
 
       stylesheet = document.createElement('style');
