@@ -343,11 +343,10 @@
       document.querySelector('head').appendChild(stylesheet);
     };
 
-    var containerEl = $('.squatch-container-popup');
-    console.log(document.getElementsByClassName('squatch-container-popup')[0]);
-    // var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
+    // var containerEl = $('.squatch-container-popup');
+    var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
     if (containerEl.length) {
-     var setContainerHeightForPopup = setContainerHeight.bind(undefined, containerEl);
+     var setContainerHeightForPopup = setContainerHeight.bind(containerEl);
      var windowEl = $(window);
 
      windowEl.on('load', function () {
