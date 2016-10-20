@@ -225,6 +225,52 @@
         }
       });
     });
+
+    // Popup stuff
+    $('[data-open-panel]').each(function() {
+      var
+        $this,
+        element;
+
+      $this   = $(this);
+      element = $($this.data('open-panel'));
+
+      $this.on('click', function() {
+        element.addClass('open');
+      });
+    });
+
+    $('[data-close-panel]').each(function() {
+      var
+        $this,
+        element;
+
+      $this   = $(this);
+      element = $($this.data('close-panel'));
+
+      $this.on('click', function() {
+        element
+          .one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
+            $this.trigger('panel:closed');
+          }).removeClass('open');
+      });
+    });
+
+    $('[data-scroll-reset]').each(function() {
+      var
+        $this,
+        element;
+
+      $this   = $(this);
+      element = $($this.data('scroll-reset'));
+
+      $this.on('click', function() {
+        $this.one('panel:closed', function() {
+          resetScroll(element);
+          setVisibilityAll(scrollElements, 0);
+        });
+      });
+    });
   });
 
 })();
