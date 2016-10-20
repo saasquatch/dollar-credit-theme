@@ -309,6 +309,8 @@
       stylesheet = document.createElement('style');
       stylesheet.type = 'text/css';
 
+      console.log('bodyHeight with no title', bodyHeightWithoutTitle);
+
       css = '#squatch-panel.open {' +
         '-webkit-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
         '-ms-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
@@ -330,7 +332,6 @@
       document.querySelector('head').appendChild(stylesheet);
     };
 
-    // Probably not needed?
     // var containerEl = $('.squatch-container-popup');
     // if (containerEl.length) {
     //  var setContainerHeightForPopup = setContainerHeight.bind(undefined, containerEl);
@@ -355,11 +356,11 @@
     //
     //    setContainerHeightIfWideEnough();
     //  });
-
-     // The content has a different height in mobile
-     // TODO: Find a a solution for responsive in popups and re-enable this
-     // var mql = window.matchMedia('(max-width: 500px)');
-     // mql.addListener(setContainerHeightForPopup);
+    //
+    //  // The content has a different height in mobile
+    //  // TODO: Find a a solution for responsive in popups and re-enable this
+    //  // var mql = window.matchMedia('(max-width: 500px)');
+    //  // mql.addListener(setContainerHeightForPopup);
     // }
   });
 
