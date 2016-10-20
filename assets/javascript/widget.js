@@ -304,6 +304,7 @@
       referralsTitleEl = document.getElementsByClassName('squatch-referrals-title')[0];
 
       bodyHeight = bodyEl.offsetHeight;
+      console.log(titleStyle.marginBottom);
       bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight + parseInt(titleStyle.marginTop) + parseInt(titleStyle.marginBottom) - titleEl.offsetTop;
       panelHeight = panelEl.offsetHeight;
 
