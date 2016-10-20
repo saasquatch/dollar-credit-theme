@@ -318,7 +318,7 @@
       // containerEl.css('height', bodyHeight + panelHeight);
       console.log('containerEl', containerEl);
       containerEl.style.height = bodyHeight + panelHeight;
-      console.log('style', containerel.style);
+      console.log('style', containerEl.style);
 
       stylesheet = document.createElement('style');
       stylesheet.type = 'text/css';
@@ -346,12 +346,13 @@
 
     // var containerEl = $('.squatch-container-popup');
     var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
+    console.log('length', containerEl.length);
     if (containerEl.length) {
-    //  var setContainerHeightForPopup = setContainerHeight(containerEl);
+     var setContainerHeightForPopup = setContainerHeight.bind(containerEl);
      var windowEl = $(window);
 
      windowEl.on('load', function () {
-       setContainerHeight(containerEl);
+       setContainerHeightForPopup();
      });
 
     }
