@@ -255,31 +255,36 @@
       });
     });
 
-    $('[data-scroll-reset]').each(function() {
-      var
-        $this,
-        element;
+    // $('[data-scroll-reset]').each(function() {
+    //   var
+    //     $this,
+    //     element;
+    //
+    //   $this   = $(this);
+    //   element = $($this.data('scroll-reset'));
+    //   console.log("element", element);
+    //
+    //   $this.on('click', function() {
+    //     $this.one('panel:closed', function() {
+    //       resetScroll(element);
+    //       setVisibilityAll(scrollElements, 0);
+    //     });
+    //   });
+    // });
 
-      $this   = $(this);
-      element = $($this.data('scroll-reset'));
-      console.log("element", element);
+    each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
+      var element = document.getElementById(el.dataset.scrollReset.slice(1));
+      console.log('element', element);
+      console.log('this', el);
 
-      $this.on('click', function() {
-        $this.one('panel:closed', function() {
+      el.onclick = function() {
+        el.addEventListener('panel:closed', function() {
+          console.log('HEY!');
           resetScroll(element);
           setVisibilityAll(scrollElements, 0);
         });
-      });
+      }
     });
-
-    // each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
-    //   var element = document.getElementById(el.dataset.scrollReset.slice(1));
-    //   console.log(element);
-    //
-    //   element.onclick = function() {
-    //     console.log("clicked", element);
-    //   }
-    // });
 
     var setContainerHeight = function(containerEl) {
       // TODO: Refactor this to make simpler
@@ -345,7 +350,6 @@
 
     if (containerEl) {
      window.onload = function() {
-       console.log("not executing?")
        setContainerHeight(containerEl);
      }
 
