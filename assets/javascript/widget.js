@@ -137,7 +137,6 @@
     };
 
     resetScroll = function(element) {
-      console.log("resetScroll", element);
       element.scrollTop = 0;
       element.dataset.scrollOffset = 0;
     };
@@ -262,9 +261,11 @@
       console.log('close-panel',el);
       var element = document.getElementById(el.dataset.closePanel.slice(1));
 
-      console.log(element);
       el.onclick = function() {
-        element.my_removeClass('open');
+        console.log("clicked", el);
+        my_removeClass(element, 'open');
+        resetScroll(element);
+        setVisibilityAll(scrollElements, 0);
       }
     });
 
@@ -273,10 +274,10 @@
       console.log('element', element);
       console.log('this', el);
 
-      el.onclick = function() {
-        resetScroll(element);
-        setVisibilityAll(scrollElements, 0);
-      }
+      // el.onclick = function() {
+      //   resetScroll(element);
+      //   setVisibilityAll(scrollElements, 0);
+      // }
     });
 
     var setContainerHeight = function(containerEl) {
