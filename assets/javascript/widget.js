@@ -317,9 +317,10 @@
       console.log('bodyHeight', bodyHeight);
       console.log('panelHeight', panelHeight);
       console.log('height', bodyHeight + panelHeight);
+      var height = bodyHeight + panelHeight + "px";
       // containerEl.css('height', bodyHeight + panelHeight);
       // console.log('containerEl', containerEl);
-      containerEl.style.height = bodyHeight + panelHeight;
+      containerEl.style.height = height;
       console.log('style', containerEl.style.height);
 
       stylesheet = document.createElement('style');
