@@ -226,59 +226,24 @@
     });
 
     // Popup stuff
-    $('[data-open-panel]').each(function() {
-      var
-        $this,
-        element;
+    each(document.querySelectorAll('[data-open-panel]'), function(el) {
+      var element = document.getElementById(el.dataset.openPanel.slice(1));
 
-      $this   = $(this);
-      element = $($this.data('open-panel'));
-
-      $this.on('click', function() {
-        element.addClass('open');
-      });
+      el.onclick = function() {
+        my_addClass(element, 'open');
+      };
     });
 
-    // $('[data-close-panel]').each(function() {
-    //   var
-    //     $this,
-    //     element;
-    //
-    //   $this   = $(this);
-    //   element = $($this.data('close-panel'));
-    //
-    //   console.log($this);
-    //
-    //   $this.on('click', function() {
-    //     element
-    //       .one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
-    //         $this.trigger('panel:closed');
-    //       }).removeClass('open');
-    //   });
-    // });
-
     each(document.querySelectorAll('[data-close-panel]'), function(el) {
-      console.log('close-panel',el);
       var element = document.getElementById(el.dataset.closePanel.slice(1));
 
       el.onclick = function() {
-        console.log("clicked", el);
         my_removeClass(element, 'open');
         resetScroll(element);
         setVisibilityAll(scrollElements, 0);
       }
     });
 
-    each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
-      var element = document.getElementById(el.dataset.scrollReset.slice(1));
-      console.log('element', element);
-      console.log('this', el);
-
-      // el.onclick = function() {
-      //   resetScroll(element);
-      //   setVisibilityAll(scrollElements, 0);
-      // }
-    });
 
     var setContainerHeight = function(containerEl) {
       // TODO: Refactor this to make simpler
