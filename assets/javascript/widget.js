@@ -257,18 +257,18 @@
       });
     });
 
-    // each(document.querySelectorAll('[data-close-panel]'), function(el) {
-    //   console.log(el);
-    //   var element = document.getElementById(el.dataset.closePanel.slice(1));
-    //
-    //   console.log(element);
-    //   el.onclick = function() {
-    //     element.addEventListener('transitionend', function() {
-    //       console.log("transitionend");
-    //       el.dispatchEvent(new CustomEvent('panel:closed'));
-    //     })
-    //   }
-    // });
+    each(document.querySelectorAll('[data-close-panel]'), function(el) {
+      console.log('close-panel',el);
+      var element = document.getElementById(el.dataset.closePanel.slice(1));
+
+      console.log(element);
+      el.onclick = function() {
+        element.addEventListener('transitionend', function() {
+          console.log("transitionend");
+          el.dispatchEvent(new CustomEvent('panel:closed'));
+        })
+      }
+    });
 
     // $('[data-scroll-reset]').each(function() {
     //   var
