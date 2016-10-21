@@ -98,20 +98,14 @@
   }
 
   domready(function() {
-    var
-      scrollElements,
-      inValidRange,
-      setVisibility,
-      setVisibilityAll,
-      resetScroll;
 
-    scrollElements = document.querySelectorAll('[data-scroll-element]');
+    var scrollElements = document.querySelectorAll('[data-scroll-element]');
 
-    inValidRange = function(offset, limit) {
+    var inValidRange = function(offset, limit) {
       return offset >= 0 && offset < limit;
     };
 
-    setVisibility = function(element, nextOffset, limit) {
+    var setVisibility = function(element, nextOffset, limit) {
       if(inValidRange(nextOffset, limit)) {
         my_removeClass(element, 'disabled');
       } else {
@@ -119,7 +113,7 @@
       }
     };
 
-    setVisibilityAll = function(elements, newOffset) {
+    var setVisibilityAll = function(elements, newOffset) {
       var
         scrollElement,
         increment,
@@ -136,17 +130,14 @@
       });
     };
 
-    resetScroll = function(element) {
+    var resetScroll = function(element) {
       element.scrollTop = 0;
       element.dataset.scrollOffset = 0;
     };
 
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
-      var
-        clipboard,
-        notification;
-
-      clipboard = new Clipboard(el);
+      var clipboard = new Clipboard(el);
+      var notification;
 
       var notify = function(clipboardNotification, notificationText) {
         notification = document.getElementById(clipboardNotification.slice(1));
@@ -176,22 +167,14 @@
     });
 
     each(scrollElements, function(el) {
-      var
-        element,
-        increment,
-        limit,
-        offset,
-        nextOffset,
-        newOffset;
-
-      element = document.querySelector(el.dataset.scrollElement);
-      increment = parseInt(el.dataset.scrollIncrement);
-      limit     = parseInt(element.dataset.scrollLimit.valueOf());
-      offset    = parseInt(element.dataset.scrollOffset.valueOf());
+      var element = document.querySelector(el.dataset.scrollElement);
+      var increment = parseInt(el.dataset.scrollIncrement);
+      var limit     = parseInt(element.dataset.scrollLimit.valueOf());
+      var offset    = parseInt(element.dataset.scrollOffset.valueOf());
 
       element.dataset.scrollLimit = limit;
 
-      nextOffset = offset + increment;
+      var nextOffset = offset + increment;
 
       setVisibility(el, nextOffset, limit);
 
@@ -246,30 +229,16 @@
 
 
     var setContainerHeight = function(containerEl) {
-      // TODO: Refactor this to make simpler
-      var
-        bodyEl,
-        bodyHeight,
-        bodyHeightWithoutTitle,
-        titleEl,
-        titleStyle,
-        panelEl,
-        referralsEl,
-        referralsTitleEl,
-        panelHeight,
-        css,
-        stylesheet;
+      var bodyEl           = document.getElementsByClassName('squatch-body')[0];
+      var titleEl          = document.getElementsByClassName('squatch-title')[0];
+      var titleStyle       = getComputedStyle(titleEl);
+      var panelEl          = document.getElementById('squatch-panel');
+      var referralsEl      = document.getElementsByClassName('squatch-referrals')[0];
+      var referralsTitleEl = document.getElementsByClassName('squatch-referrals-title')[0];
 
-      bodyEl           = document.getElementsByClassName('squatch-body')[0];
-      titleEl          = document.getElementsByClassName('squatch-title')[0];
-      titleStyle       = getComputedStyle(titleEl);
-      panelEl          = document.getElementById('squatch-panel');
-      referralsEl      = document.getElementsByClassName('squatch-referrals')[0];
-      referralsTitleEl = document.getElementsByClassName('squatch-referrals-title')[0];
-
-      bodyHeight = bodyEl.offsetHeight;
-      bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop) - parseInt(titleStyle.marginBottom) - titleEl.offsetTop;
-      panelHeight = panelEl.offsetHeight;
+      var bodyHeight = bodyEl.offsetHeight;
+      var bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop) - parseInt(titleStyle.marginBottom) - titleEl.offsetTop;
+      var panelHeight = panelEl.offsetHeight;
 
       if (referralsEl.style.display !== 'none') {
         panelHeight -= referralsEl.offsetHeight;
@@ -281,10 +250,10 @@
 
       containerEl.style.height = bodyHeight + panelHeight + "px";
 
-      stylesheet = document.createElement('style');
+      var stylesheet = document.createElement('style');
       stylesheet.type = 'text/css';
 
-      css = '#squatch-panel.open {' +
+      var css = '#squatch-panel.open {' +
         '-webkit-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
         '-ms-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
         '-o-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
