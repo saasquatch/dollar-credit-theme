@@ -318,7 +318,7 @@
       console.log('panelHeight', panelHeight);
       // containerEl.css('height', bodyHeight + panelHeight);
       // console.log('containerEl', containerEl);
-      containerEl.style.height = bodyHeight + panelHeight;
+      containerEl.style.height = parseInt(bodyHeight + panelHeight);
       console.log('style', containerEl.style.height);
 
       stylesheet = document.createElement('style');
