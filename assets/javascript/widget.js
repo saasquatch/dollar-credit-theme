@@ -271,36 +271,36 @@
     //   }
     // });
 
-    $('[data-scroll-reset]').each(function() {
-      var
-        $this,
-        element;
-
-      $this   = $(this);
-      element = $($this.data('scroll-reset'));
-      console.log("element", element);
-
-      $this.on('click', function() {
-        $this.one('panel:closed', function() {
-          resetScroll(element);
-          setVisibilityAll(scrollElements, 0);
-        });
-      });
-    });
-
-    // each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
-    //   var element = document.getElementById(el.dataset.scrollReset.slice(1));
-    //   console.log('element', element);
-    //   console.log('this', el);
+    // $('[data-scroll-reset]').each(function() {
+    //   var
+    //     $this,
+    //     element;
     //
-    //   el.onclick = function() {
-    //     el.addEventListener('panel:closed', function() {
-    //       console.log('HEY!');
+    //   $this   = $(this);
+    //   element = $($this.data('scroll-reset'));
+    //   console.log("element", element);
+    //
+    //   $this.on('click', function() {
+    //     $this.one('panel:closed', function() {
     //       resetScroll(element);
     //       setVisibilityAll(scrollElements, 0);
     //     });
-    //   }
+    //   });
     // });
+
+    each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
+      var element = document.getElementById(el.dataset.scrollReset.slice(1));
+      console.log('element', element);
+      console.log('this', el);
+
+      el.onclick = function() {
+        el.addEventListener('panel:closed', function() {
+          console.log('HEY!');
+          resetScroll(element);
+          setVisibilityAll(scrollElements, 0);
+        });
+      }
+    });
 
     var setContainerHeight = function(containerEl) {
       // TODO: Refactor this to make simpler
