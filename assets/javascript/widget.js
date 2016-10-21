@@ -10,7 +10,6 @@
   }
 
   function handleClicks(elem, fn) {
-
     if (document.addEventListener) {
       // For all major browsers, except IE 8 and earlier
       elem.addEventListener("click", fn, false);
@@ -315,16 +314,16 @@
         panelHeight -= referralsTitleEl.offsetHeight;
       }
 
-      containerEl.css('height', bodyHeight + panelHeight);
+      // containerEl.css('height', bodyHeight + panelHeight);
       console.log('containerEl', containerEl);
-      // containerEl.style.height = bodyHeight + panelHeight;
+      containerEl.style.height = bodyHeight + panelHeight;
       console.log('style', containerEl.style);
 
       stylesheet = document.createElement('style');
       stylesheet.type = 'text/css';
 
       //containerEl height is 494 in jquery
-      
+
       css = '#squatch-panel.open {' +
         '-webkit-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
         '-ms-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
@@ -346,14 +345,26 @@
       document.querySelector('head').appendChild(stylesheet);
     };
 
-    var containerEl = $('.squatch-container-popup');
-    // var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
+    // var containerEl = $('.squatch-container-popup');
+    var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
     if (containerEl) {
-     var setContainerHeightForPopup = setContainerHeight.bind(undefined,containerEl);
+    //  var setContainerHeightForPopup = setContainerHeight.bind(undefined,containerEl);
      var windowEl = $(window);
 
      windowEl.on('load', function () {
-       setContainerHeightForPopup();
+       var setContainerHeightIfWideEnough = function () {
+          var width = windowEl.width();
+
+          if (width === 500) {
+            setContainerHeight(containerEl);
+          } else {
+            setTimeout(function() {
+              setContainerHeightIfWideEnough();
+            }, 50);
+          }
+        };
+
+       setContainerHeightIfWideEnough();
      });
 
     }
