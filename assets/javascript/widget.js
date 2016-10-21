@@ -223,8 +223,8 @@
 
       el.onclick = function() {
         my_removeClass(element, 'open');
-        resetScroll(element);
-        setVisibilityAll(scrollElements, 0);
+        // resetScroll(element);
+        // setVisibilityAll(scrollElements, 0);
       }
     });
 
