@@ -294,11 +294,8 @@
       console.log('this', el);
 
       el.onclick = function() {
-        el.addEventListener('panel:closed', function() {
-          console.log('HEY!');
-          resetScroll(element);
-          setVisibilityAll(scrollElements, 0);
-        });
+        resetScroll(element);
+        setVisibilityAll(scrollElements, 0);
       }
     });
 
