@@ -257,49 +257,49 @@
       });
     });
 
-    each(document.querySelectorAll('[data-close-panel]'), function(el) {
-      console.log('close-panel',el);
-      var element = document.getElementById(el.dataset.closePanel.slice(1));
-
-      console.log(element);
-      el.onclick = function() {
-        element.addEventListener('transitionend', function() {
-          console.log("transitionend");
-          el.dispatchEvent(new CustomEvent('panel:closed'));
-        })
-      }
-    });
-
-    // $('[data-scroll-reset]').each(function() {
-    //   var
-    //     $this,
-    //     element;
+    // each(document.querySelectorAll('[data-close-panel]'), function(el) {
+    //   console.log('close-panel',el);
+    //   var element = document.getElementById(el.dataset.closePanel.slice(1));
     //
-    //   $this   = $(this);
-    //   element = $($this.data('scroll-reset'));
-    //   console.log("element", element);
-    //
-    //   $this.on('click', function() {
-    //     $this.one('panel:closed', function() {
-    //       resetScroll(element);
-    //       setVisibilityAll(scrollElements, 0);
-    //     });
-    //   });
+    //   console.log(element);
+    //   el.onclick = function() {
+    //     element.addEventListener('transitionend', function() {
+    //       console.log("transitionend");
+    //       el.dispatchEvent(new CustomEvent('panel:closed'));
+    //     })
+    //   }
     // });
 
-    each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
-      var element = document.getElementById(el.dataset.scrollReset.slice(1));
-      console.log('element', element);
-      console.log('this', el);
+    $('[data-scroll-reset]').each(function() {
+      var
+        $this,
+        element;
 
-      el.onclick = function() {
-        el.addEventListener('panel:closed', function() {
-          console.log('HEY!');
+      $this   = $(this);
+      element = $($this.data('scroll-reset'));
+      console.log("element", element);
+
+      $this.on('click', function() {
+        $this.one('panel:closed', function() {
           resetScroll(element);
           setVisibilityAll(scrollElements, 0);
         });
-      }
+      });
     });
+
+    // each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
+    //   var element = document.getElementById(el.dataset.scrollReset.slice(1));
+    //   console.log('element', element);
+    //   console.log('this', el);
+    //
+    //   el.onclick = function() {
+    //     el.addEventListener('panel:closed', function() {
+    //       console.log('HEY!');
+    //       resetScroll(element);
+    //       setVisibilityAll(scrollElements, 0);
+    //     });
+    //   }
+    // });
 
     var setContainerHeight = function(containerEl) {
       // TODO: Refactor this to make simpler
