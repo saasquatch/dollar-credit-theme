@@ -239,20 +239,31 @@
       });
     });
 
-    $('[data-close-panel]').each(function() {
-      var
-        $this,
-        element;
+    // $('[data-close-panel]').each(function() {
+    //   var
+    //     $this,
+    //     element;
+    //
+    //   $this   = $(this);
+    //   element = $($this.data('close-panel'));
+    //
+    //   $this.on('click', function() {
+    //     element
+    //       .one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
+    //         $this.trigger('panel:closed');
+    //       }).removeClass('open');
+    //   });
+    // });
 
-      $this   = $(this);
-      element = $($this.data('close-panel'));
+    each(document.querySelectorAll('[data-close-panel]'), function(el) {
+      var element = document.getElementById(el.dataset.scrollReset.slice(1));
 
-      $this.on('click', function() {
-        element
-          .one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
-            $this.trigger('panel:closed');
-          }).removeClass('open');
-      });
+      el.onclick = function() {
+        element.addEventListener('transitionend', function() {
+          console.log("transitionend");
+          el.dispatchEvent(new CustomEvent('panel:closed'));
+        })
+      }
     });
 
     // $('[data-scroll-reset]').each(function() {
