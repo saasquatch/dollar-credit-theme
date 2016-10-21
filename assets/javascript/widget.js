@@ -137,6 +137,7 @@
     };
 
     resetScroll = function(element) {
+      console.log("resetScroll", element);
       element.scrollTop = 0;
       element.dataset.scrollOffset = 0;
     };
