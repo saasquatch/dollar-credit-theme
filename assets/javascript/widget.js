@@ -171,6 +171,7 @@
       var increment = parseInt(el.dataset.scrollIncrement);
       var limit     = parseInt(element.dataset.scrollLimit.valueOf());
       var offset    = parseInt(element.dataset.scrollOffset.valueOf());
+      var newOffset;
 
       element.dataset.scrollLimit = limit;
 
