@@ -344,9 +344,8 @@
     var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
 
     if (containerEl) {
-     var windowEl = $(window);
-
-     windowEl.onload = function() {
+     window.onload = function() {
+       console.log("not executing?")
        setContainerHeight(containerEl);
      }
 
