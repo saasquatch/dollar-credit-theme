@@ -262,6 +262,7 @@
 
       $this   = $(this);
       element = $($this.data('scroll-reset'));
+      console.log("element", element);
 
       $this.on('click', function() {
         $this.one('panel:closed', function() {
@@ -271,14 +272,14 @@
       });
     });
 
-    each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
-      var element = document.getElementById(el.dataset.scrollReset.slice(1));
-      console.log(element);
-
-      element.onclick = function() {
-        console.log("clicked", element);
-      }
-    })
+    // each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
+    //   var element = document.getElementById(el.dataset.scrollReset.slice(1));
+    //   console.log(element);
+    //
+    //   element.onclick = function() {
+    //     console.log("clicked", element);
+    //   }
+    // });
 
     var setContainerHeight = function(containerEl) {
       // TODO: Refactor this to make simpler
@@ -314,19 +315,10 @@
         panelHeight -= referralsTitleEl.offsetHeight;
       }
 
-      console.log('bodyHeight', bodyHeight);
-      console.log('panelHeight', panelHeight);
-      console.log('height', bodyHeight + panelHeight);
-      var height = bodyHeight + panelHeight + "px";
-      // containerEl.css('height', bodyHeight + panelHeight);
-      // console.log('containerEl', containerEl);
-      containerEl.style.height = height;
-      console.log('style', containerEl.style.height);
+      containerEl.style.height = bodyHeight + panelHeight + "px";
 
       stylesheet = document.createElement('style');
       stylesheet.type = 'text/css';
-
-      //containerEl height is 494 in jquery
 
       css = '#squatch-panel.open {' +
         '-webkit-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
@@ -349,27 +341,14 @@
       document.querySelector('head').appendChild(stylesheet);
     };
 
-    // var containerEl = $('.squatch-container-popup');
     var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
+
     if (containerEl) {
-    //  var setContainerHeightForPopup = setContainerHeight.bind(undefined,containerEl);
      var windowEl = $(window);
 
-     windowEl.on('load', function () {
-       var setContainerHeightIfWideEnough = function () {
-          var width = windowEl.width();
-
-          if (width === 500) {
-            setContainerHeight(containerEl);
-          } else {
-            setTimeout(function() {
-              setContainerHeightIfWideEnough();
-            }, 50);
-          }
-        };
-
-       setContainerHeightIfWideEnough();
-     });
+     windowEl.onload = function() {
+       setContainerHeight(containerEl);
+     }
 
     }
   });
