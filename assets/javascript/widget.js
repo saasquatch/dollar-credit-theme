@@ -240,53 +240,33 @@
       });
     });
 
-    $('[data-close-panel]').each(function() {
-      var
-        $this,
-        element;
-
-      $this   = $(this);
-      element = $($this.data('close-panel'));
-
-      console.log($this);
-
-      $this.on('click', function() {
-        element
-          .one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
-            $this.trigger('panel:closed');
-          }).removeClass('open');
-      });
-    });
-
-    // each(document.querySelectorAll('[data-close-panel]'), function(el) {
-    //   console.log('close-panel',el);
-    //   var element = document.getElementById(el.dataset.closePanel.slice(1));
-    //
-    //   console.log(element);
-    //   el.onclick = function() {
-    //     element.addEventListener('transitionend', function() {
-    //       console.log("transitionend");
-    //       el.dispatchEvent(new CustomEvent('panel:closed'));
-    //     })
-    //   }
-    // });
-
-    // $('[data-scroll-reset]').each(function() {
+    // $('[data-close-panel]').each(function() {
     //   var
     //     $this,
     //     element;
     //
     //   $this   = $(this);
-    //   element = $($this.data('scroll-reset'));
-    //   console.log("element", element);
+    //   element = $($this.data('close-panel'));
+    //
+    //   console.log($this);
     //
     //   $this.on('click', function() {
-    //     $this.one('panel:closed', function() {
-    //       resetScroll(element);
-    //       setVisibilityAll(scrollElements, 0);
-    //     });
+    //     element
+    //       .one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
+    //         $this.trigger('panel:closed');
+    //       }).removeClass('open');
     //   });
     // });
+
+    each(document.querySelectorAll('[data-close-panel]'), function(el) {
+      console.log('close-panel',el);
+      var element = document.getElementById(el.dataset.closePanel.slice(1));
+
+      console.log(element);
+      el.onclick = function() {
+        element.my_removeClass('open');
+      }
+    });
 
     each(document.querySelectorAll('[data-scroll-reset]'), function(el) {
       var element = document.getElementById(el.dataset.scrollReset.slice(1));
