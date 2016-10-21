@@ -316,10 +316,10 @@
 
       console.log('bodyHeight', bodyHeight);
       console.log('panelHeight', panelHeight);
-      // containerEl.css('height', bodyHeight + panelHeight);
+      containerEl.css('height', bodyHeight + panelHeight);
       console.log('containerEl', containerEl);
       containerEl.style.height = bodyHeight + panelHeight;
-      console.log('style', containerEl.style);
+      console.log('style', containerEl.style.height);
 
       stylesheet = document.createElement('style');
       stylesheet.type = 'text/css';
