@@ -1,6 +1,6 @@
 .squatch-container-popup {
   .box-shadow(0 2px 4px rgba(0,0,0,.5));
-  height: 486px;
+  height: 100%;
   overflow: hidden;
 
   // Disable responsive view on popup temporarily.
@@ -8,7 +8,7 @@
   // There is another hack in widget.js as well
   // TODO: Find a solution for this and enable responsive styles again.
   @media (max-width: @container-width) {
-    width: @container-width;
+    width: 100%;
   }
 
   &,
