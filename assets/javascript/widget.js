@@ -35,7 +35,6 @@
   }
 
   function my_removeClass(el, className) {
-    console.log('removeClass el:', el);
     if (el.classList)
       el.classList.remove(className)
     else if (hasClass(el, className)) {
