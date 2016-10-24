@@ -237,6 +237,8 @@
 
 
     var setContainerHeight = function(containerEl) {
+      console.log(containerEl);
+
       var bodyEl           = document.getElementsByClassName('squatch-body')[0];
       var titleEl          = document.getElementsByClassName('squatch-title')[0];
       var titleStyle       = getComputedStyle(titleEl);
@@ -248,7 +250,7 @@
       var bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop) - parseInt(titleStyle.marginBottom) - titleEl.offsetTop;
       var panelHeight = panelEl ? panelEl.offsetHeight : 0;
 
-      if (referralsEl.style.display !== 'none') {
+      if (referralsEl && referralsEl.style.display !== 'none') {
         panelHeight -= referralsEl.offsetHeight;
       }
 
@@ -283,7 +285,6 @@
     };
 
     var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
-    console.log(containerEl);
 
     if (containerEl) {
      window.onload = function() {
