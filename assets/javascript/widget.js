@@ -223,16 +223,20 @@
     each(document.querySelectorAll('[data-open-panel]'), function(el) {
       var element = document.getElementById(el.dataset.openPanel.slice(1));
 
-      el.onclick = function() {
-        my_addClass(element, 'open');
-      };
+      if (element) {
+        el.onclick = function() {
+          my_addClass(element, 'open');
+        };
+      }
     });
 
     each(document.querySelectorAll('[data-close-panel]'), function(el) {
       var element = document.getElementById(el.dataset.closePanel.slice(1));
 
-      el.onclick = function() {
-        my_removeClass(element, 'open');
+      if (element) {
+        el.onclick = function() {
+          my_removeClass(element, 'open');
+        };
       }
     });
 
