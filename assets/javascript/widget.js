@@ -35,6 +35,7 @@
   }
 
   function my_removeClass(el, className) {
+    console.log('removeClass el:', el);
     if (el.classList)
       el.classList.remove(className)
     else if (hasClass(el, className)) {
@@ -211,10 +212,7 @@
 
     // CTA
     each(document.getElementsByClassName('cta-container'), function(el) {
-      console.log('cta-container', el);
-
       el.onclick = function(e) {
-        console.log('clicked');
         if (window.parent.squatch.eventBus) {
           window.parent.squatch.eventBus.dispatch('open_popup', e.type);
         }
