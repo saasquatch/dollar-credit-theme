@@ -209,6 +209,15 @@
       });
     });
 
+    // CTA
+    each(document.getElementsByClassName('cta-container'), function(el) {
+      el.onclick = function() {
+        if (window.parent.squatch.eventBus) {
+          window.parent.squatch.eventBus.dispatch('open_popup', e.type);
+        }
+      }
+    });
+
     // Popup stuff
     each(document.querySelectorAll('[data-open-panel]'), function(el) {
       var element = document.getElementById(el.dataset.openPanel.slice(1));
@@ -237,7 +246,7 @@
 
       var bodyHeight = bodyEl.offsetHeight;
       var bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop) - parseInt(titleStyle.marginBottom) - titleEl.offsetTop;
-      var panelHeight = panelEl.offsetHeight;
+      var panelHeight = panelEl.offsetHeight ? panelEl.offsetHeight : 0;
 
       if (referralsEl.style.display !== 'none') {
         panelHeight -= referralsEl.offsetHeight;
