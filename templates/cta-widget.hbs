@@ -9,10 +9,17 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
   <link rel="stylesheet" href="{{assets 'css/cta-widget.css'}}">
+
+  <style>
+     body .cta-container {
+       font-family: {{variables 'widget.REFERRER_WIDGET.content.widgetCustomization.widgetFont'}};
+       background-color: {{variables 'jsOptions.cta.content.buttonColor'}};
+     }
+   </style>
 </head>
 <body>
   <main class="cta-container">
-    Refer Friends and Win
+    {{variables 'jsOptions.cta.content.buttonText'}}
   </main>
 </body>
 </html>
