@@ -283,6 +283,7 @@
     };
 
     var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
+    console.log(containerEl);
 
     if (containerEl) {
      window.onload = function() {
