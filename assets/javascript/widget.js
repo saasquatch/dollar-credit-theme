@@ -211,7 +211,10 @@
 
     // CTA
     each(document.getElementsByClassName('cta-container'), function(el) {
-      el.onclick = function() {
+      console.log('cta-container', el);
+
+      el.onclick = function(e) {
+        console.log('clicked');
         if (window.parent.squatch.eventBus) {
           window.parent.squatch.eventBus.dispatch('open_popup', e.type);
         }
@@ -237,8 +240,6 @@
 
 
     var setContainerHeight = function(containerEl) {
-      console.log(containerEl);
-
       var bodyEl           = document.getElementsByClassName('squatch-body')[0];
       var titleEl          = document.getElementsByClassName('squatch-title')[0];
       var titleStyle       = getComputedStyle(titleEl);
