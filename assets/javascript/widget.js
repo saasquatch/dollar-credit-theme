@@ -254,7 +254,7 @@
         panelHeight -= referralsEl.offsetHeight;
       }
 
-      if (referralsTitleEl.style.display !== 'none') {
+      if (referralsTitleEl && referralsTitleEl.style.display !== 'none') {
         panelHeight -= referralsTitleEl.offsetHeight;
       }
 
