@@ -246,7 +246,7 @@
 
       var bodyHeight = bodyEl.offsetHeight;
       var bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop) - parseInt(titleStyle.marginBottom) - titleEl.offsetTop;
-      var panelHeight = panelEl.offsetHeight ? panelEl.offsetHeight : 0;
+      var panelHeight = panelEl ? panelEl.offsetHeight : 0;
 
       if (referralsEl.style.display !== 'none') {
         panelHeight -= referralsEl.offsetHeight;
