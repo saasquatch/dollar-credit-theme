@@ -49,6 +49,7 @@
             },
             "content":{
               "type":"object",
+              "title":"Customize CTA Button",
               "properties":{
                 "buttonSide":{
                   "type":"string",
@@ -107,18 +108,6 @@
                       "handlebars"
                     ],
                     "input_height":"50px"
-                  }
-                },
-                "previewUrl":{
-                  "type":"string",
-                  "format":"text",
-                  "minLength":1,
-                  "title":"Preview Website (URL):",
-                  "default":"http://www.google.com",
-                  "options":{
-                    "validate":[
-                      "url"
-                    ]
                   }
                 }
               }
