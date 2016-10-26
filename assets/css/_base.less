@@ -71,7 +71,14 @@ body {
     margin-bottom: 20px;
 
     &.form-control.invalid {
-      border-color: #ff677f;
+
+      &.invalid {
+        border-color: #ff677f;
+      }
+
+      &.valid {
+        border-color: @green;
+      }
     }
   }
 
