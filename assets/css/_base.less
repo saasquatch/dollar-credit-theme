@@ -77,12 +77,14 @@ body {
     max-width: 130px;
   }
 
-  .valid {
-    border-color: @green;
-  }
+  input.form-control {
+    &.valid {
+      border-color: @green;
+    }
 
-  .ivalid {
-    border-color: #ff676f;
+    &.ivalid {
+      border-color: #ff676f;
+    }
   }
 }
 
