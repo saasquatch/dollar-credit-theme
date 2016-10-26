@@ -105,12 +105,22 @@
 
     var scrollElements = document.querySelectorAll('[data-scroll-element]');
     var sendEmailBtn = document.getElementById('squatch-send-email');
-    var emailInput = document.getElementById('squatch-user-email');
+    var emailInput = document.getElementById('squatch-user-emai');
 
     handleClicks(sendEmailBtn, function() {
-      console.log("Sending email...");
-      console.log(emailInput.value);
-      console.log(isValidEmail(emailInput.value));
+      if (!isValidEmail(emailInput.value)) {
+        my_addClass(elementInput, 'invalid');
+        elementInput.onkeypress = function() {
+          if (isValidEmail(this.value)) {
+            my_removeClass(this, 'invalid');
+            my_addClass(this, 'valid');
+          }
+          console.log("onkeypress");
+        }
+      } else {
+        my_removeClass(elementInput, 'invalid');
+        console.log("Submit Email");
+      }
     });
 
     var inValidRange = function(offset, limit) {
