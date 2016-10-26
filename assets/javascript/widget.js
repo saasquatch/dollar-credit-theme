@@ -115,11 +115,12 @@
             my_removeClass(this, 'invalid');
             my_addClass(this, 'valid');
           }
-          console.log("onkeypress");
         }
       } else {
         my_removeClass(emailInput, 'invalid');
-        console.log("Submit Email");
+        if (window.parent.squatch.eventBus) {
+          window.parent.squatch.eventBus.dispatch('email_submitted', emailInput.value);
+        }
       }
     });
 
