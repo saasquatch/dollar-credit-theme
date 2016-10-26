@@ -103,9 +103,14 @@
     var sendEmailBtn = document.getElementById('squatch-send-email');
     var emailInput = document.getElementById('squatch-user-email');
 
+    var isValidEmail = function(email) {
+      return /^.+@.+\..+$/.test(email);
+    };
+
     handleClicks(sendEmailBtn, function() {
       console.log("Sending email...");
       console.log(emailInput.value);
+      console.log(isValidEmail(emailInput.value));
     });
 
     var inValidRange = function(offset, limit) {
