@@ -100,6 +100,11 @@
   domready(function() {
 
     var scrollElements = document.querySelectorAll('[data-scroll-element]');
+    var sendEmailBtn = document.getElementById('squatch-send-email');
+
+    handleClicks(sendEmailBtn, function() {
+      console.log("Sending email...");
+    });
 
     var inValidRange = function(offset, limit) {
       return offset >= 0 && offset < limit;
@@ -134,11 +139,6 @@
       element.scrollTop = 0;
       element.dataset.scrollOffset = 0;
     };
-
-    var submitEmail = function(param) {
-      console.log("submiting email");
-      console.log(param);
-    }
 
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
       var clipboard = new Clipboard(el);
