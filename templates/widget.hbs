@@ -54,15 +54,17 @@
         {{> share}}
       </div>
 
-      <div id="squatch-panel">
-        {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-        {{!-- {{> (stringFormat 'programs/%s/panel_summary' programDetails.referredRewardDetails.rewardType) }} --}}
-        {{> programs/CREDIT/panel_summary}}
-        {{> referrals}}
-        {{> attribution}}
-      </div>
+      {{#if user.firstName}}
+        <div id="squatch-panel">
+          {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+          {{!-- {{> (stringFormat 'programs/%s/panel_summary' programDetails.referredRewardDetails.rewardType) }} --}}
+          {{> programs/CREDIT/panel_summary}}
+          {{> referrals}}
+          {{> attribution}}
+        </div>
 
-      {{> actions}}
+        {{> actions}}
+      {{/if}}
     </main>
 
     <script src="{{assets 'libs/ready.min.js'}}"></script>
