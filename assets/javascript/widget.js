@@ -101,9 +101,11 @@
 
     var scrollElements = document.querySelectorAll('[data-scroll-element]');
     var sendEmailBtn = document.getElementById('squatch-send-email');
+    var emailInput = document.getElementById('squatch-user-email');
 
     handleClicks(sendEmailBtn, function() {
       console.log("Sending email...");
+      console.log(emailInput.value);
     });
 
     var inValidRange = function(offset, limit) {
