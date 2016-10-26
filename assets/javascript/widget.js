@@ -110,7 +110,7 @@
     handleClicks(sendEmailBtn, function() {
       if (!isValidEmail(emailInput.value)) {
         my_addClass(elementInput, 'invalid');
-        elementInput.onkeypress = function() {
+        emailInput.onkeypress = function() {
           if (isValidEmail(this.value)) {
             my_removeClass(this, 'invalid');
             my_addClass(this, 'valid');
