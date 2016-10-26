@@ -135,6 +135,11 @@
       element.dataset.scrollOffset = 0;
     };
 
+    var submitEmail = function(param) {
+      console.log("submiting email");
+      console.log(param);
+    }
+
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
       var clipboard = new Clipboard(el);
       var notification;
