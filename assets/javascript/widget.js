@@ -118,7 +118,7 @@
           console.log("onkeypress");
         }
       } else {
-        my_removeClass(elementInput, 'invalid');
+        my_removeClass(emailInput, 'invalid');
         console.log("Submit Email");
       }
     });
