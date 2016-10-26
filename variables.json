@@ -102,7 +102,7 @@
                   "title":"Button Text",
                   "format":"markdown",
                   "propertyOrder":4,
-                  "default":"Refer Friends and Win",
+                  "default":"Refer Friends For Rewards",
                   "options":{
                     "validate":[
                       "handlebars"
