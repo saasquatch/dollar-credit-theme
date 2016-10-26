@@ -97,15 +97,15 @@
     return 1;
   }
 
+  var isValidEmail = function(email) {
+    return /^.+@.+\..+$/.test(email);
+  }
+
   domready(function() {
 
     var scrollElements = document.querySelectorAll('[data-scroll-element]');
     var sendEmailBtn = document.getElementById('squatch-send-email');
     var emailInput = document.getElementById('squatch-user-email');
-
-    var isValidEmail = function(email) {
-      return /^.+@.+\..+$/.test(email);
-    };
 
     handleClicks(sendEmailBtn, function() {
       console.log("Sending email...");
