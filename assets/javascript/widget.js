@@ -105,7 +105,7 @@
 
     var scrollElements = document.querySelectorAll('[data-scroll-element]');
     var sendEmailBtn = document.getElementById('squatch-send-email');
-    var emailInput = document.getElementById('squatch-user-emai');
+    var emailInput = document.getElementById('squatch-user-email');
 
     handleClicks(sendEmailBtn, function() {
       if (!isValidEmail(emailInput.value)) {
