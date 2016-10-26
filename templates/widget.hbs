@@ -54,7 +54,8 @@
         {{> share}}
       </div>
 
-      {{#if user.firstName}}
+      <!-- if user.firstName -->
+      {{#if false}}
         <div id="squatch-panel">
           {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
           {{!-- {{> (stringFormat 'programs/%s/panel_summary' programDetails.referredRewardDetails.rewardType) }} --}}
@@ -64,6 +65,17 @@
         </div>
 
         {{> actions}}
+      {{else}}
+        <div class="squatch-register">
+          <p>Thanks for sending your first referral!<br>
+            Give us your email to ensure you get rewarded when your referral is used.
+          </p>
+
+          <form action="#" onsubmit="function() {console.log('hey');}">
+            <input type="email" placeholder="Email" required="required"/>
+            <button type="submit" class="btn btn-primary"></button>
+          </form>
+        </div>
       {{/if}}
     </main>
 
