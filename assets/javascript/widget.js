@@ -107,22 +107,26 @@
     var sendEmailBtn = document.getElementById('squatch-send-email');
     var emailInput = document.getElementById('squatch-user-email');
 
-    handleClicks(sendEmailBtn, function() {
-      if (!isValidEmail(emailInput.value)) {
-        my_addClass(emailInput, 'invalid');
-        emailInput.onkeypress = function() {
-          if (isValidEmail(this.value)) {
-            my_removeClass(this, 'invalid');
-            my_addClass(this, 'valid');
+    if (sendEmailBtn) {
+      handleClicks(sendEmailBtn, function() {
+        if (!isValidEmail(emailInput.value)) {
+          my_addClass(emailInput, 'invalid');
+          emailInput.onkeypress = function() {
+            if (isValidEmail(this.value)) {
+              my_removeClass(this, 'invalid');
+              my_addClass(this, 'valid');
+            }
+          }
+        } else {
+          my_removeClass(emailInput, 'invalid');
+          var registerForm = document.getElementsByClassName('squatch-register')[0];
+          registerForm.innerHTML = '<p><strong>' + emailInput.value + '</strong><br>Has been successfully registered</p>';
+          if (window.parent.squatch.eventBus) {
+            window.parent.squatch.eventBus.dispatch('email_submitted', emailInput.value);
           }
         }
-      } else {
-        my_removeClass(emailInput, 'invalid');
-        if (window.parent.squatch.eventBus) {
-          window.parent.squatch.eventBus.dispatch('email_submitted', emailInput.value);
-        }
-      }
-    });
+      });
+    }
 
     var inValidRange = function(offset, limit) {
       return offset >= 0 && offset < limit;
