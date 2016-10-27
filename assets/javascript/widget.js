@@ -122,7 +122,7 @@
           var registerForm = document.getElementsByClassName('squatch-register')[0];
           registerForm.innerHTML = '<p><strong>' + emailInput.value + '</strong><br>Has been successfully registered</p>';
           if (window.parent.squatch.eventBus) {
-            window.parent.squatch.eventBus.dispatch('email_submitted', emailInput.value);
+            window.parent.squatch.eventBus.dispatch('email_submitted', this, emailInput.value);
           }
         }
       });
