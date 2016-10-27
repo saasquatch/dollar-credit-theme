@@ -55,17 +55,15 @@
                   "type":"string",
                   "title":"Button Side:",
                   "enum":[
-                    "bottom",
-                    "left-side",
-                    "right-side",
-                    "top"
+                    "left",
+                    "right",
+                    "center"
                   ],
                   "options":{
                     "enum_titles":[
-                      "Bottom",
                       "Left Side",
                       "Right Side",
-                      "Top"
+                      "Center"
                     ]
                   }
                 },
@@ -73,15 +71,15 @@
                   "type":"string",
                   "title":"Button Position:",
                   "enum":[
-                    "center",
-                    "left",
-                    "right"
+                    "top",
+                    "bottom",
+                    "middle"
                   ],
                   "options":{
                     "enum_titles":[
-                      "Center",
-                      "Left",
-                      "Right"
+                      "Top",
+                      "Bottom",
+                      "Middle"
                     ]
                   }
                 },
