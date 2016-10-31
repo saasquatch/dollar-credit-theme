@@ -18,8 +18,8 @@
               ],
               "options":{
                 "enum_titles":[
-                  "Referrer Widget",
-                  "Referred Widget"
+                  "Referrer's Widget",
+                  "Referred Conversion Widget"
                 ]
               }
             }
@@ -134,8 +134,8 @@
                 ],
                 "options":{
                   "enum_titles":[
-                    "Referrer Widget",
-                    "Referred Widget"
+                    "Referrer's Widget",
+                    "Referred Conversion Widget"
                   ]
                 }
               }
