@@ -123,7 +123,7 @@
           registerForm.style.paddingTop = '30px';
           registerForm.innerHTML = '<p><strong>' + emailInput.value + '</strong><br>Has been successfully registered</p>';
 
-          if (window.parent.squatch.eventBus) {
+          if (window.parent.squatch && window.parent.squatch.eventBus) {
             window.parent.squatch.eventBus.dispatch('email_submitted', this, emailInput.value /*, JWT*/);
           }
         }
@@ -189,7 +189,7 @@
       clipboard.on('success', notifySuccess);
       clipboard.on('error', notifyFailure);
       handleClicks(el, function(e) {
-        if (window.parent.squatch.eventBus) {
+        if (window.parent.squatch && window.parent.squatch.eventBus) {
           window.parent.squatch.eventBus.dispatch('copy_btn_clicked', e.type);
         }
       });
@@ -232,7 +232,7 @@
 
     each(document.getElementsByClassName('squatch-header-close'), function(el) {
       handleClicks(el, function(e) {
-        if (window.parent.squatch.eventBus) {
+        if (window.parent.squatch && window.parent.squatch.eventBus) {
           window.parent.squatch.eventBus.dispatch('close_popup', e.type);
         }
       });
@@ -241,7 +241,7 @@
     // CTA
     each(document.getElementsByClassName('cta-container'), function(el) {
       el.onclick = function(e) {
-        if (window.parent.squatch.eventBus) {
+        if (window.parent.squatch && window.parent.squatch.eventBus) {
           window.parent.squatch.eventBus.dispatch('open_popup', e.type);
         }
       }
