@@ -1,5 +1,11 @@
 {
   "title":"root",
+  "self": {
+  	"vendor": "referral-saasquatch",
+	  "name" : "rs_schema",
+	  "format" : "jsonschema",
+  	"version" : "1-0-0"
+  },
   "type":"object",
   "properties":{
     "jsOptions":{
