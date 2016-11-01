@@ -145,7 +145,7 @@
       }
 
       if (window.parent.squatch && window.parent.squatch.eventBus) {
-        window.parent.squatch.eventBus.dispatch('fb_btn_clicked', this, /*params*/ /*, JWT*/);
+        window.parent.squatch.eventBus.dispatch('fb_btn_clicked', this /*,params*/ /*, JWT*/);
       }
     });
 
