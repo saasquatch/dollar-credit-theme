@@ -26,6 +26,32 @@
     }, 500);
   }
 
+  function emailFormHandler() {
+    var sendEmailBtn = document.getElementById('squatch-send-email');
+    var emailInput = document.getElementById('squatch-user-email');
+
+    handleClicks(sendEmailBtn, function() {
+      if (!isValidEmail(emailInput.value)) {
+        my_addClass(emailInput, 'invalid');
+        emailInput.onkeypress = function() {
+          if (isValidEmail(this.value)) {
+            my_removeClass(this, 'invalid');
+            my_addClass(this, 'valid');
+          }
+        }
+      } else {
+        my_removeClass(emailInput, 'invalid');
+        var registerForm = document.getElementsByClassName('squatch-register')[0];
+        registerForm.style.paddingTop = '30px';
+        registerForm.innerHTML = '<p><strong>' + emailInput.value + '</strong><br>Has been successfully registered</p>';
+
+        if (window.parent.squatch && window.parent.squatch.eventBus) {
+          window.parent.squatch.eventBus.dispatch('email_submitted', this, emailInput.value /*, JWT*/);
+        }
+      }
+    });
+  }
+
   function facebookHandler() {
     var facebookBtn = document.getElementsByClassName('fbShare')[0];
     var pictureString = (squatch.user.facebook.shareImage == "" || squatch.user.facebook.shareImage === null) ? "" : "&picture="+squatch.user.facebook.shareImage;
@@ -185,30 +211,8 @@
   domready(function() {
 
     var scrollElements = document.querySelectorAll('[data-scroll-element]');
-    var sendEmailBtn = document.getElementById('squatch-send-email');
-    var emailInput = document.getElementById('squatch-user-email');
 
-    handleClicks(sendEmailBtn, function() {
-      if (!isValidEmail(emailInput.value)) {
-        my_addClass(emailInput, 'invalid');
-        emailInput.onkeypress = function() {
-          if (isValidEmail(this.value)) {
-            my_removeClass(this, 'invalid');
-            my_addClass(this, 'valid');
-          }
-        }
-      } else {
-        my_removeClass(emailInput, 'invalid');
-        var registerForm = document.getElementsByClassName('squatch-register')[0];
-        registerForm.style.paddingTop = '30px';
-        registerForm.innerHTML = '<p><strong>' + emailInput.value + '</strong><br>Has been successfully registered</p>';
-
-        if (window.parent.squatch && window.parent.squatch.eventBus) {
-          window.parent.squatch.eventBus.dispatch('email_submitted', this, emailInput.value /*, JWT*/);
-        }
-      }
-    });
-
+    emailFormHandler();
     facebookHandler();
     twitterHandler();
     emailHandler();
