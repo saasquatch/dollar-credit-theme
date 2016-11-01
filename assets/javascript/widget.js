@@ -234,7 +234,7 @@
       clipboard.on('error', notifyFailure);
       handleClicks(el, function(e) {
         if (window.parent.squatch && window.parent.squatch.eventBus) {
-          window.parent.squatch.eventBus.dispatch('copy_btn_clicked', e.type);
+          window.parent.squatch.eventBus.dispatch('copy_btn_clicked', this, window.squatch);
         }
       });
     });
