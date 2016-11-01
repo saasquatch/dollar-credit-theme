@@ -115,6 +115,7 @@
   }
 
   function handleClicks(elem, fn) {
+    console.log(elem);
     if (!elem) return;
 
     if (document.addEventListener) {
