@@ -132,14 +132,18 @@
       }
     });
 
+    var pictureString = (squatch.user.facebook.shareImage == "" || squatch.user.facebook.shareImage === null) ? "" : "&picture="+squatch.user.facebook.shareImage;
+    var fbUrl = "https://www.facebook.com/dialog/feed?app_id=" + squatch.user.facebook.appId + "&link=" + squatch.user.facebook.link + "&name=" + squatch.user.facebook.title + "&description=" + squatch.user.facebook.summary + pictureString+ "&redirect_uri=" + squatch.user.facebook.redirectUrl;
+
+    facebookBtn.href = fbUrl;
+
     handleClicks(facebookBtn, function(e) {
       // If it's not mobile, don't use href link
       if (e.type != 'touchstart') {
         e.preventDefault();
 
-        var pictureString = (squatch.user.facebook.shareImage == "" || squatch.user.facebook.shareImage === null) ? "" : "&picture="+squatch.user.facebook.shareImage;
-
-        var url= "https://www.facebook.com/dialog/feed?app_id=" + squatch.user.facebook.appId + "&link=" + squatch.user.facebook.link + "&name=" + squatch.user.facebook.title + "&description=" + squatch.user.facebook.summary + pictureString+ "&redirect_uri=" + squatch.user.facebook.redirectUrl + "&display=popup";
+        var url= fbUrl + "&display=popup";
+        console.log(url)
 
         window.open(url, 'fb', 'status=0,width=620,height=400');
       }
