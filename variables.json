@@ -39,17 +39,6 @@
               "properties":{
                 "themeMapping":{
                   "default":"cta-widget"
-                },
-                "shownForUrls":{
-                  "type":"array",
-                  "items":{
-                    "type":"string",
-                    "options":{
-                      "validate":[
-                        "url"
-                      ]
-                    }
-                  }
                 }
               }
             },
@@ -132,6 +121,9 @@
               "url":{
                 "type":"string"
               },
+	      "showAsCTA":{
+                "type": "boolean"
+	      },
               "widgetType":{
                 "type":"string",
                 "enum":[
