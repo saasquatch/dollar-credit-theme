@@ -93,7 +93,7 @@
   }
 
   function emailHandler() {
-    var emailBtn = document.getElementsByClassName('emailShare');
+    var emailBtn = document.getElementsByClassName('emailShare')[0];
     var emailUrl = squatch.user.email.share.mailToLink;
 
     handleClicks(emailBtn, function(e) {
@@ -115,7 +115,6 @@
   }
 
   function handleClicks(elem, fn) {
-    console.log(elem);
     if (!elem) return;
 
     if (document.addEventListener) {
