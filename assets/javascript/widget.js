@@ -103,6 +103,10 @@
         var mailurl = emailUrl;
         mailTo(mailurl);
       }
+
+      if (window.parent.squatch && window.parent.squatch.eventBus) {
+        window.parent.squatch.eventBus.dispatch('email_btn_clicked', this, window.squatch);
+      }
     });
   }
 
