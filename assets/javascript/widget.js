@@ -143,13 +143,12 @@
         e.preventDefault();
 
         var url= fbUrl + "&display=popup";
-        console.log(url)
 
         window.open(url, 'fb', 'status=0,width=620,height=400');
       }
 
       if (window.parent.squatch && window.parent.squatch.eventBus) {
-        window.parent.squatch.eventBus.dispatch('fb_btn_clicked', this /*,params*/ /*, JWT*/);
+        window.parent.squatch.eventBus.dispatch('fb_btn_clicked', this, window.squatch /*,params*/ /*, JWT*/);
       }
     });
 
