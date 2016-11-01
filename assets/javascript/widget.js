@@ -29,12 +29,16 @@
 
     twitterBtn.href = twUrl;
 
-    function twClicked(e) {
+    handleClicks(twitterBtn, function(e) {
       if (e.type != 'touchstart') {
         e.preventDefault();
         window.open(twUrl, 'twitter', 'status=1,width=575,height=400');
       }
-    };
+
+      if (window.parent.squatch && window.parent.squatch.eventBus) {
+        window.parent.squatch.eventBus.dispatch('tw_btn_clicked', this, window.squatch /*,params*/ /*, JWT*/);
+      }
+    });
   }
 
   function listenToClick(element, name, fn) {
