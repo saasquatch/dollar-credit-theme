@@ -1,6 +1,42 @@
 (function() {
   'use strict';
 
+  function facebookHandler() {
+    var facebookBtn = document.getElementsByClassName('fbShare')[0];
+    var pictureString = (squatch.user.facebook.shareImage == "" || squatch.user.facebook.shareImage === null) ? "" : "&picture="+squatch.user.facebook.shareImage;
+    var fbUrl = "https://www.facebook.com/dialog/feed?app_id=" + squatch.user.facebook.appId + "&link=" + squatch.user.facebook.link + "&name=" + squatch.user.facebook.title + "&description=" + squatch.user.facebook.summary + pictureString+ "&redirect_uri=" + squatch.user.facebook.redirectUrl;
+
+    facebookBtn.href = fbUrl;
+
+    handleClicks(facebookBtn, function(e) {
+      // If it's not mobile, don't use href link
+      if (e.type != 'touchstart') {
+        e.preventDefault();
+
+        var url = fbUrl + "&display=popup";
+        window.open(url, 'fb', 'status=0,width=620,height=400');
+      }
+
+      if (window.parent.squatch && window.parent.squatch.eventBus) {
+        window.parent.squatch.eventBus.dispatch('fb_btn_clicked', this, window.squatch /*,params*/ /*, JWT*/);
+      }
+    });
+  }
+
+  function twitterHandler() {
+    var twitterBtn = document.getElementsByClassName('twShare')[0];
+    var twUrl = "https://twitter.com/intent/tweet?source=webclient&text=" + squatch.user.twitter.message;
+
+    twitterBtn.href = twUrl;
+
+    function twClicked(e) {
+      if (e.type != 'touchstart') {
+        e.preventDefault();
+        window.open(twUrl, 'twitter', 'status=1,width=575,height=400');
+      }
+    };
+  }
+
   function listenToClick(element, name, fn) {
     if (document.addEventListener) {
       element.addEventListener(name, fn, false);
@@ -108,8 +144,6 @@
     var scrollElements = document.querySelectorAll('[data-scroll-element]');
     var sendEmailBtn = document.getElementById('squatch-send-email');
     var emailInput = document.getElementById('squatch-user-email');
-    var facebookBtn = document.getElementsByClassName('fbShare')[0];
-
 
     handleClicks(sendEmailBtn, function() {
       if (!isValidEmail(emailInput.value)) {
@@ -132,25 +166,9 @@
       }
     });
 
-    var pictureString = (squatch.user.facebook.shareImage == "" || squatch.user.facebook.shareImage === null) ? "" : "&picture="+squatch.user.facebook.shareImage;
-    var fbUrl = "https://www.facebook.com/dialog/feed?app_id=" + squatch.user.facebook.appId + "&link=" + squatch.user.facebook.link + "&name=" + squatch.user.facebook.title + "&description=" + squatch.user.facebook.summary + pictureString+ "&redirect_uri=" + squatch.user.facebook.redirectUrl;
+    facebookHandler();
+    twitterHandler();
 
-    facebookBtn.href = fbUrl;
-
-    handleClicks(facebookBtn, function(e) {
-      // If it's not mobile, don't use href link
-      if (e.type != 'touchstart') {
-        e.preventDefault();
-
-        var url= fbUrl + "&display=popup";
-
-        window.open(url, 'fb', 'status=0,width=620,height=400');
-      }
-
-      if (window.parent.squatch && window.parent.squatch.eventBus) {
-        window.parent.squatch.eventBus.dispatch('fb_btn_clicked', this, window.squatch /*,params*/ /*, JWT*/);
-      }
-    });
 
     var inValidRange = function(offset, limit) {
       return offset >= 0 && offset < limit;
