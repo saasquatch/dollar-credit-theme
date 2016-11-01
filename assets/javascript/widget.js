@@ -1,6 +1,31 @@
 (function() {
   'use strict';
 
+  // gracefully handle mailto between chrome/outlook type systems/no mail client
+  // (i.e. - don't leave the page on blank tab)
+  var mailTo = function(url) {
+    // I have often experienced Firefox errors with protocol handlers
+    // so better be on the safe side.
+    try {
+      var mailer = window.open(url, 'Mailer');
+    } catch(e) {
+      console.warn('There was an error opening a mail composer.', e);
+    }
+
+    setTimeout(function() {
+      // This needs to be in a try/catch block because a Security
+      // error is thrown if the protocols doesn't match
+      try {
+        // At least in Firefox the location is changed to about:blank
+        if(mailer.location.href === url || mailer.location.href.substr(0, 6) === 'about:') {
+          mailer.close();
+        }
+      } catch(e) {
+        console.warn('There was an error opening a mail composer.', e);
+      }
+    }, 500);
+  }
+
   function facebookHandler() {
     var facebookBtn = document.getElementsByClassName('fbShare')[0];
     var pictureString = (squatch.user.facebook.shareImage == "" || squatch.user.facebook.shareImage === null) ? "" : "&picture="+squatch.user.facebook.shareImage;
@@ -41,6 +66,20 @@
     });
   }
 
+  function emailHandler() {
+    var emailBtn = document.getElementsByClassName('emailShare');
+    var emailUrl = squatch.user.email.share.mailToLink;
+
+    handleClicks(emailBtn, function(e) {
+      if (e.type != 'touchstart') {
+        e.preventDefault();
+
+        var mailurl = emailUrl;
+        mailTo(mailurl);
+      }
+    });
+  }
+
   function listenToClick(element, name, fn) {
     if (document.addEventListener) {
       element.addEventListener(name, fn, false);
@@ -61,7 +100,7 @@
       elem.attachEvent("onclick", fn, false);
       elem.attachEvent("touchstart", fn, false);
     }
-  };
+  }
 
   function hasClass(el, className) {
     if (el.classList)
@@ -172,6 +211,7 @@
 
     facebookHandler();
     twitterHandler();
+    emailHandler();
 
 
     var inValidRange = function(offset, limit) {
