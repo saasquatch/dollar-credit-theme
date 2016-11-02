@@ -57,6 +57,7 @@
     var pictureString = (squatch.user.facebook.shareImage == "" || squatch.user.facebook.shareImage === null) ? "" : "&picture="+squatch.user.facebook.shareImage;
     var fbUrl = "https://www.facebook.com/dialog/feed?app_id=" + squatch.user.facebook.appId + "&link=" + squatch.user.facebook.link + "&name=" + squatch.user.facebook.title + "&description=" + squatch.user.facebook.summary + pictureString+ "&redirect_uri=" + squatch.user.facebook.redirectUrl;
 
+    if (!facebookBtn) return;
     facebookBtn.href = fbUrl;
 
     handleClicks(facebookBtn, function(e) {
@@ -78,6 +79,7 @@
     var twitterBtn = document.getElementsByClassName('twShare')[0];
     var twUrl = "https://twitter.com/intent/tweet?source=webclient&text=" + squatch.user.twitter.message;
 
+    if (!twitterBtn) return;
     twitterBtn.href = twUrl;
 
     handleClicks(twitterBtn, function(e) {
@@ -220,7 +222,6 @@
     facebookHandler();
     twitterHandler();
     emailHandler();
-
 
     var inValidRange = function(offset, limit) {
       return offset >= 0 && offset < limit;
