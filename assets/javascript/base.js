@@ -1,5 +1,4 @@
-(function() {
-  'use strict';
+
 
   // gracefully handle mailto between chrome/outlook type systems/no mail client
   // (i.e. - don't leave the page on blank tab)
@@ -214,5 +213,3 @@
   var isValidEmail = function(email) {
     return /^.+@.+\..+$/.test(email);
   }
-
-})();
