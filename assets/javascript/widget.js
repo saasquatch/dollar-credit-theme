@@ -1,3 +1,5 @@
+(function() {
+  'use strict';
 
 
   domready(function() {
@@ -204,3 +206,5 @@
 
     }
   });
+
+})();
