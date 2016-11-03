@@ -120,15 +120,6 @@
       });
     });
 
-    // CTA
-    each(document.getElementsByClassName('cta-container'), function(el) {
-      el.onclick = function(e) {
-        if (window.parent.squatch && window.parent.squatch.eventBus) {
-          window.parent.squatch.eventBus.dispatch('open_popup', e.type);
-        }
-      }
-    });
-
     // Popup stuff
     each(document.querySelectorAll('[data-open-panel]'), function(el) {
       var element = document.getElementById(el.dataset.openPanel.slice(1));
