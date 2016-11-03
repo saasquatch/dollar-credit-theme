@@ -112,7 +112,6 @@
     });
 
     each(document.getElementsByClassName('squatch-header-close'), function(el) {
-      console.log('element', el);
       handleClicks(el, function(e) {
         if (window.parent.squatch && window.parent.squatch.eventBus) {
           window.parent.squatch.eventBus.dispatch('close_popup', e.type);
