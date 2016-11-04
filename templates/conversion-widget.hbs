@@ -51,7 +51,7 @@
 
         <button class="close squatch-header-close" data-close-panel="#squatch-panel">Close</button>
 
-        {{#if user.referredBy.newlyReferred}}
+        {{#if referredBy}}
           {{> programs/CREDIT/conversion-lead}}
           {{> conversion-share}}
         {{/if}}
