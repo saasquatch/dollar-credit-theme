@@ -113,8 +113,8 @@
 
     each(document.getElementsByClassName('squatch-header-close'), function(el) {
       handleClicks(el, function(e) {
-        if (window.parent.squatch && window.parent.squatch.eventBus) {
-          window.parent.squatch.eventBus.dispatch('close_popup', e.type);
+        if (window.frameElement && window.frameElement.squatchJsApi) {
+          window.frameElement.squatchJsApi.close();
         }
       });
     });
