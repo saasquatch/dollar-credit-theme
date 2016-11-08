@@ -70,8 +70,8 @@
       clipboard.on('success', notifySuccess);
       clipboard.on('error', notifyFailure);
       handleClicks(el, function(e) {
-        if (window.parent.squatch && window.parent.squatch.eventBus) {
-          window.parent.squatch.eventBus.dispatch('copy_btn_clicked', this, window.squatch);
+        if (window.frameElement && window.frameElement.squatchJsApi) {
+          window.frameElement.squatchJsApi._shareEvent(window.squatch, 'DIRECT');
         }
       });
     });

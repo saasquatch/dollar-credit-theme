@@ -17,8 +17,8 @@ function emailFormHandler() {
       registerForm.style.paddingTop = '30px';
       registerForm.innerHTML = '<p><strong>' + emailInput.value + '</strong><br>Has been successfully registered</p>';
 
-      if (window.parent.squatch && window.parent.squatch.eventBus) {
-        window.parent.squatch.eventBus.dispatch('email_submitted', this, emailInput.value /*, JWT*/);
+      if (window.frameElement && window.frameElement.squatchJsApi) {
+        window.frameElement.squatchJsApi.reload(emailInput.value /*, JWT token if needed */);
       }
     }
   });
@@ -42,8 +42,8 @@ function facebookHandler() {
       window.open(url, 'fb', 'status=0,width=620,height=400');
     }
 
-    if (window.parent.squatch && window.parent.squatch.eventBus) {
-      window.parent.squatch.eventBus.dispatch('fb_btn_clicked', this, window.squatch /*,params*/ /*, JWT*/);
+    if (window.frameElement && window.frameElement.squatchJsApi) {
+      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'FACEBOOK');
     }
   });
 }
@@ -61,8 +61,8 @@ function twitterHandler() {
       window.open(twUrl, 'twitter', 'status=1,width=575,height=400');
     }
 
-    if (window.parent.squatch && window.parent.squatch.eventBus) {
-      window.parent.squatch.eventBus.dispatch('tw_btn_clicked', this, window.squatch /*,params*/ /*, JWT*/);
+    if (window.frameElement && window.frameElement.squatchJsApi) {
+      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'TWITTER');
     }
   });
 }
@@ -79,8 +79,8 @@ function emailHandler() {
       mailTo(mailurl);
     }
 
-    if (window.parent.squatch && window.parent.squatch.eventBus) {
-      window.parent.squatch.eventBus.dispatch('email_btn_clicked', this, window.squatch);
+    if (window.frameElement && window.frameElement.squatchJsApi) {
+      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'EMAIL');
     }
   });
 }
