@@ -150,7 +150,7 @@
       var referralsTitleEl = document.getElementsByClassName('squatch-referrals-title')[0];
 
       var bodyHeight = bodyEl.offsetHeight;
-      var bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop) - parseInt(titleStyle.marginBottom) - titleEl.offsetTop;
+      var bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop || '0') - parseInt(titleStyle.marginBottom || '0') - titleEl.offsetTop;
       var panelHeight = panelEl ? panelEl.offsetHeight : 0;
 
       if (referralsEl && referralsEl.style.display !== 'none') {
