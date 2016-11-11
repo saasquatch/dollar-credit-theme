@@ -157,9 +157,13 @@
 
       console.log('body height with no title', bodyHeightWithoutTitle);
 
+      console.log('referralsEl exists', referralsEl);
+      console.log('displaying?', referralsEl.style.display);
       if (referralsEl && referralsEl.style.display !== 'none') {
         panelHeight -= referralsEl.offsetHeight;
+        console.log('subtracting from panel Height', referralsEl.offsetHeight);
       }
+
 
       if (referralsTitleEl && referralsTitleEl.style.display !== 'none') {
         panelHeight -= referralsTitleEl.offsetHeight;
