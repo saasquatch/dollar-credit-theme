@@ -200,10 +200,22 @@
     var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
 
     if (containerEl) {
-     window.onload = function() {
-       setContainerHeight(containerEl);
-     }
+      window.onload = function() {
 
+        var setContainerHeightIfWideEnough = function () {
+          var width = windowEl.width();
+
+          if (width === 500) {
+            setContainerHeight(containerEl);
+          } else {
+            setTimeout(function() {
+              setContainerHeightIfWideEnough();
+            }, 50);
+          }
+        };
+
+        setContainerHeightIfWideEnough();
+      }
     }
   });
 
