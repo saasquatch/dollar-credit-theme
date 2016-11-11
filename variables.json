@@ -247,7 +247,7 @@
                           "default":"You were Successfully Referred to {{companyName}}"
                         },
                         "headerDetails":{
-                          "default":"Use the Referral Code<br><span id=\"squatch-share-code\">WILLSANDERSON</span><br>at checkout to receive your referral discount"
+                          "default":"Use the Referral Code<br><span id=\"squatch-share-code\">{{referredBy.referredByUser.referralCode}}</span><br>at checkout to receive your referral discount"
                         },
                         "buttonCopy":{
                           "type":"string",
@@ -255,13 +255,6 @@
                           "minLength":1,
                           "title":"Button Copy",
                           "default":"COPY CODE"
-                        },
-                        "referralCode":{
-                          "type": "string",
-                          "format": "text",
-                          "minLength":1,
-                          "title":"Referral Code",
-                          "default": "{{referredBy.referredByUser.referralCode}}"
                         }
                       }
                     },
