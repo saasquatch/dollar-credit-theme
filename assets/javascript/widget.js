@@ -149,9 +149,13 @@
       var referralsEl      = document.getElementsByClassName('squatch-referrals')[0];
       var referralsTitleEl = document.getElementsByClassName('squatch-referrals-title')[0];
 
+      console.log('the panel', panelEl);
+
       var bodyHeight = bodyEl.offsetHeight;
       var bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop || '0') - parseInt(titleStyle.marginBottom || '0') - titleEl.offsetTop;
       var panelHeight = panelEl ? panelEl.offsetHeight : 0;
+
+      console.log('body height with no title', bodyHeightWithoutTitle);
 
       if (referralsEl && referralsEl.style.display !== 'none') {
         panelHeight -= referralsEl.offsetHeight;
@@ -160,6 +164,8 @@
       if (referralsTitleEl && referralsTitleEl.style.display !== 'none') {
         panelHeight -= referralsTitleEl.offsetHeight;
       }
+
+      console.log('the panel height', panelHeight);
 
       containerEl.style.height = bodyHeight + panelHeight + "px";
 
