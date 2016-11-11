@@ -169,7 +169,7 @@
       console.log('referralsTitleEl exists', referralsTitleEl);
       console.log('displaying?', referralsTitleEl.style.display);
       if (referralsTitleEl && referralsTitleEl.style.display !== 'none') {
-        panelHeight -= referralsTitleEl.offsetHeight;
+        panelHeight = panelHeight - referralsTitleEl.offsetHeight;
         console.log('subtracting from panel Height', referralsTitleEl.offsetHeight);
         console.log('PANEL HEIGHT NOW:', panelHeight);
       }
