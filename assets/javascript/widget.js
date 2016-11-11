@@ -158,26 +158,18 @@
 
       console.log('body height with no title', bodyHeightWithoutTitle);
 
-      console.log('referralsEl exists', referralsEl);
-      console.log('displaying?', referralsEl.style.display);
       if (referralsEl && referralsEl.style.display !== 'none') {
         panelHeight = panelHeight - referralsEl.offsetHeight;
-        console.log('subtracting from panel Height', referralsEl.offsetHeight);
-        console.log('PANEL HEIGHT NOW:', panelHeight);
       }
 
-      console.log('referralsTitleEl exists', referralsTitleEl);
-      console.log('displaying?', referralsTitleEl.style.display);
       if (referralsTitleEl && referralsTitleEl.style.display !== 'none') {
         panelHeight = panelHeight - referralsTitleEl.offsetHeight;
-        console.log('subtracting from panel Height', referralsTitleEl.offsetHeight);
-        console.log('PANEL HEIGHT NOW:', panelHeight);
       }
 
       console.log('the panel height', panelHeight);
       console.log('the body height', bodyHeight);
 
-      containerEl.style.height = bodyHeight + panelHeight + "px";
+      containerEl.style.height = bodyHeightWithoutTitle + panelHeight + "px";
 
       console.log('container Height', containerEl.style.height);
       console.log('bodyHeightWithoutTitle', bodyHeightWithoutTitle);
