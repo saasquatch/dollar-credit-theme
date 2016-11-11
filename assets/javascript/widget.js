@@ -170,7 +170,7 @@
 
       containerEl.style.height = bodyHeight + panelHeight + "px";
 
-      console.log('container Height', containerel.style.height);
+      console.log('container Height', containerEl.style.height);
 
       var stylesheet = document.createElement('style');
       stylesheet.type = 'text/css';
