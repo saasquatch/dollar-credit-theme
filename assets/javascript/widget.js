@@ -122,7 +122,7 @@
     // Popup stuff
     each(document.querySelectorAll('[data-open-panel]'), function(el) {
       var element = document.getElementById(el.dataset.openPanel.slice(1));
-
+      console.log("What is this", element);
       if (element) {
         el.onclick = function() {
           my_addClass(element, 'open');
@@ -132,7 +132,7 @@
 
     each(document.querySelectorAll('[data-close-panel]'), function(el) {
       var element = document.getElementById(el.dataset.closePanel.slice(1));
-
+      console.log("And this", element);
       if (element) {
         el.onclick = function() {
           my_removeClass(element, 'open');
