@@ -122,7 +122,6 @@
     // Popup stuff
     each(document.querySelectorAll('[data-open-panel]'), function(el) {
       var element = document.getElementById(el.dataset.openPanel.slice(1));
-      console.log("What is this", element);
       if (element) {
         el.onclick = function() {
           my_addClass(element, 'open');
@@ -132,7 +131,6 @@
 
     each(document.querySelectorAll('[data-close-panel]'), function(el) {
       var element = document.getElementById(el.dataset.closePanel.slice(1));
-      console.log("And this", element);
       if (element) {
         el.onclick = function() {
           my_removeClass(element, 'open');
@@ -150,6 +148,7 @@
       var referralsTitleEl = document.getElementsByClassName('squatch-referrals-title')[0];
 
       console.log('the panel', panelEl);
+      console.log('titleStyle', titleStyle.marginTop, titleStyle.marginBottom);
 
       var bodyHeight = bodyEl.offsetHeight;
       var bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop || '0') - parseInt(titleStyle.marginBottom || '0') - titleEl.offsetTop;
