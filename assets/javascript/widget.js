@@ -177,7 +177,7 @@
       console.log('the panel height', panelHeight);
       console.log('the body height', bodyHeight);
 
-      containerEl.style.height = bodyHeight + panelHeight + "px";
+      containerEl.style.height = bodyHeight - panelHeight + "px";
 
       console.log('container Height', containerEl.style.height);
       console.log('bodyHeightWithoutTitle', bodyHeightWithoutTitle);
