@@ -154,6 +154,7 @@
       var bodyHeight = bodyEl.offsetHeight;
       var bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop || '0') - parseInt(titleStyle.marginBottom || '0') - titleEl.offsetTop;
       var panelHeight = panelEl ? panelEl.offsetHeight : 0;
+      console.log("starting with panel HEIGHT:", panelHeight);
 
       console.log('body height with no title', bodyHeightWithoutTitle);
 
