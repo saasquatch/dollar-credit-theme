@@ -203,7 +203,7 @@
       window.onload = function() {
 
         var setContainerHeightIfWideEnough = function () {
-          var width = windowEl.width();
+          var width = window.width();
 
           if (width === 500) {
             setContainerHeight(containerEl);
