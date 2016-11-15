@@ -32,7 +32,6 @@
 
       each(elements, function(el) {
         if (isDOMElement(el)) {
-          console.log('elem', el);
           scrollElement = document.querySelector(el.dataset.scrollElement);
           increment  = parseInt(el.dataset.scrollIncrement);
           nextOffset = newOffset + increment;
@@ -52,7 +51,6 @@
       if (isDOMElement(el)) {
         try {
           var clipboard = new Clipboard(el);
-          console.log('element', el);
           var notification;
 
           var notify = function(clipboardNotification, notificationText) {
@@ -80,15 +78,12 @@
               window.frameElement.squatchJsApi._shareEvent(window.squatch, 'DIRECT');
             }
           });
-        } catch(err) {
-          console.log(err);
-        }
+        } catch(err) {}
       }
     });
 
     each(scrollElements, function(el) {
-      if (isDOMElement(el)) { // Needed for Safari
-        console.log('elem', el);
+      if (isDOMElement(el)) {
         var element = document.querySelector(el.dataset.scrollElement);
         var increment = parseInt(el.dataset.scrollIncrement);
         var limit     = parseInt(element.dataset.scrollLimit.valueOf());
@@ -121,7 +116,6 @@
 
     each(document.querySelectorAll('[data-moment]'), function(el) {
       if (isDOMElement(el)) {
-        console.log('elem', el);
         var time = moment(parseInt(el.textContent));
         el.textContent = time.fromNow();
       }
@@ -129,7 +123,6 @@
 
     each(document.getElementsByClassName('squatch-header-close'), function(el) {
       if (isDOMElement(el)) {
-        console.log('elem', el);
         handleClicks(el, function(e) {
           if (window.frameElement && window.frameElement.squatchJsApi) {
             window.frameElement.squatchJsApi.close();
@@ -141,7 +134,6 @@
     // Popup stuff
     each(document.querySelectorAll('[data-open-panel]'), function(el) {
       if (isDOMElement(el)) {
-        console.log('elem', el);
         var element = document.getElementById(el.dataset.openPanel.slice(1));
         if (element) {
           el.onclick = function() {
@@ -153,7 +145,6 @@
 
     each(document.querySelectorAll('[data-close-panel]'), function(el) {
       if (isDOMElement(el)) {
-        console.log('elem', el);
         var element = document.getElementById(el.dataset.closePanel.slice(1));
         if (element) {
           el.onclick = function() {
