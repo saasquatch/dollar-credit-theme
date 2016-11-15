@@ -154,7 +154,7 @@
     });
 
     each(document.querySelectorAll('[data-close-panel]'), function(el) {
-      if (el) {
+      if (el !== 0 || el !== 1) {
         console.log('elem', el);
         var element = document.getElementById(el.dataset.closePanel.slice(1));
         if (element) {
