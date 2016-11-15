@@ -85,36 +85,35 @@
     });
 
     each(scrollElements, function(el) {
-      // Needed for Safari
-      if (el) {
-        var element = document.querySelector(el.dataset.scrollElement);
-        var increment = parseInt(el.dataset.scrollIncrement);
-        var limit     = parseInt(element.dataset.scrollLimit.valueOf());
-        var offset    = parseInt(element.dataset.scrollOffset.valueOf());
-        var newOffset;
+      if (!el) break; // Needed for Safari
 
-        element.dataset.scrollLimit = limit;
+      var element = document.querySelector(el.dataset.scrollElement);
+      var increment = parseInt(el.dataset.scrollIncrement);
+      var limit     = parseInt(element.dataset.scrollLimit.valueOf());
+      var offset    = parseInt(element.dataset.scrollOffset.valueOf());
+      var newOffset;
 
-        var nextOffset = offset + increment;
+      element.dataset.scrollLimit = limit;
 
-        setVisibility(el, nextOffset, limit);
+      var nextOffset = offset + increment;
 
-        // Force IE to forget previous scroll top value
-        resetScroll(element);
+      setVisibility(el, nextOffset, limit);
 
-        listenToClick(el, 'click', function() {
-          offset = parseInt(element.dataset.scrollOffset);
+      // Force IE to forget previous scroll top value
+      resetScroll(element);
 
-          newOffset = offset + increment;
+      listenToClick(el, 'click', function() {
+        offset = parseInt(element.dataset.scrollOffset);
 
-          if (inValidRange(newOffset, limit)) {
-            scrollTop(element, document.getElementById(newOffset).offsetTop, 400);
-            element.dataset.scrollOffset = newOffset;
+        newOffset = offset + increment;
 
-            setVisibilityAll(scrollElements, newOffset);
-          }
-        });
-      }
+        if (inValidRange(newOffset, limit)) {
+          scrollTop(element, document.getElementById(newOffset).offsetTop, 400);
+          element.dataset.scrollOffset = newOffset;
+
+          setVisibilityAll(scrollElements, newOffset);
+        }
+      });
     });
 
     each(document.querySelectorAll('[data-moment]'), function(el) {
