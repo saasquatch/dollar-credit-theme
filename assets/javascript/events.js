@@ -15,7 +15,13 @@ function emailFormHandler() {
       my_removeClass(emailInput, 'invalid');
 
       if (window.frameElement && window.frameElement.squatchJsApi) {
-        window.frameElement.squatchJsApi.reload(emailInput.value /*, JWT token if needed */);
+        var reload = window.frameElement.squatchJsApi.reload;
+
+        if (window.parent.squatch && window.parent.squatch.EventBus) {
+          window.parent.squatch.EventBus.dispatch('submit_email', this, reload, emailInput.value);
+        } else {
+          window.frameElement.squatchJsApi.reload(emailInput.value);
+        }
       }
     }
   });
