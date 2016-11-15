@@ -47,6 +47,7 @@
 
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
       var clipboard = new Clipboard(el);
+      console.log('element', el);
       var notification;
 
       var notify = function(clipboardNotification, notificationText) {
