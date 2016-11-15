@@ -31,7 +31,7 @@
         limit;
 
       each(elements, function(el) {
-        if (el) {
+        if (el !== 0 && el !== 1) {
           console.log('elem', el);
           scrollElement = document.querySelector(el.dataset.scrollElement);
           increment  = parseInt(el.dataset.scrollIncrement);
@@ -49,7 +49,7 @@
     };
 
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
-      if (el) {
+      if (el !== 0 && el !== 1) {
         console.log('elem', el);
         // What happens if I catch the error
         try {
@@ -89,7 +89,7 @@
     });
 
     each(scrollElements, function(el) {
-      if (el) { // Needed for Safari
+      if (el !== 0 && el !== 1) { // Needed for Safari
         console.log('elem', el);
         var element = document.querySelector(el.dataset.scrollElement);
         var increment = parseInt(el.dataset.scrollIncrement);
@@ -122,7 +122,7 @@
     });
 
     each(document.querySelectorAll('[data-moment]'), function(el) {
-      if (el) {
+      if (el !== 0 && el !== 1) {
         console.log('elem', el);
         var time = moment(parseInt(el.textContent));
         el.textContent = time.fromNow();
@@ -130,7 +130,7 @@
     });
 
     each(document.getElementsByClassName('squatch-header-close'), function(el) {
-      if (el) {
+      if (el !== 0 && el !== 1) {
         console.log('elem', el);
         handleClicks(el, function(e) {
           if (window.frameElement && window.frameElement.squatchJsApi) {
@@ -142,7 +142,7 @@
 
     // Popup stuff
     each(document.querySelectorAll('[data-open-panel]'), function(el) {
-      if (el) {
+      if (el !== 0 && el !== 1) {
         console.log('elem', el);
         var element = document.getElementById(el.dataset.openPanel.slice(1));
         if (element) {
@@ -154,7 +154,7 @@
     });
 
     each(document.querySelectorAll('[data-close-panel]'), function(el) {
-      if (el !== 0 || el !== 1) {
+      if (el !== 0 && el !== 1) {
         console.log('elem', el);
         var element = document.getElementById(el.dataset.closePanel.slice(1));
         if (element) {
