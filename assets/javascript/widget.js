@@ -32,6 +32,7 @@
 
       each(elements, function(el) {
         if (el) {
+          console.log('elem', el);
           scrollElement = document.querySelector(el.dataset.scrollElement);
           increment  = parseInt(el.dataset.scrollIncrement);
           nextOffset = newOffset + increment;
@@ -49,6 +50,7 @@
 
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
       if (el) {
+        console.log('elem', el);
         // What happens if I catch the error
         try {
           var clipboard = new Clipboard(el);
@@ -88,6 +90,7 @@
 
     each(scrollElements, function(el) {
       if (el) { // Needed for Safari
+        console.log('elem', el);
         var element = document.querySelector(el.dataset.scrollElement);
         var increment = parseInt(el.dataset.scrollIncrement);
         var limit     = parseInt(element.dataset.scrollLimit.valueOf());
@@ -120,6 +123,7 @@
 
     each(document.querySelectorAll('[data-moment]'), function(el) {
       if (el) {
+        console.log('elem', el);
         var time = moment(parseInt(el.textContent));
         el.textContent = time.fromNow();
       }
@@ -127,6 +131,7 @@
 
     each(document.getElementsByClassName('squatch-header-close'), function(el) {
       if (el) {
+        console.log('elem', el);
         handleClicks(el, function(e) {
           if (window.frameElement && window.frameElement.squatchJsApi) {
             window.frameElement.squatchJsApi.close();
@@ -138,6 +143,7 @@
     // Popup stuff
     each(document.querySelectorAll('[data-open-panel]'), function(el) {
       if (el) {
+        console.log('elem', el);
         var element = document.getElementById(el.dataset.openPanel.slice(1));
         if (element) {
           el.onclick = function() {
@@ -149,6 +155,7 @@
 
     each(document.querySelectorAll('[data-close-panel]'), function(el) {
       if (el) {
+        console.log('elem', el);
         var element = document.getElementById(el.dataset.closePanel.slice(1));
         if (element) {
           el.onclick = function() {
