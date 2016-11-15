@@ -31,12 +31,14 @@
         limit;
 
       each(elements, function(el) {
-        scrollElement = document.querySelector(el.dataset.scrollElement);
-        increment  = parseInt(el.dataset.scrollIncrement);
-        nextOffset = newOffset + increment;
-        limit      = parseInt(scrollElement.dataset.scrollLimit);
+        if (el) {
+          scrollElement = document.querySelector(el.dataset.scrollElement);
+          increment  = parseInt(el.dataset.scrollIncrement);
+          nextOffset = newOffset + increment;
+          limit      = parseInt(scrollElement.dataset.scrollLimit);
 
-        setVisibility(el, nextOffset, limit);
+          setVisibility(el, nextOffset, limit);
+        }
       });
     };
 
@@ -46,105 +48,113 @@
     };
 
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
-      // What happens if I catch the error
-      try {
-        var clipboard = new Clipboard(el);
-        console.log('element', el);
-        var notification;
+      if (el) {
+        // What happens if I catch the error
+        try {
+          var clipboard = new Clipboard(el);
+          console.log('element', el);
+          var notification;
 
-        var notify = function(clipboardNotification, notificationText) {
-          notification = document.getElementById(clipboardNotification.slice(1));
-          notification.textContent = notificationText;
-          my_addClass(notification, 'in');
-          setTimeout(function() {
-            my_removeClass(notification, 'in');
-          }, 1400);
-        };
+          var notify = function(clipboardNotification, notificationText) {
+            notification = document.getElementById(clipboardNotification.slice(1));
+            notification.textContent = notificationText;
+            my_addClass(notification, 'in');
+            setTimeout(function() {
+              my_removeClass(notification, 'in');
+            }, 1400);
+          };
 
-        var notifySuccess = function(e) {
-          notify(e.trigger.dataset.clipboardNotification, "Copied!");
-        };
+          var notifySuccess = function(e) {
+            notify(e.trigger.dataset.clipboardNotification, "Copied!");
+          };
 
-        var notifyFailure = function(e) {
-          //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
-          notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
-        };
+          var notifyFailure = function(e) {
+            //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
+            notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
+          };
 
-        clipboard.on('success', notifySuccess);
-        clipboard.on('error', notifyFailure);
-        handleClicks(el, function(e) {
-          if (window.frameElement && window.frameElement.squatchJsApi) {
-            window.frameElement.squatchJsApi._shareEvent(window.squatch, 'DIRECT');
-          }
-        });
-      } catch(err) {
-        console.log(err);
+          clipboard.on('success', notifySuccess);
+          clipboard.on('error', notifyFailure);
+          handleClicks(el, function(e) {
+            if (window.frameElement && window.frameElement.squatchJsApi) {
+              window.frameElement.squatchJsApi._shareEvent(window.squatch, 'DIRECT');
+            }
+          });
+        } catch(err) {
+          console.log(err);
+        }
       }
-
-
     });
 
     each(scrollElements, function(el) {
-      if (!el) break; // Needed for Safari
+      if (el) { // Needed for Safari
+        var element = document.querySelector(el.dataset.scrollElement);
+        var increment = parseInt(el.dataset.scrollIncrement);
+        var limit     = parseInt(element.dataset.scrollLimit.valueOf());
+        var offset    = parseInt(element.dataset.scrollOffset.valueOf());
+        var newOffset;
 
-      var element = document.querySelector(el.dataset.scrollElement);
-      var increment = parseInt(el.dataset.scrollIncrement);
-      var limit     = parseInt(element.dataset.scrollLimit.valueOf());
-      var offset    = parseInt(element.dataset.scrollOffset.valueOf());
-      var newOffset;
+        element.dataset.scrollLimit = limit;
 
-      element.dataset.scrollLimit = limit;
+        var nextOffset = offset + increment;
 
-      var nextOffset = offset + increment;
+        setVisibility(el, nextOffset, limit);
 
-      setVisibility(el, nextOffset, limit);
+        // Force IE to forget previous scroll top value
+        resetScroll(element);
 
-      // Force IE to forget previous scroll top value
-      resetScroll(element);
+        listenToClick(el, 'click', function() {
+          offset = parseInt(element.dataset.scrollOffset);
 
-      listenToClick(el, 'click', function() {
-        offset = parseInt(element.dataset.scrollOffset);
+          newOffset = offset + increment;
 
-        newOffset = offset + increment;
+          if (inValidRange(newOffset, limit)) {
+            scrollTop(element, document.getElementById(newOffset).offsetTop, 400);
+            element.dataset.scrollOffset = newOffset;
 
-        if (inValidRange(newOffset, limit)) {
-          scrollTop(element, document.getElementById(newOffset).offsetTop, 400);
-          element.dataset.scrollOffset = newOffset;
-
-          setVisibilityAll(scrollElements, newOffset);
-        }
-      });
+            setVisibilityAll(scrollElements, newOffset);
+          }
+        });
+      }
     });
 
     each(document.querySelectorAll('[data-moment]'), function(el) {
-      var time = moment(parseInt(el.textContent));
-      el.textContent = time.fromNow();
+      if (el) {
+        var time = moment(parseInt(el.textContent));
+        el.textContent = time.fromNow();
+      }
     });
 
     each(document.getElementsByClassName('squatch-header-close'), function(el) {
-      handleClicks(el, function(e) {
-        if (window.frameElement && window.frameElement.squatchJsApi) {
-          window.frameElement.squatchJsApi.close();
-        }
-      });
+      if (el) {
+        handleClicks(el, function(e) {
+          if (window.frameElement && window.frameElement.squatchJsApi) {
+            window.frameElement.squatchJsApi.close();
+          }
+        });
+      }
     });
 
     // Popup stuff
     each(document.querySelectorAll('[data-open-panel]'), function(el) {
-      var element = document.getElementById(el.dataset.openPanel.slice(1));
-      if (element) {
-        el.onclick = function() {
-          my_addClass(element, 'open');
-        };
+      if (el) {
+        var element = document.getElementById(el.dataset.openPanel.slice(1));
+        if (element) {
+          el.onclick = function() {
+            my_addClass(element, 'open');
+          };
+        }
       }
     });
 
     each(document.querySelectorAll('[data-close-panel]'), function(el) {
-      var element = document.getElementById(el.dataset.closePanel.slice(1));
-      if (element) {
-        el.onclick = function() {
-          my_removeClass(element, 'open');
-        };
+      if (el) {
+        var element = document.getElementById(el.dataset.closePanel.slice(1));
+        if (element) {
+          el.onclick = function() {
+            my_removeClass(element, 'open');
+          };
+        }
       }
     });
 
