@@ -15,10 +15,10 @@ function emailFormHandler() {
       my_removeClass(emailInput, 'invalid');
 
       if (window.frameElement && window.frameElement.squatchJsApi) {
-        var reload = window.frameElement.squatchJsApi.reload;
+        var widget = window.frameElement.squatchJsApi;
 
         if (window.parent.squatch && window.parent.squatch.EventBus) {
-          window.parent.squatch.EventBus.dispatch('submit_email', this, reload, emailInput.value);
+          window.parent.squatch.EventBus.dispatch('submit_email', this, widget, emailInput.value);
         } else {
           window.frameElement.squatchJsApi.reload(emailInput.value);
         }
