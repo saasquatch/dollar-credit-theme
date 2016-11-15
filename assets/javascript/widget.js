@@ -85,6 +85,7 @@
     });
 
     each(scrollElements, function(el) {
+      console.log('scrollElement', el);
       var element = document.querySelector(el.dataset.scrollElement);
       var increment = parseInt(el.dataset.scrollIncrement);
       var limit     = parseInt(element.dataset.scrollLimit.valueOf());
