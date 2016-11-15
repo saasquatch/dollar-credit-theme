@@ -46,35 +46,42 @@
     };
 
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
-      var clipboard = new Clipboard(el);
-      console.log('element', el);
-      var notification;
+      // What happens if I catch the error
+      try {
+        var clipboard = new Clipboard(el);
+        console.log('element', el);
+        var notification;
 
-      var notify = function(clipboardNotification, notificationText) {
-        notification = document.getElementById(clipboardNotification.slice(1));
-        notification.textContent = notificationText;
-        my_addClass(notification, 'in');
-        setTimeout(function() {
-          my_removeClass(notification, 'in');
-        }, 1400);
-      };
+        var notify = function(clipboardNotification, notificationText) {
+          notification = document.getElementById(clipboardNotification.slice(1));
+          notification.textContent = notificationText;
+          my_addClass(notification, 'in');
+          setTimeout(function() {
+            my_removeClass(notification, 'in');
+          }, 1400);
+        };
 
-      var notifySuccess = function(e) {
-        notify(e.trigger.dataset.clipboardNotification, "Copied!");
-      };
+        var notifySuccess = function(e) {
+          notify(e.trigger.dataset.clipboardNotification, "Copied!");
+        };
 
-      var notifyFailure = function(e) {
-        //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
-        notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
-      };
+        var notifyFailure = function(e) {
+          //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
+          notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
+        };
 
-      clipboard.on('success', notifySuccess);
-      clipboard.on('error', notifyFailure);
-      handleClicks(el, function(e) {
-        if (window.frameElement && window.frameElement.squatchJsApi) {
-          window.frameElement.squatchJsApi._shareEvent(window.squatch, 'DIRECT');
-        }
-      });
+        clipboard.on('success', notifySuccess);
+        clipboard.on('error', notifyFailure);
+        handleClicks(el, function(e) {
+          if (window.frameElement && window.frameElement.squatchJsApi) {
+            window.frameElement.squatchJsApi._shareEvent(window.squatch, 'DIRECT');
+          }
+        });
+      } catch(err) {
+        console.log(err);
+      }
+
+
     });
 
     each(scrollElements, function(el) {
