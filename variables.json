@@ -373,7 +373,7 @@
                 {
                   "properties":{
                     "subject":{
-                      "default":"​{{newReferral.referredUser.firstName}}​ helped you get one step closer to free credit with {{companyName}}​!"
+                      "default":"​{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}}​ helped you get one step closer to free credit with {{companyName}}​!"
                     },
                     "themeMapping":{
                       "default":"emails/referral-started"
@@ -396,7 +396,7 @@
                       "default":"#Good News!\nYour friend has signed up for a free account with {{companyName}}!"
                     },
                     "bodyContent":{
-                      "default":"{{newReferral.referredUser.firstName}} is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}"
+                      "default":"{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}}​ is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}"
                     }
                   }
                 },
