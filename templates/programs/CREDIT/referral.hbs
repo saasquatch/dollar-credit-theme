@@ -5,7 +5,7 @@
     <img class="img-circle squatch-referrals-avatar" src="{{gravatar referral.email default="mm" rating="pg" size=40 secure=isSecureUrl}}">
   {{/if}}
 
-  <div class="squatch-referrals-heading">{{referral.firstName}}</div>
+  <div class="squatch-referrals-heading">{{stringEmptyHandler referral.firstName onEmpty="Anonymous"}}</div>
 
   <div class="squatch-referrals-description">
     <span class="hidden-sm">
