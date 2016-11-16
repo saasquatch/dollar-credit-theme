@@ -49,6 +49,7 @@
                 "buttonSide":{
                   "type":"string",
                   "title":"Button Side:",
+		  "default" : "right",
                   "enum":[
                     "left",
                     "right",
@@ -65,6 +66,7 @@
                 "buttonPosition":{
                   "type":"string",
                   "title":"Button Position:",
+		  "default" : "bottom",
                   "enum":[
                     "top",
                     "bottom",
