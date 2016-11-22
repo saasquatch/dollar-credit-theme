@@ -17,8 +17,8 @@ function emailFormHandler() {
       if (window.frameElement && window.frameElement.squatchJsApi) {
         var widget = window.frameElement.squatchJsApi;
 
-        if (window.parent.squatch && window.parent.squatch.EventBus) {
-          window.parent.squatch.EventBus.dispatch('submit_email', this, widget, emailInput.value);
+        if (window.parent.squatch && window.parent.squatch.widgets().eventBus) {
+          window.parent.squatch.widgets().eventBus.dispatch('submit_email', this, widget, emailInput.value);
         } else {
           window.frameElement.squatchJsApi.reload(emailInput.value);
         }
