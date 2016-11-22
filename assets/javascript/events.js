@@ -13,12 +13,15 @@ function emailFormHandler() {
       }
     } else {
       my_removeClass(emailInput, 'invalid');
-      var registerForm = document.getElementsByClassName('squatch-register')[0];
-      registerForm.style.paddingTop = '30px';
-      registerForm.innerHTML = '<p><strong>' + emailInput.value + '</strong><br>Has been successfully registered</p>';
 
       if (window.frameElement && window.frameElement.squatchJsApi) {
-        window.frameElement.squatchJsApi.reload(emailInput.value /*, JWT token if needed */);
+        var widget = window.frameElement.squatchJsApi;
+
+        if (window.parent.squatch && window.parent.squatch.EventBus) {
+          window.parent.squatch.EventBus.dispatch('submit_email', this, widget, emailInput.value);
+        } else {
+          window.frameElement.squatchJsApi.reload(emailInput.value);
+        }
       }
     }
   });

@@ -49,6 +49,7 @@
                 "buttonSide":{
                   "type":"string",
                   "title":"Button Side:",
+		  "default" : "right",
                   "enum":[
                     "left",
                     "right",
@@ -65,6 +66,7 @@
                 "buttonPosition":{
                   "type":"string",
                   "title":"Button Position:",
+		  "default" : "bottom",
                   "enum":[
                     "top",
                     "bottom",
@@ -247,7 +249,7 @@
                           "default":"You were Successfully Referred to {{companyName}}"
                         },
                         "headerDetails":{
-                          "default":"Use the Referral Code<br><span id=\"squatch-share-code\">WILLSANDERSON</span><br>at checkout to receive your referral discount"
+                          "default":"Use the Referral Code<br><span id=\"squatch-share-code\">{{referredBy.referredByUser.referralCode}}</span><br>at checkout to receive your referral discount"
                         },
                         "buttonCopy":{
                           "type":"string",
@@ -255,13 +257,6 @@
                           "minLength":1,
                           "title":"Button Copy",
                           "default":"COPY CODE"
-                        },
-                        "referralCode":{
-                          "type": "string",
-                          "format": "text",
-                          "minLength":1,
-                          "title":"Referral Code",
-                          "default": "{{referredBy.referredByUser.referralCode}}"
                         }
                       }
                     },
@@ -380,7 +375,7 @@
                 {
                   "properties":{
                     "subject":{
-                      "default":"​{{newReferral.referredUser.firstName}}​ helped you get one step closer to free credit with {{companyName}}​!"
+                      "default":"​{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}}​ helped you get one step closer to free credit with {{companyName}}​!"
                     },
                     "themeMapping":{
                       "default":"emails/referral-started"
@@ -403,7 +398,7 @@
                       "default":"#Good News!\nYour friend has signed up for a free account with {{companyName}}!"
                     },
                     "bodyContent":{
-                      "default":"{{newReferral.referredUser.firstName}} is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}"
+                      "default":"{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}}​ is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}"
                     }
                   }
                 },

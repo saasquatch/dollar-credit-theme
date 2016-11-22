@@ -126,3 +126,7 @@
   var isValidEmail = function(email) {
     return /^.+@.+\..+$/.test(email);
   }
+
+  var isDOMElement = function(element) {
+    return (element && element.nodeType === 1);
+  }

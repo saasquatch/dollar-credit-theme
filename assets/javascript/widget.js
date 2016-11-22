@@ -31,12 +31,14 @@
         limit;
 
       each(elements, function(el) {
-        scrollElement = document.querySelector(el.dataset.scrollElement);
-        increment  = parseInt(el.dataset.scrollIncrement);
-        nextOffset = newOffset + increment;
-        limit      = parseInt(scrollElement.dataset.scrollLimit);
+        if (isDOMElement(el)) {
+          scrollElement = document.querySelector(el.dataset.scrollElement);
+          increment  = parseInt(el.dataset.scrollIncrement);
+          nextOffset = newOffset + increment;
+          limit      = parseInt(scrollElement.dataset.scrollLimit);
 
-        setVisibility(el, nextOffset, limit);
+          setVisibility(el, nextOffset, limit);
+        }
       });
     };
 
@@ -46,97 +48,109 @@
     };
 
     each(document.querySelectorAll('[data-clipboard-target]'), function(el) {
-      var clipboard = new Clipboard(el);
-      var notification;
+      if (isDOMElement(el)) {
+        try {
+          var clipboard = new Clipboard(el);
+          var notification;
 
-      var notify = function(clipboardNotification, notificationText) {
-        notification = document.getElementById(clipboardNotification.slice(1));
-        notification.textContent = notificationText;
-        my_addClass(notification, 'in');
-        setTimeout(function() {
-          my_removeClass(notification, 'in');
-        }, 1400);
-      };
+          var notify = function(clipboardNotification, notificationText) {
+            notification = document.getElementById(clipboardNotification.slice(1));
+            notification.textContent = notificationText;
+            my_addClass(notification, 'in');
+            setTimeout(function() {
+              my_removeClass(notification, 'in');
+            }, 1400);
+          };
 
-      var notifySuccess = function(e) {
-        notify(e.trigger.dataset.clipboardNotification, "Copied!");
-      };
+          var notifySuccess = function(e) {
+            notify(e.trigger.dataset.clipboardNotification, "Copied!");
+          };
 
-      var notifyFailure = function(e) {
-        //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
-        notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
-      };
+          var notifyFailure = function(e) {
+            //if the copy function failed the text should still be selected, so just ask the user to hit ctrl+c
+            notify(e.trigger.dataset.clipboardNotification, "Press Ctrl+C to copy");
+          };
 
-      clipboard.on('success', notifySuccess);
-      clipboard.on('error', notifyFailure);
-      handleClicks(el, function(e) {
-        if (window.frameElement && window.frameElement.squatchJsApi) {
-          window.frameElement.squatchJsApi._shareEvent(window.squatch, 'DIRECT');
-        }
-      });
+          clipboard.on('success', notifySuccess);
+          clipboard.on('error', notifyFailure);
+          handleClicks(el, function(e) {
+            if (window.frameElement && window.frameElement.squatchJsApi) {
+              window.frameElement.squatchJsApi._shareEvent(window.squatch, 'DIRECT');
+            }
+          });
+        } catch(err) {}
+      }
     });
 
     each(scrollElements, function(el) {
-      var element = document.querySelector(el.dataset.scrollElement);
-      var increment = parseInt(el.dataset.scrollIncrement);
-      var limit     = parseInt(element.dataset.scrollLimit.valueOf());
-      var offset    = parseInt(element.dataset.scrollOffset.valueOf());
-      var newOffset;
+      if (isDOMElement(el)) {
+        var element = document.querySelector(el.dataset.scrollElement);
+        var increment = parseInt(el.dataset.scrollIncrement);
+        var limit     = parseInt(element.dataset.scrollLimit.valueOf());
+        var offset    = parseInt(element.dataset.scrollOffset.valueOf());
+        var newOffset;
 
-      element.dataset.scrollLimit = limit;
+        element.dataset.scrollLimit = limit;
 
-      var nextOffset = offset + increment;
+        var nextOffset = offset + increment;
 
-      setVisibility(el, nextOffset, limit);
+        setVisibility(el, nextOffset, limit);
 
-      // Force IE to forget previous scroll top value
-      resetScroll(element);
+        // Force IE to forget previous scroll top value
+        resetScroll(element);
 
-      listenToClick(el, 'click', function() {
-        offset = parseInt(element.dataset.scrollOffset);
+        listenToClick(el, 'click', function() {
+          offset = parseInt(element.dataset.scrollOffset);
 
-        newOffset = offset + increment;
+          newOffset = offset + increment;
 
-        if (inValidRange(newOffset, limit)) {
-          scrollTop(element, document.getElementById(newOffset).offsetTop, 400);
-          element.dataset.scrollOffset = newOffset;
+          if (inValidRange(newOffset, limit)) {
+            scrollTop(element, document.getElementById(newOffset).offsetTop, 400);
+            element.dataset.scrollOffset = newOffset;
 
-          setVisibilityAll(scrollElements, newOffset);
-        }
-      });
+            setVisibilityAll(scrollElements, newOffset);
+          }
+        });
+      }
     });
 
     each(document.querySelectorAll('[data-moment]'), function(el) {
-      var time = moment(parseInt(el.textContent));
-      el.textContent = time.fromNow();
+      if (isDOMElement(el)) {
+        var time = moment(parseInt(el.textContent));
+        el.textContent = time.fromNow();
+      }
     });
 
     each(document.getElementsByClassName('squatch-header-close'), function(el) {
-      handleClicks(el, function(e) {
-        if (window.frameElement && window.frameElement.squatchJsApi) {
-          window.frameElement.squatchJsApi.close();
-        }
-      });
+      if (isDOMElement(el)) {
+        handleClicks(el, function(e) {
+          if (window.frameElement && window.frameElement.squatchJsApi) {
+            window.frameElement.squatchJsApi.close();
+          }
+        });
+      }
     });
 
     // Popup stuff
     each(document.querySelectorAll('[data-open-panel]'), function(el) {
-      var element = document.getElementById(el.dataset.openPanel.slice(1));
-
-      if (element) {
-        el.onclick = function() {
-          my_addClass(element, 'open');
-        };
+      if (isDOMElement(el)) {
+        var element = document.getElementById(el.dataset.openPanel.slice(1));
+        if (element) {
+          el.onclick = function() {
+            my_addClass(element, 'open');
+          };
+        }
       }
     });
 
     each(document.querySelectorAll('[data-close-panel]'), function(el) {
-      var element = document.getElementById(el.dataset.closePanel.slice(1));
-
-      if (element) {
-        el.onclick = function() {
-          my_removeClass(element, 'open');
-        };
+      if (isDOMElement(el)) {
+        var element = document.getElementById(el.dataset.closePanel.slice(1));
+        if (element) {
+          el.onclick = function() {
+            my_removeClass(element, 'open');
+          };
+        }
       }
     });
 
@@ -150,15 +164,15 @@
       var referralsTitleEl = document.getElementsByClassName('squatch-referrals-title')[0];
 
       var bodyHeight = bodyEl.offsetHeight;
-      var bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop) - parseInt(titleStyle.marginBottom) - titleEl.offsetTop;
+      var bodyHeightWithoutTitle = bodyHeight - titleEl.offsetHeight - parseInt(titleStyle.marginTop || '0') - parseInt(titleStyle.marginBottom || '0') - titleEl.offsetTop;
       var panelHeight = panelEl ? panelEl.offsetHeight : 0;
 
       if (referralsEl && referralsEl.style.display !== 'none') {
-        panelHeight -= referralsEl.offsetHeight;
+        panelHeight = panelHeight - referralsEl.offsetHeight;
       }
 
       if (referralsTitleEl && referralsTitleEl.style.display !== 'none') {
-        panelHeight -= referralsTitleEl.offsetHeight;
+        panelHeight = panelHeight - referralsTitleEl.offsetHeight;
       }
 
       containerEl.style.height = bodyHeight + panelHeight + "px";
@@ -190,10 +204,22 @@
     var containerEl = document.getElementsByClassName('squatch-container-popup')[0];
 
     if (containerEl) {
-     window.onload = function() {
-       setContainerHeight(containerEl);
-     }
+      window.onload = function() {
 
+        var setContainerHeightIfWideEnough = function () {
+          var width = window.innerWidth;
+
+          if (width === 500) {
+            setContainerHeight(containerEl);
+          } else {
+            setTimeout(function() {
+              setContainerHeightIfWideEnough();
+            }, 50);
+          }
+        };
+
+        setContainerHeightIfWideEnough();
+      }
     }
   });
 
