@@ -74,6 +74,9 @@ function emailHandler() {
   var emailBtn = document.getElementsByClassName('emailShare')[0];
   var emailUrl = squatch.user.email.share.mailToLink;
 
+  if(!emailBtn) return;
+  emailBtn.href = emailUrl;
+
   handleClicks(emailBtn, function(e) {
     if (e.type != 'touchstart') {
       e.preventDefault();
