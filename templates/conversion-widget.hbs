@@ -11,14 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
-    <link rel="stylesheet" href="{{assets 'css/widget.css'}}">
+    <link rel="stylesheet" href="{{assets 'css/conversion-widget.css'}}">
 
-    {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-    {{!-- {{> (stringFormat 'programs/%s/theme_messages' programDetails.referredRewardDetails.rewardType) }} --}}
     {{> programs/CREDIT/theme_messages}}
     {{squatchHead}}
     <script src="{{assets 'javascript/base.js'}}"></script>
     <script src="{{assets 'javascript/events.js'}}"></script>
+
 
     <!--[if lt IE 9]>
       <script src="{{assets 'libs/bind-polyfill.js'}}"></script>
@@ -32,10 +31,10 @@
 
    <style>
       .squatch-container .squatch-title {
-        color: {{variables 'widget.REFERRER_WIDGET.content.widgetCustomization.headerColor'}};
+        color: {{variables 'widget.CONVERSION_WIDGET.content.widgetCustomization.headerColor'}};
       }
       body .squatch-container {
-        font-family: {{variables 'widget.REFERRER_WIDGET.content.widgetCustomization.widgetFont'}};
+        font-family: {{variables 'widget.CONVERSION_WIDGET.content.widgetCustomization.widgetFont'}};
       }
     </style>
   </head>
@@ -43,32 +42,21 @@
   <body>
     <main class="squatch-container squatch-container-{{lower mode}}">
       <div class="squatch-body">
-        {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-        {{!-- {{> (stringFormat 'programs/%s/title' programDetails.referredRewardDetails.rewardType) }} --}}
-        {{> programs/CREDIT/title}}
+
+        <div class="friend-face">
+          <img src={{variables 'widget.CONVERSION_WIDGET.content.widgetCustomization.widgetHeaderImage'}}>
+        </div>
+
+        {{> programs/CREDIT/conversion-title}}
 
         <button class="close squatch-header-close" data-close-panel="#squatch-panel">Close</button>
 
-        {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-        {{!-- {{> (stringFormat 'programs/%s/lead' programDetails.referredRewardDetails.rewardType) }} --}}
-        {{> programs/CREDIT/lead}}
-        {{> cta}}
-        {{> share}}
+        {{#if referredBy}}
+          {{> programs/CREDIT/conversion-lead}}
+          {{> conversion-share}}
+        {{/if}}
       </div>
 
-      {{#if user.email}}
-        <div id="squatch-panel">
-          {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-          {{!-- {{> (stringFormat 'programs/%s/panel_summary' programDetails.referredRewardDetails.rewardType) }} --}}
-          {{> programs/CREDIT/panel_summary}}
-          {{> referrals}}
-          {{> attribution}}
-        </div>
-
-        {{> actions}}
-      {{else}}
-        {{> form}}
-      {{/if}}
     </main>
 
     <div id="cta">

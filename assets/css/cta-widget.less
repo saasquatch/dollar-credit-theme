@@ -1,0 +1,117 @@
+@import '_variables.less';
+
+body {
+  margin: 0;
+}
+
+.cta-container {
+  z-index: 9999;
+  border-radius: 5px;
+  padding: 5px;
+  padding-top: 7px;
+  padding-left: 25px;
+  text-align: center;
+  color: @white;
+  font-size: 14px;
+  height: 40px;
+  width: 230px;
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  &.middle {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    width: 110px;
+    height: 150px;
+    padding-left: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    p {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .icon {
+      width: 35px;
+      height: 33px;
+      margin: 0 auto;
+    }
+  }
+
+  &.bottom {
+
+    p {
+      margin-top: 7px;
+      float: left;
+    }
+
+    .icon {
+      float: left;
+      margin-left: 15px;
+      margin-top: 4px;
+      width: 23px;
+      height: 22px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      height: 60px;
+    }
+  }
+
+  &.top {
+    padding-top: 22px;
+    padding-bottom: 0;
+    height: 30px;
+
+    p {
+      margin: 0;
+      float: left;
+      -webkit-transition: margin-top 0.2s ease-in-out;
+      -moz-transition: margin-top 0.2s ease-in-out;
+      -o-transition: margin-top 0.2s ease-in-out;
+      transition: margin-top 0.2s ease-in-out;
+    }
+
+    .icon {
+      float: left;
+      width: 23px;
+      height: 22px;
+      position: absolute;
+      bottom: 10px;
+      right: 25px;
+
+      -webkit-transition: none;
+      -moz-transition: none;
+      -o-transition: none;
+      transition: none;
+
+      -webkit-transition: margin-top 0.2s ease-in-out;
+      -moz-transition: margin-top 0.2s ease-in-out;
+      -o-transition: margin-top 0.2s ease-in-out;
+      transition: margin-top 0.2s ease-in-out;
+    }
+
+    &:hover {
+      cursor: pointer;
+      height: 50px;
+
+      p {
+        margin-top: 20px;
+      }
+
+      .icon {
+
+      }
+    }
+  }
+
+}

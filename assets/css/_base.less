@@ -56,3 +56,39 @@ body {
     color: @gray-darker;
   }
 }
+
+.squatch-register {
+  border-top: 1px solid @gray-lighter;
+  padding: 15px 30px 30px 30px;
+  font-size: @font-size-sm;
+  text-align: center;
+
+  #squatch-user-email {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    &.form-control {
+
+      &.invalid {
+        border-color: #ff677f;
+      }
+
+      &.valid {
+        border-color: @green;
+      }
+    }
+  }
+
+  #squatch-send-email {
+    .button-variant(@white; #6cc44d; #6cc44d);
+    width: 100%;
+    max-width: 130px;
+  }
+}
+
+#cta {
+  display: none;
+}

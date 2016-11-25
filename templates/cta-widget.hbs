@@ -1,0 +1,31 @@
+<!doctype html>
+<head>
+  <base target="_self">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Referral SaaSquatch Dollar Credit Theme</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+  <link rel="stylesheet" href="{{assets 'css/cta-widget.css'}}">
+  <script src="{{assets 'javascript/base.js'}}"></script>
+
+  <style>
+     body .cta-container {
+       font-family: {{variables 'widget.REFERRER_WIDGET.content.widgetCustomization.widgetFont'}};
+       background-color: {{variables 'jsOptions.cta.content.buttonColor'}};
+     }
+  </style>
+
+</head>
+<body>
+  <main class="cta-container {{variables 'jsOptions.cta.content.buttonPosition'}}">
+    {{variables 'jsOptions.cta.content.buttonText'}}
+    <img class="icon" src="{{assets 'images/cta-icon.png'}}">
+  </main>
+
+  <script src="{{assets 'libs/ready.min.js'}}"></script>
+  <script src="{{assets 'javascript/cta-widget.js'}}"></script>
+</body>
+</html>

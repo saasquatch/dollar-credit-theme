@@ -1,0 +1,128 @@
+// Core variables and mixins
+@import "../libs/bootstrap/less/_variables.less";
+@import "../libs/bootstrap/less/_mixins.less";
+
+// Reset and dependencies
+@import "../libs/bootstrap/less/_normalize.less";
+@import "../libs/bootstrap/less/_print.less";
+
+// Core CSS
+@import "../libs/bootstrap/less/_scaffolding.less";
+@import "../libs/bootstrap/less/_type.less";
+@import "../libs/bootstrap/less/_grid.less";
+@import "../libs/bootstrap/less/_tables.less";
+@import "../libs/bootstrap/less/_forms.less";
+@import "../libs/bootstrap/less/_buttons.less";
+@import "../libs/bootstrap/less/_input-groups.less";
+
+// Components
+@import "../libs/bootstrap/less/_component-animations.less";
+@import "../libs/bootstrap/less/_labels.less";
+
+// Utility classes
+@import "../libs/bootstrap/less/_utilities.less";
+@import "../libs/bootstrap/less/_responsive-utilities.less";
+
+// Theme Base
+@import '_variables.less';
+@import '_base.less';
+@import '_shims.less';
+
+// Components
+@import '_buttons.less';
+@import '_icons.less';
+@import '_input-groups.less';
+@import '_share.less';
+
+// Atomic Classes
+@import '_atomic.less';
+
+// Theme Modes
+@import 'modes/_embed.less';
+@import 'modes/_popup.less';
+@import 'modes/_hosted.less';
+
+
+body {
+  background: transparent;
+}
+
+.friend-face {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.squatch-title {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 35px;
+}
+
+.squatch-header-close {
+  top: 80px;
+  right: 4px;
+}
+
+.squatch-lead {
+  font-size: @font-size-h2;
+  color: @gray-darker;
+  border-top: 1px solid #eee;
+  margin-left: -30px;
+  margin-right: -30px;
+  padding-top: 35px;
+  padding-bottom: 25px;
+
+  span {
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: @font-size-xl;
+  }
+}
+
+.squatch-share {
+  text-align: center;
+  position: relative;
+}
+
+#squatch-share-notification {
+  top: -20px;
+  right: 140px;
+}
+
+button.icon-btn.copy {
+  .button-variant(@white; #6cc44d; #6cc44d);
+  text-align: center;
+  width: 100%;
+  max-width: 170px;
+
+  &:before {
+    content: none;
+  }
+}
+
+.squatch-container-popup {
+  padding-top: 70px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+  .squatch-body {
+    background-color: @white;
+
+    @media (max-width: @screen-sm-max) {
+      padding: 30px;
+    }
+  }
+
+  .squatch-title {
+    @media (max-width: @screen-sm-max) {
+      padding: 0;
+    }
+  }
+
+  .friend-face {
+    margin-top: -100px;
+  }
+}
