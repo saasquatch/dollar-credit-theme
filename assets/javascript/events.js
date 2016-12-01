@@ -27,6 +27,29 @@ function emailFormHandler() {
   });
 }
 
+function messengerHandler() {
+  var messengerBtn = document.getElementsByClassName('messengerShare')[0];
+
+  if (!messengerBtn) return;
+
+  var messengerUrl = 'https://www.facebook.com/dialog/send?app_id=' + squatch.user.facebook.appId + '&link=' + squatch.user.facebook.link;
+  messengerUrl.href = messengerUrl;
+
+  handleClicks(messengerBtn, function(e) {
+    // If it's not mobile, don't use href link
+    if (e.type != 'touchstart') {
+      e.preventDefault();
+
+      var url = fbUrl + "&display=popup";
+      window.open(url, 'fb-messenger', 'status=0,width=620,height=400');
+    }
+
+    if (window.frameElement && window.frameElement.squatchJsApi) {
+      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'MESSENGER');
+    }
+  });
+}
+
 function facebookHandler() {
   var facebookBtn = document.getElementsByClassName('fbShare')[0];
 
