@@ -25,7 +25,7 @@
               "options":{
                 "enum_titles":[
                   "Referrer's Widget",
-                  "Referred Conversion Widget"
+                  "Referred User Widget"
                 ]
               }
             }
@@ -135,7 +135,7 @@
                 "options":{
                   "enum_titles":[
                     "Referrer's Widget",
-                    "Referred Conversion Widget"
+                    "Referred User Widget"
                   ]
                 }
               }
