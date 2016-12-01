@@ -32,7 +32,7 @@ function messengerHandler() {
 
   if (!messengerBtn) return;
 
-  var messengerUrl = 'https://www.facebook.com/dialog/send?app_id=' + squatch.user.facebook.appId + '&link=' + squatch.user.facebook.link;
+  var messengerUrl = 'https://www.facebook.com/dialog/send?app_id=' + squatch.user.facebook.appId + '&link=' + squatch.user.facebook.link + '&redirect_uri=' + squatch.user.facebook.redirectUrl;
   messengerBtn.href = messengerUrl;
 
   handleClicks(messengerBtn, function(e) {
