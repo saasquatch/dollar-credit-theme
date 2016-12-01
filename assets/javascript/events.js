@@ -40,7 +40,7 @@ function messengerHandler() {
     if (e.type != 'touchstart') {
       e.preventDefault();
 
-      var url = fbUrl + "&display=popup";
+      var url = messengerUrl + "&display=popup";
       window.open(url, 'fb-messenger', 'status=0,width=620,height=400');
     }
 
