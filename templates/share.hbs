@@ -21,6 +21,12 @@
       Email
     </a>
 
+    <a class="btn btn-sms squatch-share-btn smsShare"
+       target="{{#if (stringCompare mode "POPUP" emptyOnFalse=true)}}_blank{{else}}{{#if (stringCompare mode "EMBED" emptyOnFalse=true)}}_blank{{else}}_self{{/if}}{{/if}}">
+      <i class="icon icon-chat"></i>
+      SMS
+    </a>
+
     <a class="btn btn-messenger squatch-share-btn messengerShare"
        target="{{#if (stringCompare mode "POPUP" emptyOnFalse=true)}}_blank{{else}}{{#if (stringCompare mode "EMBED" emptyOnFalse=true)}}_blank{{else}}_self{{/if}}{{/if}}">
       <i class="icon icon-messenger"></i>

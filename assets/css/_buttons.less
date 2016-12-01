@@ -39,6 +39,20 @@
   .icon {
     margin-right: 10px;
   }
+
+  @media (max-width: @screen-sm-max) {
+    display: none;
+  }
+}
+
+.btn-sms {
+  .button-variant(@btn-sms-color; @btn-sms-bg; @btn-sms-border);
+
+  display: none;
+
+  @media (max-width: @screen-sm-max) {
+    display: block;
+  }
 }
 
 button[data-scroll-element]{
