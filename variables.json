@@ -126,7 +126,10 @@
 	      "showAsCTA":{
                 "type": "boolean"
 	      },
-              "widgetType":{
+	      "displayOnLoad":{
+                "type": "boolean"
+	      },
+	      "widgetType":{
                 "type":"string",
                 "enum":[
                   "REFERRER_WIDGET",
