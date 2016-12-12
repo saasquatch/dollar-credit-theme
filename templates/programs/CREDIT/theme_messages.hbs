@@ -55,30 +55,10 @@
   };
 
   window.squatch.analytics = {
-    apikey    : '{{segmentApiKey}}',
     attributes: {
       tenant   : '{{tenantAlias}}',
       userId   : '{{user.id}}',
       accountId: '{{user.accountId}}'
-    },
-    user: {
-      ident : '{{user.id}}',
-      traits: {
-        tenant   : '{{tenantAlias}}',
-        accountId: '{{user.accountId}}'
-      }
-    },
-    events: {
-      OPENED_WIDGET : 'Opened Widget',
-      OPENED_POPUP  : 'Opened Popup',
-      CLOSED_POPUP  : 'Closed Popup',
-      FACEBOOK_SHARE: 'Clicked Facebook Share',
-      TWITTER_SHARE : 'Clicked Twitter Share',
-      EMAIL_SHARE   : 'Clicked Email Share',
-      LEARN_MORE    : 'Clicked Learn More',
-      FAQ_BACK      : 'Clicked FAQ Back',
-      COPY_LINK     : 'Clicked Copy Link',
-      REMIND_FRIEND : 'Clicked Remind Friend'
     }
   };
 
