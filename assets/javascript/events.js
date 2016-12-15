@@ -76,9 +76,10 @@ function emailHandler() {
 
   if(!emailBtn) return;
   // emailBtn.href = emailUrl;
-  emailBtn.href = '#';
+  emailBtn.href = 'mailto:jorge@saasquat.ch?body=hey';
 
-  emailBtn.onclick = function() {
+  emailBtn.onclick = function(e) {
+    e.preventDefault();
     window.location = 'mailto:jorge@saasquat.ch?body=hey';
     return false;
   }
