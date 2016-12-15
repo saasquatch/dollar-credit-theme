@@ -75,7 +75,8 @@ function emailHandler() {
   var emailUrl = squatch.user.email.share.mailToLink;
 
   if(!emailBtn) return;
-  emailBtn.href = emailUrl;
+  // emailBtn.href = emailUrl;
+  emailBtn.href = 'mailto:jorge@saasquat.ch?body=hey';
 
   handleClicks(emailBtn, function(e) {
     if (e.type != 'touchstart') {
