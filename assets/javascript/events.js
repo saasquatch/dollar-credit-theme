@@ -78,15 +78,6 @@ function emailHandler() {
   // emailBtn.href = emailUrl;
   emailBtn.href = 'mailto:jorge@saasquat.ch?body=hey';
 
-
-  handleClicks(emailBtn, function(e) {
-    if (e.type === 'touchstart') {
-      e.preventDefault();
-      window.location = 'mailto:jorge@saasquat.ch?body=hey';
-      return false;
-    }
-  })
-
   // handleClicks(emailBtn, function(e) {
   //   if (e.type != 'touchstart') {
   //     e.preventDefault();
