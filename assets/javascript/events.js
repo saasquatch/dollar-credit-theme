@@ -76,19 +76,26 @@ function emailHandler() {
 
   if(!emailBtn) return;
   // emailBtn.href = emailUrl;
-  emailBtn.href = 'mailto:jorge@saasquat.ch?body=hey';
-  emailBtn.target = '_parent';
 
-  // handleClicks(emailBtn, function(e) {
-  //   if (e.type != 'touchstart') {
-  //     e.preventDefault();
-  //
-  //     var mailurl = emailUrl;
-  //     mailTo(mailurl);
-  //   }
-  //
-  //   if (window.frameElement && window.frameElement.squatchJsApi) {
-  //     window.frameElement.squatchJsApi._shareEvent(window.squatch, 'EMAIL');
-  //   }
-  // });
+  var md = new MobileDetect('Version/4.0 Mobile Safari/534.30');
+  var UA = md.userAgent();
+
+  emailBtn.href = emailUrl;
+
+  if (UA === 'Safari') {
+    emailBtn.target = '_parent';
+  } else {
+    handleClicks(emailBtn, function(e) {
+      if (e.type != 'touchstart') {
+        e.preventDefault();
+
+        var mailurl = emailUrl;
+        mailTo(mailurl);
+      }
+
+      if (window.frameElement && window.frameElement.squatchJsApi) {
+        window.frameElement.squatchJsApi._shareEvent(window.squatch, 'EMAIL');
+      }
+    });
+  }
 }
