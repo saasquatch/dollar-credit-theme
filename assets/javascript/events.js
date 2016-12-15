@@ -79,16 +79,16 @@ function emailHandler() {
   emailBtn.href = 'mailto:jorge@saasquat.ch?body=hey';
   emailBtn.target = '_parent';
 
-  handleClicks(emailBtn, function(e) {
-    if (e.type != 'touchstart') {
-      e.preventDefault();
-
-      var mailurl = emailUrl;
-      mailTo(mailurl);
-    }
-
-    if (window.frameElement && window.frameElement.squatchJsApi) {
-      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'EMAIL');
-    }
-  });
+  // handleClicks(emailBtn, function(e) {
+  //   if (e.type != 'touchstart') {
+  //     e.preventDefault();
+  //
+  //     var mailurl = emailUrl;
+  //     mailTo(mailurl);
+  //   }
+  //
+  //   if (window.frameElement && window.frameElement.squatchJsApi) {
+  //     window.frameElement.squatchJsApi._shareEvent(window.squatch, 'EMAIL');
+  //   }
+  // });
 }
