@@ -71,17 +71,17 @@ function twitterHandler() {
 }
 
 function emailHandler() {
-  // var emailBtn = document.getElementsByClassName('emailShare')[0];
-  // var emailUrl = squatch.user.email.share.mailToLink;
-  //
-  // if(!emailBtn) return;
-  // // emailBtn.href = emailUrl;
-  // emailBtn.href = '#';
-  //
-  // emailBtn.onclick = function() {
-  //   window.location = 'mailto:jorge@saasquat.ch?body=hey';
-  //   return false;
-  // }
+  var emailBtn = document.getElementsByClassName('emailShare')[0];
+  var emailUrl = squatch.user.email.share.mailToLink;
+
+  if(!emailBtn) return;
+  // emailBtn.href = emailUrl;
+  emailBtn.href = '#';
+
+  emailBtn.onclick = function() {
+    window.location = 'mailto:jorge@saasquat.ch?body=hey';
+    return false;
+  }
 
   // handleClicks(emailBtn, function(e) {
   //   if (e.type != 'touchstart') {
