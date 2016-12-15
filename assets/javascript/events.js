@@ -71,23 +71,24 @@ function twitterHandler() {
 }
 
 function emailHandler() {
-  // var emailBtn = document.getElementsByClassName('emailShare')[0];
-  // var emailUrl = squatch.user.email.share.mailToLink;
-  //
-  // if(!emailBtn) return;
-  // // emailBtn.href = emailUrl;
-  // emailBtn.href = 'mailto:jorge@saasquat.ch';
+  var emailBtn = document.getElementsByClassName('emailShare')[0];
+  var emailUrl = squatch.user.email.share.mailToLink;
 
-  // handleClicks(emailBtn, function(e) {
-  //   if (e.type != 'touchstart') {
-  //     e.preventDefault();
-  //
-  //     var mailurl = emailUrl;
-  //     mailTo(mailurl);
-  //   }
-  //
-  //   if (window.frameElement && window.frameElement.squatchJsApi) {
-  //     window.frameElement.squatchJsApi._shareEvent(window.squatch, 'EMAIL');
-  //   }
-  // });
+  if(!emailBtn) return;
+  // emailBtn.href = emailUrl;
+  emailBtn.href = 'mailto:jorge@saasquat.ch?body=hey';
+  emailBtn.target = '_parent';
+
+  handleClicks(emailBtn, function(e) {
+    if (e.type != 'touchstart') {
+      e.preventDefault();
+
+      var mailurl = emailUrl;
+      mailTo(mailurl);
+    }
+
+    if (window.frameElement && window.frameElement.squatchJsApi) {
+      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'EMAIL');
+    }
+  });
 }
