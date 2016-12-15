@@ -71,12 +71,12 @@ function twitterHandler() {
 }
 
 function emailHandler() {
-  var emailBtn = document.getElementsByClassName('emailShare')[0];
-  var emailUrl = squatch.user.email.share.mailToLink;
-
-  if(!emailBtn) return;
-  // emailBtn.href = emailUrl;
-  emailBtn.href = 'mailto:jorge@saasquat.ch?body=hey';
+  // var emailBtn = document.getElementsByClassName('emailShare')[0];
+  // var emailUrl = squatch.user.email.share.mailToLink;
+  //
+  // if(!emailBtn) return;
+  // // emailBtn.href = emailUrl;
+  // emailBtn.href = 'mailto:jorge@saasquat.ch';
 
   // handleClicks(emailBtn, function(e) {
   //   if (e.type != 'touchstart') {
