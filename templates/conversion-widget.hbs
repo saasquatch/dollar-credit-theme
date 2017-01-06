@@ -53,7 +53,7 @@
 
         {{#if referredBy}}
           {{> programs/CREDIT/conversion-lead}}
-          {{> conversion-share}}
+          {{>cta-widget cta=(variables-object 'widget.CONVERSION_WIDGET.cta')}}
         {{/if}}
       </div>
 
