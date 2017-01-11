@@ -60,7 +60,7 @@
     </main>
 
     <div id="cta">
-      {{> cta-widget}}
+      {{>cta-widget cta=(variables-object 'widget.CONVERSION_WIDGET.cta')}}
     </div>
 
     <script src="{{assets 'libs/ready.min.js'}}"></script>

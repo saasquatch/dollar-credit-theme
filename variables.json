@@ -1,686 +1,734 @@
 {
-  "title":"root",
-  "self": {
-  	"vendor": "referral-saasquatch",
-	  "name" : "rs_schema",
-	  "format" : "jsonschema",
-  	"version" : "1-0-0"
-  },
-  "type":"object",
-  "properties":{
-    "jsOptions":{
-      "type":"object",
-      "properties":{
-        "widget":{
-          "type":"object",
-          "properties":{
-            "defaultWidgetType":{
-              "type":"string",
-              "title":"Default Widget Type",
-              "default":"REFERRER_WIDGET",
-              "enum":[
-                "REFERRER_WIDGET",
-                "CONVERSION_WIDGET"
-              ],
-              "options":{
-                "enum_titles":[
-                  "Referrer's Widget",
-                  "Referred User Widget"
-                ]
-              }
-            }
-          }
-        },
-        "cta":{
-          "type":"object",
-          "properties":{
-            "configuration":{
-              "type":"object",
-              "properties":{
-                "themeMapping":{
-                  "default":"cta-widget"
-                }
-              }
+   "title":"root",
+   "self":{
+      "vendor":"referral-saasquatch",
+      "name":"rs_schema",
+      "format":"jsonschema",
+      "version":"1-1-0"
+   },
+   "type":"object",
+   "properties":{
+      "jsOptions":{
+         "type":"object",
+         "properties":{
+            "widget":{
+               "type":"object",
+               "properties":{
+                  "defaultWidgetType":{
+                     "type":"string",
+                     "title":"Default Widget Type",
+                     "default":"REFERRER_WIDGET",
+                     "enum":[
+                        "REFERRER_WIDGET",
+                        "CONVERSION_WIDGET"
+                     ],
+                     "options":{
+                        "enum_titles":[
+                           "Referrer's Widget",
+                           "Referred User Widget"
+                        ]
+                     }
+                  }
+               }
             },
-            "content":{
-              "type":"object",
-              "title":"Customize CTA Button",
-              "properties":{
-                "buttonSide":{
-                  "type":"string",
-                  "title":"Button Side:",
-		  "default" : "right",
-                  "enum":[
-                    "left",
-                    "right",
-                    "center"
-                  ],
-                  "options":{
-                    "enum_titles":[
-                      "Left Side",
-                      "Right Side",
-                      "Center"
-                    ]
+            "conversionUrls":{
+               "type":"array",
+               "items":{
+                  "type":"string"
+               }
+            },
+            "widgetUrlMappings":{
+               "type":"array",
+               "items":{
+                  "type":"object",
+                  "properties":{
+                     "url":{
+                        "type":"string"
+                     },
+                     "showAsCTA":{
+                        "type":"boolean"
+                     },
+                     "displayOnLoad":{
+                        "type":"boolean"
+                     },
+                     "widgetType":{
+                        "type":"string",
+                        "enum":[
+                           "REFERRER_WIDGET",
+                           "CONVERSION_WIDGET"
+                        ],
+                        "options":{
+                           "enum_titles":[
+                              "Referrer's Widget",
+                              "Referred User Widget"
+                           ]
+                        }
+                     }
                   }
-                },
-                "buttonPosition":{
-                  "type":"string",
-                  "title":"Button Position:",
-		  "default" : "bottom",
-                  "enum":[
-                    "top",
-                    "bottom",
-                    "middle"
-                  ],
-                  "options":{
-                    "enum_titles":[
-                      "Top",
-                      "Bottom",
-                      "Middle"
-                    ]
-                  }
-                },
-                "buttonColor":{
-                  "type":"string",
-                  "format":"text",
-                  "minLength":1,
-                  "title":"Button Color (hex code):",
-                  "default":"#4486E1",
-                  "options":{
-                    "validate":[
-                      "hex-color"
-                    ]
-                  }
-                },
-                "buttonText":{
-                  "type":"string",
-                  "title":"Button Text",
-                  "format":"markdown",
-                  "propertyOrder":4,
-                  "default":"Refer Friends For Rewards",
-                  "options":{
-                    "validate":[
-                      "handlebars"
-                    ],
-                    "input_height":"50px"
-                  }
-                }
-              }
+               }
             }
-          }
-        },
-        "conversionUrls":{
-          "type":"array",
-          "items":{
-            "type":"string"
-          }
-        },
-        "widgetUrlMappings":{
-          "type":"array",
-          "items":{
-            "type":"object",
-            "properties":{
-              "url":{
-                "type":"string"
-              },
-	      "showAsCTA":{
-                "type": "boolean"
-	      },
-	      "displayOnLoad":{
-                "type": "boolean"
-	      },
-	      "widgetType":{
-                "type":"string",
-                "enum":[
-                  "REFERRER_WIDGET",
-                  "CONVERSION_WIDGET"
-                ],
-                "options":{
-                  "enum_titles":[
-                    "Referrer's Widget",
-                    "Referred User Widget"
-                  ]
-                }
-              }
+         }
+      },
+      "widget":{
+         "type":"object",
+         "properties":{
+            "REFERRER_WIDGET":{
+               "type":"object",
+               "properties":{
+                  "configuration":{
+                     "properties":{
+                        "themeMapping":{
+                           "default":"widget"
+                        }
+                     }
+                  },
+                  "content":{
+                     "properties":{
+                        "widgetCustomization":{
+                           "allOf":[
+                              {
+                                 "title":"Customize Referral Widget",
+                                 "properties":{
+                                    "widgetFont":{
+                                       "default":"\"Helvetica Neue\",Helvetica,Arial,sans-serif"
+                                    },
+                                    "headerColor":{
+                                       "default":"#4486E1"
+                                    },
+                                    "heading":{
+                                       "default":"Give ${{math programDetails.referredRewardDetails.credit ' / 100'}} and Get ${{math programDetails.referrerRewardDetails.credit ' / 100'}}!"
+                                    },
+                                    "headerDetails":{
+                                       "default":"Give a friend ${{math programDetails.referredRewardDetails.credit ' / 100'}} credit off {{companyName}} and receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} for yourself when they pay their first bill."
+                                    },
+                                    "shareCodeDetails":{
+                                       "type":"string",
+                                       "format":"markdown",
+                                       "title":"Call To Action Text",
+                                       "default":"Share the link below or use the code **{{user.referralCode}}**",
+                                       "options":{
+                                          "input_height":"100px",
+                                          "validate":[
+                                             "handlebars"
+                                          ]
+                                       }
+                                    }
+                                 }
+                              },
+                              {
+                                 "$ref":"#/definitions/widget/definitions/content/definitions/generalBody"
+                              }
+                           ]
+                        },
+                        "shareMessaging":{
+                           "allOf":[
+                              {
+                                 "$ref":"#/definitions/widget/definitions/content/definitions/shareContent"
+                              },
+                              {
+                                 "required":[
+                                    "emailShareBody",
+                                    "emailShareSubject",
+                                    "facebookShareSubject",
+                                    "facebookShareBody",
+                                    "twitterShareBody"
+                                 ]
+                              }
+                           ]
+                        }
+                     }
+                  },
+                  "cta":{
+                     "type":"object",
+                     "properties":{
+                        "configuration":{
+                           "$ref":"#/definitions/widget/definitions/cta/definitions/configuration"
+                        },
+                        "content":{
+                           "allOf":[
+                              {
+                                 "properties":{
+                                    "buttonText":{
+                                       "default":"Refer Friends For Rewards"
+                                    }
+                                 }
+                              },
+                              {
+                                 "$ref":"#/definitions/widget/definitions/cta/definitions/content"
+                              }
+                           ]
+                        }
+                     }
+                  }
+               }
+            },
+            "CONVERSION_WIDGET":{
+               "type":"object",
+               "properties":{
+                  "configuration":{
+                     "properties":{
+                        "themeMapping":{
+                           "default":"conversion-widget"
+                        }
+                     }
+                  },
+                  "content":{
+                     "properties":{
+                        "widgetCustomization":{
+                           "allOf":[
+                              {
+                                 "title":"Customize Referred Widget",
+                                 "properties":{
+                                    "widgetHeaderImage":{
+                                       "type":"string",
+                                       "format":"text",
+                                       "minLength":1,
+                                       "title":"Heading Image Url:",
+                                       "default":"{{assets 'images/conversion.png'}}"
+                                    },
+                                    "widgetFont":{
+                                       "default":"\"Helvetica Neue\",Helvetica,Arial,sans-serif"
+                                    },
+                                    "headerColor":{
+                                       "default":"#444"
+                                    },
+                                    "heading":{
+                                       "default":"You were Successfully Referred to {{companyName}}"
+                                    },
+                                    "headerDetails":{
+                                       "default":"Use the Referral Code<br><span id=\"squatch-share-code\">{{referredBy.referredByUser.referralCode}}</span><br>at checkout to receive your referral discount"
+                                    },
+                                    "buttonCopy":{
+                                       "type":"string",
+                                       "format":"text",
+                                       "minLength":1,
+                                       "title":"Button Copy",
+                                       "default":"COPY CODE"
+                                    }
+                                 }
+                              },
+                              {
+                                 "$ref":"#/definitions/widget/definitions/content/definitions/generalBody"
+                              }
+                           ]
+                        }
+                     }
+                  },
+                  "cta":{
+                     "type":"object",
+                     "properties":{
+                        "configuration":{
+                           "$ref":"#/definitions/widget/definitions/cta/definitions/configuration"
+                        },
+                        "content":{
+                           "allOf":[
+                              {
+                                 "properties":{
+                                    "buttonText":{
+                                       "default":"Get Rewarded"
+                                    }
+                                 }
+                              },
+                              {
+                                 "$ref":"#/definitions/widget/definitions/cta/definitions/content"
+                              }
+                           ]
+                        }
+                     }
+                  }
+               }
             }
-          }
-        }
+         }
+      },
+      "email":{
+         "type":"object",
+         "properties":{
+            "REFERRER_REWARD_LIMIT_REACHED":{
+               "type":"object",
+               "properties":{
+                  "configuration":{
+                     "allOf":[
+                        {
+                           "properties":{
+                              "subject":{
+                                 "default":"You have hit the reward limit!"
+                              },
+                              "themeMapping":{
+                                 "default":"emails/referrer-reward-limit"
+                              }
+                           }
+                        },
+                        {
+                           "$ref":"#/definitions/email/definitions/configuration"
+                        }
+                     ]
+                  },
+                  "content":{
+                     "allOf":[
+                        {
+                           "properties":{
+                              "headerImageUrl":{
+                                 "default":"{{assets 'images/email/reward-limit-header.png'}}"
+                              },
+                              "headerContent":{
+                                 "default":"#Reward Limit\nYou have successfully referred the maximum!"
+                              },
+                              "bodyContent":{
+                                 "default":"Thanks for spreading the word about {{companyName}}. You've referred so many new people that you've earned the maximum amount of available credit."
+                              },
+                              "shareCTA":{
+                                 "default":"However, you can keep referring new users and giving ${{programDetails.referrerRewardDetails.credit}} off with your code. - **{{user.referralCode}}**"
+                              }
+                           }
+                        },
+                        {
+                           "$ref":"#/definitions/email/definitions/generalContent"
+                        },
+                        {
+                           "$ref":"#/definitions/email/definitions/shareContent"
+                        }
+                     ]
+                  }
+               }
+            },
+            "REFERRAL_CONVERTED":{
+               "type":"object",
+               "properties":{
+                  "configuration":{
+                     "allOf":[
+                        {
+                           "properties":{
+                              "subject":{
+                                 "default":"Congrats! You have earned ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}"
+                              },
+                              "themeMapping":{
+                                 "default":"emails/referral-converted"
+                              }
+                           }
+                        },
+                        {
+                           "$ref":"#/definitions/email/definitions/configuration"
+                        }
+                     ]
+                  },
+                  "content":{
+                     "allOf":[
+                        {
+                           "properties":{
+                              "headerImageUrl":{
+                                 "default":"{{assets 'images/email/referral-converted-header.png'}}"
+                              },
+                              "headerContent":{
+                                 "default":"#Congratulations\nYour friend has signed up for a {{companyName}} Account!"
+                              },
+                              "bodyContent":{
+                                 "default":"You have now earned ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}. Refer more friends to save even more!"
+                              }
+                           }
+                        },
+                        {
+                           "$ref":"#/definitions/email/definitions/generalContent"
+                        },
+                        {
+                           "$ref":"#/definitions/email/definitions/shareContent"
+                        }
+                     ]
+                  }
+               }
+            },
+            "REFERRAL_STARTED":{
+               "type":"object",
+               "properties":{
+                  "configuration":{
+                     "allOf":[
+                        {
+                           "properties":{
+                              "subject":{
+                                 "default":"​{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}}​ helped you get one step closer to free credit with {{companyName}}​!"
+                              },
+                              "themeMapping":{
+                                 "default":"emails/referral-started"
+                              }
+                           }
+                        },
+                        {
+                           "$ref":"#/definitions/email/definitions/configuration"
+                        }
+                     ]
+                  },
+                  "content":{
+                     "allOf":[
+                        {
+                           "properties":{
+                              "headerImageUrl":{
+                                 "default":"{{assets 'images/email/referral-started-header.png'}}"
+                              },
+                              "headerContent":{
+                                 "default":"#Good News!\nYour friend has signed up for a free account with {{companyName}}!"
+                              },
+                              "bodyContent":{
+                                 "default":"{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}}​ is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}"
+                              }
+                           }
+                        },
+                        {
+                           "$ref":"#/definitions/email/definitions/generalContent"
+                        },
+                        {
+                           "$ref":"#/definitions/email/definitions/shareContent"
+                        }
+                     ]
+                  }
+               }
+            }
+         }
       }
-    },
-    "widget":{
-      "type":"object",
-      "properties":{
-        "REFERRER_WIDGET":{
-          "type":"object",
-          "properties":{
-            "configuration":{
-              "properties":{
-                "themeMapping":{
-                  "default":"widget"
-                }
-              }
-            },
+   },
+   "definitions":{
+      "widget":{
+         "definitions":{
             "content":{
-              "properties":{
-                "widgetCustomization":{
-                  "allOf":[
-                    {
-                      "title":"Customize Referral Widget",
-                      "properties":{
+               "definitions":{
+                  "generalBody":{
+                     "type":"object",
+                     "properties":{
                         "widgetFont":{
-                          "default":"\"Helvetica Neue\",Helvetica,Arial,sans-serif"
+                           "type":"string",
+                           "title":"Widget Font:",
+                           "enum":[
+                              "\"Helvetica Neue\",Helvetica,Arial,sans-serif",
+                              "'Lato',sans-serif",
+                              "'Times New Roman'",
+                              "Arial",
+                              "Courier",
+                              "Tahoma",
+                              "Verdana",
+                              "Georgia"
+                           ],
+                           "options":{
+                              "enum_titles":[
+                                 "Helvetica Neue",
+                                 "Lato",
+                                 "Times New Roman",
+                                 "Arial",
+                                 "Courier",
+                                 "Tahoma",
+                                 "Verdana",
+                                 "Georgia"
+                              ]
+                           }
                         },
                         "headerColor":{
-                          "default":"#4486E1"
+                           "type":"string",
+                           "format":"text",
+                           "minLength":1,
+                           "title":"Heading Text Color (hex code):",
+                           "options":{
+                              "validate":[
+                                 "hex-color"
+                              ]
+                           }
                         },
                         "heading":{
-                          "default": "Give ${{math programDetails.referredRewardDetails.credit ' / 100'}} and Get ${{math programDetails.referrerRewardDetails.credit ' / 100'}}!"
+                           "type":"string",
+                           "minLength":1,
+                           "format":"markdown",
+                           "title":"Heading Text:",
+                           "options":{
+                              "input_height":"100px",
+                              "validate":[
+                                 "handlebars"
+                              ]
+                           }
                         },
                         "headerDetails":{
-                          "default":"Give a friend ${{math programDetails.referredRewardDetails.credit ' / 100'}} credit off {{companyName}} and receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} for yourself when they pay their first bill."
-                        },
-                        "shareCodeDetails":{
-                          "type":"string",
-                          "format":"markdown",
-                          "title":"Call To Action Text",
-                          "default":"Share the link below or use the code **{{user.referralCode}}**",
-                          "options":{
-                            "input_height":"100px",
-                            "validate":[
-                              "handlebars"
-                            ]
-                          }
+                           "type":"string",
+                           "minLength":1,
+                           "format":"markdown",
+                           "title":"Body Text:",
+                           "options":{
+                              "input_height":"100px",
+                              "validate":[
+                                 "handlebars"
+                              ]
+                           }
                         }
-                      }
-                    },
-                    {
-                      "$ref":"#/definitions/widget/definitions/content/definitions/generalBody"
-                    }
-                  ]
-                },
-                "shareMessaging":{
-                  "allOf":[
-                    {
-                      "$ref":"#/definitions/widget/definitions/content/definitions/shareContent"
-                    },
-                    {
-                      "required":[
-                        "emailShareBody",
-                        "emailShareSubject",
-                        "facebookShareSubject",
-                        "facebookShareBody",
-                        "twitterShareBody"
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "CONVERSION_WIDGET":{
-          "type":"object",
-          "properties":{
-            "configuration":{
-              "properties":{
-                "themeMapping":{
-                  "default":"conversion-widget"
-                }
-              }
-            },
-            "content":{
-              "properties":{
-                "widgetCustomization":{
-                  "allOf":[
-                    {
-                      "title":"Customize Referred Widget",
-                      "properties":{
-                        "widgetHeaderImage":{
-                          "type":"string",
-                          "format":"text",
-                          "minLength":1,
-                          "title":"Heading Image Url:",
-                          "default":"{{assets 'images/conversion.png'}}"
+                     }
+                  },
+                  "shareContent":{
+                     "title":"Share Messaging",
+                     "type":"object",
+                     "properties":{
+                        "emailShareSubject":{
+                           "type":"string",
+                           "description":"Email share subject",
+                           "minLength":4,
+                           "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
                         },
-                        "widgetFont":{
-                          "default":"\"Helvetica Neue\",Helvetica,Arial,sans-serif"
+                        "emailShareBody":{
+                           "type":"string",
+                           "description":"Email share body",
+                           "minLength":4,
+                           "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.emailShareLink}}"
                         },
-                        "headerColor":{
-                          "default":"#444"
+                        "facebookShareImageURL":{
+                           "type":"string",
+                           "description":"Facebook URL Image",
+                           "default":""
                         },
-                        "heading":{
-                          "default":"You were Successfully Referred to {{companyName}}"
+                        "facebookShareSubject":{
+                           "type":"string",
+                           "description":"Facebook share subject",
+                           "minLength":4,
+                           "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
                         },
-                        "headerDetails":{
-                          "default":"Use the Referral Code<br><span id=\"squatch-share-code\">{{referredBy.referredByUser.referralCode}}</span><br>at checkout to receive your referral discount"
+                        "facebookShareBody":{
+                           "type":"string",
+                           "description":"Facebook share subject",
+                           "minLength":4,
+                           "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.facebookShareLink}}"
                         },
-                        "buttonCopy":{
-                          "type":"string",
-                          "format":"text",
-                          "minLength":1,
-                          "title":"Button Copy",
-                          "default":"COPY CODE"
+                        "twitterShareBody":{
+                           "type":"string",
+                           "description":"Twitter share body",
+                           "minLength":4,
+                           "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.twitterShareLink}}"
                         }
-                      }
-                    },
-                    {
-                      "$ref":"#/definitions/widget/definitions/content/definitions/generalBody"
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "email":{
-      "type":"object",
-      "properties":{
-        "REFERRER_REWARD_LIMIT_REACHED":{
-          "type":"object",
-          "properties":{
-            "configuration":{
-              "allOf":[
-                {
-                  "properties":{
-                    "subject":{
-                      "default":"You have hit the reward limit!"
-                    },
-                    "themeMapping":{
-                      "default":"emails/referrer-reward-limit"
-                    }
+                     }
                   }
-                },
-                {
-                  "$ref":"#/definitions/email/definitions/configuration"
-                }
-              ]
+               }
             },
-            "content":{
-              "allOf":[
-                {
-                  "properties":{
-                    "headerImageUrl":{
-                      "default":"{{assets 'images/email/reward-limit-header.png'}}"
-                    },
-                    "headerContent":{
-                      "default":"#Reward Limit\nYou have successfully referred the maximum!"
-                    },
-                    "bodyContent":{
-                      "default":"Thanks for spreading the word about {{companyName}}. You've referred so many new people that you've earned the maximum amount of available credit."
-                    },
-                    "shareCTA":{
-                      "default":"However, you can keep referring new users and giving ${{programDetails.referrerRewardDetails.credit}} off with your code. - **{{user.referralCode}}**"
-                    }
+            "cta":{
+               "definitions":{
+                  "configuration":{
+                     "type":"object",
+                     "properties":{
+                        "themeMapping":{
+                           "default":"cta-widget"
+                        }
+                     }
+                  },
+                  "content":{
+                     "type":"object",
+                     "title":"Customize CTA Button",
+                     "properties":{
+                        "buttonSide":{
+                           "type":"string",
+                           "title":"Button Side:",
+                           "default":"right",
+                           "enum":[
+                              "left",
+                              "right",
+                              "center"
+                           ],
+                           "options":{
+                              "enum_titles":[
+                                 "Left Side",
+                                 "Right Side",
+                                 "Center"
+                              ]
+                           }
+                        },
+                        "buttonPosition":{
+                           "type":"string",
+                           "title":"Button Position:",
+                           "default":"bottom",
+                           "enum":[
+                              "top",
+                              "bottom",
+                              "middle"
+                           ],
+                           "options":{
+                              "enum_titles":[
+                                 "Top",
+                                 "Bottom",
+                                 "Middle"
+                              ]
+                           }
+                        },
+                        "buttonColor":{
+                           "type":"string",
+                           "format":"text",
+                           "minLength":1,
+                           "title":"Button Color (hex code):",
+                           "default":"#4486E1",
+                           "options":{
+                              "validate":[
+                                 "hex-color"
+                              ]
+                           }
+                        },
+                        "buttonText":{
+                           "type":"string",
+                           "title":"Button Text",
+                           "format":"markdown",
+                           "propertyOrder":4,
+                           "options":{
+                              "validate":[
+                                 "handlebars"
+                              ],
+                              "input_height":"50px"
+                           }
+                        },
+                        "buttonWidth":{
+                          "type":"integer",
+                          "title":"Button Width",
+                          "format":"number",
+                          "default":230
+                        }
+                     }
                   }
-                },
-                {
-                  "$ref":"#/definitions/email/definitions/generalContent"
-                },
-                {
-                  "$ref":"#/definitions/email/definitions/shareContent"
-                }
-              ]
+               }
             }
-          }
-        },
-        "REFERRAL_CONVERTED":{
-          "type":"object",
-          "properties":{
+         }
+      },
+      "email":{
+         "definitions":{
             "configuration":{
-              "allOf":[
-                {
-                  "properties":{
-                    "subject":{
-                      "default":"Congrats! You have earned ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}"
-                    },
-                    "themeMapping":{
-                      "default":"emails/referral-converted"
-                    }
+               "type":"object",
+               "title":"Email Defaults",
+               "properties":{
+                  "fromName":{
+                     "type":"string",
+                     "title":"From Name",
+                     "default":"{{companyName}}",
+                     "propertyOrder":1,
+                     "minLength":1,
+                     "options":{
+                        "validate":[
+                           "handlebars"
+                        ]
+                     }
+                  },
+                  "fromAddress":{
+                     "type":"string",
+                     "title":"From Address",
+                     "format":"email",
+                     "default":"referral@mail.saasquat.ch",
+                     "propertyOrder":2,
+                     "minLength":5,
+                     "options":{
+                        "validate":[
+                           "email"
+                        ]
+                     }
+                  },
+                  "subject":{
+                     "type":"string",
+                     "title":"Subject",
+                     "format":"textarea",
+                     "default":"Referral Update",
+                     "propertyOrder":3,
+                     "minLength":1,
+                     "options":{
+                        "validate":[
+                           "handlebars"
+                        ],
+                        "input_height":"50px"
+                     }
+                  },
+                  "themeMapping":{
+                     "options":{
+                        "hidden":true
+                     }
                   }
-                },
-                {
-                  "$ref":"#/definitions/email/definitions/configuration"
-                }
-              ]
+               }
             },
-            "content":{
-              "allOf":[
-                {
-                  "properties":{
-                    "headerImageUrl":{
-                      "default":"{{assets 'images/email/referral-converted-header.png'}}"
-                    },
-                    "headerContent":{
-                      "default":"#Congratulations\nYour friend has signed up for a {{companyName}} Account!"
-                    },
-                    "bodyContent":{
-                      "default":"You have now earned ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}. Refer more friends to save even more!"
-                    }
+            "generalContent":{
+               "type":"object",
+               "properties":{
+                  "headerImageUrl":{
+                     "type":"string",
+                     "title":"Header Image URL",
+                     "propertyOrder":1,
+                     "options":{
+                        "validate":[
+                           "handlebars"
+                        ]
+                     }
+                  },
+                  "headerContent":{
+                     "type":"string",
+                     "title":"Header Content",
+                     "format":"markdown",
+                     "propertyOrder":2,
+                     "options":{
+                        "validate":[
+                           "handlebars"
+                        ],
+                        "input_height":"50px"
+                     }
+                  },
+                  "bodyContent":{
+                     "type":"string",
+                     "title":"Body Content",
+                     "format":"markdown",
+                     "propertyOrder":3,
+                     "options":{
+                        "validate":[
+                           "handlebars"
+                        ],
+                        "input_height":"50px"
+                     }
+                  },
+                  "footer":{
+                     "type":"string",
+                     "title":"Footer",
+                     "format":"markdown",
+                     "propertyOrder":1001,
+                     "options":{
+                        "validate":[
+                           "handlebars"
+                        ],
+                        "input_height":"50px"
+                     }
                   }
-                },
-                {
-                  "$ref":"#/definitions/email/definitions/generalContent"
-                },
-                {
-                  "$ref":"#/definitions/email/definitions/shareContent"
-                }
-              ]
-            }
-          }
-        },
-        "REFERRAL_STARTED":{
-          "type":"object",
-          "properties":{
-            "configuration":{
-              "allOf":[
-                {
-                  "properties":{
-                    "subject":{
-                      "default":"​{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}}​ helped you get one step closer to free credit with {{companyName}}​!"
-                    },
-                    "themeMapping":{
-                      "default":"emails/referral-started"
-                    }
-                  }
-                },
-                {
-                  "$ref":"#/definitions/email/definitions/configuration"
-                }
-              ]
-            },
-            "content":{
-              "allOf":[
-                {
-                  "properties":{
-                    "headerImageUrl":{
-                      "default":"{{assets 'images/email/referral-started-header.png'}}"
-                    },
-                    "headerContent":{
-                      "default":"#Good News!\nYour friend has signed up for a free account with {{companyName}}!"
-                    },
-                    "bodyContent":{
-                      "default":"{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}}​ is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}"
-                    }
-                  }
-                },
-                {
-                  "$ref":"#/definitions/email/definitions/generalContent"
-                },
-                {
-                  "$ref":"#/definitions/email/definitions/shareContent"
-                }
-              ]
-            }
-          }
-        }
-      }
-    }
-  },
-  "definitions":{
-    "widget":{
-      "definitions":{
-        "content":{
-          "definitions":{
-            "generalBody":{
-              "type":"object",
-              "properties":{
-                "widgetFont":{
-                  "type":"string",
-                  "title":"Widget Font:",
-                  "enum":[
-                    "\"Helvetica Neue\",Helvetica,Arial,sans-serif",
-                    "'Lato',sans-serif",
-                    "'Times New Roman'",
-                    "Arial",
-                    "Courier",
-                    "Tahoma",
-                    "Verdana",
-                    "Georgia"
-                  ],
-                  "options":{
-                    "enum_titles":[
-                      "Helvetica Neue",
-                      "Lato",
-                      "Times New Roman",
-                      "Arial",
-                      "Courier",
-                      "Tahoma",
-                      "Verdana",
-                      "Georgia"
-                    ]
-                  }
-                },
-                "headerColor":{
-                  "type":"string",
-                  "format":"text",
-                  "minLength":1,
-                  "title":"Heading Text Color (hex code):",
-                  "options":{
-                    "validate":[
-                      "hex-color"
-                    ]
-                  }
-                },
-                "heading":{
-                  "type":"string",
-                  "minLength":1,
-                  "format":"markdown",
-                  "title":"Heading Text:",
-                  "options":{
-                    "input_height":"100px",
-                    "validate":[
-                      "handlebars"
-                    ]
-                  }
-                },
-                "headerDetails":{
-                  "type":"string",
-                  "minLength":1,
-                  "format":"markdown",
-                  "title":"Body Text:",
-                  "options":{
-                    "input_height":"100px",
-                    "validate":[
-                      "handlebars"
-                    ]
-                  }
-                }
-              }
+               }
             },
             "shareContent":{
-              "title":"Share Messaging",
-              "type":"object",
-              "properties":{
-                "emailShareSubject": {
-                  "type": "string",
-                  "description": "Email share subject",
-                  "minLength": 4,
-                  "default": "Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
-                },
-                "emailShareBody": {
-                  "type": "string",
-                  "description": "Email share body",
-                  "minLength": 4,
-                  "default": "Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.emailShareLink}}"
-                },
-                "facebookShareImageURL": {
-                  "type": "string",
-                  "description": "Facebook URL Image",
-                  "default": ""
-                },
-                "facebookShareSubject": {
-                  "type": "string",
-                  "description": "Facebook share subject",
-                  "minLength": 4,
-                  "default": "Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
-                },
-                "facebookShareBody": {
-                  "type": "string",
-                  "description": "Facebook share subject",
-                  "minLength": 4,
-                  "default": "Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.facebookShareLink}}"
-                },
-                "twitterShareBody": {
-                  "type": "string",
-                  "description": "Twitter share body",
-                  "minLength": 4,
-                  "default": "Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.twitterShareLink}}"
-                }
-              }
+               "type":"object",
+               "properties":{
+                  "shareCTA":{
+                     "type":"string",
+                     "title":"Share Code CTA",
+                     "format":"markdown",
+                     "propertyOrder":4,
+                     "default":"Keep sharing your code and earn more discounts - **{{user.referralCode}}**",
+                     "options":{
+                        "validate":[
+                           "handlebars"
+                        ],
+                        "input_height":"50px"
+                     }
+                  },
+                  "hasShareLink":{
+                     "type":"boolean",
+                     "format":"checkbox",
+                     "title":"Enable Share Link",
+                     "propertyOrder":5,
+                     "default":true
+                  },
+                  "shareButtonHeader":{
+                     "type":"string",
+                     "title":"Share Button Header",
+                     "format":"markdown",
+                     "propertyOrder":6,
+                     "default":"Refer and Earn ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of Credit",
+                     "options":{
+                        "validate":[
+                           "handlebars"
+                        ],
+                        "input_height":"50px"
+                     }
+                  }
+               }
             }
-          }
-        }
+         }
       }
-    },
-    "email":{
-      "definitions":{
-        "configuration":{
-          "type":"object",
-          "title":"Email Defaults",
-          "properties":{
-            "fromName":{
-              "type":"string",
-              "title":"From Name",
-              "default":"{{companyName}}",
-              "propertyOrder":1,
-              "minLength":1,
-              "options":{
-                "validate":[
-                  "handlebars"
-                ]
-              }
-            },
-            "fromAddress":{
-              "type":"string",
-              "title":"From Address",
-              "format":"email",
-              "default":"referral@mail.saasquat.ch",
-              "propertyOrder":2,
-              "minLength":5,
-              "options":{
-                "validate":[
-                  "email"
-                ]
-              }
-            },
-            "subject":{
-              "type":"string",
-              "title":"Subject",
-              "format":"textarea",
-              "default":"Referral Update",
-              "propertyOrder":3,
-              "minLength":1,
-              "options":{
-                "validate":[
-                  "handlebars"
-                ],
-                "input_height":"50px"
-              }
-            },
-            "themeMapping":{
-              "options":{
-                "hidden":true
-              }
-            }
-          }
-        },
-        "generalContent":{
-          "type":"object",
-          "properties":{
-            "headerImageUrl":{
-              "type":"string",
-              "title":"Header Image URL",
-              "propertyOrder":1,
-              "options":{
-                "validate":[
-                  "handlebars"
-                ]
-              }
-            },
-            "headerContent":{
-              "type":"string",
-              "title":"Header Content",
-              "format":"markdown",
-              "propertyOrder":2,
-              "options":{
-                "validate":[
-                  "handlebars"
-                ],
-                "input_height":"50px"
-              }
-            },
-            "bodyContent":{
-              "type":"string",
-              "title":"Body Content",
-              "format":"markdown",
-              "propertyOrder":3,
-              "options":{
-                "validate":[
-                  "handlebars"
-                ],
-                "input_height":"50px"
-              }
-            },
-            "footer":{
-              "type":"string",
-              "title":"Footer",
-              "format":"markdown",
-              "propertyOrder":1001,
-              "options":{
-                "validate":[
-                  "handlebars"
-                ],
-                "input_height":"50px"
-              }
-            }
-          }
-        },
-        "shareContent":{
-          "type":"object",
-          "properties":{
-            "shareCTA":{
-              "type":"string",
-              "title":"Share Code CTA",
-              "format":"markdown",
-              "propertyOrder":4,
-              "default":"Keep sharing your code and earn more discounts - **{{user.referralCode}}**",
-              "options":{
-                "validate":[
-                  "handlebars"
-                ],
-                "input_height":"50px"
-              }
-            },
-            "hasShareLink":{
-              "type":"boolean",
-              "format":"checkbox",
-              "title":"Enable Share Link",
-              "propertyOrder":5,
-              "default":true
-            },
-            "shareButtonHeader":{
-              "type":"string",
-              "title":"Share Button Header",
-              "format":"markdown",
-              "propertyOrder":6,
-              "default":"Refer and Earn ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of Credit",
-              "options":{
-                "validate":[
-                  "handlebars"
-                ],
-                "input_height":"50px"
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "required":[
-    "jsOptions",
-    "widget",
-    "email"
-  ]
+   },
+   "required":[
+      "jsOptions",
+      "widget",
+      "email"
+   ]
 }

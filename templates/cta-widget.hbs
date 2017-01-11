@@ -14,15 +14,17 @@
   <style>
      body .cta-container {
        font-family: {{variables 'widget.REFERRER_WIDGET.content.widgetCustomization.widgetFont'}};
-       background-color: {{variables 'jsOptions.cta.content.buttonColor'}};
+       background-color: {{cta.content.buttonColor}};
      }
   </style>
 
 </head>
 <body>
-  <main class="cta-container {{variables 'jsOptions.cta.content.buttonPosition'}}">
-    {{variables 'jsOptions.cta.content.buttonText'}}
-    <img class="icon" src="{{assets 'images/cta-icon.png'}}">
+  <main class="cta-container {{cta.content.buttonPosition}}" style="width: {{cta.content.buttonWidth}}px;">
+    <div class="wrap">
+      {{{cta.content.buttonText}}}
+      <img class="icon" src="{{assets 'images/cta-icon.png'}}">
+    </div>
   </main>
 
   <script src="{{assets 'libs/ready.min.js'}}"></script>
