@@ -149,7 +149,7 @@
                               {
                                  "properties":{
                                     "buttonText":{
-                                       "default":"Get Rewarded"
+                                       "default":"Refer Friends For Rewards"
                                     }
                                  }
                               },
@@ -569,7 +569,13 @@
                               ],
                               "input_height":"50px"
                            }
-                        }
+                        },
+						"buttonWidth":{
+							"type":"integer",
+							"title":"Button Width",
+							"format":"number",
+							"default":230
+						}
                      }
                   }
                }
