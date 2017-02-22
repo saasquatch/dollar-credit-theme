@@ -96,10 +96,10 @@
                                        "default":"#4486E1"
                                     },
                                     "heading":{
-                                       "default":"Give {{programDetails.referredRewardDetails.discountPercent}}% off and Get {{programDetails.referrerRewardDetails.discountPercent}}% off!"
+                                       "default":"Give ${{math programDetails.referredRewardDetails.credit ' / 100'}} and Get ${{math programDetails.referrerRewardDetails.credit ' / 100'}}!"
                                     },
                                     "headerDetails":{
-                                       "default":"Share {{programDetails.referredRewardDetails.discountPercent}}% off {{companyName}} and receive {{programDetails.referrerRewardDetails.discountPercent}}% off your monthly bill when they pay their first bill."
+                                       "default":"Give a friend ${{math programDetails.referredRewardDetails.credit ' / 100'}} credit off {{companyName}} and receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} for yourself when they pay their first bill."
                                     },
                                     "shareCodeDetails":{
                                        "type":"string",
@@ -278,7 +278,7 @@
                                  "default":"Thanks for spreading the word about {{companyName}}. You've referred so many new people that you've earned the maximum amount of available credit."
                               },
                               "shareCTA":{
-                                 "default":"However, you can keep referring new users and giving {{programDetails.referrerRewardDetails.discountPercent}}% off with your code. - **{{user.referralCode}}**"
+                                 "default":"However, you can keep referring new users and giving ${{programDetails.referrerRewardDetails.credit}} off with your code. - **{{user.referralCode}}**"
                               }
                            }
                         },
@@ -300,7 +300,7 @@
                         {
                            "properties":{
                               "subject":{
-                                 "default":"Congrats! Your monthly {{companyName}} bill is now {{programDetails.referrerRewardDetails.discountPercent}}% less!"
+                                 "default":"Congrats! You have earned ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}"
                               },
                               "themeMapping":{
                                  "default":"emails/referral-converted"
@@ -323,7 +323,7 @@
                                  "default":"#Congratulations\nYour friend has signed up for a {{companyName}} Account!"
                               },
                               "bodyContent":{
-                                 "default":"You have now earned {{programDetails.referrerRewardDetails.discountPercent}}% off your next monthly bill. Refer more friends to save even more!"
+                                 "default":"You have now earned ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}. Refer more friends to save even more!"
                               }
                            }
                         },
@@ -345,7 +345,7 @@
                         {
                            "properties":{
                               "subject":{
-                                 "default":"{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}} helped you get one step closer to saving {{programDetails.referrerRewardDetails.discountPercent}}% on {{companyName}}!"
+                                 "default":"​{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}}​ helped you get one step closer to free credit with {{companyName}}​!"
                               },
                               "themeMapping":{
                                  "default":"emails/referral-started"
@@ -368,7 +368,7 @@
                                  "default":"#Good News!\nYour friend has signed up for a free account with {{companyName}}!"
                               },
                               "bodyContent":{
-                                 "default":"{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}} is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive a {{programDetails.referrerRewardDetails.discountPercent}}% discount!"
+                                 "default":"{{stringEmptyHandler newReferral.referredUser.firstName onEmpty='A friend'}}​ is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}"
                               }
                            }
                         },
@@ -464,13 +464,13 @@
                            "type":"string",
                            "description":"Email share subject",
                            "minLength":4,
-                           "default":"Get {{companyName}} for {{programDetails.referredRewardDetails.discountPercent}}% less!"
+                           "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
                         },
                         "emailShareBody":{
                            "type":"string",
                            "description":"Email share body",
                            "minLength":4,
-                           "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.discountPercent}}% off our monthly bill. Use this link {{shareLinks.emailShareLink}}"
+                           "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.emailShareLink}}"
                         },
                         "facebookShareImageURL":{
                            "type":"string",
@@ -481,25 +481,25 @@
                            "type":"string",
                            "description":"Facebook share subject",
                            "minLength":4,
-                           "default":"Get {{companyName}} for {{programDetails.referredRewardDetails.discountPercent}}% less!"
+                           "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
                         },
                         "facebookShareBody":{
                            "type":"string",
                            "description":"Facebook share subject",
                            "minLength":4,
-                           "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.discountPercent}}% off our monthly bill. Use this link {{shareLinks.facebookShareLink}}"
+                           "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.facebookShareLink}}"
                         },
                         "twitterShareBody":{
                            "type":"string",
                            "description":"Twitter share body",
                            "minLength":4,
-                           "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.discountPercent}}% off our monthly bill. Use this link {{shareLinks.twitterShareLink}}"
+                           "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.twitterShareLink}}"
                         },
                         "smsShareBody":{
                            "type":"string",
                            "description":"SMS share body",
                            "minLength":4,
-                           "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.discountPercent}}% off our monthly bill. Use this link {{sharelinks.smsShareLink}}"
+                           "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.smsShareLink}}"
                         }
                      }
                   }
@@ -720,7 +720,7 @@
                      "title":"Share Button Header",
                      "format":"markdown",
                      "propertyOrder":6,
-                     "default":"Refer and Earn a {{programDetails.referredRewardDetails.discountPercent}}% Discount",
+                     "default":"Refer and Earn ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of Credit",
                      "options":{
                         "validate":[
                            "handlebars"
