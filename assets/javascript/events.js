@@ -56,7 +56,7 @@ function smsHandler() {
   if (!smsBtn) return;
 
   // Test url
-  var smsUrl = 'sms:?&body=' + squatch.user.sms.body;
+  var smsUrl = 'sms:?body=' + squatch.user.sms.body;
   console.log('smsUrl', smsUrl);
   smsBtn.href = smsUrl;
 
