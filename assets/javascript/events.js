@@ -56,7 +56,7 @@ function smsHandler() {
   if (!smsBtn) return;
 
   // Test url
-  var smsUrl = 'sms:?&body=bodytext';
+  var smsUrl = 'sms:?&body=' + squatch.user.twitter.body;
   smsBtn.href = smsUrl;
 
   var md = new MobileDetect('Version/4.0 Mobile Safari/534.30');
