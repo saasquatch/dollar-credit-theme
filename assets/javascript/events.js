@@ -65,6 +65,12 @@ function smsHandler() {
   if (UA === 'Safari') {
     smsBtn.target = '_parent';
   }
+
+  handleClicks(smsBtn, function(e) {
+    if (window.frameElement && window.frameElement.squatchJsApi) {
+      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'SMS');
+    }
+  });
 }
 
 function facebookHandler() {
@@ -124,6 +130,12 @@ function emailHandler() {
 
   if (UA === 'Safari') {
     emailBtn.target = '_parent';
+
+    handleClicks(emailBtn, function(e) {
+      if (window.frameElement && window.frameElement.squatchJsApi) {
+        window.frameElement.squatchJsApi._shareEvent(window.squatch, 'EMAIL');
+      }
+    });
   } else {
     handleClicks(emailBtn, function(e) {
       if (e.type != 'touchstart') {
