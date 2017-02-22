@@ -58,6 +58,10 @@ function smsHandler() {
   // Test url
   var smsUrl = 'sms:?&body=bodytext';
   smsBtn.href = smsUrl;
+
+  if (UA === 'Safari') {
+    smsBtn.target = '_parent';
+  }
 }
 
 function facebookHandler() {
