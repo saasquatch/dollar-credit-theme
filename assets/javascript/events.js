@@ -56,7 +56,7 @@ function smsHandler() {
   if (!smsBtn) return;
 
   // Test url
-  var smsUrl = 'sms:?body=Jorge%20Conde%20Gomez%20Llanos%20invited%20you%20to%20join%20Airbnb.%20Sign%20up%20and%20get%20%2450%20CAD%20off%20your%20first%20adventure.%20https%3A%2F%2Fwww.airbnb.ca%2Fc%2Fjorgec263%3Fs%3D46';
+  var smsUrl = 'sms:?body=Testbody';
   smsBtn.href = smsUrl;
 }
 
