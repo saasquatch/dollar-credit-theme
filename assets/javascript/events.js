@@ -56,7 +56,7 @@ function smsHandler() {
   if (!smsBtn) return;
 
   // Test url
-  var smsUrl = 'sms:?body=Testbody';
+  var smsUrl = 'sms:?&body=bodytext';
   smsBtn.href = smsUrl;
 }
 
