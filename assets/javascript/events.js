@@ -59,6 +59,9 @@ function smsHandler() {
   var smsUrl = 'sms:?&body=bodytext';
   smsBtn.href = smsUrl;
 
+  var md = new MobileDetect('Version/4.0 Mobile Safari/534.30');
+  var UA = md.userAgent();
+
   if (UA === 'Safari') {
     smsBtn.target = '_parent';
   }
