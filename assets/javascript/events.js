@@ -45,7 +45,7 @@ function messengerHandler() {
     }
 
     if (window.frameElement && window.frameElement.squatchJsApi) {
-      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'MESSENGER');
+      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'FBMESSENGER');
     }
   });
 }
