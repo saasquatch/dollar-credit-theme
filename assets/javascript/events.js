@@ -27,6 +27,53 @@ function emailFormHandler() {
   });
 }
 
+function messengerHandler() {
+  var messengerBtn = document.getElementsByClassName('messengerShare')[0];
+
+  if (!messengerBtn) return;
+
+  var messengerUrl = 'https://www.facebook.com/dialog/send?app_id=' + squatch.user.facebook.appId + '&link=' + squatch.user.facebook.link + '&redirect_uri=' + squatch.user.facebook.redirectUrl;
+  messengerBtn.href = messengerUrl;
+
+  handleClicks(messengerBtn, function(e) {
+    // If it's not mobile, don't use href link
+    if (e.type != 'touchstart') {
+      e.preventDefault();
+
+      var url = messengerUrl + "&display=popup";
+      window.open(url, 'fb-messenger', 'status=0,width=620,height=400');
+    }
+
+    if (window.frameElement && window.frameElement.squatchJsApi) {
+      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'FBMESSENGER');
+    }
+  });
+}
+
+function smsHandler() {
+  var smsBtn = document.getElementsByClassName('smsShare')[0];
+
+  if (!smsBtn) return;
+
+  // Test url
+  var smsUrl = 'sms:?&body=' + squatch.user.sms.body;
+  console.log('smsUrl', smsUrl);
+  smsBtn.href = smsUrl;
+
+  var md = new MobileDetect('Version/4.0 Mobile Safari/534.30');
+  var UA = md.userAgent();
+
+  if (UA === 'Safari') {
+    smsBtn.target = '_parent';
+  }
+
+  handleClicks(smsBtn, function(e) {
+    if (window.frameElement && window.frameElement.squatchJsApi) {
+      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'SMS');
+    }
+  });
+}
+
 function facebookHandler() {
   var facebookBtn = document.getElementsByClassName('fbShare')[0];
 
@@ -84,6 +131,12 @@ function emailHandler() {
 
   if (UA === 'Safari') {
     emailBtn.target = '_parent';
+
+    handleClicks(emailBtn, function(e) {
+      if (window.frameElement && window.frameElement.squatchJsApi) {
+        window.frameElement.squatchJsApi._shareEvent(window.squatch, 'EMAIL');
+      }
+    });
   } else {
     handleClicks(emailBtn, function(e) {
       if (e.type != 'touchstart') {
