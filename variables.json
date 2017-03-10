@@ -89,7 +89,7 @@
                               {
                                  "title":"Customize Referral Widget",
                                  "properties":{
-                                    "font":{
+                                    "widgetFont":{
                                        "default":"\"Helvetica Neue\",Helvetica,Arial,sans-serif"
                                     },
                                     "align": {
@@ -108,11 +108,26 @@
                                       "format":"number",
                                       "default":15
                                     },
-                                    "color":{
+                                    "headerColor":{
                                        "default":"#4486E1"
                                     },
-                                    "text":{
+                                    "heading":{
                                        "default":"Give ${{math programDetails.referredRewardDetails.credit ' / 100'}} and Get ${{math programDetails.referrerRewardDetails.credit ' / 100'}}!"
+                                    },
+                                    "headerDetails":{
+                                       "default":"Give a friend ${{math programDetails.referredRewardDetails.credit ' / 100'}} credit off {{companyName}} and receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} for yourself when they pay their first bill."
+                                    },
+                                    "shareCodeDetails":{
+                                       "type":"string",
+                                       "format":"markdown",
+                                       "title":"Call To Action Text",
+                                       "default":"Share the link below or use the code **{{user.referralCode}}**",
+                                       "options":{
+                                          "input_height":"100px",
+                                          "validate":[
+                                             "handlebars"
+                                          ]
+                                       }
                                     }
                                  }
                               },
@@ -394,7 +409,7 @@
                   "generalBody":{
                      "type":"object",
                      "properties":{
-                        "font":{
+                        "widgetFont":{
                            "type":"string",
                            "title":"Widget Font:",
                            "enum":[
@@ -420,7 +435,7 @@
                               ]
                            }
                         },
-                        "color":{
+                        "headerColor":{
                            "type":"string",
                            "format":"text",
                            "minLength":1,
@@ -431,11 +446,23 @@
                               ]
                            }
                         },
-                        "text":{
+                        "heading":{
                            "type":"string",
                            "minLength":1,
                            "format":"markdown",
                            "title":"Heading Text:",
+                           "options":{
+                              "input_height":"100px",
+                              "validate":[
+                                 "handlebars"
+                              ]
+                           }
+                        },
+                        "headerDetails":{
+                           "type":"string",
+                           "minLength":1,
+                           "format":"markdown",
+                           "title":"Body Text:",
                            "options":{
                               "input_height":"100px",
                               "validate":[
