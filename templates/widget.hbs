@@ -21,16 +21,6 @@
     <script src="{{assets 'javascript/base.js'}}"></script>
     <script src="{{assets 'javascript/events.js'}}"></script>
 
-    <!--[if lt IE 9]>
-      <script src="{{assets 'libs/bind-polyfill.js'}}"></script>
-      <script src="{{assets 'libs/html5shiv-printshiv.min.js'}}"></script>
-    <![endif]-->
-
-    <!--[if lte IE 9]>
-      <script src="{{assets 'libs/matchMedia.js'}}"></script>
-      <script src="{{assets 'libs/matchMedia.addListener.js'}}"></script>
-    <![endif]-->
-
    <style>
       .squatch-container .squatch-title {
         color: {{variables 'widget.REFERRER_WIDGET.content.widgetCustomization.headerColor'}};
@@ -43,33 +33,8 @@
 
   <body>
     <main class="squatch-container squatch-container-{{lower mode}}">
-      <div class="squatch-body">
-        {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-        {{!-- {{> (stringFormat 'programs/%s/title' programDetails.referredRewardDetails.rewardType) }} --}}
-        {{> programs/CREDIT/title}}
 
-        <button class="close squatch-header-close" data-close-panel="#squatch-panel">Close</button>
-
-        {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-        {{!-- {{> (stringFormat 'programs/%s/lead' programDetails.referredRewardDetails.rewardType) }} --}}
-        {{> programs/CREDIT/lead}}
-        {{> cta}}
-        {{> share}}
-      </div>
-
-      {{#if user.email}}
-        <div id="squatch-panel">
-          {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-          {{!-- {{> (stringFormat 'programs/%s/panel_summary' programDetails.referredRewardDetails.rewardType) }} --}}
-          {{> programs/CREDIT/panel_summary}}
-          {{> referrals}}
-          {{> attribution}}
-        </div>
-
-        {{> actions}}
-      {{else}}
-        {{> form}}
-      {{/if}}
+      {{> text properties=(variables-object 'widget.REFERRER_WIDGET.content.widgetCustomization')}}
     </main>
 
     <div id="cta">
