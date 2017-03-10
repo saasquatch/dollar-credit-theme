@@ -93,7 +93,20 @@
                                        "default":"\"Helvetica Neue\",Helvetica,Arial,sans-serif"
                                     },
                                     "align": {
+                                      "type":"string",
                                       "default":"center"
+                                    },
+                                    "paddingTop": {
+                                      "type":"integer",
+                                      "title":"Padding Top",
+                                      "format":"number",
+                                      "default":15
+                                    },
+                                    "paddingBottom": {
+                                      "type":"integer",
+                                      "title":"Padding Bottom",
+                                      "format":"number",
+                                      "default":15
                                     },
                                     "headerColor":{
                                        "default":"#4486E1"
