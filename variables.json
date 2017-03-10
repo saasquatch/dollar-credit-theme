@@ -92,6 +92,9 @@
                                     "widgetFont":{
                                        "default":"\"Helvetica Neue\",Helvetica,Arial,sans-serif"
                                     },
+                                    "align": {
+                                      "default":"center"
+                                    },
                                     "headerColor":{
                                        "default":"#4486E1"
                                     },
