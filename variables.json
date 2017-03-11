@@ -96,6 +96,10 @@
                                       "type":"string",
                                       "default":"center"
                                     },
+                                    "component": {
+                                      "type":"string",
+                                      "default":"{{> components/text }}"
+                                    },
                                     "paddingTop": {
                                       "type":"integer",
                                       "title":"Padding Top",
@@ -113,9 +117,6 @@
                                     },
                                     "heading":{
                                        "default":"Give ${{math programDetails.referredRewardDetails.credit ' / 100'}} and Get ${{math programDetails.referrerRewardDetails.credit ' / 100'}}!"
-                                    },
-                                    "headerDetails":{
-                                       "default":"{{> components/text }}"
                                     },
                                     "shareCodeDetails":{
                                        "type":"string",
