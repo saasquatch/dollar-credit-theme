@@ -115,7 +115,7 @@
                                        "default":"Give ${{math programDetails.referredRewardDetails.credit ' / 100'}} and Get ${{math programDetails.referrerRewardDetails.credit ' / 100'}}!"
                                     },
                                     "headerDetails":{
-                                       "default":"{{> components/text properties=(variables-object 'widget.REFERRER_WIDGET.content.widgetCustomization')}}"
+                                       "default":"{{> components/text }}"
                                     },
                                     "shareCodeDetails":{
                                        "type":"string",
