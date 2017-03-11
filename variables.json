@@ -461,6 +461,7 @@
                         "headerDetails":{
                            "type":"string",
                            "minLength":1,
+                           "format":"markdown",
                            "title":"Body Text:",
                            "options":{
                               "input_height":"100px",
