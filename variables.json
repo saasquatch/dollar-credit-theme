@@ -98,7 +98,7 @@
                                     },
                                     "component": {
                                       "type":"string",
-                                      "default":"{{> components/text properties=((variables-object 'widget.REFERRER_WIDGET.content.widgetCustomization')}}"
+                                      "default":"{{> components/text properties=((variables-object \"widget.REFERRER_WIDGET.content.widgetCustomization\")}}"
                                     },
                                     "paddingTop": {
                                       "type":"integer",
