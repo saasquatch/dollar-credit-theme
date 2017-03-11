@@ -115,7 +115,7 @@
                                        "default":"Give ${{math programDetails.referredRewardDetails.credit ' / 100'}} and Get ${{math programDetails.referrerRewardDetails.credit ' / 100'}}!"
                                     },
                                     "headerDetails":{
-                                       "default":"Give a friend ${{math programDetails.referredRewardDetails.credit ' / 100'}} credit off {{companyName}} and receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} for yourself when they pay their first bill."
+                                       "default":"{{> components/text properties=(variables-object 'widget.REFERRER_WIDGET.content.widgetCustomization')}}"
                                     },
                                     "shareCodeDetails":{
                                        "type":"string",
