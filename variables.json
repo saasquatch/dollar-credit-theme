@@ -112,6 +112,18 @@
                                              "handlebars"
                                           ]
                                        }
+                                    },
+                                    "registrationHeader":{
+                                      "type":"string",
+                                      "format":"markdown",
+                                      "title":"Registration Header",
+                                      "default":"Thanks for sending your first referral!<br>Give us your email to ensure you get rewarded when your referral is used.",
+                                      "options":{
+                                         "input_height":"100px",
+                                         "validate":[
+                                            "handlebars"
+                                         ]
+                                      }
                                     }
                                  }
                               },
