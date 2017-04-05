@@ -45,7 +45,7 @@
       Messenger
     </a>
 
-    <a class="btn btn-facebook squatch-share-btn fbShare"
+    <a class="btn btn-facebook squatch-share-btn fbShare {{variables 'widget.REFERRER_WIDGET.content.shareMessaging.facebookDisplayRule'}}"
        target="{{#if (stringCompare mode "POPUP" emptyOnFalse=true)}}_blank{{else}}{{#if (stringCompare mode "EMBED" emptyOnFalse=true)}}_blank{{else}}_self{{/if}}{{/if}}">
       <i class="icon icon-facebook"></i>
       Share

@@ -501,6 +501,11 @@
                            "minLength":4,
                            "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.facebookShareLink}}"
                         },
+                        "facebookDisplayRule":{
+                          "type":"string",
+                          "description":"Display rule",
+                          "default":"mobile-and-desktop"
+                        },
                         "twitterShareBody":{
                            "type":"string",
                            "description":"Twitter share body",
