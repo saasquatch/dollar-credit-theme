@@ -136,16 +136,6 @@
                            "allOf":[
                               {
                                  "$ref":"#/definitions/widget/definitions/content/definitions/shareContent"
-                              },
-                              {
-                                 "required":[
-                                    "emailShareBody",
-                                    "emailShareSubject",
-                                    "facebookShareSubject",
-                                    "facebookShareBody",
-                                    "twitterShareBody",
-                                    "smsShareBody"
-                                 ]
                               }
                            ]
                         }
@@ -472,52 +462,178 @@
                      "title":"Share Messaging",
                      "type":"object",
                      "properties":{
-                        "emailShareSubject":{
-                           "type":"string",
-                           "description":"Email share subject",
-                           "minLength":4,
-                           "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
-                        },
-                        "emailShareBody":{
-                           "type":"string",
-                           "description":"Email share body",
-                           "minLength":4,
-                           "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.emailShareLink}}"
-                        },
-                        "facebookShareImageURL":{
-                           "type":"string",
-                           "description":"Facebook URL Image",
-                           "default":""
-                        },
-                        "facebookShareSubject":{
-                           "type":"string",
-                           "description":"Facebook share subject",
-                           "minLength":4,
-                           "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
-                        },
-                        "facebookShareBody":{
-                           "type":"string",
-                           "description":"Facebook share subject",
-                           "minLength":4,
-                           "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.facebookShareLink}}"
-                        },
-                        "facebookDisplayRule":{
-                          "type":"string",
-                          "description":"Display rule",
-                          "default":"mobile-and-desktop"
-                        },
-                        "twitterShareBody":{
-                           "type":"string",
-                           "description":"Twitter share body",
-                           "minLength":4,
-                           "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.twitterShareLink}}"
-                        },
-                        "smsShareBody":{
-                           "type":"string",
-                           "description":"SMS share body",
-                           "minLength":4,
-                           "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{share-link 'SMS'}}"
-                        }
+						"EMAIL" : {
+							"type" : "object",
+							"properties" : {
+								"emailShareSubject":{
+								   "type":"string",
+								   "title":"Email share subject",
+								   "minLength":4,
+								   "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
+								},
+								"emailShareBody":{
+								   "type":"string",
+								   "title":"Email share body",
+								   "minLength":4,
+								   "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.emailShareLink}}"
+								},
+								"emailDisplayRule":{
+									"type":"string",
+									"title":"Display rule",
+									"default":"mobile-and-desktop",
+									"enum":[
+										"mobile-and-desktop",
+										"hidden",
+										"mobile-only",
+										"desktop-only"
+									],
+									"options":{
+										"enum_titles":[
+											"Show",
+											"Hide",
+											"Mobile Only",
+											"Desktop Only"
+										]
+									}
+								}
+							}
+						},
+						"FACEBOOK" : {
+							"type" : "object",
+							"properties" : {
+								"facebookShareImageURL":{
+								   "type":"string",
+								   "title":"Facebook URL Image",
+								   "default":""
+								},
+								"facebookShareSubject":{
+								   "type":"string",
+								   "title":"Facebook share subject",
+								   "minLength":4,
+								   "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
+								},
+								"facebookShareBody":{
+								   "type":"string",
+								   "title":"Facebook share subject",
+								   "minLength":4,
+								   "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.facebookShareLink}}"
+								},
+								"facebookDisplayRule":{
+									"type":"string",
+									"title":"Display rule",
+									"default":"mobile-and-desktop",
+									"enum":[
+										"mobile-and-desktop",
+										"hidden",
+										"mobile-only",
+										"desktop-only"
+									],
+									"options":{
+										"enum_titles":[
+											"Show",
+											"Hide",
+											"Mobile Only",
+											"Desktop Only"
+										]
+									}
+								}
+							}
+						},
+						"TWITTER" : {
+							"type" : "object",
+							"properties" : {
+								"twitterShareBody":{
+								   "type":"string",
+								   "title":"Twitter share body",
+								   "minLength":4,
+								   "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.twitterShareLink}}"
+								},
+								"twitterDisplayRule":{
+								  "type":"string",
+								  "title":"Display rule",
+								  "default":"mobile-and-desktop"
+								},
+								"twitterDisplayRule":{
+									"type":"string",
+									"title":"Display rule",
+									"default":"mobile-and-desktop",
+									"enum":[
+										"mobile-and-desktop",
+										"hidden",
+										"mobile-only",
+										"desktop-only"
+									],
+									"options":{
+										"enum_titles":[
+											"Show",
+											"Hide",
+											"Mobile Only",
+											"Desktop Only"
+										]
+									}
+								}
+							}
+						},
+						"SMS" : {
+							"type" : "object",
+							"properties" : {
+								"smsShareBody":{
+								   "type":"string",
+								   "title":"SMS share body",
+								   "minLength":4,
+								   "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{share-link 'SMS'}}"
+								},
+								"smsDisplayRule":{
+									"type":"string",
+									"title":"Display rule",
+									"default":"mobile-and-desktop",
+									"enum":[
+										"mobile-and-desktop",
+										"hidden",
+										"mobile-only",
+										"desktop-only"
+									],
+									"options":{
+										"enum_titles":[
+											"Show",
+											"Hide",
+											"Mobile Only",
+											"Desktop Only"
+										]
+									}
+								}
+							}
+						},
+						"WHATSAPP" : {
+							"type" : "object",
+							"properties" : {
+								"whatsAppShareBody":{
+								   "type":"string",
+								   "title":"WhatsApp share body",
+								   "minLength":4,
+								   "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{share-link 'WHATSAPP'}}"
+								},
+								"whatsappDisplayRule":{
+									"type":"string",
+									"title":"Display rule",
+									"default":"mobile-and-desktop",
+									"enum":[
+										"mobile-and-desktop",
+										"hidden",
+										"mobile-only",
+										"desktop-only"
+									],
+									"options":{
+										"enum_titles":[
+											"Show",
+											"Hide",
+											"Mobile Only",
+											"Desktop Only"
+										]
+									}
+								}
+							}
+						}
                      }
                   }
                }
