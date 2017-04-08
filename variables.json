@@ -132,7 +132,7 @@
                               }
                            ]
                         },
-                        "shareMessaging":{
+                        "sharingOptions":{
                            "allOf":[
                               {
                                  "$ref":"#/definitions/widget/definitions/content/definitions/shareContent"
