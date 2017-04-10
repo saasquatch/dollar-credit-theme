@@ -16,9 +16,9 @@
     sharelink: '{{shareLinks.shareLink}}',
     email    : {
       share : {
-        subject: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.emailShareSubject') space="%20"}}',
-        body: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.emailShareBody') space="%20"}}',
-        mailToLink: 'mailto:?subject={{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.emailShareSubject') space="%20"}}&body={{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.emailShareBody') space="%20"}}',
+        subject: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.EMAIL.emailShareSubject') space="%20"}}',
+        body: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.EMAIL.emailShareBody') space="%20"}}',
+        mailToLink: 'mailto:?subject={{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.EMAIL.emailShareSubject') space="%20"}}&body={{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.EMAIL.emailShareBody') space="%20"}}',
       },
       reminder: {
         subject: '{{urlencode (stringFormat "How do you like %s so far?" companyName) space="%20"}}',
