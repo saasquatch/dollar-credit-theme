@@ -41,6 +41,10 @@
 
   & + & {
     margin-left: @grid-gutter-width;
+
+    @media (max-width: @screen-sm-max) {
+      margin-left: 0;
+    }
   }
 
   html.lt-ie9 & {
@@ -49,7 +53,6 @@
 
   @media (max-width: @screen-sm-max) {
     width: 100%;
-    margin-left: 0;
     margin-top: @grid-gutter-width;
   }
 }
