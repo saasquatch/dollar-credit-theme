@@ -78,3 +78,28 @@
     display: block;
   }
 }
+
+.emailShare {
+
+  &.mobile-and-desktop {
+    // display block (don't need anything)
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  &.mobile-only {
+    display: none;
+
+    @media (max-width: @screen-sm-max) {
+      display: block;
+    }
+  }
+
+  &.desktop-only {
+    @media (max-width: @screen-sm-max) {
+      display: none;
+    }
+  }
+}
