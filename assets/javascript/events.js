@@ -78,9 +78,8 @@ function whatsappHandler() {
 
   if (!whatsappBtn) return;
 
-  // Test url
   var whatsappUrl = 'whatsapp://send?text=' + squatch.user.whatsapp.body;
-  whatsappBtn.href = smsUrl;
+  whatsappBtn.href = whatsappUrl;
 
   handleClicks(whatsappBtn, function(e) {
     if (window.frameElement && window.frameElement.squatchJsApi) {
