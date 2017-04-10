@@ -39,19 +39,14 @@
   .icon {
     margin-right: 10px;
   }
-
-  @media (max-width: @screen-sm-max) {
-    display: none;
-  }
 }
 
 .btn-sms {
   .button-variant(@btn-sms-color; @btn-sms-bg; @btn-sms-border);
-  display: none;
+}
 
-  @media (max-width: @screen-sm-max) {
-    display: block;
-  }
+.btn-whatsapp {
+  .button-variant(@btn-whatsapp-color; @btn-whatsapp-bg; @btn-whatsapp-border);
 }
 
 button[data-scroll-element]{
