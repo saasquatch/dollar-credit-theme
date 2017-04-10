@@ -16,9 +16,9 @@
     sharelink: '{{shareLinks.shareLink}}',
     email    : {
       share : {
-        subject: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.EMAIL.emailShareSubject') space="%20"}}',
-        body: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.EMAIL.emailShareBody') space="%20"}}',
-        mailToLink: 'mailto:?subject={{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.EMAIL.emailShareSubject') space="%20"}}&body={{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.EMAIL.emailShareBody') space="%20"}}',
+        subject: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareSubject') space="%20"}}',
+        body: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareBody') space="%20"}}',
+        mailToLink: 'mailto:?subject={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareSubject') space="%20"}}&body={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareBody') space="%20"}}',
       },
       reminder: {
         subject: '{{urlencode (stringFormat "How do you like %s so far?" companyName) space="%20"}}',
@@ -28,11 +28,11 @@
       type: 'UNKNOWN'
     },
     facebook: {
-      title: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.FACEBOOK.facebookShareSubject')}}',
-      summary: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.FACEBOOK.facebookShareBody')}}',
+      title: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.FACEBOOK.facebookShareSubject')}}',
+      summary: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.FACEBOOK.facebookShareBody')}}',
       link: '{{shareLinks.facebookShareLink}}',
-{{#if variables.widget.REFERRER_WIDGET.content.shareContent.FACEBOOK.facebookShareImageURL}}
-      shareImage: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.FACEBOOK.facebookShareImageURL')}}',
+{{#if variables.widget.REFERRER_WIDGET.content.sharingOptions.FACEBOOK.facebookShareImageURL}}
+      shareImage: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.FACEBOOK.facebookShareImageURL')}}',
 {{else}}
       shareImage: null,
 {{/if}}
@@ -40,19 +40,19 @@
       redirectUrl: 'http://app.referralsaasquatch.com/widget/close'
     },
     twitter: {
-      message: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.TWITTER.twitterShareBody')}}'
+      message: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.TWITTER.twitterShareBody')}}'
     },
     mobile: {
       sharelink : '{{shareLinks.shareLink}}',
       emailBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileEmailShareLink)}}',
       facebookBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileFacebookShareLink)}}',
-      twitterBody: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.TWITTER.twitterShareBody') space="%20"}}',
+      twitterBody: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.TWITTER.twitterShareBody') space="%20"}}',
       twitterShareLink : '{{shareLinks.mobileTwitterShareLink}}',
       facebookShareLink : '{{shareLinks.mobileFacebookShareLink}}',
       emailShareLink: '{{shareLinks.mobileEmailShareLink}}'
     },
     sms: {
-      body: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareContent.SMS.smsShareBody') space="%20"}}'
+      body: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.SMS.smsShareBody') space="%20"}}'
     },
     fallbackImg: 'https://www.gravatar.com/avatar/0?d=blank'
   };
