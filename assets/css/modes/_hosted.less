@@ -13,8 +13,19 @@
 
   .fbMobile {
     display: none;
-    @media (max-width: @screen-sm-max) {
-      display: block;
+
+    &.mobile-and-desktop,
+    &.mobile-only {
+      @media (max-width: @screen-sm-max) {
+        display: block;
+      }
+    }
+
+    &.hidden,
+    &.desktop-only {
+      @media (max-width: @screen-sm-max) {
+        display: none;
+      }
     }
   }
 
@@ -26,12 +37,23 @@
 
   .twMobile {
     display: none;
-    @media (max-width: @screen-sm-max) {
-      display: block;
+
+    &.mobile-and-desktop,
+    &.mobile-only {
+      @media (max-width: @screen-sm-max) {
+        display: block;
+      }
+    }
+
+    &.hidden,
+    &.desktop-only {
+      @media (max-width: @screen-sm-max) {
+        display: none;
+      }
     }
   }
 
-  .fbShare {
+  .twShare {
     @media (max-width: @screen-sm-max) {
       display: none;
     }
