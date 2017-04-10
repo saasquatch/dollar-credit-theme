@@ -65,25 +65,9 @@
   }
 }
 
-.btn-messenger {
-  @media (max-width: @screen-sm-max) {
-    display: none;
-  }
-}
-
-.btn-sms {
-  display: none;
-
-  @media (max-width: @screen-sm-max) {
-    display: block;
-  }
-}
-
-.emailShare {
-
-  &.mobile-and-desktop {
-    // display block (don't need anything)
-  }
+.emailShare,
+.fbShare,
+.twShare {
 
   &.hidden {
     display: none;
@@ -100,6 +84,34 @@
   &.desktop-only {
     @media (max-width: @screen-sm-max) {
       display: none;
+    }
+  }
+}
+
+.messengerShare {
+
+  &.hidden {
+    display: none;
+  }
+
+  &.desktop-only {
+    @media (max-width: @screen-sm-max) {
+      display: none;
+    }
+  }
+}
+
+.smsShare {
+
+  &.hidden {
+    display: none;
+  }
+
+  &.mobile-only {
+    display: none;
+
+    @media (max-width: @screen-sm-max) {
+      display: block;
     }
   }
 }
