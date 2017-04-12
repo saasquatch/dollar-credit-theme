@@ -543,7 +543,7 @@
                         },
                         "FBMESSENGER":{
                            "type":"object",
-						   "title":"Facebook Messenger",
+						   "title":"Messenger",
                            "properties":{
                               "facebookDisplayRule":{
                                  "type":"string",
