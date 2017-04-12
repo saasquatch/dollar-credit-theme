@@ -73,6 +73,21 @@ function smsHandler() {
   });
 }
 
+function whatsappHandler() {
+  var whatsappBtn = document.getElementsByClassName('whatsappShare')[0];
+
+  if (!whatsappBtn) return;
+
+  var whatsappUrl = 'whatsapp://send?text=' + squatch.user.whatsapp.body;
+  whatsappBtn.href = whatsappUrl;
+
+  handleClicks(whatsappBtn, function(e) {
+    if (window.frameElement && window.frameElement.squatchJsApi) {
+      window.frameElement.squatchJsApi._shareEvent(window.squatch, 'WHATSAPP');
+    }
+  });
+}
+
 function facebookHandler() {
   var facebookBtn = document.getElementsByClassName('fbShare')[0];
 

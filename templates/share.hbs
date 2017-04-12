@@ -15,46 +15,52 @@
   </div>
 
   <div class="clearfix">
-    <a class="btn btn-email squatch-share-btn emailShare"
+    <a class="btn btn-email squatch-share-btn emailShare {{variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailDisplayRule'}}"
        target="{{#if (stringCompare mode "POPUP" emptyOnFalse=true)}}_blank{{else}}{{#if (stringCompare mode "EMBED" emptyOnFalse=true)}}_blank{{else}}_self{{/if}}{{/if}}">
       <i class="icon icon-mail"></i>
       Email
     </a>
 
-    <!-- <a class="btn btn-twitter squatch-share-btn twShare"
+    <a class="btn btn-twitter squatch-share-btn twShare {{variables 'widget.REFERRER_WIDGET.content.sharingOptions.TWITTER.twitterDisplayRule'}}"
        target="{{#if (stringCompare mode "POPUP" emptyOnFalse=true)}}_blank{{else}}{{#if (stringCompare mode "EMBED" emptyOnFalse=true)}}_blank{{else}}_self{{/if}}{{/if}}">
       <i class="icon icon-twitter"></i>
       Tweet
-    </a> -->
+    </a>
 
-    <!-- <a class="btn btn-twitter squatch-share-btn twMobile"
+    <a class="btn btn-twitter squatch-share-btn twMobile {{variables 'widget.REFERRER_WIDGET.content.sharingOptions.TWITTER.twitterDisplayRule'}}"
        target="{{#if (stringCompare mode "POPUP" emptyOnFalse=true)}}_blank{{else}}{{#if (stringCompare mode "EMBED" emptyOnFalse=true)}}_blank{{else}}_self{{/if}}{{/if}}">
       <i class="icon icon-twitter"></i>
       Tweet
-    </a> -->
+    </a>
 
-    <a class="btn btn-sms squatch-share-btn smsShare"
+    <a class="btn btn-sms squatch-share-btn smsShare {{variables 'widget.REFERRER_WIDGET.content.sharingOptions.SMS.smsDisplayRule'}}"
        target="{{#if (stringCompare mode "POPUP" emptyOnFalse=true)}}_blank{{else}}{{#if (stringCompare mode "EMBED" emptyOnFalse=true)}}_blank{{else}}_self{{/if}}{{/if}}">
       <i class="icon icon-chat"></i>
       SMS
     </a>
 
-    <a class="btn btn-messenger squatch-share-btn messengerShare"
+    <a class="btn btn-messenger squatch-share-btn messengerShare {{variables 'widget.REFERRER_WIDGET.content.sharingOptions.FBMESSENGER.facebookDisplayRule'}}"
        target="{{#if (stringCompare mode "POPUP" emptyOnFalse=true)}}_blank{{else}}{{#if (stringCompare mode "EMBED" emptyOnFalse=true)}}_blank{{else}}_self{{/if}}{{/if}}">
       <i class="icon icon-messenger"></i>
       Messenger
     </a>
 
-    <a class="btn btn-facebook squatch-share-btn fbShare"
+    <a class="btn btn-facebook squatch-share-btn fbShare {{variables 'widget.REFERRER_WIDGET.content.sharingOptions.FACEBOOK.facebookDisplayRule'}}"
        target="{{#if (stringCompare mode "POPUP" emptyOnFalse=true)}}_blank{{else}}{{#if (stringCompare mode "EMBED" emptyOnFalse=true)}}_blank{{else}}_self{{/if}}{{/if}}">
       <i class="icon icon-facebook"></i>
       Share
     </a>
 
-    <a class="btn btn-facebook squatch-share-btn fbMobile"
+    <a class="btn btn-facebook squatch-share-btn fbMobile {{variables 'widget.REFERRER_WIDGET.content.sharingOptions.FACEBOOK.facebookDisplayRule'}}"
        target="{{#if (stringCompare mode "POPUP" emptyOnFalse=true)}}_blank{{else}}{{#if (stringCompare mode "EMBED" emptyOnFalse=true)}}_blank{{else}}_self{{/if}}{{/if}}">
       <i class="icon icon-facebook"></i>
       Share
+    </a>
+
+    <a class="btn btn-whatsapp squatch-share-btn whatsappShare {{variables 'widget.REFERRER_WIDGET.content.sharingOptions.SMS.smsDisplayRule'}}"
+       target="{{#if (stringCompare mode "POPUP" emptyOnFalse=true)}}_blank{{else}}{{#if (stringCompare mode "EMBED" emptyOnFalse=true)}}_blank{{else}}_self{{/if}}{{/if}}">
+      <i class="icon icon-whatsapp"></i>
+      WhatsApp
     </a>
 
   </div>

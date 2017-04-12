@@ -12,6 +12,7 @@
     emailHandler();
     messengerHandler();
     smsHandler();
+    whatsappHandler();
 
     var inValidRange = function(offset, limit) {
       return offset >= 0 && offset < limit;
