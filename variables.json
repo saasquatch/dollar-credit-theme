@@ -628,7 +628,7 @@
                                  "type":"string",
                                  "title":"WhatsApp share body",
                                  "minLength":4,
-                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{share-link 'WHATSAPP'}}"
+                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{share-link 'SMS'}}"
                               },
                               "whatsappDisplayRule":{
                                  "type":"string",
