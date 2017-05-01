@@ -464,19 +464,31 @@
                      "properties":{
                         "EMAIL":{
                            "type":"object",
-						   "title":"Email",
+                           "title":"Email",
                            "properties":{
                               "emailShareSubject":{
                                  "type":"string",
                                  "title":"Email share subject",
                                  "minLength":4,
-                                 "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
+                                 "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}",
+                                 "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"50px"
+                                 }
                               },
                               "emailShareBody":{
                                  "type":"string",
                                  "title":"Email share body",
                                  "minLength":4,
-                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.emailShareLink}}"
+                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.emailShareLink}}",
+                                 "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"50px"
+                                 }
                               },
                               "emailDisplayRule":{
                                  "type":"string",
@@ -501,7 +513,7 @@
                         },
                         "FACEBOOK":{
                            "type":"object",
-						   "title":"Facebook",
+                           "title":"Facebook",
                            "properties":{
                               "facebookShareImageURL":{
                                  "type":"string",
@@ -512,13 +524,25 @@
                                  "type":"string",
                                  "title":"Facebook share subject",
                                  "minLength":4,
-                                 "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}"
+                                 "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}",
+                                 "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"50px"
+                                 }
                               },
                               "facebookShareBody":{
                                  "type":"string",
-                                 "title":"Facebook share subject",
+                                 "title":"Facebook share body",
                                  "minLength":4,
-                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.facebookShareLink}}"
+                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.facebookShareLink}}",
+                                 "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"50px"
+                                 }
                               },
                               "facebookDisplayRule":{
                                  "type":"string",
@@ -543,7 +567,7 @@
                         },
                         "FBMESSENGER":{
                            "type":"object",
-						   "title":"Messenger",
+                           "title":"Messenger",
                            "properties":{
                               "facebookDisplayRule":{
                                  "type":"string",
@@ -564,13 +588,19 @@
                         },
                         "TWITTER":{
                            "type":"object",
-						   "title":"Twitter",
+                           "title":"Twitter",
                            "properties":{
                               "twitterShareBody":{
                                  "type":"string",
                                  "title":"Twitter share body",
                                  "minLength":4,
-                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.twitterShareLink}}"
+                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.twitterShareLink}}",
+                                 "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"50px"
+                                 }
                               },
                               "twitterDisplayRule":{
                                  "type":"string",
@@ -595,13 +625,19 @@
                         },
                         "SMS":{
                            "type":"object",
-						   "title":"SMS",
+                           "title":"SMS",
                            "properties":{
                               "smsShareBody":{
                                  "type":"string",
                                  "title":"SMS share body",
                                  "minLength":4,
-                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{share-link 'SMS'}}"
+                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{share-link 'SMS'}}",
+                                 "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"50px"
+                                 }
                               },
                               "smsDisplayRule":{
                                  "type":"string",
@@ -622,13 +658,19 @@
                         },
                         "WHATSAPP":{
                            "type":"object",
-						   "title":"WhatsApp",
+                           "title":"WhatsApp",
                            "properties":{
                               "whatsAppShareBody":{
                                  "type":"string",
                                  "title":"WhatsApp share body",
                                  "minLength":4,
-                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{share-link 'WHATSAPP'}}"
+                                 "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{share-link 'WHATSAPP'}}",
+                                 "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"50px"
+                                 }
                               },
                               "whatsappDisplayRule":{
                                  "type":"string",
