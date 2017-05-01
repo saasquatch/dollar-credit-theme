@@ -475,7 +475,7 @@
                                     "validate":[
                                        "handlebars"
                                     ],
-                                    "input_height":"50px"
+                                    "input_height":"100px"
                                  }
                               },
                               "emailShareBody":{
@@ -488,7 +488,7 @@
                                     "validate":[
                                        "handlebars"
                                     ],
-                                    "input_height":"50px"
+                                    "input_height":"100px"
                                  }
                               },
                               "emailDisplayRule":{
@@ -531,7 +531,7 @@
                                     "validate":[
                                        "handlebars"
                                     ],
-                                    "input_height":"50px"
+                                    "input_height":"100px"
                                  }
                               },
                               "facebookShareBody":{
@@ -544,7 +544,7 @@
                                     "validate":[
                                        "handlebars"
                                     ],
-                                    "input_height":"50px"
+                                    "input_height":"100px"
                                  }
                               },
                               "facebookDisplayRule":{
@@ -603,7 +603,7 @@
                                     "validate":[
                                        "handlebars"
                                     ],
-                                    "input_height":"50px"
+                                    "input_height":"100px"
                                  }
                               },
                               "twitterDisplayRule":{
@@ -641,7 +641,7 @@
                                     "validate":[
                                        "handlebars"
                                     ],
-                                    "input_height":"50px"
+                                    "input_height":"100px"
                                  }
                               },
                               "smsDisplayRule":{
@@ -675,7 +675,7 @@
                                     "validate":[
                                        "handlebars"
                                     ],
-                                    "input_height":"50px"
+                                    "input_height":"100px"
                                  }
                               },
                               "whatsappDisplayRule":{
