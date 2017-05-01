@@ -482,6 +482,7 @@
                                  "type":"string",
                                  "title":"Email share body",
                                  "minLength":4,
+                                 "format":"text",
                                  "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.emailShareLink}}",
                                  "options":{
                                     "validate":[
@@ -524,6 +525,7 @@
                                  "type":"string",
                                  "title":"Facebook share subject",
                                  "minLength":4,
+                                 "format":"text",
                                  "default":"Get ${{math programDetails.referredRewardDetails.credit ' / 100'}} off {{companyName}}",
                                  "options":{
                                     "validate":[
@@ -536,6 +538,7 @@
                                  "type":"string",
                                  "title":"Facebook share body",
                                  "minLength":4,
+                                 "format":"text",
                                  "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.facebookShareLink}}",
                                  "options":{
                                     "validate":[
@@ -594,6 +597,7 @@
                                  "type":"string",
                                  "title":"Twitter share body",
                                  "minLength":4,
+                                 "format":"text",
                                  "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{shareLinks.twitterShareLink}}",
                                  "options":{
                                     "validate":[
@@ -631,6 +635,7 @@
                                  "type":"string",
                                  "title":"SMS share body",
                                  "minLength":4,
+                                 "format":"text",
                                  "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{share-link 'SMS'}}",
                                  "options":{
                                     "validate":[
@@ -664,6 +669,7 @@
                                  "type":"string",
                                  "title":"WhatsApp share body",
                                  "minLength":4,
+                                 "format":"text",
                                  "default":"Sign up for a {{companyName}} account and we both get ${{math programDetails.referredRewardDetails.credit ' / 100'}} free credit. Use this link {{share-link 'WHATSAPP'}}",
                                  "options":{
                                     "validate":[
