@@ -99,7 +99,7 @@
                                        "default":"Give a ${{math programDetails.referredRewardDetails.credit ' / 100'}} Coupon and Get a ${{math programDetails.referrerRewardDetails.credit ' / 100'}} Coupon!"
                                     },
                                     "headerDetails":{
-                                       "default":"Give a friend a ${{math programDetails.referredRewardDetails.credit ' / 100'}} with {{companyName}} and receive a ${{math programDetails.referrerRewardDetails.credit ' / 100'}} coupon for yourself when they pay their first bill."
+                                       "default":"Give a friend a ${{math programDetails.referredRewardDetails.credit ' / 100'}} coupon with {{companyName}} and receive a ${{math programDetails.referrerRewardDetails.credit ' / 100'}} coupon for yourself when they pay their first bill."
                                     },
                                     "shareCodeDetails":{
                                        "type":"string",
