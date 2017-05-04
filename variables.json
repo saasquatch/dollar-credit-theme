@@ -326,7 +326,8 @@
                               },
                               "bodyContent":{
                                  "default":"You have now earned ${{math programDetails.referrerRewardDetails.credit ' / 100'}} of free credit with {{companyName}}. Refer more friends to save even more!"
-                              }
+                              },
+                              "instructionsContent": { "default" : "at checkout to receive your reward."}
                            }
                         },
                         {
