@@ -325,7 +325,7 @@
                                  "default":"#Congratulations\nYour friend has signed up for a {{companyName}} Account!"
                               },
                               "bodyContent":{
-                                 "default": { "default" : "You have now earned a <br> **${{math programDetails.referrerRewardDetails.credit ' / 100'}} coupon with {{companyName}}.** <br> Use your unique promotional code" }
+                                 "default":"You have now earned a <br> **${{math programDetails.referrerRewardDetails.credit ' / 100'}} coupon with {{companyName}}.** <br> Use your unique promotional code"
                               },
                               "instructionsContent": { "default" : "at checkout to receive your reward."}
                            }
