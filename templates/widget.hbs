@@ -44,16 +44,18 @@
   <body>
     <main class="squatch-container squatch-container-{{lower mode}}">
       <div class="squatch-body">
-        {{> programs/CREDIT/title}}
+        {{> title}}
 
-        <!-- <button class="close squatch-header-close" data-close-panel="#squatch-panel">Close</button>
+        <button class="close squatch-header-close" data-close-panel="#squatch-panel">Close</button>
 
-        {{> programs/CREDIT/lead}}
+
+
+        {{> lead}}
         {{> cta}}
         {{> share}}
       </div>
 
-      {{#if user.email}}
+      <!-- {{#if user.email}}
         <div id="squatch-panel">
           {{> programs/CREDIT/panel_summary}}
           {{> referrals}}
@@ -63,10 +65,10 @@
         {{> actions}}
       {{else}}
         {{> form}}
-      {{/if}}
+      {{/if}} -->
     </main>
 
-    <div id="cta">
+    <!-- <div id="cta">
       {{> cta-widget cta=(variables-object 'widget.REFERRER_WIDGET.cta')}}
     </div> -->
 
