@@ -44,8 +44,8 @@
     },
     mobile: {
       sharelink : '{{shareLinks.shareLink}}',
-      emailBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileEmailShareLink)}}',
-      facebookBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (math programDetails.referredRewardDetails.credit ' / 100') shareLinks.mobileFacebookShareLink)}}',
+      emailBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (format-reward 'REFERRED' includeUnit=true) shareLinks.mobileEmailShareLink)}}',
+      facebookBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get $%s free credit. Use this link %s" companyName (format-reward 'REFERRED' includeUnit=true) shareLinks.mobileFacebookShareLink)}}',
       twitterBody: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.TWITTER.twitterShareBody') space="%20"}}',
       twitterShareLink : '{{shareLinks.mobileTwitterShareLink}}',
       facebookShareLink : '{{shareLinks.mobileFacebookShareLink}}',
