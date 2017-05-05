@@ -96,7 +96,7 @@
                                        "default":"#4486E1"
                                     },
                                     "heading":{
-                                      "default":"{{stringFormat 'Give %s and Get %s!' programDetails.referredRewardDetails.credit programDetails.referrerRewardDetails.credit}}"
+                                      "default":"Give {{format-reward 'REFERRED' includeUnit=true}}, Get {{format-reward 'REFERRER' includeUnit=true}}"
                                     },
                                     "headerDetails":{
                                        "default":"Give a friend ${{math programDetails.referredRewardDetails.credit ' / 100'}} credit off {{companyName}} and receive ${{math programDetails.referrerRewardDetails.credit ' / 100'}} for yourself when they pay their first bill."
