@@ -22,7 +22,7 @@
             reward=referredBy.referredReward
             dateReferred=referredBy.dateReferred}}
 
-            {{> (stringFormat "programs/%s/referral" programDetails.referredRewardDetails.rewardType)}}
+            {{#partial (stringFormat "programs/%s/referral" programDetails.referredRewardDetails.rewardType)}}{{/partial}}
             <!-- {{> programs/CREDIT/referral}} -->
           {{/block}}
         </tr>
