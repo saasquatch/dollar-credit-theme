@@ -40,7 +40,7 @@
             reward=referrerReward
             programDetails=../programDetails}}
 
-            {{> (stringFormat "programs/%s/test" (lookup . "programDetails.referredRewardDetails.rewardType"))}}
+            {{> (stringFormat "programs/%s/test" programDetails.referredRewardDetails.rewardType")}}
           {{/block}}
         </tr>
       {{/unless}}
