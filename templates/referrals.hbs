@@ -55,9 +55,10 @@
             heading="Applied"
             unit=unit
             value=value
+            reward=.
             dateGiven=dateGiven}}
 
-            {{lookup . .}}
+            {{> (stringFormat 'programs/%s/reward' programDetails.referredRewardDetails.rewardType)}}
 
           {{/block}}
         </tr>
