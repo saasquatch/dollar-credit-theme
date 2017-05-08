@@ -41,7 +41,8 @@
             reward=referrerReward
             programDetails=../programDetails}}
 
-            {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType)}}
+            {{#partial (stringFormat "programs/%s/referral" programDetails.referredRewardDetails.rewardType)}}{{/partial}}
+            <!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType)}} -->
             <!-- {{> programs/CREDIT/referral}} -->
           {{/block}}
         </tr>
