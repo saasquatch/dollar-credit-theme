@@ -32,16 +32,16 @@
           ${{math reward.value ' / 100'}}
         {{else}}
           {{#if referred}}
-            ${{math programDetails.referredRewardDetails.credit ' / 100'}}
+            {{format-reward 'REFERRED' includeUnit=true}}
           {{else}}
-            ${{math programDetails.referrerRewardDetails.credit ' / 100'}}
+            {{format-reward 'REFERRER' includeUnit=true}}
           {{/if}}
         {{/if}}
       {{else}}
         {{#if referred}}
-          ${{math programDetails.referredRewardDetails.credit ' / 100'}} Pending
+          {{format-reward 'REFERRED' includeUnit=true}} Pending
         {{else}}
-          ${{math programDetails.referrerRewardDetails.credit ' / 100'}} Pending
+          {{format-reward 'REFERRER' includeUnit=true}} Pending
         {{/if}}
       {{/if}}
     </span>
@@ -78,9 +78,9 @@
         ${{math reward.value ' / 100'}}
       {{else}}
         {{#if referred}}
-          ${{math programDetails.referredRewardDetails.credit ' / 100'}}
+          {{format-reward 'REFERRED' includeUnit=true}}
         {{else}}
-          ${{math programDetails.referrerRewardDetails.credit ' / 100'}}
+          {{format-reward 'REFERRER' includeUnit=true}}
         {{/if}}
       {{/if}}
     {{else}}
