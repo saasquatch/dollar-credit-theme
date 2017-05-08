@@ -22,7 +22,7 @@
             reward=referredBy.referredReward
             dateReferred=referredBy.dateReferred}}
 
-            {{#partial (stringFormat "programs/%s/test" programDetails.referredRewardDetails.rewardType)}}{{/partial}}
+            {{> (stringFormat "programs/%s/test" programDetails.referredRewardDetails.rewardType)}}
           {{/block}}
         </tr>
       {{/unless}}
@@ -40,7 +40,7 @@
             reward=referrerReward
             programDetails=../programDetails}}
 
-            {{#partial (stringFormat "programs/%s/test" programDetails.referredRewardDetails.rewardType)}}{{/partial}}
+            {{> (stringFormat "programs/%s/test" programDetails.referredRewardDetails.rewardType)}}
           {{/block}}
         </tr>
       {{/unless}}
