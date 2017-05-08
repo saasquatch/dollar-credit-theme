@@ -59,7 +59,8 @@
             value=value
             dateGiven=dateGiven}}
 
-            {{> programs/CREDIT/reward}}
+            {{> (stringFormat 'programs/%s/reward' programDetails.referredRewardDetails.rewardType)}}
+
           {{/block}}
         </tr>
       {{/unless}}
