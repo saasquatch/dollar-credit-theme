@@ -20,6 +20,11 @@
         body: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareBody') space="%20"}}',
         mailToLink: 'mailto:?subject={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareSubject') space="%20"}}&body={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareBody') space="%20"}}',
       },
+      reminder: {
+        subject: '{{urlencode (stringFormat "How do you like %s so far?" companyName) space="%20"}}',
+        body: '{{urlencode (stringFormat "Hey,%n %nI saw that you signed up for %s. What do you think of it so far?%n %nBy the way, if you\'ve lost the link to %s, here it is again - %s" companyName companyName shareLinks.emailShareLink) space="%20"}}',
+        mailToLink: 'mailto:?subject={{urlencode (stringFormat "How do you like %s so far?" companyName) space="%20"}}&body={{urlencode (stringFormat "Hey,%n %nI saw that you signed up for %s. What do you think of it so far?%n %nBy the way, if you\'ve lost the link to %s, here it is again - %s" companyName companyName shareLinks.emailShareLink) space="%20"}}',
+      },
       type: 'UNKNOWN'
     },
     facebook: {
