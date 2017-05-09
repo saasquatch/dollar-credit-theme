@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="{{assets 'css/widget.css'}}">
 
-    {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
-    {{!-- {{> (stringFormat 'programs/%s/theme_messages' programDetails.referredRewardDetails.rewardType) }} --}}
-    {{> programs/CREDIT/theme_messages}}
+    {{> theme_messages}}
     {{squatchHead}}
     <script src="{{assets 'libs/mobile-detect.min.js'}}"></script>
     <script src="{{assets 'javascript/base.js'}}"></script>
@@ -48,8 +46,6 @@
 
         <button class="close squatch-header-close" data-close-panel="#squatch-panel">Close</button>
 
-
-
         {{> lead}}
         {{> cta}}
         {{> share}}
@@ -68,9 +64,9 @@
       {{/if}}
     </main>
 
-    <!-- <div id="cta">
+    <div id="cta">
       {{> cta-widget cta=(variables-object 'widget.REFERRER_WIDGET.cta')}}
-    </div> -->
+    </div>
 
     <script src="{{assets 'libs/ready.min.js'}}"></script>
     <script src="{{assets 'libs/clipboard.min.js'}}"></script>

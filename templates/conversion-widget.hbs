@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="{{assets 'css/conversion-widget.css'}}">
 
-    {{> programs/CREDIT/theme_messages}}
+    {{> theme_messages}}
     {{squatchHead}}
     <script src="{{assets 'javascript/base.js'}}"></script>
     <script src="{{assets 'javascript/events.js'}}"></script>
@@ -47,12 +47,12 @@
           <img class="checkmark-size" src={{variables 'widget.CONVERSION_WIDGET.content.widgetCustomization.widgetHeaderImage'}}>
         </div>
 
-        {{> programs/CREDIT/conversion-title}}
+        {{> conversion-title}}
 
         <button class="close squatch-header-close" data-close-panel="#squatch-panel">Close</button>
 
         {{#if referredBy}}
-          {{> programs/CREDIT/conversion-lead}}
+          {{> conversion-lead}}
           {{> conversion-share}}
         {{/if}}
       </div>

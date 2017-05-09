@@ -20,11 +20,6 @@
         body: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareBody') space="%20"}}',
         mailToLink: 'mailto:?subject={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareSubject') space="%20"}}&body={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareBody') space="%20"}}',
       },
-      reminder: {
-        subject: '{{urlencode (stringFormat "How do you like %s so far?" companyName) space="%20"}}',
-        body: '{{urlencode (stringFormat "Hey,%n %nI saw that you signed up for %s. What do you think of it so far?%n %nBy the way, if you\'ve lost the link to %s, here it is again - %s" companyName companyName shareLinks.emailShareLink) space="%20"}}',
-        mailToLink: 'mailto:?subject={{urlencode (stringFormat "How do you like %s so far?" companyName) space="%20"}}&body={{urlencode (stringFormat "Hey,%n %nI saw that you signed up for %s. What do you think of it so far?%n %nBy the way, if you\'ve lost the link to %s, here it is again - %s" companyName companyName shareLinks.emailShareLink) space="%20"}}',
-      },
       type: 'UNKNOWN'
     },
     facebook: {
@@ -41,15 +36,6 @@
     },
     twitter: {
       message: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.TWITTER.twitterShareBody')}}'
-    },
-    mobile: {
-      sharelink : '{{shareLinks.shareLink}}',
-      emailBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get %s free credit. Use this link %s" companyName (format-reward 'REFERRED' includeUnit=true) shareLinks.mobileEmailShareLink)}}',
-      facebookBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get %s free credit. Use this link %s" companyName (format-reward 'REFERRED' includeUnit=true) shareLinks.mobileFacebookShareLink)}}',
-      twitterBody: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.TWITTER.twitterShareBody') space="%20"}}',
-      twitterShareLink : '{{shareLinks.mobileTwitterShareLink}}',
-      facebookShareLink : '{{shareLinks.mobileFacebookShareLink}}',
-      emailShareLink: '{{shareLinks.mobileEmailShareLink}}'
     },
     sms: {
       body: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.SMS.smsShareBody') space="%20"}}'
