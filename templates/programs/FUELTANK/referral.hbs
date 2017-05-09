@@ -1,5 +1,5 @@
 {{#if reward.value}}
-  {{lookup . 'reward'}}
+  {{lookup . 'reward.fuelTankType'}}
   {{!-- {{> (stringFormat 'programs/%s/referral' reward.fuelTankType)}}--}}
 {{else}}
   {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.fuelTankType)}}
