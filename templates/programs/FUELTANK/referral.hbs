@@ -1,8 +1,5 @@
 {{#if reward.value}}
-  {{lookup . 'reward'}}
-  {{> programs/PCT_DISCOUNT/referral}}
-   {{!-- {{> (stringFormat 'programs/%s/referral' reward.fuelTankType)}} --}}
+  {{> (stringFormat 'programs/%s/referral' reward.fuelTankType)}}
 {{else}}
-  {{lookup . 'programDetails'}}
-   {{!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.fuelTankType)}} --}}
+  {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.fuelTankType)}}
 {{/if}}
