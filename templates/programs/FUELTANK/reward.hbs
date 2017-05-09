@@ -1,5 +1,9 @@
 {{#if reward.value}}
-  {{> (stringFormat 'programs/%s/reward' reward.fuelTankType)}}
+  {{#if reward.fuelTankType}}
+    {{> (stringFormat 'programs/%s/reward' reward.fuelTankType)}}
+  {{else}}
+    {{> (stringFormat 'programs/%s/reward' reward.type)}}
+  {{/if}}
 {{else}}
   {{> (stringFormat 'programs/%s/reward' programDetails.referredRewardDetails.fuelTankType)}}
 {{/if}}
