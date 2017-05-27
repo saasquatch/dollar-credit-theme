@@ -230,13 +230,13 @@ subject: {{variables 'email.REFERRAL_STARTED.configuration.subject'}}
               <td class="mobile-block" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5;" align="center">
                 <div style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
                     <!--[if mso]>
-                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://twitter.com/intent/tweet?source=webclient&text={{urlencode (variables 'shareMessaging.twitterShareBody')}}" style="height:39px;v-text-anchor:middle;width:136px;" arcsize="18%" stroke="f" fill="t">
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://twitter.com/intent/tweet?source=webclient&text={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.TWITTER.twitterShareBody')}}" style="height:39px;v-text-anchor:middle;width:136px;" arcsize="18%" stroke="f" fill="t">
                       <v:fill type="tile" src="{{assets 'images/social_07.jpg'}}" color="#0089b6" />
                       <w:anchorlock/>
                       <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:400;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tweet</center>
                     </v:roundrect>
                     <![endif]-->
-                  <a class="social-button twitter" href="https://twitter.com/intent/tweet?source=webclient&text={{urlencode (variables 'shareMessaging.twitterShareBody')}}" style="border-radius: 7px; font-family: HelveticaNeue, Helvetica, Arial, sans-serif; font-size: 16px; color: #FFFFFF; display: inline-block; text-align: center; text-decoration: none; mso-hide: all; background: #0089B7; padding: 0; min-width: 136px;" target="_blank">
+                  <a class="social-button twitter" href="https://twitter.com/intent/tweet?source=webclient&text={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.TWITTER.twitterShareBody')}}" style="border-radius: 7px; font-family: HelveticaNeue, Helvetica, Arial, sans-serif; font-size: 16px; color: #FFFFFF; display: inline-block; text-align: center; text-decoration: none; mso-hide: all; background: #0089B7; padding: 0; min-width: 136px;" target="_blank">
                     <img src="{{assets 'images/twitter.jpg'}}" style="float: left; margin: 0; padding: 0;">
                     <span class="social-button-text" style="margin: 0; padding: 0; margin-top: 7px; margin-left: -10px; display: inline-block; min-width: 93px; max-height: 39px;">Tweet</span>
                   </a>
@@ -245,13 +245,13 @@ subject: {{variables 'email.REFERRAL_STARTED.configuration.subject'}}
               <td class="mobile-block" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5;" align="center">
                 <div style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
                   <!--[if mso]>
-                  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.facebook.com/dialog/feed?app_id=157382547792399&link={{shareLinks.facebookShareLink}}&name={{urlencode (variables 'shareMessaging.facebookShareSubject')}}&description={{urlencode (variables 'shareMessaging.facebookShareBody')}}&redirect_uri=https://www.facebook.com" style="height:39px;v-text-anchor:middle;width:136px;" arcsize="18%" stroke="f" fill="t">
+                  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.facebook.com/dialog/feed?app_id=157382547792399&link={{share-link 'FACEBOOK'}}&name={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.FACEBOOK.facebookShareSubject')}}&description={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.FACEBOOK.facebookShareBody')}}&redirect_uri=https://www.facebook.com" style="height:39px;v-text-anchor:middle;width:136px;" arcsize="18%" stroke="f" fill="t">
                     <v:fill type="tile" src="{{assets 'images/social_09.jpg'}}" color="#234079" />
                     <w:anchorlock/>
                     <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:400;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Share</center>
                   </v:roundrect>
                   <![endif]-->
-                  <a class="social-button facebook" href="https://www.facebook.com/dialog/feed?app_id=157382547792399&link={{shareLinks.facebookShareLink}}&name={{urlencode (variables 'shareMessaging.facebookShareSubject')}}&description={{urlencode (variables 'shareMessaging.facebookShareBody')}}&redirect_uri=https://www.facebook.com" style="border-radius: 7px; font-family: HelveticaNeue, Helvetica, Arial, sans-serif; font-size: 16px; color: #FFFFFF; display: inline-block; text-align: center; text-decoration: none; mso-hide: all; background: #234078; padding: 0; min-width: 136px;" target="_blank">
+                  <a class="social-button facebook" href="https://www.facebook.com/dialog/feed?app_id=157382547792399&link={{share-link 'FACEBOOK'}}&name={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.FACEBOOK.facebookShareSubject')}}&description={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.FACEBOOK.facebookShareBody')}}&redirect_uri=https://www.facebook.com" style="border-radius: 7px; font-family: HelveticaNeue, Helvetica, Arial, sans-serif; font-size: 16px; color: #FFFFFF; display: inline-block; text-align: center; text-decoration: none; mso-hide: all; background: #234078; padding: 0; min-width: 136px;" target="_blank">
                     <img src="{{assets 'images/facebook.jpg'}}" style="float: left; margin: 0; padding: 0;">
                     <span class="social-button-text" style="margin: 0; padding: 0; margin-top: 7px; margin-left: -10px; display: inline-block; min-width: 93px; max-height: 39px;">Share</span>
                   </a>
@@ -260,13 +260,13 @@ subject: {{variables 'email.REFERRAL_STARTED.configuration.subject'}}
               <td class="mobile-block" style="border-collapse: collapse; font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important; font-size: 16px; color: #2d2c2c; text-align: center; line-height: 1.5;" align="center">
                 <div style="font-family: 'Open Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;">
                   <!--[if mso]>
-                  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="mailto:?subject={{urlencode (variables 'shareMessaging.emailShareSubject') space="%20"}}&body={{urlencode (variables 'shareMessaging.emailShareBody') space="%20"}}" style="height:39px;v-text-anchor:middle;width:136px;" arcsize="18%" stroke="f" fill="t">
+                  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="mailto:?subject={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareSubject') space='%20'}}&body={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareBody') space='%20'}}" style="height:39px;v-text-anchor:middle;width:136px;" arcsize="18%" stroke="f" fill="t">
                     <v:fill type="tile" src="{{assets 'images/social_11.jpg'}}" color="#40494e" />
                     <w:anchorlock/>
                     <center style="color:#ffffff;font-family:sans-serif;font-size:16px;font-weight:400;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</center>
                   </v:roundrect>
                   <![endif]-->
-                  <a class="social-button email" href="mailto:?subject={{urlencode (variables 'shareMessaging.emailShareSubject') space="%20"}}&body={{urlencode (variables 'shareMessaging.emailShareBody') space="%20"}}"
+                  <a class="social-button email" href="mailto:?subject={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareSubject') space='%20'}}&body={{urlencode (variables 'widget.REFERRER_WIDGET.content.sharingOptions.EMAIL.emailShareBody') space='%20'}}"
                   style="border-radius: 7px; font-family: HelveticaNeue, Helvetica, Arial, sans-serif; font-size: 16px; color: #FFFFFF; display: inline-block; text-align: center; text-decoration: none; mso-hide: all; background: #40494E; padding: 0; min-width: 136px;" target="_blank">
                     <img src="{{assets 'images/email.jpg'}}" style="float: left; margin: 0; padding: 0;">
                     <span class="social-button-text" style="margin: 0; padding: 0; margin-top: 7px; margin-left: -10px; display: inline-block; min-width: 93px; max-height: 39px;">Email</span>
